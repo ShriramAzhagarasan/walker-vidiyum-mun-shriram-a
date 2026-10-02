@@ -1,0 +1,18 @@
+# Godot
+.godot/
+*.import.tmp
+export/
+# Media kept out of GitHub (course rule): films and MP3s go to OneDrive
+*.mp4
+*.mp3
+*.mov
+# Raw generation dumps (keep thumbnails/contact sheets only)
+gen/raw/
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# Credentials
+.env
+*token*
