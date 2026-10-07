@@ -63,15 +63,21 @@ def main():
     scale = a.height / im.height
     im = im.resize((max(1, round(im.width * scale)), a.height), Image.LANCZOS)
     pad = 8
-    out = Image.new("RGBA", (im.width + pad * 2, im.height + pad + a.feet_pad), (0, 0, 0, 0))
-    out.paste(im, (pad, pad), im)
+    # centre the image on the legs (bottom 25% of the alpha), so gestures don't shift the standing point
+    al = np.array(im)[..., 3]
+    legs = al[int(al.shape[0] * 0.75):]
+    cols = np.nonzero(legs.max(axis=0) > 0)[0]
+    cx = (cols.min() + cols.max()) / 2 if len(cols) else im.width / 2
+    half = int(max(cx, im.width - cx)) + pad
+    out = Image.new("RGBA", (half * 2, im.height + pad + a.feet_pad), (0, 0, 0, 0))
+    out.paste(im, (int(half - cx), pad), im)
     Path(a.dest).parent.mkdir(parents=True, exist_ok=True)
     out.save(a.dest)
     row = {"time": datetime.now().isoformat(timespec="seconds"), "src": a.src, "dest": a.dest,
            "edits": [f"rembg background removal ({a.model})", "alpha<16 -> 0",
                      "kept largest connected region" if not a.keep_all else "kept all regions",
                      f"trimmed to bbox {bbox}", f"scaled to {a.height}px tall (LANCZOS)",
-                     f"padded {pad}px, feet {a.feet_pad}px above bottom"]}
+                     f"padded, centred on legs, feet {a.feet_pad}px above bottom"]}
     with LOG.open("a") as f:
         f.write(json.dumps(row) + "\n")
     print("wrote", a.dest, out.size)

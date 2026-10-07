@@ -41,7 +41,7 @@ func _ready() -> void:
 				_sphere(0.06, Vector3(lerpf(x, next, t), 3.1 - sin(t * PI) * 0.45, LIGHT_Z + 0.05), bulb)
 			var light := OmniLight3D.new()
 			light.light_color = STRING_LIGHT_COLOR
-			light.light_energy = 1.6
+			light.light_energy = 2.8
 			light.omni_range = 7.0
 			light.position = Vector3((x + next) / 2.0, 2.7, LIGHT_Z + 1.2)
 			add_child(light)

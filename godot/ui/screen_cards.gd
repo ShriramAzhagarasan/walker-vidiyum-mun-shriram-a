@@ -52,6 +52,9 @@ func set_paused(value: bool) -> void:
 
 func show_end_card(value: bool) -> void:
 	_end_target = 1.0 if value else 0.0
+	if value:
+		caption_queue.clear()                       # nothing from the night may sit on top of the end card
+		caption_time = 0.0
 	if not value:
 		end_alpha = 0.0
 

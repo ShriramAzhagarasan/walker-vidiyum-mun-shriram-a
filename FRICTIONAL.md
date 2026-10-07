@@ -39,3 +39,12 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 - **Palette finding:** a light-blue shirt (the first idea) would vanish against the white villa (contrast ~1.2:1). Switched to a maroon and cream check, which gives ≥ 3:1 against every background for at least one large shirt value (table in CHARACTER-SHEET).
 - **Human / Claude / model:** Shriram decided the direction. Claude drafted all design docs, code-drew the storyboard and spec sheets, and drafted the dialogue at Shriram's request. No generations before this commit.
 - **Still unresolved:** whether MusicGen can produce a gaana loop that sounds like Chennai (F8); the citation for Manimekala in the epic.
+
+## 2026-10-07 ~00:00–00:50: Hari's reference
+- **Wanted:** one reference image of Hari that matches the character sheet (maroon and cream check, half sleeves, dark jeans, blue rubber chappals, three-quarter view facing right, flat cel shading) and reads at 300 px. Every pose is derived from it.
+- **Asked:** FLUX.2 [klein] 4B (local, Apache 2.0), prompt `prompts/hari_ref.txt`, 768×1344, q8, seeds 101–105; and Z-Image-Turbo with the same prompt, seeds 201–202, for comparison (ASSET-LOG, CHAR-HARI-REF rows 1–7).
+- **Got:** all five Klein outputs matched the clothing spec. The first one (s101) was usable on the first try. They differed in check scale (D's fine check blurs to pink at 300 px), floor shadows (B, C, E), and one off-spec dark undershirt (C). Z-Image (F, G) faced the camera head-on instead of 3/4, in a flatter vector style with mid-blue jeans.
+- **Decided (Shriram):** **B**, "that kind of style, which matches life is strange kind of game like telltale style." Claude had leaned toward A for contrast and the clean cutout. Shriram chose on style and feel, which is the pillar-level call. The cost: B has a floor shadow, which background removal must handle (F9).
+- **Next:** derived the poses from B with the Klein edit pipeline. The test walk pose (s300) kept the face, the check pattern and the chappals, at 142 s per image.
+- **Human / Claude / model:** Shriram chose the reference. Claude wrote the prompt, ran the models and built the comparison sheet (`design/gen-contact/CHAR-HARI-REF.jpg`). Klein and Z-Image produced the images.
+- **Still unresolved:** whether the poses keep the check pattern when the arms move across the shirt (F1).

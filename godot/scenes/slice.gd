@@ -14,7 +14,7 @@ const NotesToast = preload("res://ui/notes_toast.gd")
 const Whiteout = preload("res://ui/whiteout.gd")
 
 const HARI_START := Vector3(7.5, 0, 1.0)
-const ADVAY_AT_CAR := Vector3(5.6, 0, 0.3)
+const ADVAY_AT_CAR := Vector3(6.5, 0, -0.5)        # beside Manikandan, not in front of him (seen overlapping in shot p05)
 const ADVAY_ON_DECK := Vector3(12.0, 0, 2.2)
 const ADVAY_LEAVES_CAR_AFTER := 12.0       ## game minutes after 1:40
 const KEYS_MOVE_SECONDS := 0.6
@@ -22,9 +22,9 @@ const CRASH_FLASH_SECONDS := 1.4
 const CRASH_WHITE_SECONDS := 1.2
 # Clock colour stops: [minutes, sky top, sky horizon, ambient, light colour, light energy].
 const SKY_KEYS := [
-	[1200.0, Color("1d1b4f"), Color("4a3f86"), Color("2a2850"), Color("8fa0ff"), 0.35],
-	[1290.0, Color("0b0a2a"), Color("1d2055"), Color("1b1a3c"), Color("7f8fe0"), 0.25],
-	[1680.0, Color("0b0a2a"), Color("1d2055"), Color("1b1a3c"), Color("7f8fe0"), 0.25],
+	[1200.0, Color("1d1b4f"), Color("4a3f86"), Color("1c1a3a"), Color("8fa0ff"), 0.16],
+	[1290.0, Color("0b0a2a"), Color("1d2055"), Color("100f26"), Color("7f8fe0"), 0.08],
+	[1680.0, Color("0b0a2a"), Color("1d2055"), Color("100f26"), Color("7f8fe0"), 0.08],
 	[1740.0, Color("23235e"), Color("6b4a7d"), Color("3a3058"), Color("b090c0"), 0.3],
 	[1775.0, Color("5a4a8a"), Color("e0897a"), Color("6a4c62"), Color("ffb090"), 0.5],
 	[1795.0, Color("e98f9a"), Color("ffc477"), Color("a07068"), Color("ffc890"), 0.8],

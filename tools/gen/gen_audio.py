@@ -45,7 +45,11 @@ def log(row):
 
 def run_sfx(ids):
     from diffusers import StableAudioPipeline
+    from diffusers import CosineDPMSolverMultistepScheduler
     pipe = StableAudioPipeline.from_pretrained("stabilityai/stable-audio-open-1.0", torch_dtype=torch.float32).to(DEV)
+    # Run 1 (2026-10-07) crashed on the final step: torchsde RecursionError because the last sigma is 0,
+    # outside the Brownian interval. Fix: end the schedule at sigma_min instead of zero.
+    pipe.scheduler = CosineDPMSolverMultistepScheduler.from_config(pipe.scheduler.config, final_sigmas_type="sigma_min")
     sr = pipe.vae.sampling_rate
     for aid in ids:
         prompt, dur = SFX[aid]
@@ -59,7 +63,7 @@ def run_sfx(ids):
             log({"time": datetime.now().isoformat(timespec="seconds"), "asset": aid,
                  "model": "stabilityai/stable-audio-open-1.0", "prompt": prompt, "negative_prompt": SFX_NEG,
                  "seed": seed, "seed_generator": "torch cpu Generator", "duration_s": dur, "steps": 100,
-                 "guidance": 7.0, "sample_rate": sr, "output": str(out.relative_to(ROOT)),
+                 "guidance": 7.0, "scheduler": "CosineDPMSolverMultistep, final_sigmas_type=sigma_min", "sample_rate": sr, "output": str(out.relative_to(ROOT)),
                  "seconds": round(time.time() - t0, 1), "device": DEV})
             print("OK", out.name, round(time.time() - t0, 1), "s", flush=True)
 

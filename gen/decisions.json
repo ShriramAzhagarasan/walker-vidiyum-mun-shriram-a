@@ -1,0 +1,44 @@
+{
+ "gen/raw/CHAR-HARI-REF_klein_s102.png": {
+  "outcome": "accepted",
+  "by": "Shriram",
+  "reason": "\"lets do B and we will choose that kind of style, which matches life is strange kind of game like telltale style\" (2026-10-07). Sets the reference for every Hari pose.",
+  "used": "design/character/gen/hari-ref.png; edit reference for all CHAR-HARI-* poses"
+ },
+ "gen/raw/CHAR-HARI-REF_klein_s101.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: large maroon check, no floor shadow)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-REF_klein_s103.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: dark undershirt at collar, off-spec)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-REF_klein_s104.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: fine check blurs to pink at 300 px)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-REF_klein_s105.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: fine check, big floor shadow)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-REF_zimage_s201.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: Z-Image faces front, not the 3/4 view the sheet specifies; flatter vector style; mid-blue jeans)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-REF_zimage_s202.png": {
+  "outcome": "rejected",
+  "by": "Shriram",
+  "reason": "not chosen; Shriram picked B (Claude's note: Z-Image faces front, not the 3/4 view the sheet specifies; flatter vector style; mid-blue jeans)",
+  "used": "\u2014"
+ }
+}
