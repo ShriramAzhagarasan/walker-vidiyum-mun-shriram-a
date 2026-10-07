@@ -14,7 +14,7 @@ var has_art := false
 
 func _ready() -> void:
 	shaded = false                       # unshaded: cel art keeps its colours
-	alpha_cut = SpriteBase3D.ALPHA_CUT_DISCARD
+	alpha_cut = SpriteBase3D.ALPHA_CUT_OPAQUE_PREPASS   # smooth anti-aliased edges, still depth-sorted
 	no_depth_test = false
 	double_sided = true
 	billboard = BaseMaterial3D.BILLBOARD_FIXED_Y if billboard_y else BaseMaterial3D.BILLBOARD_DISABLED

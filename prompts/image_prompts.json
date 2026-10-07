@@ -32,5 +32,10 @@
     "CHAR-HARI-OVERHEAR": "Standing still with his body turned slightly away, head turned back over his shoulder, both hands down at his sides, eyes wide, secretly eavesdropping on someone behind him. No phone, hands not near his face.",
     "CHAR-HARI-WHITEOUT": "Recoiling backward, leaning back, raising one forearm across his eyes as if blinded by headlights, grimacing. Plain flat lighting on the figure, no light effects, no glow, no sun, no lens flare anywhere in the image."
   },
-  "_rev2_note": "2026-10-07: OVERHEAR rev1 came back as hand-at-ear (same silhouette as PHONE, predicted failure F5); WHITEOUT rev1 drew a sun-flare into the image. Prompts revised."
+  "_rev2_note": "2026-10-07: OVERHEAR rev1 came back as hand-at-ear (same silhouette as PHONE, predicted failure F5); WHITEOUT rev1 drew a sun-flare into the image. Prompts revised.",
+  "walk_cycle": {
+    "CHAR-HARI-WALK-PASS": "Walking to the right, passing position of the walk cycle: legs almost together under his body, the back foot lifted just off the ground with the knee bent, arms close to his sides, upright posture, relaxed expression.",
+    "CHAR-HARI-WALK-B": "Walking forward to the right in mid-stride with his LEFT leg forward and the right leg behind with the heel lifted, the right arm swinging forward and the left arm back, relaxed expression."
+  },
+  "_walk_note": "2026-10-07: added after Shriram's playtest ('the motion on how he moves feels too fake... looks so static'): a 4-frame walk cycle walk_1 (WALK s302 contact) / walk_2 (PASS) / walk_3 (B contact) / walk_4 (PASS)."
 }

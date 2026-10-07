@@ -10,7 +10,7 @@ const PRESETS := {
 const GATE_END_X := 5.0
 const RAILING_START_X := 20.0
 const BLEND_HALF_WIDTH := 1.5           ## m either side of a zone boundary
-const FOLLOW_SHARPNESS := 3.0           ## higher = snappier damping
+const FOLLOW_SHARPNESS := 4.5           ## higher = snappier damping
 const CAMERA_Z_RANGE := Vector2(-5.5, 9.0)
 
 @export var target_path: NodePath
@@ -29,8 +29,12 @@ static func zone_weights(x: float) -> Dictionary:
 	var to_rail := smoothstep(RAILING_START_X - BLEND_HALF_WIDTH, RAILING_START_X + BLEND_HALF_WIDTH, x)
 	return {"gate": 1.0 - to_deck, "deck": to_deck * (1.0 - to_rail), "railing": to_rail}
 
+func _target_pos() -> Vector3:
+	return target.get_global_transform_interpolated().origin   # physics interpolation: smooth at any display rate
+
 func desired() -> Array:
-	var weights := zone_weights(target.global_position.x)
+	var tp := _target_pos()
+	var weights := zone_weights(tp.x)
 	var offset := Vector3.ZERO
 	var look := Vector3.ZERO
 	var fov := 0.0
@@ -38,9 +42,9 @@ func desired() -> Array:
 		offset += PRESETS[zone].offset * weights[zone]
 		look += PRESETS[zone].look * weights[zone]
 		fov += PRESETS[zone].fov * weights[zone]
-	var pos: Vector3 = target.global_position + offset
+	var pos: Vector3 = tp + offset
 	pos.z = clampf(pos.z, CAMERA_Z_RANGE.x, CAMERA_Z_RANGE.y)
-	return [pos, target.global_position + look, fov]
+	return [pos, tp + look, fov]
 
 func snap() -> void:
 	var d := desired()

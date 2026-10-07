@@ -14,6 +14,7 @@ const PARTY_THIN_TO := 0.2             ## party gain at dawn after thinning from
 const DAWN_FADE_SECONDS := 0.5
 const PAUSE_DUCK_DB := -8.0
 const SILENT_DB := -60.0
+const MUSIC_HEADROOM_DB := -4.0       ## party loop peaks at 0 dBFS; leave room under the SFX
 
 var trigger_counts := {}               ## event id -> times fired (tests read this)
 var music_playing := false
@@ -55,8 +56,8 @@ func _process(delta: float) -> void:
 	var ls: Node = get_node("/root/LoopState")
 	var t := smoothstep(CROSSFADE_FROM, CROSSFADE_TO, get_node("/root/Story").player_x)
 	var thin := remap(clampf(ls.clock_minutes, ls.MUSIC_THIN_START, ls.DAWN_TIME), ls.MUSIC_THIN_START, ls.DAWN_TIME, 1.0, PARTY_THIN_TO)
-	party.volume_db = _gain_db(lerpf(1.0, 0.25, t) * thin * _fade)
-	gaana.volume_db = _gain_db(lerpf(0.15, 1.0, t) * _fade)
+	party.volume_db = _gain_db(lerpf(1.0, 0.25, t) * thin * _fade) + MUSIC_HEADROOM_DB
+	gaana.volume_db = _gain_db(lerpf(0.15, 1.0, t) * _fade) + MUSIC_HEADROOM_DB
 
 func reset_counts() -> void:
 	trigger_counts.clear()

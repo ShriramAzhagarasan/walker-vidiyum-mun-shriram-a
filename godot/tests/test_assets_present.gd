@@ -7,7 +7,9 @@ extends "res://tests/harness.gd"
 const HARI_STATES := ["idle", "walk", "talk", "phone", "notes", "overhear", "startled", "keys", "whiteout", "relief"]
 const NPCS := ["manikandan", "manikandan_phone", "advay", "krishna"]
 const ENV := ["marble", "villa", "beach_backdrop", "fire_glow", "suv"]
-const SFX := ["phone_buzz", "clue_saved", "keys_exchanged", "dawn_crash", "safe_dawn"]
+## Max length per SFX, from CHANGE-BRIEF / gen_audio.py durations: short cues must stay short so they
+## feel immediate; the dawn sounds are deliberately longer (a horn swell into a screech; a waves-and-crows bed).
+const SFX := {"phone_buzz": 2.5, "clue_saved": 2.5, "keys_exchanged": 2.0, "dawn_crash": 5.5, "safe_dawn": 9.0}
 const MUSIC := ["party_loop", "gaana_loop"]
 
 func _sprite_ok(path: String) -> void:
@@ -42,7 +44,7 @@ func run() -> bool:
 		check("loads env " + e, tex != null and tex.get_width() >= 512, tex.get_size() if tex else null)
 	for s in SFX:
 		var st := load("res://assets/audio/sfx/%s.ogg" % s) as AudioStream
-		check("loads sfx " + s, st != null and st.get_length() > 0.2 and st.get_length() <= 4.0, st.get_length() if st else null)
+		check("loads sfx %s (<= %.1f s)" % [s, SFX[s]], st != null and st.get_length() > 0.2 and st.get_length() <= SFX[s], st.get_length() if st else null)
 	for m in MUSIC:
 		var st := load("res://assets/audio/music/%s.ogg" % m) as AudioStream
 		check("loads music " + m, st != null and st.get_length() > 8.0, st.get_length() if st else null)

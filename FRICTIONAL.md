@@ -78,3 +78,18 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
   - Party s7 was set aside: its seam jump was 2× the typical sample step.
   - **Whether the gaana sounds like Chennai (F8) is Shriram's call, still pending.**
 - **Human / Claude / model:** all judgments above are Claude's spec checks. Shriram's accept/reject picks come next (SHRIRAM-DECISIONS).
+
+## 2026-10-07 ~12:20: Shriram's first playtest, and the response
+- **Shriram (verbatim):** "the motion on how he moves feels too fake, the gameplay looks terrible and disgusting, looks so static, the movement should feel natural, no lag, and i don't hear any music."
+- **Claude's diagnosis, from the code:**
+  - **"Static/fake":** Hari was one still WALK image sliding at a constant 2.2 m/s with instant start and stop, no contact with the floor (no shadow), and an instant mirror-flip. The assignment allows one static image per state, but it didn't meet Shriram's bar for his own game.
+  - **"Lag":** the camera updated every rendered frame (`_process`) but followed Hari's physics position, which only moves at 60 Hz. On a higher-refresh display that shows as stutter.
+  - **"No music":** a 6 s Movie Maker capture of the same build *did* contain music (mean -13 dB, peaks at 0 dBFS). So the mix plays, and the cause is environmental (how the game was launched or muted). It's being checked with Shriram. The party loop clipping at 0 dBFS was real; added 4 dB of headroom.
+- **Changed:**
+  - physics interpolation on, and the camera follows the interpolated transform;
+  - acceleration 9 m/s² and deceleration 14 m/s²;
+  - a distance-driven walk cycle (new generated frames: PASS and the opposite-leg B contact), so the feet don't slide;
+  - 3.5 cm step bob, idle breathing, a 0.14 s squash on turning;
+  - soft blob shadows under every character;
+  - anti-aliased sprite edges (opaque prepass instead of hard alpha cut).
+- **Still unresolved:** billboards will never move like rigged 3D characters. That's the semester's path (A3 onward), not today's.

@@ -57,6 +57,11 @@ var _lit_key := Vector2(-1, -1)
 
 func _ready() -> void:
 	hari.camera = rig.camera
+	# Nodes moved per frame in _process are not physics-interpolated (only Hari's body is).
+	for n in [rig, rig.camera, advay, keys_icon, manikandan, krishna]:
+		n.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+	for npc in [manikandan, advay, krishna]:
+		npc.add_child(preload("res://scenes/blob_shadow.gd").new())
 	LoopState.loop_started.connect(_on_loop_started)
 	LoopState.phone_buzz.connect(cards.show_phone)                       # visual twin: incoming-call card
 	LoopState.clue_saved.connect(_on_clue_saved)
@@ -94,6 +99,7 @@ func _on_loop_started(_index: int) -> void:
 	headlights.light_energy = 0.0
 	hari.position = HARI_START
 	hari.velocity = Vector3.ZERO
+	hari.reset_physics_interpolation()               # teleport: don't interpolate from the old spot
 	advay.position = ADVAY_AT_CAR
 	_keys_path.clear()
 	rig.snap()

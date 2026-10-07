@@ -30,6 +30,8 @@ func _shot(name: String) -> void:
 func _place(x: float, z: float = 0.0, face_left := false) -> void:
 	var hari: CharacterBody3D = slice.get_node("Hari")
 	hari.global_position = Vector3(x, 0, z)
+	hari.reset_physics_interpolation()
+	hari.set("_facing_left", face_left)
 	hari.get_node("Sprite").flip_h = face_left
 	slice.get_node("CameraRig").call("snap")
 	await _wait(40)
