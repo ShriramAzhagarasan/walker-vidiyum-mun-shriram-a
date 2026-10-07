@@ -1,0 +1,1154 @@
+{
+ "schema_version": 1,
+ "teaching_contract": "code-then-result-v1",
+ "game": {
+  "project": "godot/",
+  "build_id": "4e3bf6478e096a920e480bd42d5e373a7453357005fa0f0f72ec767ca9e39b21"
+ },
+ "files": [
+  {
+   "path": "assets/art/env/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png",
+   "sha256": "1f95177f4cd9c755785eb3abc66b66fb7246342e9dc99afde22e98cd7fb2b26f",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png.import",
+   "sha256": "bad1c857310586cb3814d783ab5d4ce5b1d5b63e69b7abe4b985caceab8ab4b0",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/fire_glow.png",
+   "sha256": "c9781ebff15ea31ec28ecae3e555483b19aa5fe32863bf6c30c6272a4990b76e",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/fire_glow.png.import",
+   "sha256": "7a0ba026a2bd09eb4188c36f63105a0a5bae52b5471d70dc83404fa4cc0c1ecf",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/marble.png",
+   "sha256": "287e372fd750fbb4c21d39b50adb22142be11e2874b46de60ecefc23839bbdb8",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/marble.png.import",
+   "sha256": "81cb4a1d210a63640b1049705ed1486aa074a9bd907163d56f657f8e22156536",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/suv.png",
+   "sha256": "2964ace2be2760a0625ae94de500a9270da9431658b366c2126532a2e6c8c642",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/suv.png.import",
+   "sha256": "b2bbc131b8955fdb8376966b937397c463167dace75798543dfc91eef50025be",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/villa.png",
+   "sha256": "73f9d927500f7fb7006a4f53824926ab8111acd16af73efb7026795175d41355",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/env/villa.png.import",
+   "sha256": "e024fe560c49ea678a189aee27868df5c37a49e376823898c5987bbf1405d78b",
+   "role": "generated environment art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/hari/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "directory marker",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/idle.png",
+   "sha256": "89683a4794d85e8e2ce8badd04ca110197e8adc9cac644c27fe2fb2b82ca2759",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/idle.png.import",
+   "sha256": "d4ab8b668ec257c2a36b36644a8aa5c0c40d4fe78b85210f54bdf44af845a6a6",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/keys.png",
+   "sha256": "bee591c846d15175c6e951aaff5d88af932fb76d1329cfde52bc13b8eb85f50f",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/keys.png.import",
+   "sha256": "c28a878516688ab72bf62f87fb1a24621c6ffed054fb4adee89e9d46840e61ab",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/notes.png",
+   "sha256": "df643f6c172445b57a06aa69db7e9590c310b62b24bd9b7fa14025f57cea6392",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/notes.png.import",
+   "sha256": "f8a9d0438cdbff4299ff1928530c9f652e8451cb24e1423104a3150a4830f7fc",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/overhear.png",
+   "sha256": "d6af3d59217d8b4ed7976a1f274f4a1834f503f91176f6949f7004fe685d3f63",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/overhear.png.import",
+   "sha256": "711ad9874031ec75dc54c3922c4613bb69bbd93712e18c999c019332b8eb1983",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/phone.png",
+   "sha256": "2ef90033867a8d0b7a747195f46067c59003ba07f64b438e57bc096a5187259d",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/phone.png.import",
+   "sha256": "3df90f0762d5d4d966063568cf0477f0d268bfd9a91adcda70c39e2e2d3b06d7",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/relief.png",
+   "sha256": "7c068cb7864f0ebd210a1609ba1bcce11384eec520d8102b156c25ae20e3f5eb",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/relief.png.import",
+   "sha256": "87c57766f4a7ea28442007c607af21bba73770382d82cb09b2ebb6d9602249fd",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/startled.png",
+   "sha256": "ce6bae9413ed803499cc8c55e951e75af17965abf5db7197411b91299b4865df",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/startled.png.import",
+   "sha256": "09f303a57d9b43e007f427545e57f3337551b54d005d4151574fe38a5b9ac4c4",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/talk.png",
+   "sha256": "9ef50bcc0366e4f9d9bdc19c7bf67e296c08edf32bb1ea2dda5f1445d2ca46f4",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/talk.png.import",
+   "sha256": "3aeb9f8ad9cab1ea909488af48ceb564dc06b7d1157fb02ceb73c923c0ab9e71",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk.png",
+   "sha256": "6bd79a799d2e0f0eeb120c97a7dd1071aad8bb396cc04c61a9d30c315ad612c8",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk.png.import",
+   "sha256": "057945168a38b0f6e17e0dee2aa44a30565a5331cb233329619105f62d4f3077",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_1.png",
+   "sha256": "6bd79a799d2e0f0eeb120c97a7dd1071aad8bb396cc04c61a9d30c315ad612c8",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_1.png.import",
+   "sha256": "2375c00e48bba3c49b801f8ec303d16c8eebf8b9761b9c70fecc53d7e9488e4e",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_2.png",
+   "sha256": "89683a4794d85e8e2ce8badd04ca110197e8adc9cac644c27fe2fb2b82ca2759",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_2.png.import",
+   "sha256": "78adf96facfb839fb305e2477faf0117661f29001e776ed7bbe5bb8755ecdf6e",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_3.png",
+   "sha256": "ebb8933b1c5beb345256853e50512168fc21128e30cd13e4935b629d413d85c9",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_3.png.import",
+   "sha256": "3635446d3102a73ad4b30fc599b5f1ea597e8fed83f84a3b3c949d14b1533c7e",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_4.png",
+   "sha256": "89683a4794d85e8e2ce8badd04ca110197e8adc9cac644c27fe2fb2b82ca2759",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/walk_4.png.import",
+   "sha256": "e89a57299c357e6d4c67e7e0316a9fe325a4fa4a459f779e89d7eb59ee4623a2",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/whiteout.png",
+   "sha256": "d006469bc05e7a7604eb43a09e9e5f3312bf4edfd09ff70b06bb6cf2b026ce8d",
+   "role": "generated Hari state image (FLUX.2 klein edit, edited per gen/edit_log.jsonl)",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/hari/whiteout.png.import",
+   "sha256": "3581f461c5b79d7d2dd4fc180247a64fe9f369823453f1bdc5a8fe08f1c441e1",
+   "role": "import settings for a Hari state image",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_1.png",
+   "sha256": "85c6c74111992bb6a026768c286ca0435ce0f587ee74a4adc922225f1c11b2e9",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_1.png.import",
+   "sha256": "42c13acc34e5cb139a5091573c034a30f57784cb57a03f7fcb826d3b23020800",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_2.png",
+   "sha256": "2cf012b275bce3fa2e29948498013ee87c58eb286cf7c98ae4fc346a6bc2fd2d",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_2.png.import",
+   "sha256": "4ede81316371cf4318be9ffee3f9506bbc4b597cad5550285af68065a31249f2",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_3.png",
+   "sha256": "e66f8efaa13df63a8cb1983123b3fb3c1fe99742aa1c2b231fe2538e4219244b",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_3.png.import",
+   "sha256": "9aeefa4f92f8f67b4d88ae0a726f810702d61c10aad2359b1aee338da69750dc",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_4.png",
+   "sha256": "5dba38de9bf71a265163a900b26f0f0a3c91e9a646ec39cbd98d669ff132fb1e",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/intro/intro_4.png.import",
+   "sha256": "d022e2e0ba7a121158a4b3eb2ae1d11c1f1457db27851f58ecf05d15d05baa87",
+   "role": "generated intro panel still or its import settings",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "assets/art/npc/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/advay.png",
+   "sha256": "ffaeb33422253e10e21a528c8a373fa20552fc0cd8eea17056cc2a8b5673769c",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/advay.png.import",
+   "sha256": "2e57b6bf86a9b3a931216298b99d9c5819687459745f6350fa24fe6381dfd2a2",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/krishna.png",
+   "sha256": "e3ea4932a6753d35f18736b4bebfd7640fa2efe4b202f080e5d8c461edec6d28",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/krishna.png.import",
+   "sha256": "83050d532fdef9bb6526c4b38912ade7f808356fbff1f4ab13b43dc69d2c8fc9",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/manikandan.png",
+   "sha256": "ea91dcd859bba334b0771542d1ea7eb9ea127bef996be5d5e612672f77e2e343",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/manikandan.png.import",
+   "sha256": "845f4b23c0ff0bd03f30ac67eb5e55c775755bccc53496e55a5448548d47ed39",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png",
+   "sha256": "8f6c3ae72ba7af389e5a16bf85ab7c4797ad153ac7470ade254f85b72e754188",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png.import",
+   "sha256": "4bcc0235a66c443fc505cc40b719b4e3e3c9939e379bc84f4384ab8b1fc7aa43",
+   "role": "generated NPC art or its import settings",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/art/ui/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "directory marker",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "assets/audio/music/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg",
+   "sha256": "fb1a9b8fd650d599af308dadbda8942085d26e29c2c4f5b0fd468f29d65f7726",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg.import",
+   "sha256": "c5e759f81047ed012537acc20a3ad2bcf6e0ce161fe4c1348a467ce17405cfd3",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg",
+   "sha256": "5a6f908794cfccf3720e75151ab000906d02fce18165102265498e94f8f711ed",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg.import",
+   "sha256": "2b1cfd51f2378c1660794fb43075da91e3a26d2062cfd641a2a49bd775807cfe",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/.gitkeep",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg",
+   "sha256": "8e56003c1a4d4483dfeada30cf0da724fa70251ae73321b8d762125ce2cfa3da",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg.import",
+   "sha256": "e3bdf332d1818f7c699b48bc924e80bfe4d6d4b466e021099f14dde441484a6c",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg",
+   "sha256": "08c517a5d1cf07ec34ae9a891d98b948b4958bf0f338fd8ae11ee37c1e7130b8",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg.import",
+   "sha256": "6c20507c2fa37b87bec4539481479cc966883352d9a0cd16ac5cee4e9e94ccd1",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg",
+   "sha256": "ead983106678c4d536b521ea8aedfb0835baa4fa0a6952c533d0585d7c2b81b4",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg.import",
+   "sha256": "535198d0983db224b725dfadceafce1575cf74100666a09bcfa5b379861ebf81",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg",
+   "sha256": "93dd42984aa9a3fea3f5c2e4a5865885cd8402bed185f2bdc71217f2c5c4dd7d",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg.import",
+   "sha256": "96041262c39306b5aae878ba70d7c9066dc15415938b4a1c913222fcde6ed803",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg",
+   "sha256": "3ff89e2b58dba08ee8a6276ae6e4727f21b3c9f041c4bc99640216140006098d",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg.import",
+   "sha256": "ac596c11fa2cdc5c230a55b3e89acb500012c0acc3b6b6be2ed4e29d022bf168",
+   "role": "generated audio file, import settings or directory marker",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "autoload/controls.gd",
+   "sha256": "bea1539578ecd4430f9686fa2ec662436344ed79bcceb3ca841798f62be33943",
+   "role": "keyboard -> logic (just-pressed polling, T fast-forward)",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "autoload/loop_state.gd",
+   "sha256": "13f1f3f850f89681d1dbea6016a211d1ce1ebaee2732f920e2e9c224aa1c751c",
+   "role": "clock, loop, knowledge, per-loop flags, timeline events",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "autoload/sound_bank.gd",
+   "sha256": "f44bae1c59b406784321177bf228202ad3e8ec89185ae03ea1e9d3d3d7fa2af0",
+   "role": "listens to logic signals; SFX and music buses",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "autoload/story.gd",
+   "sha256": "f12fd0ebcfad715e09d9b280cb4f4e57e0e06542ed42a81ca4f77c0210bd5c59",
+   "role": "dialogue flow, interaction latch, Hari's state",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "data/dialogue.json",
+   "sha256": "ee57baa336e4cebd10429ac184415a20c68254a213b08aaa96a82a4b2baf9702",
+   "role": "every dialogue line, caption and clue text",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "default_bus_layout.tres",
+   "sha256": "18fd2bc38be5fe56280a697becf1d30ffa313129d598fefee5778200a7d035e5",
+   "role": "Music and SFX buses, pause low-pass",
+   "component_ids": [
+    "sound"
+   ]
+  },
+  {
+   "path": "logic/hari_spec.gd",
+   "sha256": "ec46be2bf2540ebeec233103086872145d29f072bb94b577429a6acf66493f6a",
+   "role": "Hari's size, capsule and speed constants",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "logic/input_setup.gd",
+   "sha256": "ef371de1ee653cf9b8f366d64d2c082d02ae29aba6864a6dfb31ec2a8466a42f",
+   "role": "key bindings registered in code",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "logic/story_data.gd",
+   "sha256": "8fdae2a79088839157916874024f8d5c3b0c4c4849ee02deb2fba2290aadcdfd",
+   "role": "reads dialogue.json",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "project.godot",
+   "sha256": "315247add34a7047b2833ed293076fc22cf0cdad0cf77bc885bd3f03a16604c5",
+   "role": "autoload order, main scene, Forward+ renderer, window",
+   "component_ids": [
+    "night-logic"
+   ]
+  },
+  {
+   "path": "scenes/art3d.gd",
+   "sha256": "e435bf29ac3905b99e0deb45f2362bba19de3a1489a9107432e435ed71bad3d0",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/billboard_art.gd",
+   "sha256": "e1794e1e7fa3d53894f3b81522f676a57ed185baabbd2259d6822209bd91562d",
+   "role": "billboard Sprite3D: loads art, sizes it to height_m, feet at y = 0",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "scenes/blob_shadow.gd",
+   "sha256": "2b584bb25d9b190ee65973dec28410e4968a6a07557da8840ac57423c618b7ba",
+   "role": "contact shadow under Hari",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "scenes/camera_rig.gd",
+   "sha256": "8cdb00d22127d34e60de0477ee7642c95980b4c0805caf23b48573946b4a916f",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/deck_dressing.gd",
+   "sha256": "a48d2599cc90544a9a0ddcbea5cee1c33f6e4695983d376be63727518b243268",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/environment_fill.gd",
+   "sha256": "a8491a770a50ecbd98ad66372f0c7384845581622e02b3bc2eddae1b5ba7f020",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/fallback_prop.gd",
+   "sha256": "c53c07a3baf0d97813706e8baf60174658fd5d2134fead045fd49410ebc3fd60",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/hari.gd",
+   "sha256": "fe37da1d8be952f4b0f47138abc7861ae3790d5b0036ee509a8284c4c43c9c1b",
+   "role": "player body, camera-relative movement, state -> art file, facing flip",
+   "component_ids": [
+    "hari-asset"
+   ]
+  },
+  {
+   "path": "scenes/intro.gd",
+   "sha256": "2a9ddb4fe8fc12015dca93300db71a40a5e5259356a87b498e549c7c91bdb8c3",
+   "role": "title screen + intro motion comic; changes scene to the slice",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "scenes/intro.tscn",
+   "sha256": "4e0c76a5255554e40759dc3f62eb9e95de921a51d2cab946b01629033b7d6eee",
+   "role": "the main scene (project.godot run/main_scene)",
+   "component_ids": [
+    "intro"
+   ]
+  },
+  {
+   "path": "scenes/slice.gd",
+   "sha256": "ac89fc13bdef1c746b0d2de7c63094b71ad40a01e5ea283ad3e427bff96a54e7",
+   "role": "scene controller: signals -> visuals, clock-driven sky and lights",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/slice.tscn",
+   "sha256": "4be9bbdf3ecd35015f0103ea6ac1507377b03f85efd62b8034573d64fbfb9beb",
+   "role": "the saved 3D scene",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "scenes/textured_surface.gd",
+   "sha256": "69c2f6ceded790276dfd05cb6d8a719b280fcbcb776c991027c9d592e3ae9ad0",
+   "role": "set dressing / camera / surfaces built in code",
+   "component_ids": [
+    "world"
+   ]
+  },
+  {
+   "path": "tests/harness.gd",
+   "sha256": "42be05afeb492c321c99324e8ffd509187dd2dcac64b6e720f70f5b05d53e4bf",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_assets_present.gd",
+   "sha256": "056e91652efae72948f7cacca408818cd70cbe30c42ff3dfe167f1704d29064f",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_audio_mix.gd",
+   "sha256": "d1342ec16ae12cb8c5b748cfdbd886ca5708224701cf58b901b88561749f26e9",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_loop_logic.gd",
+   "sha256": "b85952a4b676f47260238742813a670d68cdc077d0b32c17766b6fd793f95e92",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_slice_smoke.gd",
+   "sha256": "84bafab86677d9bb27ff4081b37e8c503c0d8828132a5c25176acb59cb1b360b",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tests/test_sound_triggers.gd",
+   "sha256": "e259e97bf576ae10ea6121cfb389a7aa83928effa355838bec5ffc1a0796aa5c",
+   "role": "headless test",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tools/capture_intro.gd",
+   "sha256": "3aa4c0b26c1d80da0cd761bc592d3af0004699eb1ca31766d740957da43d212e",
+   "role": "scripted screenshot tool for the intro",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "tools/capture_shots.gd",
+   "sha256": "2e842fa497666c8ea5bd05da8220f1df65f406b625ca243990a639999279b5b2",
+   "role": "scripted screenshot tool (test API)",
+   "component_ids": [
+    "tests"
+   ]
+  },
+  {
+   "path": "ui/dialogue_panel.gd",
+   "sha256": "6ff20c296b6de80271ed03544eaa21d415f85dd371958a59b26230636fd6fbc8",
+   "role": "screen-space card / HUD drawing",
+   "component_ids": [
+    "ui"
+   ]
+  },
+  {
+   "path": "ui/hud.gd",
+   "sha256": "42e6ad0c8d1613878a91b2f5654c35e44b15a8f9cd9cfa5e22ac5a1affbbbbd2",
+   "role": "screen-space card / HUD drawing",
+   "component_ids": [
+    "ui"
+   ]
+  },
+  {
+   "path": "ui/notes_toast.gd",
+   "sha256": "125939a740ea78452068aa4d5935f90036692812571922ac0fa9afeb27249240",
+   "role": "screen-space card / HUD drawing",
+   "component_ids": [
+    "ui"
+   ]
+  },
+  {
+   "path": "ui/screen_cards.gd",
+   "sha256": "ea22bd1fddcdda318ad4b86a694fffabdee9fc82c183ead085abd9f95a104af2",
+   "role": "screen-space card / HUD drawing",
+   "component_ids": [
+    "ui"
+   ]
+  },
+  {
+   "path": "ui/whiteout.gd",
+   "sha256": "839666cc982df1a9b7589a75404993e4552d4db8e1422e32562069ace71c28d9",
+   "role": "screen-space card / HUD drawing",
+   "component_ids": [
+    "ui"
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": "hari-asset",
+   "explanation": "Hari's generated art as a game asset: ten state PNGs (FLUX.2 klein edits, rembg cutout, trim, 680 px leg-centred) shown on a fixed-Y, unshaded billboard Sprite3D sized to 1.75 m; hari.gd maps Story.hari_state to <state>.png, walks camera-relative and flips the sprite to face left.",
+   "beat_ids": [
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "files": [
+    "assets/art/hari/.gitkeep",
+    "assets/art/hari/idle.png",
+    "assets/art/hari/idle.png.import",
+    "assets/art/hari/keys.png",
+    "assets/art/hari/keys.png.import",
+    "assets/art/hari/notes.png",
+    "assets/art/hari/notes.png.import",
+    "assets/art/hari/overhear.png",
+    "assets/art/hari/overhear.png.import",
+    "assets/art/hari/phone.png",
+    "assets/art/hari/phone.png.import",
+    "assets/art/hari/relief.png",
+    "assets/art/hari/relief.png.import",
+    "assets/art/hari/startled.png",
+    "assets/art/hari/startled.png.import",
+    "assets/art/hari/talk.png",
+    "assets/art/hari/talk.png.import",
+    "assets/art/hari/walk.png",
+    "assets/art/hari/walk.png.import",
+    "assets/art/hari/walk_1.png",
+    "assets/art/hari/walk_1.png.import",
+    "assets/art/hari/walk_2.png",
+    "assets/art/hari/walk_2.png.import",
+    "assets/art/hari/walk_3.png",
+    "assets/art/hari/walk_3.png.import",
+    "assets/art/hari/walk_4.png",
+    "assets/art/hari/walk_4.png.import",
+    "assets/art/hari/whiteout.png",
+    "assets/art/hari/whiteout.png.import",
+    "logic/hari_spec.gd",
+    "scenes/billboard_art.gd",
+    "scenes/blob_shadow.gd",
+    "scenes/hari.gd"
+   ]
+  },
+  {
+   "id": "night-logic",
+   "explanation": "The loop: LoopState owns the clock (8 PM to 5:55 AM in 180 s, x8 while T is held), knowledge that persists, per-loop flags and one-shot timeline events; Story runs dialogue and Hari's state; Controls turns keys into logic calls; dialogue.json holds every line.",
+   "beat_ids": [
+    "B10",
+    "B11",
+    "B15",
+    "B16"
+   ],
+   "files": [
+    "autoload/controls.gd",
+    "autoload/loop_state.gd",
+    "autoload/story.gd",
+    "data/dialogue.json",
+    "logic/input_setup.gd",
+    "logic/story_data.gd",
+    "project.godot"
+   ]
+  },
+  {
+   "id": "sound",
+   "explanation": "SoundBank listens to five LoopState signals (phone_buzz, clue_saved, keys_exchanged, dawn_crash, safe_dawn) and two music loops on separate buses; it never changes game state and counts every request for tests.",
+   "beat_ids": [
+    "B03",
+    "B12",
+    "B13",
+    "B15"
+   ],
+   "files": [
+    "assets/audio/music/.gitkeep",
+    "assets/audio/music/gaana_loop.ogg",
+    "assets/audio/music/gaana_loop.ogg.import",
+    "assets/audio/music/party_loop.ogg",
+    "assets/audio/music/party_loop.ogg.import",
+    "assets/audio/sfx/.gitkeep",
+    "assets/audio/sfx/clue_saved.ogg",
+    "assets/audio/sfx/clue_saved.ogg.import",
+    "assets/audio/sfx/dawn_crash.ogg",
+    "assets/audio/sfx/dawn_crash.ogg.import",
+    "assets/audio/sfx/keys_exchanged.ogg",
+    "assets/audio/sfx/keys_exchanged.ogg.import",
+    "assets/audio/sfx/phone_buzz.ogg",
+    "assets/audio/sfx/phone_buzz.ogg.import",
+    "assets/audio/sfx/safe_dawn.ogg",
+    "assets/audio/sfx/safe_dawn.ogg.import",
+    "autoload/sound_bank.gd",
+    "default_bus_layout.tres"
+   ]
+  },
+  {
+   "id": "world",
+   "explanation": "The 3D deck: slice.tscn/slice.gd build the marble deck, backdrops, NPC billboards, SUV, lights and a sky driven by the clock (revision R1 retuned the night values); a Telltale-style follow camera blends zone presets.",
+   "beat_ids": [
+    "B02",
+    "B11",
+    "B16",
+    "B17",
+    "B18"
+   ],
+   "files": [
+    "assets/art/env/.gitkeep",
+    "assets/art/env/beach_backdrop.png",
+    "assets/art/env/beach_backdrop.png.import",
+    "assets/art/env/fire_glow.png",
+    "assets/art/env/fire_glow.png.import",
+    "assets/art/env/marble.png",
+    "assets/art/env/marble.png.import",
+    "assets/art/env/suv.png",
+    "assets/art/env/suv.png.import",
+    "assets/art/env/villa.png",
+    "assets/art/env/villa.png.import",
+    "assets/art/npc/.gitkeep",
+    "assets/art/npc/advay.png",
+    "assets/art/npc/advay.png.import",
+    "assets/art/npc/krishna.png",
+    "assets/art/npc/krishna.png.import",
+    "assets/art/npc/manikandan.png",
+    "assets/art/npc/manikandan.png.import",
+    "assets/art/npc/manikandan_phone.png",
+    "assets/art/npc/manikandan_phone.png.import",
+    "assets/art/ui/.gitkeep",
+    "scenes/art3d.gd",
+    "scenes/camera_rig.gd",
+    "scenes/deck_dressing.gd",
+    "scenes/environment_fill.gd",
+    "scenes/fallback_prop.gd",
+    "scenes/slice.gd",
+    "scenes/slice.tscn",
+    "scenes/textured_surface.gd"
+   ]
+  },
+  {
+   "id": "ui",
+   "explanation": "Screen-space twins of every sound: phone card, notes card, captions, white-out, pause overlay and end card, plus the phone-style HUD clock and mute indicators.",
+   "beat_ids": [
+    "B11",
+    "B15",
+    "B16"
+   ],
+   "files": [
+    "ui/dialogue_panel.gd",
+    "ui/hud.gd",
+    "ui/notes_toast.gd",
+    "ui/screen_cards.gd",
+    "ui/whiteout.gd"
+   ]
+  },
+  {
+   "id": "intro",
+   "explanation": "The main scene: a title screen and a four-panel intro motion comic (generated stills, captions, gaana music, the dawn horn on panel 4); Enter advances, Esc skips, then it changes to slice.tscn, where loop 1 starts itself.",
+   "beat_ids": [
+    "B02"
+   ],
+   "files": [
+    "assets/art/intro/intro_1.png",
+    "assets/art/intro/intro_1.png.import",
+    "assets/art/intro/intro_2.png",
+    "assets/art/intro/intro_2.png.import",
+    "assets/art/intro/intro_3.png",
+    "assets/art/intro/intro_3.png.import",
+    "assets/art/intro/intro_4.png",
+    "assets/art/intro/intro_4.png.import",
+    "scenes/intro.gd",
+    "scenes/intro.tscn"
+   ]
+  },
+  {
+   "id": "tests",
+   "explanation": "Headless tests (exact sound counts over two scripted loops, loop logic, scene smoke, asset presence) and the scripted screenshot tool used for TEST-REPORT evidence; they use the test API, not played input.",
+   "beat_ids": [
+    "B13",
+    "B19",
+    "B18"
+   ],
+   "files": [
+    "tests/harness.gd",
+    "tests/test_assets_present.gd",
+    "tests/test_audio_mix.gd",
+    "tests/test_loop_logic.gd",
+    "tests/test_slice_smoke.gd",
+    "tests/test_sound_triggers.gd",
+    "tools/capture_intro.gd",
+    "tools/capture_shots.gd"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B08",
+   "path": "scenes/hari.gd",
+   "start_line": 83,
+   "end_line": 90,
+   "text": "func _show_state(state: String) -> void:\n\tvar key := state.to_lower()\n\tif key == \"walk\" and _walk_frames.size() > 1:\n\t\tsprite.set_art(_walk_frames[int(_travel / STRIDE_M) % _walk_frames.size()], key)\n\telse:\n\t\tsprite.set_art(ART_DIR + key + \".png\", key)\n\tlabel.text = state\n\tlabel.visible = not sprite.has_art                       # state label only on placeholders"
+  },
+  {
+   "beat_id": "B10",
+   "path": "autoload/loop_state.gd",
+   "start_line": 164,
+   "end_line": 175,
+   "text": "func _set_clock(minutes: float) -> void:\n\tclock_minutes = minf(minutes, NIGHT_END)\n\tif clock_minutes >= ADVAY_TIME and not flags.ADVAY_DONE:\n\t\tflags.ADVAY_DONE = true\n\t\t_advay_arrives()\n\tif clock_minutes >= FIRE_GLOW_TIME and not flags.FIRE_GLOW_DONE:\n\t\tflags.FIRE_GLOW_DONE = true\n\t\tfire_glow.emit()\n\tif clock_minutes >= DAWN_TIME and not flags.DAWN_DONE:\n\t\tflags.DAWN_DONE = true\n\t\tclock_minutes = DAWN_TIME\n\t\t_dawn()"
+  },
+  {
+   "beat_id": "B12",
+   "path": "autoload/sound_bank.gd",
+   "start_line": 45,
+   "end_line": 51,
+   "text": "\tls.phone_buzz.connect(_play.bind(\"phone_buzz\"))\n\tls.clue_saved.connect(func(_id: String) -> void: _play(\"clue_saved\"))\n\tls.keys_exchanged.connect(func(_from: String, _to: String) -> void: _play(\"keys_exchanged\"))\n\tls.dawn_crash.connect(_on_dawn.bind(\"dawn_crash\"))\n\tls.safe_dawn.connect(_on_dawn.bind(\"safe_dawn\"))\n\tls.loop_started.connect(func(_index: int) -> void: start_music())\n\tls.pause_changed.connect(_on_pause_changed)"
+  },
+  {
+   "beat_id": "B17",
+   "path": "scenes/slice.gd",
+   "start_line": 23,
+   "end_line": 32,
+   "text": "# Clock colour stops: [minutes, sky top, sky horizon, ambient, light colour, light energy].\nconst SKY_KEYS := [\n\t[1200.0, Color(\"1d1b4f\"), Color(\"4a3f86\"), Color(\"1c1a3a\"), Color(\"8fa0ff\"), 0.16],\n\t[1290.0, Color(\"0b0a2a\"), Color(\"1d2055\"), Color(\"100f26\"), Color(\"7f8fe0\"), 0.08],\n\t[1680.0, Color(\"0b0a2a\"), Color(\"1d2055\"), Color(\"100f26\"), Color(\"7f8fe0\"), 0.08],\n\t[1740.0, Color(\"23235e\"), Color(\"6b4a7d\"), Color(\"3a3058\"), Color(\"b090c0\"), 0.3],\n\t[1775.0, Color(\"4a4682\"), Color(\"c98a86\"), Color(\"4c4458\"), Color(\"f0b8a0\"), 0.32],\n\t[1795.0, Color(\"e98f9a\"), Color(\"ffc477\"), Color(\"a07068\"), Color(\"ffc890\"), 0.8],\n]\nconst SUNRISE := [Color(\"ffb38a\"), Color(\"ffe6a8\"), Color(\"c09080\"), Color(\"fff0d0\"), 1.4]"
+  }
+ ],
+ "exclusions": [],
+ "code_result_pairs": [
+  {
+   "code_beat": "B08",
+   "result_beat": "B09",
+   "observation": "In real play the call closes and PHONE becomes IDLE, then WALK and TALK: each state swaps the billboard image, at one height.",
+   "media": {
+    "path": "media/B09.mp4",
+    "sha256": "77b346a4f7af094f9e799875e45cd33b7b9c5db8df3e10fc790b1f85446c0866"
+   }
+  },
+  {
+   "code_beat": "B10",
+   "result_beat": "B11",
+   "observation": "Holding T, the HUD shows >> x8 and the clock races; at 1:21 the overheard call and its clue fire once; at 1:40 at 1x Advay takes the keys once.",
+   "media": {
+    "path": "media/B11.mp4",
+    "sha256": "3da32a4bf19539f43ad38bb57a25346feff721fb738250170f01e2325d62166a"
+   }
+  },
+  {
+   "code_beat": "B12",
+   "result_beat": "B13",
+   "observation": "Recorded test output: exact per-event request counts (2/3/2/1/1), identical with both buses muted, matching the filmed run’s driver summary.",
+   "media": {
+    "path": "media/B13.mp4",
+    "sha256": "8d8188b28a85b17653f87b13b69ed51aed5b2859ef8f0992f4d29c292b2f0673"
+   }
+  },
+  {
+   "code_beat": "B17",
+   "result_beat": "B18",
+   "observation": "R1 before/after screenshots: lavender sky and washed-out marble become a night sky with warm pools under the string lights.",
+   "media": {
+    "path": "media/B18.mp4",
+    "sha256": "2675d0fc0c6dac61f71ae4acf0980c3114b6b2b4926d458682ed0c09d12ee59a"
+   }
+  }
+ ]
+}

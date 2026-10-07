@@ -15,8 +15,8 @@
   - Stable Audio Open 1.0 (HF rev `f21265c`, local via diffusers 0.40 on MPS, Stability AI Community License): 5 sound effects.
   - MusicGen stereo-medium (HF rev `2747e61`, local via transformers 5.18 on MPS, CC-BY-NC 4.0, non-commercial): 2 music loops.
   - rembg 2.0.85 with isnet-anime / BiRefNet (MIT / Apache 2.0): background removal.
-- **Final film URL and filename:** *(OneDrive link)* · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` *(confirm after render)*
-- **Final film SHA-256:** *(after render)*
+- **Final film URL and filename:** *(OneDrive link)* · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` (3840×2160, 30 fps, 6:18)
+- **Final film SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`
 - **Summary of my work:**
   - **Story and design input (mine):** I chose the game and wrote its story, characters, setting and tone as an homage to Chennai (`design/input/`). I corrected Claude's generic local details.
   - **Look and style (mine):** I picked the 3D/Telltale direction (built as 2.5D) and chose Hari's reference image, which set the style for every pose.
@@ -30,3 +30,4 @@
   - The audio picks were provisional, made from measurements, pending my listening verdict.
   - MusicGen's licence is non-commercial.
   - The first 7 commits carry my work git identity by mistake (explained in SOURCES.md).
+  - The film's text-legibility gate flagged the small text inside game footage and generated images; the override is documented in the reel's `_qc/GATE-T-OVERRIDE.md`.

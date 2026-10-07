@@ -1,0 +1,171 @@
+{
+ "B00": {
+  "start_s": 0.0,
+  "dur_s": 13.367,
+  "mean_db": "-27.3",
+  "max_db": "-8.3",
+  "narrated": true
+ },
+ "B01": {
+  "start_s": 13.367,
+  "dur_s": 12.2,
+  "mean_db": "-27.5",
+  "max_db": "-6.7",
+  "narrated": true
+ },
+ "B02": {
+  "start_s": 25.567,
+  "dur_s": 17.533,
+  "mean_db": "-27.3",
+  "max_db": "-7.2",
+  "narrated": true
+ },
+ "B03": {
+  "start_s": 43.1,
+  "dur_s": 14.133,
+  "mean_db": "-26.9",
+  "max_db": "-8.2",
+  "narrated": true
+ },
+ "B04": {
+  "start_s": 57.233,
+  "dur_s": 16.2,
+  "mean_db": "-27.2",
+  "max_db": "-3.8",
+  "narrated": true
+ },
+ "B05": {
+  "start_s": 73.433,
+  "dur_s": 13.933,
+  "mean_db": "-26.9",
+  "max_db": "-6.3",
+  "narrated": true
+ },
+ "B06": {
+  "start_s": 87.367,
+  "dur_s": 16.567,
+  "mean_db": "-27.1",
+  "max_db": "-5.9",
+  "narrated": true
+ },
+ "B07": {
+  "start_s": 103.933,
+  "dur_s": 14.133,
+  "mean_db": "-26.9",
+  "max_db": "-7.1",
+  "narrated": true
+ },
+ "B08": {
+  "start_s": 118.067,
+  "dur_s": 15.733,
+  "mean_db": "-26.8",
+  "max_db": "-5.5",
+  "narrated": true
+ },
+ "B09": {
+  "start_s": 133.8,
+  "dur_s": 15.567,
+  "mean_db": "-27.0",
+  "max_db": "-4.1",
+  "narrated": true
+ },
+ "B10": {
+  "start_s": 149.367,
+  "dur_s": 14.467,
+  "mean_db": "-27.2",
+  "max_db": "-9.5",
+  "narrated": true
+ },
+ "B11": {
+  "start_s": 163.833,
+  "dur_s": 24.7,
+  "mean_db": "-28.6",
+  "max_db": "-8.1",
+  "narrated": true
+ },
+ "B12": {
+  "start_s": 188.533,
+  "dur_s": 11.5,
+  "mean_db": "-27.0",
+  "max_db": "-6.8",
+  "narrated": true
+ },
+ "B13": {
+  "start_s": 200.033,
+  "dur_s": 15.533,
+  "mean_db": "-26.8",
+  "max_db": "-3.9",
+  "narrated": true
+ },
+ "B14": {
+  "start_s": 215.567,
+  "dur_s": 11.533,
+  "mean_db": "-24.0",
+  "max_db": "-7.7",
+  "narrated": false
+ },
+ "B15": {
+  "start_s": 227.1,
+  "dur_s": 23.3,
+  "mean_db": "-28.1",
+  "max_db": "-6.2",
+  "narrated": true
+ },
+ "B16": {
+  "start_s": 250.4,
+  "dur_s": 25.133,
+  "mean_db": "-29.5",
+  "max_db": "-7.6",
+  "narrated": true
+ },
+ "B17": {
+  "start_s": 275.533,
+  "dur_s": 14.367,
+  "mean_db": "-27.3",
+  "max_db": "-6.1",
+  "narrated": true
+ },
+ "B18": {
+  "start_s": 289.9,
+  "dur_s": 12.233,
+  "mean_db": "-27.0",
+  "max_db": "-8.1",
+  "narrated": true
+ },
+ "B19": {
+  "start_s": 302.133,
+  "dur_s": 16.0,
+  "mean_db": "-27.1",
+  "max_db": "-6.2",
+  "narrated": true
+ },
+ "B20": {
+  "start_s": 318.133,
+  "dur_s": 16.0,
+  "mean_db": "-27.2",
+  "max_db": "-8.3",
+  "narrated": true
+ },
+ "B21": {
+  "start_s": 334.133,
+  "dur_s": 20.733,
+  "mean_db": "-27.7",
+  "max_db": "-3.4",
+  "narrated": true
+ },
+ "B22": {
+  "start_s": 354.867,
+  "dur_s": 17.933,
+  "mean_db": "-27.3",
+  "max_db": "-6.8",
+  "narrated": true
+ },
+ "B23": {
+  "start_s": 372.8,
+  "dur_s": 5.4,
+  "mean_db": "-26.7",
+  "max_db": "-11.1",
+  "narrated": true
+ }
+}
+timeline end 378.2

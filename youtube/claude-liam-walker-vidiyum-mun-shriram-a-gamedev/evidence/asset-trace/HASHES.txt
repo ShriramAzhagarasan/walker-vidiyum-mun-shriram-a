@@ -1,0 +1,13 @@
+a04dae2b717100be2a11b69d54979cf3aff7ab0200d560d271c1600f8c5a9d3f  design/character/poses-spec.png
+3324b1b342ccee24012eebecb7d6c4d7a7a0c8969fdb5f81d164ba100eb92f8d  design/character/gen/hari-ref.png
+21c5f6faa22da144f8d267eb699116104e2876004178b8e12b329c34c3ee1e21  design/gen-contact/CHAR-HARI-POSES-1.jpg
+76c5d23e3d91e3f60315a007da0b9f2d192786918706c6bc145c724505ec3b0b  gen/raw/CHAR-HARI-PHONE_klein_s301.png
+390bad5aa8b2d00b3131479b2ab12b48bf6a00801aa9031dadd1c7886507b4c0  gen/raw/CHAR-HARI-PHONE_klein_s302.png
+2ef90033867a8d0b7a747195f46067c59003ba07f64b438e57bc096a5187259d  godot/assets/art/hari/phone.png
+cc8ff6f62e94c272d700489a2e183772d9e5b501548a1633785d0c29e33dfd06  evidence/revisions/R1-lighting-before.jpg
+ca0dd64c5175c72bb20fc9ea6f42bf30d33369e5759a5f6d38e92bdbc04bf1d2  evidence/revisions/R1-lighting-after.jpg
+663121e1944b6e9acc05d34a7074894f013e15b65743e6a1cbc0cb3d5cbe148d  youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/evidence/asset-trace/B-edit-board.png  (composed board)
+faae4cf5142cbace6bca21a2ae51f8414671e927eac91d5c0af8e144ff719eb6  youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/evidence/asset-trace/B-prompt-board.png  (composed board)
+105f59ac84282dea4db5e7325e9aca95f9783c3a0e655d8a91584a07f0405b02  youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/evidence/asset-trace/B-r1-board.png  (composed board)
+2f6b8ef7ad9aa4559eecd234cd471efd1e9aa971a402eac4d284ba2db8fa0d21  youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/evidence/asset-trace/B-raw-board.png  (composed board)
+ce63a1e397ece2f84d6abbc78bebc45c6dc4009b7c13d3a67b770ea8deb1aeac  youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/evidence/asset-trace/B-spec-board.png  (composed board)

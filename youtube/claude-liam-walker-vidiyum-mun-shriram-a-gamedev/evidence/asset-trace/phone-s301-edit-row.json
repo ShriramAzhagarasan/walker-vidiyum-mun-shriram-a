@@ -1,0 +1,13 @@
+{
+ "time": "2026-10-07T13:01:24",
+ "src": "gen/raw/CHAR-HARI-PHONE_klein_s301.png",
+ "dest": "godot/assets/art/hari/phone.png",
+ "edits": [
+  "rembg background removal (isnet-anime)",
+  "alpha<16 -> 0",
+  "kept largest connected region",
+  "trimmed to bbox (181, 53, 608, 1318)",
+  "scaled to 680px tall (LANCZOS)",
+  "padded, centred on legs, feet 4px above bottom"
+ ]
+}

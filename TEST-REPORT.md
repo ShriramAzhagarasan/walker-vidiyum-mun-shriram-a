@@ -37,7 +37,7 @@ All of those need human eyes and ears (sections 5–8).
 ## 3. Character against the sheet
 - **Evidence:**
   - `design/character/gen/poses-generated.jpg`: the generated states at one scale with the capsule over each.
-  - `evidence/shots/state_<state>_{right,left}.png` [SCRIPTED CAPTURE]: each state in engine, facing right and flipped left.
+  - `evidence/shots/state_<state>_{right,left}.jpg` [SCRIPTED CAPTURE]: each state in engine, facing right and flipped left.
   - `design/character/poses-spec.png`: the spec.
 
 | State | Spec pose | In engine (right / left) | Mismatch with the sheet or collision |
@@ -60,15 +60,15 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 
 | Panel | Slice evidence | Matches | Differences, and why |
 |---|---|---|---|
-| 1 Title, bird's-eye | `intro_title.png`, `intro_panel_1.png` | The villa, fence, village fire and ECR in one establishing frame, with the title. | A **design view**, made as a generated still with a slow zoom in the intro, not the 3D scene. |
-| 2 8 PM Amma's call | `p02_amma_call.png` | PHONE pose, phone card, 8:00 PM clock, villa and string lights, dialogue | none significant |
-| 3 Talk to Manikandan | `p03_gate_walk.png`, `p03_talk_manikandan.png` | WALK → TALK, Manikandan at the SUV, "E — Talk", gate framing | Not over-the-shoulder; the follow camera frames the SUV from the front-right. |
-| 4 Clue saved | `p04_overhear.png`, `p04_clue_saved.png` | OVERHEAR during the call, then NOTES with the notes card | No close-up high-angle phone shot. The **HUD notes card** is the close-up. |
-| 5 1:40 keys taken | `p05_keys_taken.png` | Advay with the speaker, caption, keys icon arcs to him | Not a low angle. Advay's line is a timed caption, not modal. |
-| 6 Dawn failure | `p06_dawn_crash.png`, `p06_whiteout.png` | Music cut, horn, headlight sweep, shake, WHITEOUT pose, white-out | No Dutch tilt (shake instead). |
-| 7 Loop 2 wake | `p07_loop2_wake.png` | STARTLED, damp shirt, "loop 2", D8 thoughts, the call again | No camera push-in. Revision 2 dialogue adds Hari's shock lines. |
-| 8 Keys stay | `p08_choice.png`, `p08_keys_stay.png` | "Ask about Selvam" (only with both clues), KEYS pose, keys icon to Manikandan | none significant |
-| 9 Safe dawn and end card | `p09_safe_dawn.png`, `p09_end_card.png` | RELIEF at the railing, dawn, beach and rock backdrop, end card in English and Tamil | Not a low angle from the sand; the railing camera looks out to sea instead. |
+| 1 Title, bird's-eye | `intro_title.jpg`, `intro_panel_1.jpg` | The villa, fence, village fire and ECR in one establishing frame, with the title. | A **design view**, made as a generated still with a slow zoom in the intro, not the 3D scene. |
+| 2 8 PM Amma's call | `p02_amma_call.jpg` | PHONE pose, phone card, 8:00 PM clock, villa and string lights, dialogue | none significant |
+| 3 Talk to Manikandan | `p03_gate_walk.jpg`, `p03_talk_manikandan.jpg` | WALK → TALK, Manikandan at the SUV, "E — Talk", gate framing | Not over-the-shoulder; the follow camera frames the SUV from the front-right. |
+| 4 Clue saved | `p04_overhear.jpg`, `p04_clue_saved.jpg` | OVERHEAR during the call, then NOTES with the notes card | No close-up high-angle phone shot. The **HUD notes card** is the close-up. |
+| 5 1:40 keys taken | `p05_keys_taken.jpg` | Advay with the speaker, caption, keys icon arcs to him | Not a low angle. Advay's line is a timed caption, not modal. |
+| 6 Dawn failure | `p06_dawn_crash.jpg`, `p06_whiteout.jpg` | Music cut, horn, headlight sweep, shake, WHITEOUT pose, white-out | No Dutch tilt (shake instead). |
+| 7 Loop 2 wake | `p07_loop2_wake.jpg` | STARTLED, damp shirt, "loop 2", D8 thoughts, the call again | No camera push-in. Revision 2 dialogue adds Hari's shock lines. |
+| 8 Keys stay | `p08_choice.jpg`, `p08_keys_stay.jpg` | "Ask about Selvam" (only with both clues), KEYS pose, keys icon to Manikandan | none significant |
+| 9 Safe dawn and end card | `p09_safe_dawn.jpg`, `p09_end_card.jpg` | RELIEF at the railing, dawn, beach and rock backdrop, end card in English and Tamil | Not a low angle from the sand; the railing camera looks out to sea instead. |
 
 ## 5. Sound events
 | Check | Result |

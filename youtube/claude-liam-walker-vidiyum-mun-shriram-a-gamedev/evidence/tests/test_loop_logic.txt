@@ -1,0 +1,46 @@
+$ godot --headless --path capture-project -s res://tests/test_loop_logic.gd
+# exit 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+[PASS] fresh slice: loop 1, no knowledge   1 { "KNOW_SELVAM": false, "KNOW_KEYS": false }
+[PASS] 8 PM start   1200.0
+[PASS] before 1:20 Manikandan is generic   mani_generic
+[PASS] 1:30 loop 1: overhear Selvam (clue saved once the call has been heard)   { "KNOW_SELVAM": true, "KNOW_KEYS": false }
+[PASS] overhearing again teaches nothing new   ["KNOW_SELVAM"]
+[PASS] loop 1: ask unavailable even with Selvam clue   { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] 1:40 Advay takes keys, KNOW_KEYS learned   advay { "KNOW_SELVAM": true, "KNOW_KEYS": true }
+[PASS] after Advay, Manikandan is worried   mani_after_advay
+[PASS] 5:50 without KEYS_SAFE: crash   crash=1 safe=0
+[PASS] crash resets to 8 PM loop 2   loop=2 clock=1200
+[PASS] knowledge persists across reset   { "KNOW_SELVAM": true, "KNOW_KEYS": true } ["KNOW_SELVAM", "KNOW_KEYS"]
+[PASS] per-loop flags reset   { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false } car
+[PASS] loop 2 with both clues before 1:40: ask available   mani_choice
+[PASS] asking sets KEYS_SAFE   { "KEYS_SAFE": true, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] cannot ask twice   { "KEYS_SAFE": true, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] 1:40 with KEYS_SAFE: Advay refused, keys stay   manikandan
+[PASS] KEYS_SAFE prevents the crash   crash=1 safe=1
+[PASS] safe dawn ends the slice   3
+[PASS] R restart: loop 1, knowledge cleared   { "KNOW_SELVAM": false, "KNOW_KEYS": false }
+[PASS] ask gating: only Selvam clue -> false   mani_generic
+[PASS] ask gating: only keys clue -> false   mani_generic
+[PASS] ask gating: no clues -> false   mani_generic
+[PASS] ask gating: loop 1 even with both -> false   mani_generic
+[PASS] ask gating: both clues but after 1:40 -> false   mani_after_advay
+[PASS] ask gating: both clues, loop 2, before 1:40 -> true   mani_choice
+[PASS] dialogue: no 'Ask about Selvam' with one clue   mani_generic []
+[PASS] dialogue: 'Ask about Selvam' shown with both clues   ["Ask about Selvam", "Just getting some air"]
+[PASS] dialogue: choosing 'Just getting some air' leaves KEYS_SAFE false   mani_never_mind { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] krishna ambient line for this loop, no flags touched   krishna_ambient_repeat
+[PASS] E with nobody near opens nothing   krishna_ambient_repeat
+[PASS] dialogue.json: every DIALOGUE.md id present, no PLACEHOLDER   []
+[PASS] dialogue.json: C1 choice + E1 end card with Tamil line   { "id": "E1", "title": "…but someone is missing.", "tamil": "…ஆனால் யாரோ காணவில்லை.", "hint": "R  restart from loop 1      Esc  quit" }
+[PASS] loop 2 opens with Hari's thought (D8) before Amma's first line D1a   ["D8", "D8b", "D8c", "D1a", "D9a", "D9b", "D9c", "D1c", "D9d"]
+[PASS] loop 2 call differs from loop 1: Hari reacts to the repeated words (D9a after D1a)   ["D8", "D8b", "D8c", "D1a", "D9a", "D9b", "D9c", "D1c", "D9d"]
+[PASS] test script ran to completion   true
+
+test_loop_logic.gd: 36 checks, 0 failed -> PASS
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

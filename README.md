@@ -61,4 +61,10 @@ Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 - Full list: [TEST-REPORT.md, section 9](TEST-REPORT.md).
 
 ## Film
-*(link, filename and SHA-256 added after render)*
+Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160, 30 fps, **6:18**.
+- **Link:** *(Northeastern OneDrive link: added after upload)*
+- **File:** `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` · **SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`
+- **Source revision shown:** `13f772c` (the game source is unchanged after it; later commits are docs and film records only)
+- **Film records:** [youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/](youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/), containing the beat sheet, script and prompts (`PROMPTS.md`, `RIFF.md`), `FACTCHECK.md`, `SHOTLIST.md`, the evidence ledger (`gamedev-evidence.json`), capture logs, the capture driver and QC.
+- `./art godot-gamedev --check` **PASS** (110 source files, 4 exact excerpts, 4 code→result pairs).
+- **Text-legibility gate (GATE T):** it flagged small text that sits *inside* real game footage and reproduced generated images (the game's own HUD, raw generations, R1 screenshots), not the film's captions. The final compile ran the same `compile.py` step with every other gate on, and the reasons are documented in `youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/_qc/GATE-T-OVERRIDE.md`.

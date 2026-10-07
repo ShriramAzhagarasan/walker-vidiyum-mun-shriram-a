@@ -1,0 +1,20 @@
+$ godot --headless --path capture-project -s res://tests/test_audio_mix.gd
+# exit 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+[PASS] music headroom is at least 8 dB under full scale   -10.0
+[PASS] phone buzz ducks the music (duck window open)   2.23200009536743
+[PASS] music is ducked by >= 6 dB while the buzz sounds   -9.0
+[PASS] N mutes the SFX bus   true
+[PASS] M mutes the Music bus   true
+[PASS] muted SFX still counted (sound never decides state)   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted SFX does not duck the music   0.0
+[PASS] N and M toggle back (both buses audible)   [false, false]
+[PASS] test script ran to completion   true
+
+test_audio_mix.gd: 10 checks, 0 failed -> PASS
+WARNING: 8 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

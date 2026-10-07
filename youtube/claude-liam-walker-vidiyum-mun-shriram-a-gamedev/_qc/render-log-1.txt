@@ -1,0 +1,31 @@
+[remotion] B08: ok: GodotDevWorkbench -> media/B08.mp4
+B08 51s
+[remotion] B00: ok: ClaudeComposerAsk -> media/B00.mp4
+B00 76s
+[remotion] B01: ok: BrutalistHesitantWriter -> media/B01.mp4
+B01 34s
+[remotion] B04: ok: GodotDesignFigure -> media/B04.mp4
+B04 60s
+[remotion] B05: ok: GodotDesignFigure -> media/B05.mp4
+B05 60s
+[remotion] B06: ok: GodotDesignFigure -> media/B06.mp4
+B06 60s
+[remotion] B07: ok: GodotDesignFigure -> media/B07.mp4
+B07 54s
+[remotion] B10: ok: GodotDevWorkbench -> media/B10.mp4
+B10 45s
+[remotion] B12: ok: GodotDevWorkbench -> media/B12.mp4
+B12 44s
+[remotion] B17: ok: GodotDevWorkbench -> media/B17.mp4
+B17 61s
+[remotion] B18: ok: GodotDesignFigure -> media/B18.mp4
+B18 76s
+[remotion] B20: ok: GodotDesignBoard -> media/B20.mp4
+B20 44s
+[remotion] B21: ok: ClaudeVerdictArtifact -> media/B21.mp4
+B21 88s
+[remotion] B22: ok: ClaudeComposerAsk -> media/B22.mp4
+B22 76s
+[remotion] B23: ok: ClaudeTitleOutro -> media/B23.mp4
+B23 18s
+done

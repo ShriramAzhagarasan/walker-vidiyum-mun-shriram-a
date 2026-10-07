@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M1 Pro (Apple7)
+
+Movie Maker mode enabled, recording movie in 3840×2160 @ 30 FPS...
+CAPTURE OK frames=5798 seconds=193.27 counts={ "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 1 }
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
+--------------------------------------------------------------------------------
+Done recording movie at path: /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/capture/run-01.avi
+5798 frames at 30 FPS (movie length: 00:03:13:08), recorded in 00:13:13 (24% of real-time speed).
+CPU render time: 1.13 seconds (average: 0.19 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 280.08 seconds (average: 48.31 ms/frame)
+--------------------------------------------------------------------------------
+exit=0

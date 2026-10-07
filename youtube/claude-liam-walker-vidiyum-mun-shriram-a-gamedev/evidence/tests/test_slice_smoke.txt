@@ -1,0 +1,23 @@
+$ godot --headless --path capture-project -s res://tests/test_slice_smoke.gd
+# exit 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27430749644> Story:<Node#28118615502> SoundBank:<Node#28470937040>
+[PASS] scene started loop 1 with Amma's call   amma_call_first
+[PASS] movement locked during the call   (7.5, 0.0, 1.0)
+[PASS] D walks Hari toward +x (camera-relative) at 2.2 m/s   dx=0.91 speed=2.20
+[PASS] Story.player_x follows Hari   8.41 vs 8.41
+[PASS] Hari WALK then IDLE   IDLE
+[PASS] within 1.6 m of Manikandan -> nearby_target + talk hint   manikandan
+[PASS] away from NPCs -> no target   
+[PASS] capsule r=0.28 h=1.70, bottom at the feet   ():<CapsuleShape3D#-9223371990214113576>
+[PASS] sprite image height maps to 1.75 m   0.00252890167758
+[PASS] state change swaps Hari's image   PHONE
+[PASS] camera presets by zone   { "gate": 0.0, "deck": 0.5, "railing": 0.5 }
+[PASS] test script ran to completion   true
+
+test_slice_smoke.gd: 13 checks, 0 failed -> PASS
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

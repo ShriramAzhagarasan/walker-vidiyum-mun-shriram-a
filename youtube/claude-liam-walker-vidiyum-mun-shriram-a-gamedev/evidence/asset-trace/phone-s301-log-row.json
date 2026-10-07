@@ -1,0 +1,18 @@
+{
+ "time": "2026-10-07T01:05:21",
+ "asset": "CHAR-HARI-PHONE",
+ "model": "flux2-klein-4b",
+ "prompt": "The same young man from the reference image: identical face, hair, skin tone, maroon and cream checked half-sleeve collared shirt untucked, dark indigo jeans and blue-strap rubber flip-flop slippers, same proportions and the same flat cel-shaded style with clean dark outlines. Whole body visible from hair to slippers, three-quarter front view facing right. Holding a dark smartphone to his ear with his elbow clearly raised out to the side, other hand in his jeans pocket, eyes looking slightly away and guilty, as if telling a small lie. Flat cel-shaded 2D game illustration, clean uniform dark outlines, two-tone shading, flat colours, no texture, no gradients. Solid flat light grey background, no shadow on the background, no text, no logos.",
+ "seed": 301,
+ "width": 768,
+ "height": 1344,
+ "steps": null,
+ "quantize": 8,
+ "edit_refs": [
+  "design/character/gen/hari-ref.png"
+ ],
+ "output": "gen/raw/CHAR-HARI-PHONE_klein_s301.png",
+ "seconds": 128.2,
+ "ok": true,
+ "cmd": "--model flux2-klein-4b --image-paths design/character/gen/hari-ref.png --prompt 'The same young man from the reference image: identical face, hair, skin tone, maroon and cream checked half-sleeve collared shirt untucked, dark indigo jeans and blue-strap rubber flip-flop slippers, same proportions and the same flat cel-shaded style with clean dark outlines. Whole body visible from hair to slippers, three-quarter front view facing right. Holding a dark smartphone to his ear with his elbow clearly raised out to the side, other hand in his jeans pocket, eyes looking slightly away and guilty, as if telling a small lie. Flat cel-shaded 2D game illustration, clean uniform dark outlines, two-tone shading, flat colours, no texture, no gradients. Solid flat light grey background, no shadow on the background, no text, no logos.' --seed 301 --width 768 --height 1344 -q 8 --output /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/gen/raw/CHAR-HARI-PHONE_klein_s301.png --metadata"
+}

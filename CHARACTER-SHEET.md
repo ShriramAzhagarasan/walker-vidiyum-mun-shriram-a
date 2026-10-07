@@ -127,4 +127,4 @@ Contrast ratios against the environment (WCAG formula, computed by the script):
 
 **Silhouette at game size (generated art):** `design/character/gen/silhouette-generated.png`. IDLE and OVERHEAR are nearly the same silhouette (the F5 limitation). The other 8 states read distinctly.
 
-**In engine:** `evidence/shots/state_<state>_{right,left}.png`. Each state is shown facing right (as drawn) and left (runtime `flip_h`). The sprites are tinted by the scene's light (night, string lights, dawn), so they don't glow against the dark deck.
+**In engine:** `evidence/shots/state_<state>_{right,left}.jpg`. Each state is shown facing right (as drawn) and left (runtime `flip_h`). The sprites are tinted by the scene's light (night, string lights, dawn), so they don't glow against the dark deck.

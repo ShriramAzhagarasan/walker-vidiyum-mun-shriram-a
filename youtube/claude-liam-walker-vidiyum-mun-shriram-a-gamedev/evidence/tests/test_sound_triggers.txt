@@ -1,0 +1,98 @@
+$ godot --headless --path capture-project -s res://tests/test_sound_triggers.gd
+# exit 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+--- scenario: unmuted ---
+[PASS] unmuted L1 phone_buzz on start   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] unmuted L1 Hari PHONE + locked during call   PHONE
+[PASS] unmuted L1 Hari back to IDLE after call   IDLE
+[PASS] unmuted L1 WALK while moving   WALK
+[PASS] unmuted L1 generic line before 1:20, Hari TALK   mani_generic TALK
+[PASS] unmuted L1 Manikandan on the phone 1:20-1:40   1530.0
+[PASS] unmuted L1 Hari OVERHEAR while the call is open   OVERHEAR
+[PASS] unmuted L1 call heard -> clue saved once + NOTES   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] unmuted L1 held E re-triggers nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] unmuted L1 Advay took keys (+ NOTES for the new clue)   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] unmuted L1 Advay present   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] unmuted L1 talking after Advay re-triggers nothing   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] unmuted L1 fire glow at 4:45   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": false }
+[PASS] unmuted L1 dawn_crash once   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L1 mashing / clock pokes during crash re-trigger nothing   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L1 Hari WHITEOUT before reset   WHITEOUT loop=1
+[PASS] unmuted reset to loop 2 at 8:00 PM   loop=2 clock=1200.0
+[PASS] unmuted L2 phone_buzz again   { "phone_buzz": 2, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L2 Hari STARTLED first, D8 before Amma   STARTLED
+[PASS] unmuted L2 knowledge kept, KEYS_SAFE reset   { "KNOW_SELVAM": true, "KNOW_KEYS": true } { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] unmuted L2 'Ask about Selvam' offered   ["Ask about Selvam", "Just getting some air"]
+[PASS] unmuted L2 keys safe after asking, Hari KEYS   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 } KEYS
+[PASS] unmuted L2 talking again re-triggers nothing   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L2 Advay refused, keys stay   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L2 safe_dawn once, no crash   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 1 }
+[PASS] unmuted L2 Hari RELIEF   RELIEF
+[PASS] unmuted slice ended   3
+[PASS] unmuted music stopped at end   false
+[PASS] unmuted exact count phone_buzz == 2   2
+[PASS] unmuted exact count clue_saved == 3   3
+[PASS] unmuted exact count keys_exchanged == 2   2
+[PASS] unmuted exact count dawn_crash == 1   1
+[PASS] unmuted exact count safe_dawn == 1   1
+[PASS] unmuted clue_saved == number of new clues   ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"]
+[PASS] unmuted all 10 Hari states shown   []
+[PASS] unmuted state order matches the script   ["PHONE", "IDLE", "WALK", "IDLE", "TALK", "IDLE", "OVERHEAR", "NOTES", "IDLE", "TALK", "IDLE", "NOTES", "IDLE", "WHITEOUT", "STARTLED", "PHONE", "IDLE", "TALK", "KEYS", "NOTES", "IDLE", "TALK", "IDLE", "RELIEF"]
+[PASS] unmuted NOTES shown ~1.5 s each time   [1505, 1491, 1505]
+[PASS] unmuted KEYS shown ~1.5 s each time   [1501]
+[PASS] unmuted STARTLED >= ~1.2 s, then PHONE   [1909] -> PHONE
+--- scenario: muted ---
+[PASS] muted L1 phone_buzz on start   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted L1 Hari PHONE + locked during call   PHONE
+[PASS] muted L1 Hari back to IDLE after call   IDLE
+[PASS] muted L1 WALK while moving   WALK
+[PASS] muted L1 generic line before 1:20, Hari TALK   mani_generic TALK
+[PASS] muted L1 Manikandan on the phone 1:20-1:40   1530.0
+[PASS] muted L1 Hari OVERHEAR while the call is open   OVERHEAR
+[PASS] muted L1 call heard -> clue saved once + NOTES   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] muted L1 held E re-triggers nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted L1 Advay took keys (+ NOTES for the new clue)   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] muted L1 Advay present   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] muted L1 talking after Advay re-triggers nothing   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted L1 fire glow at 4:45   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": false }
+[PASS] muted L1 dawn_crash once   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L1 mashing / clock pokes during crash re-trigger nothing   { "phone_buzz": 1, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L1 Hari WHITEOUT before reset   WHITEOUT loop=1
+[PASS] muted reset to loop 2 at 8:00 PM   loop=2 clock=1200.0
+[PASS] muted L2 phone_buzz again   { "phone_buzz": 2, "clue_saved": 2, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L2 Hari STARTLED first, D8 before Amma   STARTLED
+[PASS] muted L2 knowledge kept, KEYS_SAFE reset   { "KNOW_SELVAM": true, "KNOW_KEYS": true } { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] muted L2 'Ask about Selvam' offered   ["Ask about Selvam", "Just getting some air"]
+[PASS] muted L2 keys safe after asking, Hari KEYS   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 } KEYS
+[PASS] muted L2 talking again re-triggers nothing   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L2 Advay refused, keys stay   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L2 safe_dawn once, no crash   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 1 }
+[PASS] muted L2 Hari RELIEF   RELIEF
+[PASS] muted slice ended   3
+[PASS] muted music stopped at end   false
+[PASS] muted exact count phone_buzz == 2   2
+[PASS] muted exact count clue_saved == 3   3
+[PASS] muted exact count keys_exchanged == 2   2
+[PASS] muted exact count dawn_crash == 1   1
+[PASS] muted exact count safe_dawn == 1   1
+[PASS] muted clue_saved == number of new clues   ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"]
+[PASS] muted all 10 Hari states shown   []
+[PASS] muted state order matches the script   ["IDLE", "PHONE", "IDLE", "WALK", "IDLE", "TALK", "IDLE", "OVERHEAR", "NOTES", "IDLE", "TALK", "IDLE", "NOTES", "IDLE", "WHITEOUT", "STARTLED", "PHONE", "IDLE", "TALK", "KEYS", "NOTES", "IDLE", "TALK", "IDLE", "RELIEF"]
+[PASS] muted NOTES shown ~1.5 s each time   [1505, 1494, 1510]
+[PASS] muted KEYS shown ~1.5 s each time   [1501]
+[PASS] muted STARTLED >= ~1.2 s, then PHONE   [1926] -> PHONE
+[PASS] mute: same loop_index   2 vs 2
+[PASS] mute: same knowledge   { "KNOW_SELVAM": true, "KNOW_KEYS": true } vs { "KNOW_SELVAM": true, "KNOW_KEYS": true }
+[PASS] mute: same per-loop flags   { "KEYS_SAFE": true, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": true } vs { "KEYS_SAFE": true, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": true }
+[PASS] mute: same notes   ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"] vs ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"]
+[PASS] mute: end reached both times   true / true
+[PASS] mute: same trigger counts   { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 1 } vs { "phone_buzz": 2, "clue_saved": 3, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 1 }
+[PASS] test script ran to completion   true
+
+test_sound_triggers.gd: 86 checks, 0 failed -> PASS
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

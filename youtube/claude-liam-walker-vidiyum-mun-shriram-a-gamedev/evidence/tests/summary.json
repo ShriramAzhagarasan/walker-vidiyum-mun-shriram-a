@@ -1,0 +1,22 @@
+{
+ "test_sound_triggers.gd": {
+  "exit": 0,
+  "summary": "test_sound_triggers.gd: 86 checks, 0 failed -> PASS"
+ },
+ "test_audio_mix.gd": {
+  "exit": 0,
+  "summary": "test_audio_mix.gd: 10 checks, 0 failed -> PASS"
+ },
+ "test_loop_logic.gd": {
+  "exit": 0,
+  "summary": "test_loop_logic.gd: 36 checks, 0 failed -> PASS"
+ },
+ "test_slice_smoke.gd": {
+  "exit": 0,
+  "summary": "test_slice_smoke.gd: 13 checks, 0 failed -> PASS"
+ },
+ "test_assets_present.gd": {
+  "exit": 0,
+  "summary": "test_assets_present.gd: 70 checks, 0 failed -> PASS"
+ }
+}

@@ -1,0 +1,29 @@
+[art] compiled B00  VIDEO    13.4s  ← B00.mp4
+[art] compiled B01  VIDEO    12.2s  ← B01.mp4
+[art] compiled B02  VIDEO    17.5s  ← B02.mp4
+[art] compiled B03  VIDEO    14.1s  ← B03.mp4
+[art] compiled B04  VIDEO    16.2s  ← B04.mp4
+[art] compiled B05  VIDEO    13.9s  ← B05.mp4
+[art] compiled B06  VIDEO    16.1s  ← B06.mp4
+[art] compiled B07  VIDEO    14.1s  ← B07.mp4
+[art] compiled B08  VIDEO    15.7s  ← B08.mp4
+[art] compiled B09  VIDEO    15.6s  ← B09.mp4
+[art] compiled B10  VIDEO    14.5s  ← B10.mp4
+[art] compiled B11  VIDEO    24.7s  ← B11.mp4
+[art] compiled B12  VIDEO    11.5s  ← B12.mp4
+[art] compiled B13  VIDEO    15.5s  ← B13.mp4
+[art] compiled B14  VIDEO    11.5s  ← B14.mp4
+[art] compiled B15  VIDEO    23.3s  ← B15.mp4
+[art] compiled B16  VIDEO    25.1s  ← B16.mp4
+[art] compiled B17  VIDEO    14.4s  ← B17.mp4
+[art] compiled B18  VIDEO    11.0s  ← B18.mp4
+[art] compiled B19  VIDEO    16.2s  ← B19.mp4
+[art] compiled B20  VIDEO    15.3s  ← B20.mp4
+[art] compiled B21  VIDEO    20.7s  ← B21.mp4
+[art] compiled B22  VIDEO    17.9s  ← B22.mp4
+[art] compiled B23  VIDEO     5.4s  ← B23.mp4
+[art] REFUSED: [art] command failed:
+/opt/homebrew/opt/python@3.13/bin/python3.13 /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/brutalist.art/runtime/qc/final_frame_check.py /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev --mp4 /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/exports/landscape/.claude-liam-walker-vidiyum-mun-shriram-a-gamedev-candidate-u6_y69r2/candidate.mp4 --sheet /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/clips/_work/resolved-sheet.json
+
+[art] motion histogram: graphic:17  gameplay:7
+exit=2

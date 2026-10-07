@@ -1,0 +1,76 @@
+$ godot --headless --path capture-project -s res://tests/test_assets_present.gd
+# exit 0
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+[PASS] loads res://assets/art/hari/idle.png   
+[PASS]   alpha channel idle.png   5
+[PASS]   transparent corner idle.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge idle.png   252x692
+[PASS] loads res://assets/art/hari/walk.png   
+[PASS]   alpha channel walk.png   5
+[PASS]   transparent corner walk.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge walk.png   282x692
+[PASS] loads res://assets/art/hari/talk.png   
+[PASS]   alpha channel talk.png   5
+[PASS]   transparent corner talk.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge talk.png   324x692
+[PASS] loads res://assets/art/hari/phone.png   
+[PASS]   alpha channel phone.png   5
+[PASS]   transparent corner phone.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge phone.png   260x692
+[PASS] loads res://assets/art/hari/notes.png   
+[PASS]   alpha channel notes.png   5
+[PASS]   transparent corner notes.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge notes.png   258x692
+[PASS] loads res://assets/art/hari/overhear.png   
+[PASS]   alpha channel overhear.png   5
+[PASS]   transparent corner overhear.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge overhear.png   240x692
+[PASS] loads res://assets/art/hari/startled.png   
+[PASS]   alpha channel startled.png   5
+[PASS]   transparent corner startled.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge startled.png   296x692
+[PASS] loads res://assets/art/hari/keys.png   
+[PASS]   alpha channel keys.png   5
+[PASS]   transparent corner keys.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge keys.png   256x692
+[PASS] loads res://assets/art/hari/whiteout.png   
+[PASS]   alpha channel whiteout.png   5
+[PASS]   transparent corner whiteout.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge whiteout.png   252x692
+[PASS] loads res://assets/art/hari/relief.png   
+[PASS]   alpha channel relief.png   5
+[PASS]   transparent corner relief.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge relief.png   298x692
+[PASS] loads res://assets/art/npc/manikandan.png   
+[PASS]   alpha channel manikandan.png   5
+[PASS]   transparent corner manikandan.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge manikandan.png   230x692
+[PASS] loads res://assets/art/npc/manikandan_phone.png   
+[PASS]   alpha channel manikandan_phone.png   5
+[PASS]   transparent corner manikandan_phone.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge manikandan_phone.png   312x692
+[PASS] loads res://assets/art/npc/advay.png   
+[PASS]   alpha channel advay.png   5
+[PASS]   transparent corner advay.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge advay.png   364x692
+[PASS] loads res://assets/art/npc/krishna.png   
+[PASS]   alpha channel krishna.png   5
+[PASS]   transparent corner krishna.png   (0.0, 0.0, 0.0, 0.0)
+[PASS]   feet within 12 px of the bottom edge krishna.png   318x692
+[PASS] loads env marble   (1024.0, 1024.0)
+[PASS] loads env villa   (2048.0, 768.0)
+[PASS] loads env beach_backdrop   (2048.0, 768.0)
+[PASS] loads env fire_glow   (1024.0, 832.0)
+[PASS] loads env suv   (1320.0, 650.0)
+[PASS] loads sfx phone_buzz (<= 2.5 s)   2.40000009536743
+[PASS] loads sfx clue_saved (<= 2.5 s)   2.20000004768372
+[PASS] loads sfx keys_exchanged (<= 2.0 s)   1.79999995231628
+[PASS] loads sfx dawn_crash (<= 5.5 s)   5.0
+[PASS] loads sfx safe_dawn (<= 9.0 s)   8.0
+[PASS] loads music party_loop   15.4879064559937
+[PASS] loads music gaana_loop   16.9282188415527
+[PASS] test script ran to completion   true
+
+test_assets_present.gd: 70 checks, 0 failed -> PASS

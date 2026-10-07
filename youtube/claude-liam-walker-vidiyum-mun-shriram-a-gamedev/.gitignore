@@ -1,0 +1,18 @@
+# Large/regenerable media stays out of git (root .gitignore already drops *.mp4 / *.mp3)
+capture-project/*
+!capture-project/capture_driver.gd
+capture/*.avi
+capture/*.wav
+*.avi
+*.mp4
+*.mov
+mp3/
+_qc/labels/
+exports/
+*.wav
+# raw generations are gitignored in the game repo (gen/raw/); keep the copies local, hashes are in HASHES.txt
+evidence/asset-trace/CHAR-HARI-PHONE_klein_*.png
+_qc/frames/
+_qc/spot/
+clips/
+build-state.json

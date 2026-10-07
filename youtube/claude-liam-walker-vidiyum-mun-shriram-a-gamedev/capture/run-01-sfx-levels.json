@@ -1,0 +1,92 @@
+[
+ {
+  "id": "phone_buzz",
+  "clue": "",
+  "t": 32.433,
+  "before_mean_db": -28.1,
+  "before_max_db": -4.7,
+  "after_mean_db": -15.6,
+  "after_max_db": -2.0,
+  "delta_mean_db": 12.5
+ },
+ {
+  "id": "clue_saved",
+  "clue": "KNOW_SELVAM",
+  "t": 79.333,
+  "before_mean_db": -20.6,
+  "before_max_db": -0.9,
+  "after_mean_db": -15.0,
+  "after_max_db": -1.2,
+  "delta_mean_db": 5.6
+ },
+ {
+  "id": "keys_exchanged",
+  "clue": "",
+  "t": 83.167,
+  "before_mean_db": -20.3,
+  "before_max_db": 0.0,
+  "after_mean_db": -13.2,
+  "after_max_db": -0.7,
+  "delta_mean_db": 7.1
+ },
+ {
+  "id": "clue_saved",
+  "clue": "KNOW_KEYS",
+  "t": 83.167,
+  "before_mean_db": -20.3,
+  "before_max_db": 0.0,
+  "after_mean_db": -13.2,
+  "after_max_db": -0.7,
+  "delta_mean_db": 7.1
+ },
+ {
+  "id": "dawn_crash",
+  "clue": "",
+  "t": 102.8,
+  "before_mean_db": -30.7,
+  "before_max_db": -8.1,
+  "after_mean_db": -16.4,
+  "after_max_db": -4.0,
+  "delta_mean_db": 14.3
+ },
+ {
+  "id": "phone_buzz",
+  "clue": "",
+  "t": 106.833,
+  "before_mean_db": -12.3,
+  "before_max_db": -0.4,
+  "after_mean_db": -11.9,
+  "after_max_db": 0.0,
+  "delta_mean_db": 0.4
+ },
+ {
+  "id": "keys_exchanged",
+  "clue": "",
+  "t": 152.2,
+  "before_mean_db": -20.5,
+  "before_max_db": 0.0,
+  "after_mean_db": -13.1,
+  "after_max_db": -0.3,
+  "delta_mean_db": 7.4
+ },
+ {
+  "id": "clue_saved",
+  "clue": "KEYS_WITH_MANI",
+  "t": 152.2,
+  "before_mean_db": -20.5,
+  "before_max_db": 0.0,
+  "after_mean_db": -13.1,
+  "after_max_db": -0.3,
+  "delta_mean_db": 7.4
+ },
+ {
+  "id": "safe_dawn",
+  "clue": "",
+  "t": 186.2,
+  "before_mean_db": -30.1,
+  "before_max_db": -11.9,
+  "after_mean_db": -20.9,
+  "after_max_db": -3.3,
+  "delta_mean_db": 9.2
+ }
+]
