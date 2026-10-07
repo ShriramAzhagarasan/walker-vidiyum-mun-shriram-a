@@ -100,3 +100,21 @@ Claude proposed this; Shriram approved the 2.5D approach (2026-10-06).
 | F8 | **The gaana sounds generic or not Chennai:** the music model has seen little of this genre. | Shriram listens and judges against the pillar *The night belongs to Chennai*. Rejections logged; fall back to percussion-only, or to one loop, with the limitation stated. |
 | F9 | **Background removal damage:** it eats hair edges or the shirt check, or leaves a green fringe. | View each cutout on black and on white at 2×; fix with alpha-matting settings or a manual cleanup, and record the edit. |
 | F10 | **Unreadable when muted:** without the horn, the dawn failure looks like a random white flash. | Muted playtest by Shriram; the headlight sweep, shake and caption must carry the meaning. |
+
+---
+
+## Revision 2 (2026-10-07, after generation and Shriram's playtest 1)
+Driven by observations, not planned in revision 1:
+
+| Change | Why (evidence) | Where |
+|---|---|---|
+| **Title screen + intro motion comic** (4 generated 16:9 stills: INTRO-1-ECR, INTRO-2-ROCK, INTRO-3-ARRIVAL from reference B, INTRO-4-DAWN; captions; Esc skips; cuts to 8 PM) | Shriram asked for an intro that explains the story before play. It also brings storyboard panel 1 (the title view) into the slice. | `godot/scenes/intro.gd`; `assets/art/intro/` |
+| **Walk cycle** (walk_1 stride s302 · walk_2 passing = IDLE · walk_3 stride WALK-B s322 · walk_4 passing), advanced by distance travelled, with the step bob low on contact and high on passing | Playtest 1: "feels too fake… looks so static… he is just sliding". The generated WALK-PASS frames came back as strides, so IDLE serves as the passing frame. | `godot/scenes/hari.gd` |
+| **Motion feel:** acceleration 9 m/s², deceleration 14 m/s², idle breathing, turn squash, blob shadows, anti-aliased sprite edges | Same playtest | `hari.gd`, `blob_shadow.gd`, `billboard_art.gd` |
+| **Physics interpolation**; the camera follows the interpolated transform | Stutter: the camera read a 60 Hz position every render frame | `project.godot`, `camera_rig.gd` |
+| **Environment fill:** a raised stucco plinth under the deck, sand down to the beach, a compound wall with a gate and warm lamps | Playtest screenshots showed the sky's flat ground colour past every deck edge | `godot/scenes/environment_fill.gd` |
+| **PHONE image s302 → s301** | Shriram's screenshot showed two phones (a second one at the far ear) | `assets/art/hari/phone.png` |
+| **Music −4 dB headroom** | The party loop peaks at 0 dBFS | `autoload/sound_bank.gd` |
+| **SFX scheduler:** EDM DPM-Solver++ | Stable Audio Open's default sampler crashed and the first workaround produced silence | `tools/gen/gen_audio.py` |
+
+**New predicted failure, F11:** the intro's generated stills may not match the in-game art (Hari's face drifts in INTRO-3; the villa doesn't match ENV-VILLA). Check: the stills side by side with the reference and the villa backdrop at full screen. Shriram judges.

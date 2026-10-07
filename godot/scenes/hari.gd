@@ -71,8 +71,8 @@ func _process(delta: float) -> void:
 	if walking and _walk_frames.size() > 1:
 		var frame := int(_travel / STRIDE_M) % _walk_frames.size()
 		sprite.set_art(_walk_frames[frame], "walk")
-	var phase := _travel / STRIDE_M * PI
-	var bob := absf(sin(phase)) * BOB_M * k if walking else 0.0
+	# low on contact frames (even), high on passing frames (odd): a step, not a float
+	var bob := (1.0 - cos(PI * (_travel / STRIDE_M - 0.5))) * 0.5 * BOB_M * k if walking else 0.0
 	sprite.position.y = sprite.height_m / 2.0 + bob
 	var breath := 1.0 + (sin(_time * TAU * BREATH_HZ) * BREATH_AMOUNT if not walking else 0.0)
 	_turn = maxf(_turn - delta, 0.0)

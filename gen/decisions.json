@@ -133,5 +133,87 @@
   "by": "Claude (spec check)",
   "reason": "grille badge resembles a real carmaker's logo (no-brands rule)",
   "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-PHONE_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Shriram (playtest screenshot) / Claude",
+  "reason": "two phones: a second phone at the far ear, visible in game (Shriram's screenshot 13:00)",
+  "used": "replaced by s301"
+ },
+ "gen/raw/CHAR-HARI-PHONE_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional)",
+  "reason": "one phone, elbow out (F5 rule)",
+  "used": "godot/assets/art/hari/phone.png (panels 2, 7)"
+ },
+ "gen/raw/CHAR-HARI-WALK-PASS_klein_s321.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "asked for a passing pose (legs together); got another stride. The edit model stays close to the reference pose",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WALK-PASS_klein_s322.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "asked for a passing pose (legs together); got another stride. The edit model stays close to the reference pose",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WALK-B_klein_s322.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional)",
+  "reason": "asked for the opposite leg forward; got a stride similar to WALK. Used as a second contact frame for variety",
+  "used": "godot/assets/art/hari/walk_3.png"
+ },
+ "gen/raw/INTRO-1-ECR_klein_s702.png": {
+  "outcome": "accepted",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "closest to the in-game villa (ENV-VILLA s602): white flat-roof glass, pool, fence, boats",
+  "used": "godot/assets/art/intro/intro_1.png (title + intro; storyboard panel 1)",
+  "edits": "none (used as generated)"
+ },
+ "gen/raw/INTRO-2-ROCK_klein_s701.png": {
+  "outcome": "accepted",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "rock shrine with lamp and jasmine, fishermen at the fire beyond the fence",
+  "used": "godot/assets/art/intro/intro_2.png (title + intro; storyboard panel 1)",
+  "edits": "none (used as generated)"
+ },
+ "gen/raw/INTRO-3-ARRIVAL_klein_s701.png": {
+  "outcome": "accepted",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "Hari and Krishna both visible. Mismatch: Hari is driving, not pillion as asked; the villa is a different gabled design (F11)",
+  "used": "godot/assets/art/intro/intro_3.png (title + intro; storyboard panel 1)",
+  "edits": "none (used as generated)"
+ },
+ "gen/raw/INTRO-4-DAWN_klein_s701.png": {
+  "outcome": "accepted",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "headlight glare at dawn, no vehicle shown (crash never shown)",
+  "used": "godot/assets/art/intro/intro_4.png (title + intro; storyboard panel 1)",
+  "edits": "none (used as generated)"
+ },
+ "gen/raw/INTRO-1-ECR_klein_s701.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; the other seed fit the story better (s702 arrival hides Krishna)",
+  "used": "\u2014"
+ },
+ "gen/raw/INTRO-2-ROCK_klein_s702.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; the other seed fit the story better (s702 arrival hides Krishna)",
+  "used": "\u2014"
+ },
+ "gen/raw/INTRO-3-ARRIVAL_klein_s702.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; the other seed fit the story better (s702 arrival hides Krishna)",
+  "used": "\u2014"
+ },
+ "gen/raw/INTRO-4-DAWN_klein_s702.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; the other seed fit the story better (s702 arrival hides Krishna)",
+  "used": "\u2014"
  }
 }

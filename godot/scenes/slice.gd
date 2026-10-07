@@ -62,6 +62,7 @@ func _ready() -> void:
 		n.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	for npc in [manikandan, advay, krishna]:
 		npc.add_child(preload("res://scenes/blob_shadow.gd").new())
+	add_child(preload("res://scenes/environment_fill.gd").new())       # plinth, sand, compound wall (no void past the deck)
 	LoopState.loop_started.connect(_on_loop_started)
 	LoopState.phone_buzz.connect(cards.show_phone)                       # visual twin: incoming-call card
 	LoopState.clue_saved.connect(_on_clue_saved)
