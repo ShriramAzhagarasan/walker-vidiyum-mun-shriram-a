@@ -14,12 +14,17 @@ const PARTY_THIN_TO := 0.2             ## party gain at dawn after thinning from
 const DAWN_FADE_SECONDS := 0.5
 const PAUSE_DUCK_DB := -8.0
 const SILENT_DB := -60.0
-const MUSIC_HEADROOM_DB := -4.0       ## party loop peaks at 0 dBFS; leave room under the SFX
+const MUSIC_HEADROOM_DB := -10.0      ## music sits well under the SFX (playtest 4: SFX were masked at -4 dB)
+const DUCK_DB := -9.0                  ## extra music cut while any SFX is sounding
+const DUCK_ATTACK := 0.06              ## seconds to duck
+const DUCK_RELEASE := 0.7              ## seconds to recover
 
 var trigger_counts := {}               ## event id -> times fired (tests read this)
 var music_playing := false
 var _fade := 1.0
 var _fading := false
+var _duck_until := 0.0                  ## real time (s) until which music stays ducked
+var _duck_db := 0.0
 var _sfx_players := {}
 var party: AudioStreamPlayer
 var gaana: AudioStreamPlayer
@@ -56,8 +61,12 @@ func _process(delta: float) -> void:
 	var ls: Node = get_node("/root/LoopState")
 	var t := smoothstep(CROSSFADE_FROM, CROSSFADE_TO, get_node("/root/Story").player_x)
 	var thin := remap(clampf(ls.clock_minutes, ls.MUSIC_THIN_START, ls.DAWN_TIME), ls.MUSIC_THIN_START, ls.DAWN_TIME, 1.0, PARTY_THIN_TO)
-	party.volume_db = _gain_db(lerpf(1.0, 0.25, t) * thin * _fade) + MUSIC_HEADROOM_DB
-	gaana.volume_db = _gain_db(lerpf(0.15, 1.0, t) * _fade) + MUSIC_HEADROOM_DB
+	var now := Time.get_ticks_msec() / 1000.0
+	var target := DUCK_DB if now < _duck_until else 0.0
+	var rate := absf(DUCK_DB) / (DUCK_ATTACK if target < _duck_db else DUCK_RELEASE)
+	_duck_db = move_toward(_duck_db, target, rate * delta)
+	party.volume_db = _gain_db(lerpf(1.0, 0.25, t) * thin * _fade) + MUSIC_HEADROOM_DB + _duck_db
+	gaana.volume_db = _gain_db(lerpf(0.15, 1.0, t) * _fade) + MUSIC_HEADROOM_DB + _duck_db
 
 func reset_counts() -> void:
 	trigger_counts.clear()
@@ -102,6 +111,8 @@ func _play(id: String) -> void:
 	var player: AudioStreamPlayer = _sfx_players.get(id)
 	if player and player.stream:
 		player.play()
+		if not is_bus_muted("SFX"):               # duck the music under an audible SFX (audio only; no game state)
+			_duck_until = maxf(_duck_until, Time.get_ticks_msec() / 1000.0 + minf(player.stream.get_length(), 2.5))
 
 func _on_dawn(id: String) -> void:
 	_play(id)

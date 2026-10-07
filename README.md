@@ -42,6 +42,7 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
 ## Tests
 ```bash
 "$GODOT" --headless --path godot -s res://tests/test_assets_present.gd   # every generated asset is present and well-formed (70 checks)
+"$GODOT" --headless --path godot -s res://tests/test_audio_mix.gd        # music under SFX, ducking, N/M mute toggles (10 checks)
 "$GODOT" --headless --path godot -s res://tests/test_sound_triggers.gd   # exact per-event sound counts over a scripted 2-loop run
 "$GODOT" --headless --path godot -s res://tests/test_loop_logic.gd       # knowledge persists, flags reset, keys-safe prevents the crash
 "$GODOT" --headless --path godot -s res://tests/test_slice_smoke.gd      # the 3D scene builds with all nodes

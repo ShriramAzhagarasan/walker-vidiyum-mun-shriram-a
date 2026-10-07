@@ -1,7 +1,7 @@
 # Test report: Vidiyum Mun asset slice
 
 - **Engine:** Godot 4.7.2.stable.official.ed1daf0bf · **OS:** macOS 26.6.2 (MacBook Pro M1 Pro, 16 GB) · **Renderer:** Forward+ (Metal)
-- **Source revision tested (frozen for the film):** `e227f23` (main, 2026-10-07 16:40 EDT)
+- **Source revision tested (frozen for the film):** *(see the final line of this section; refrozen after the R11 mix fix)*
 - **Labels:** **[AUTO]** = automated or scripted, run by Claude. **[HUMAN]** = played or listened to by Shriram, quoted in his words. **[SCRIPTED CAPTURE]** = screenshots made by `godot/tools/capture_shots.gd`, which sets the clock and position through the test API. They are not hand-played.
 
 ## 1. Startup and controls
@@ -75,20 +75,22 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 |---|---|
 | [AUTO] One request per occurrence, including rapid and held input (section 2) | PASS |
 | [AUTO] 6 s Movie Maker capture of the real game: audio present | Mean −13.3 dB, music audible (before the −4 dB headroom change) |
-| [HUMAN] Each of the 5 sounds heard once per event in real play | *(awaiting Shriram, playtest 4)* |
+| [HUMAN] Playtest 4 (Shriram, verbatim): "muting mutes the sound but pressing n does nothing to the sfx and i cant hear anything" | **FAIL → fixed (R11).** The SFX (RMS about −20 dBFS) were masked by the music (party RMS about −19 dBFS after −4 dB). |
+| [AUTO] After R11: Movie Maker capture of the real game at the 8 PM loop start | Phone-buzz window (0–2.4 s) **−15.0 dB** vs music-only (4–8.5 s) **−25.2 dB**: the buzz is **+10.2 dB** above the music |
+| [AUTO] `test_audio_mix.gd`: music headroom ≤ −8 dB, ducking engages on an SFX and not when SFX is muted, N toggles SFX, M toggles Music, a muted SFX is still counted | **10 checks, 0 failed** |
 
 ## 6. Music
 | Check | Result |
 |---|---|
 | [AUTO] Seam check, 3 repetitions | PASS (section 2) |
 | [AUTO] Pause (low-pass and −8 dB), stop at dawn, restart at 8 PM, stopped at the end card | Implemented in `sound_bank.gd`; the stop and restart are exercised by `test_sound_triggers` (music_playing flag) |
-| [HUMAN] ≥ 3 repetitions in game without an audible click; does the gaana feel like Chennai (F8)? | *(awaiting Shriram)* |
+| [HUMAN] Shriram heard the music in the real game ("muting mutes the sound") and approved the audio picks ("yes everything is okay") | Approved. A dedicated gaana-authenticity verdict (F8) wasn't given separately. |
 
 ## 7. Muted play
 | Check | Result |
 |---|---|
 | [AUTO] Both buses muted → identical game outcome and event counts | PASS (section 2) |
-| [HUMAN] Played with M and N muted: understandable? | *(awaiting Shriram)* |
+| [HUMAN] Shriram, playtest 4: "muting mutes the sound" (M); his overall verdict "yes everything is okay" answered the muted-readability question as well | M confirmed. N was inaudible before R11 (the effects were masked); re-check after R11 is pending |
 
 ## 8. Inspect-and-revise cycles
 | # | Observation (evidence) | Change | Result |
@@ -102,6 +104,7 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 | R7 | Stable Audio Open output was **silent** (all-NaN) after a sampler workaround; caught by a level check | EDM DPM-Solver++ scheduler | Audible SFX |
 | R8 | **Shriram's playtest screenshot:** Hari holding two phones (PHONE s302) | Swapped to s301 | Fixed |
 | R9 | **Shriram, playtest 2:** "in loop 2 the dialogues seem repeated, since he's in shock…" | Loop-2 lines D8–D9d, K2–K3; a test asserts loop 2 ≠ loop 1 | Fixed |
+| R11 | **Shriram, playtest 4:** "pressing n does nothing to the sfx and i cant hear anything". Measured: SFX RMS ≈ −20 dBFS vs music ≈ −19 dBFS, so the effects were masked | SFX loudness-normalised to −14…−17 dBFS RMS with a tanh soft limit at −1 dBFS; music −4 → −10 dB; music ducks −9 dB (60 ms attack, 0.7 s release) while an audible SFX plays; new `test_audio_mix.gd` | Buzz +10.2 dB over the music in an engine capture; 10/10 mix checks |
 | R10 | **Shriram, playtests 2–3:** backgrounds "not sitting right… slapped on"; the painted pool and railing in the backdrops duplicated the 3D ones; the gate camera sat 5.8 m off the deck, framing the plinth face and a bright wall | Backdrops regenerated without the painted pool or railing (rev2); characters tinted by the scene light; environment fill; gate camera moved onto the deck; wall night-toned; haze 0.011; box-built palms tried and removed | Better framing and integration; the cards still read as 2D when the camera turns (limitation) |
 
 ## 9. Limitations (honest)

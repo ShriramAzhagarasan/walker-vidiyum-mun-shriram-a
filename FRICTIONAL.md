@@ -111,3 +111,11 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
   - Wall pushed back and night-toned, lamps dimmed, night haze up (fog 0.006 → 0.011).
   - **Tried and removed:** box-built palm silhouettes, which looked like bars.
 - **Still unresolved (stated as a limitation):** billboard characters and the SUV still read as 2D when the camera turns. Next step: build the SUV, the rock and the fence posts as Blender models in A3.
+
+## 2026-10-07 ~16:55: playtest 4, inaudible SFX (R11)
+- **Shriram:** "yes everything is okay" (approving the asset picks and the dialogue), "muting mutes the sound but pressing n does nothing to the sfx and i cant hear anything."
+- **Expected:** N toggles the SFX bus, and the five effects are clearly heard over the music.
+- **Got:** the bus toggle *worked* (now proven by `test_audio_mix.gd`), but nothing audible changed, because the effects were masked. Measured average loudness: SFX about −20 dBFS vs party music about −19 dBFS. My earlier "music present" check had only verified that music existed, never that the SFX sat above it. A gap in my own check.
+- **Changed (Claude):** SFX normalised by loudness (RMS), not peak; music −10 dB; music ducks −9 dB while an effect sounds.
+- **Verified:** in an engine capture the phone buzz is +10.2 dB over the music. I paused the film agent before its final take, so the film uses the fixed mix.
+- **Human / Claude / model:** Shriram found it by playing and approved the picks. Claude diagnosed it and fixed the mix. The sounds themselves are unchanged Stable Audio Open outputs, re-mastered.

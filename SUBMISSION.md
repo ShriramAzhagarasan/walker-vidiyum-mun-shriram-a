@@ -1,0 +1,32 @@
+# Submission
+
+- **Assignment:** Assignment 2 - Generate Art, Sound, and Music for Your Game
+- **Student:** Shriram Alagarasan (azhagarasan.s@northeastern.edu)
+- **Project name:** walker-vidiyum-mun-shriram-a, *Vidiyum Mun* (விடியும் முன், "Before Dawn")
+- **Game concept in one sentence:** A middle-class Chennai student at the last party on a rich family's illegally fenced ECR beach keeps waking at 8 PM after every tragic dawn, and must notice the people the party ignores to change what happens before sunrise.
+- **GitHub repository/folder URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
+- **Started from:** an empty Godot 4.7.2 project. Test-harness and GDScript conventions were borrowed from my Assignment 1 repo (walker-jumpman-shriram-a, itself based on nikbearbrown/walker-jumpman); no art, levels or characters reused.
+- **Submitted commit SHA:** *(final docs commit; filled in at submission)*
+- **Source revision shown in the film:** `e227f23` (game source frozen; later commits change only docs and film records, not `godot/`)
+- **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · macOS 26.6.2 (Apple M1 Pro, 16 GB)
+- **Generative models used (name, version, where run, licence):**
+  - FLUX.2 [klein] 4B (HF rev `e7b7dc2`, local via mflux 0.20.0 on Apple Silicon, Apache 2.0): every character image, the environment, the intro stills.
+  - Z-Image-Turbo (HF rev `f332072`, local, Apache 2.0): comparison only, not used.
+  - Stable Audio Open 1.0 (HF rev `f21265c`, local via diffusers 0.40 on MPS, Stability AI Community License): 5 sound effects.
+  - MusicGen stereo-medium (HF rev `2747e61`, local via transformers 5.18 on MPS, CC-BY-NC 4.0, non-commercial): 2 music loops.
+  - rembg 2.0.85 with isnet-anime / BiRefNet (MIT / Apache 2.0): background removal.
+- **Final film URL and filename:** *(OneDrive link)* · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` *(confirm after render)*
+- **Final film SHA-256:** *(after render)*
+- **Summary of my work:**
+  - **Story and design input (mine):** I chose the game and wrote its story, characters, setting and tone as an homage to Chennai (`design/input/`). I corrected Claude's generic local details.
+  - **Look and style (mine):** I picked the 3D/Telltale direction (built as 2.5D) and chose Hari's reference image, which set the style for every pose.
+  - **Playtests (mine):** I played the slice three times, and my notes drove the revisions: static motion → walk cycle and motion feel; a two-phone pose → replaced; loop-2 dialogue that just repeated → Hari now reacts in shock; flat "slapped-on" backdrops → regenerated and re-framed.
+  - **What Claude built:** design-doc drafts, prompts, generation and audio tools, the Godot code and tests, and the film pipeline. The local models generated every asset. See SOURCES.md and FRICTIONAL.md for the full split.
+- **Known limitations:**
+  - **2.5D:** flat generated characters, SUV and backdrops read as cards when the camera turns, with no rigged 3D motion. The next step is Blender props in A3.
+  - OVERHEAR is close to IDLE in silhouette.
+  - The walk cycle is 4 frames, with IDLE as the passing frame.
+  - The in-game camera doesn't do the storyboard's special angles.
+  - The audio picks were provisional, made from measurements, pending my listening verdict.
+  - MusicGen's licence is non-commercial.
+  - The first 7 commits carry my work git identity by mistake (explained in SOURCES.md).
