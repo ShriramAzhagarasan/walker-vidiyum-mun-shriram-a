@@ -32,7 +32,7 @@ tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.2, 0.18, 0.36, 1)
-fog_density = 0.006
+fog_density = 0.011
 
 [sub_resource type="PlaneMesh" id="Driveway"]
 size = Vector2(5, 8)

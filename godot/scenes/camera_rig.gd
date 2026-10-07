@@ -3,7 +3,7 @@ extends Node3D
 ## blended smoothly by Hari's x. Presets are data: offset from Hari, look-at offset, FOV.
 
 const PRESETS := {
-	"gate": {"offset": Vector3(1.4, 2.3, 5.8), "look": Vector3(-1.2, 1.1, -0.8), "fov": 52.0},     # wider, shows the SUV
+	"gate": {"offset": Vector3(2.4, 2.0, 3.1), "look": Vector3(-0.6, 1.1, -1.8), "fov": 54.0},     # on the deck, looking at the SUV and villa (playtest 3: the old preset sat off the deck and framed the wall)
 	"deck": {"offset": Vector3(0.0, 1.9, 4.5), "look": Vector3(0.0, 1.25, 0.0), "fov": 45.0},      # medium
 	"railing": {"offset": Vector3(-2.6, 1.8, -2.6), "look": Vector3(2.6, 1.0, 3.2), "fov": 50.0},  # swings past Hari to the sea
 }

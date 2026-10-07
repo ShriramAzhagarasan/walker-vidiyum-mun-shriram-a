@@ -94,3 +94,20 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
   - anti-aliased sprite edges (opaque prepass instead of hard alpha cut).
 - **Still unresolved:** billboards will never move like rigged 3D characters. That's the semester's path (A3 onward), not today's.
 - **Addendum 2026-10-07 ~13:05 (evidence found after the entry above):** the film agent's 4K Movie Maker probe window opened at 12:18–12:21 as a normal, focusable window. Its input log (`youtube/…-gamedev/capture/probe-4k-inputs.jsonl`, 12:21:45) records a human pressing E, walking and talking to Krishna. Movie Maker runs at ~22 % of real time and writes audio to the file, not the speakers. So **the "lag" and "no music" in playtest 1 were most likely that capture window, not the game.** The "static/fake motion" complaint stands. Fix to the process: capture windows are now `no_focus` and fail the take on any input the driver didn't send. Playtest 2 will run the real game with `godot --path godot`.
+
+## 2026-10-07 ~13:30–14:20: playtests 2 and 3, and a visual integration pass
+- **Shriram, playtest 2 (verbatim in SHRIRAM-DECISIONS):** backgrounds "still not sitting right… very mediocre"; characters, car, house, beach and fence "not up to the mark"; loop 2 dialogue "seems repeated, since he's in shock".
+- **Shriram, playtest 3:** "the car, how advay moves everything looks unnatural, we need 3d elements but all of these still look 2d… near the house, where you could [see] the beach feels like a picture being slapped upon there… towards the house entry, it looks a little bad."
+- **Claude's analysis (agreed with Shriram):**
+  - The slice is 2.5D: flat generated cards (characters, SUV, backdrops) inside a 3D box world. Cards always face the camera and backdrops are boards, so oblique camera angles expose them.
+  - My code-built filler (the bright compound wall, the plinth face) was the worst offender in the gate shots.
+  - Natural motion and a car you can look around need rigged 3D models. That's A3+ (Blender), not A2, whose spec allows one static image per state.
+- **Changed:**
+  - Loop-2 dialogue now reacts to the repeat (D8–D9d, K2–K3).
+  - Villa and beach regenerated without the painted pool and railing that duplicated the 3D ones.
+  - Characters tinted by night, string lights and dawn.
+  - Advay's path moved off Hari.
+  - Gate camera moved onto the deck, facing the SUV and villa.
+  - Wall pushed back and night-toned, lamps dimmed, night haze up (fog 0.006 → 0.011).
+  - **Tried and removed:** box-built palm silhouettes, which looked like bars.
+- **Still unresolved (stated as a limitation):** billboard characters and the SUV still read as 2D when the camera turns. Next step: build the SUV, the rock and the fence posts as Blender models in A3.

@@ -3,10 +3,10 @@ extends Node3D
 ## every edge): a raised stucco plinth under the deck, sand below it out to the beach backdrop, and a
 ## white compound wall with warm lamps on the gate side. Code-built geometry (Claude), no generated art.
 
-const STUCCO := Color("e2dccf")
+const STUCCO := Color("b8b1a3")             ## night-toned plaster: frames the scene instead of glaring (playtest 3)
 const SAND := Color("3b3428")
 const WALL_CAP := Color("bdb6a8")
-const DECK_MIN := Vector3(-0.6, -3.0, -4.1)      ## the deck and driveway sit on top of this plinth
+const DECK_MIN := Vector3(-1.8, -3.0, -4.1)      ## the deck and driveway sit on top of this plinth
 const DECK_MAX := Vector3(26.1, 0.0, 4.1)
 
 func _ready() -> void:
@@ -18,24 +18,18 @@ func _ready() -> void:
 	_box(Vector3(DECK_MIN.x, -0.4, DECK_MAX.z - 0.08), Vector3(DECK_MAX.x, -0.01, DECK_MAX.z), STUCCO, 0.8)
 	_box(Vector3(DECK_MIN.x, -0.4, DECK_MIN.z), Vector3(DECK_MAX.x, -0.01, DECK_MIN.z + 0.08), STUCCO, 0.8)
 	_box(Vector3(DECK_MAX.x - 0.08, -0.4, DECK_MIN.z), Vector3(DECK_MAX.x, -0.01, DECK_MAX.z), STUCCO, 0.8)
+	_box(Vector3(-1.8, -0.02, -4.1), Vector3(0.0, 0.0, 4.1), Color("2a2622"), 0.9)   # paving strip up to the wall
 	# compound wall along the gate side (x = -0.6), with a gap for the gate opening near the SUV
-	_box(Vector3(-1.0, 0.0, -9.0), Vector3(-0.6, 2.6, -1.6), STUCCO, 0.8)
-	_box(Vector3(-1.0, 0.0, 1.6), Vector3(-0.6, 2.6, 6.0), STUCCO, 0.8)
-	_box(Vector3(-1.05, 2.6, -9.0), Vector3(-0.55, 2.75, 6.0), WALL_CAP, 0.7)
+	_box(Vector3(-2.0, 0.0, -9.0), Vector3(-1.6, 2.4, -1.6), STUCCO, 0.8)
+	_box(Vector3(-2.0, 0.0, 1.6), Vector3(-1.6, 2.4, 4.1), STUCCO, 0.8)
+	_box(Vector3(-2.05, 2.4, -9.0), Vector3(-1.55, 2.52, 4.1), WALL_CAP, 0.7)
 	# dark metal gate panel in the gap
-	_box(Vector3(-0.95, 0.0, -1.6), Vector3(-0.85, 2.2, 1.6), Color("1c1d22"), 0.4)
+	_box(Vector3(-1.95, 0.0, -1.6), Vector3(-1.85, 2.0, 1.6), Color("1c1d22"), 0.4)
 	# back wall behind the driveway, joining the compound wall to the villa backdrop
-	_box(Vector3(-1.0, 0.0, -9.0), Vector3(5.0, 2.6, -8.6), STUCCO, 0.8)
+	_box(Vector3(-2.0, 0.0, -9.0), Vector3(5.0, 2.4, -8.6), STUCCO, 0.8)
 	for z in [-5.0, 3.6]:
-		_lamp(Vector3(-0.45, 2.3, z))
-	# neighbouring coconut groves beyond the wall: dark silhouette masses so the gate view has depth, not sky
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 7
-	for i in 14:
-		var z := -9.0 + i * 1.2
-		var h := rng.randf_range(4.0, 7.5)
-		_box(Vector3(-3.6 - rng.randf() * 1.5, 0.0, z), Vector3(-3.3 - rng.randf() * 1.5, h, z + 0.25), Color("15130f"), 1.0)
-		_crown(Vector3(-3.5 - rng.randf() * 1.5, h, z + 0.12), rng.randf_range(1.2, 1.8))
+		_lamp(Vector3(-1.45, 2.1, z))
+	# (box-built palm silhouettes were tried and removed: they read as bars and blobs in the gate shots)
 
 func _crown(pos: Vector3, r: float) -> void:
 	var mi := MeshInstance3D.new()
@@ -77,7 +71,7 @@ func _lamp(pos: Vector3) -> void:
 	add_child(bulb)
 	var light := OmniLight3D.new()
 	light.light_color = Color("ffbf80")
-	light.light_energy = 1.8
+	light.light_energy = 0.9
 	light.omni_range = 6.0
 	light.position = pos + Vector3(0.3, 0, 0)
 	add_child(light)
