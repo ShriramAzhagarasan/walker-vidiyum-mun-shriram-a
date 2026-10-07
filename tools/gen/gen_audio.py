@@ -45,25 +45,27 @@ def log(row):
 
 def run_sfx(ids):
     from diffusers import StableAudioPipeline
-    from diffusers import CosineDPMSolverMultistepScheduler
+    from diffusers import EDMDPMSolverMultistepScheduler
     pipe = StableAudioPipeline.from_pretrained("stabilityai/stable-audio-open-1.0", torch_dtype=torch.float32).to(DEV)
-    # Run 1 (2026-10-07) crashed on the final step: torchsde RecursionError because the last sigma is 0,
-    # outside the Brownian interval. Fix: end the schedule at sigma_min instead of zero.
-    pipe.scheduler = CosineDPMSolverMultistepScheduler.from_config(pipe.scheduler.config, final_sigmas_type="sigma_min")
+    # 2026-10-07: the model's default stochastic sampler (CosineDPMSolver sde-dpmsolver++ via torchsde) is broken in
+    # this torch 2.14 / diffusers 0.40 setup: run 1 hit a RecursionError; final_sigmas_type=sigma_min gave all-NaN
+    # (written as silence). Deterministic EDM DPM-Solver++ with the model's own sigma settings works.
+    pipe.scheduler = EDMDPMSolverMultistepScheduler(sigma_min=0.3, sigma_max=500, sigma_data=1.0, sigma_schedule="exponential",
+                                                    prediction_type="v_prediction", algorithm_type="dpmsolver++", solver_order=2)
     sr = pipe.vae.sampling_rate
     for aid in ids:
         prompt, dur = SFX[aid]
         for seed in SFX_SEEDS:
             t0 = time.time()
             g = torch.Generator("cpu").manual_seed(seed)
-            audio = pipe(prompt, negative_prompt=SFX_NEG, num_inference_steps=100, guidance_scale=7.0,
+            audio = pipe(prompt, negative_prompt=SFX_NEG, num_inference_steps=50, guidance_scale=7.0,
                          audio_end_in_s=dur, num_waveforms_per_prompt=1, generator=g).audios[0]
             out = RAW / f"{aid}_sao_s{seed}.wav"
             sf.write(out, audio.T.float().cpu().numpy(), sr)
             log({"time": datetime.now().isoformat(timespec="seconds"), "asset": aid,
                  "model": "stabilityai/stable-audio-open-1.0", "prompt": prompt, "negative_prompt": SFX_NEG,
-                 "seed": seed, "seed_generator": "torch cpu Generator", "duration_s": dur, "steps": 100,
-                 "guidance": 7.0, "scheduler": "CosineDPMSolverMultistep, final_sigmas_type=sigma_min", "sample_rate": sr, "output": str(out.relative_to(ROOT)),
+                 "seed": seed, "seed_generator": "torch cpu Generator", "duration_s": dur, "steps": 50,
+                 "guidance": 7.0, "scheduler": "EDMDPMSolverMultistep dpmsolver++ order 2, sigma 0.3-500 exponential, v_prediction", "sample_rate": sr, "output": str(out.relative_to(ROOT)),
                  "seconds": round(time.time() - t0, 1), "device": DEV})
             print("OK", out.name, round(time.time() - t0, 1), "s", flush=True)
 

@@ -48,3 +48,33 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 - **Next:** derived the poses from B with the Klein edit pipeline. The test walk pose (s300) kept the face, the check pattern and the chappals, at 142 s per image.
 - **Human / Claude / model:** Shriram chose the reference. Claude wrote the prompt, ran the models and built the comparison sheet (`design/gen-contact/CHAR-HARI-REF.jpg`). Klein and Z-Image produced the images.
 - **Still unresolved:** whether the poses keep the check pattern when the arms move across the shirt (F1).
+
+## 2026-10-07 01:00–03:30: overnight batch (Claude ran it; Shriram asleep; his picks pending)
+- **Wanted:** all 10 Hari states from reference B, three NPCs, five environment pieces, five SFX and two music loops, matched to the sheet and the storyboard.
+- **Asked:** Klein 4B edit pipeline (reference B, the prompts in `prompts/image_prompts.json`, seeds 301/302), Klein text-to-image for NPCs and environments (seeds 401–403, 601–602), MusicGen stereo-medium (seeds 7, 8), Stable Audio Open (seeds 11/22/33). Every row is in `gen/log.jsonl` and `gen/audio_log.jsonl`.
+- **Got:**
+  - **Poses kept B's face, check shirt and chappals across all 10 states** (`design/gen-contact/CHAR-HARI-POSES-1.jpg`, `-2.jpg`). Predicted failure F1 (drift) did not happen at in-game size.
+  - **Two spec failures:**
+    - OVERHEAR came back as a hand at the ear, the same silhouette as PHONE. That's exactly predicted failure F5.
+    - WHITEOUT had a sun-flare painted into the image.
+  - **Environments:** SUV s601 had an oval badge on the grille that resembles a real carmaker's logo, against the no-brands rule. s602 is plain.
+  - **Advay:** all three versions held a phone-sized object, not a speaker.
+- **Changed next (Claude, against the sheet):**
+  - OVERHEAR prompt revised (head over the shoulder, hands down, "no phone, hands not near his face");
+  - WHITEOUT prompt revised ("no light effects, no glow, no lens flare");
+  - Advay prompt revised (a large cylindrical speaker with a strap).
+- **Rev2 results:**
+  - WHITEOUT is fixed.
+  - Advay's speaker reads at 300 px.
+  - OVERHEAR no longer copies PHONE, but **now sits close to IDLE**, because the head turn is subtle. **Unresolved:** the silhouette alone doesn't separate OVERHEAR from IDLE at 208 px. The dialogue panel and the overheard call carry the meaning instead.
+- **SFX friction:**
+  - Run 1: Stable Audio Open's default sampler (sde-dpmsolver++ via torchsde) crashed on the last step (RecursionError).
+  - My first fix (`final_sigmas_type=sigma_min`) "worked", but every file was **pure silence**. The output was all-NaN, written as zeros. That cost about 30 min of 3-minute generations before a level check caught it.
+  - The deterministic EDM DPM-Solver++ with the model's own sigma range (0.3–500, v-prediction) produced real, tonal audio.
+  - Lesson: check the output level of the first generation, not just the exit code.
+- **Music:**
+  - Both loops cut at 8 bars (party 125 bpm, gaana 113.6 bpm).
+  - The seam check passes (`tools/check/loop_seam_check.py`).
+  - Party s7 was set aside: its seam jump was 2× the typical sample step.
+  - **Whether the gaana sounds like Chennai (F8) is Shriram's call, still pending.**
+- **Human / Claude / model:** all judgments above are Claude's spec checks. Shriram's accept/reject picks come next (SHRIRAM-DECISIONS).

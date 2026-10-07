@@ -2,30 +2,35 @@
   "_style": "Flat cel-shaded 2D game illustration, clean uniform dark outlines, two-tone shading, flat colours, no texture, no gradients. Solid flat light grey background, no shadow on the background, no text, no logos.",
   "_pose_prefix": "The same young man from the reference image: identical face, hair, skin tone, maroon and cream checked half-sleeve collared shirt untucked, dark indigo jeans and blue-strap rubber flip-flop slippers, same proportions and the same flat cel-shaded style with clean dark outlines. Whole body visible from hair to slippers, three-quarter front view facing right.",
   "poses": {
-    "CHAR-HARI-IDLE":     "Standing relaxed, arms loose at his sides, weight even, calm neutral expression.",
-    "CHAR-HARI-WALK":     "Walking forward to the right in mid-stride, front leg forward, back heel lifted, opposite arm swinging, relaxed expression.",
-    "CHAR-HARI-TALK":     "Talking to someone in front of him, his front hand raised and open in an explaining gesture, leaning slightly forward, earnest expression, mouth slightly open.",
-    "CHAR-HARI-PHONE":    "Holding a dark smartphone to his ear with his elbow clearly raised out to the side, other hand in his jeans pocket, eyes looking slightly away and guilty, as if telling a small lie.",
-    "CHAR-HARI-NOTES":    "Looking down at a dark smartphone held in both hands at chest height, typing a note with his thumbs, head bowed, focused expression.",
+    "CHAR-HARI-IDLE": "Standing relaxed, arms loose at his sides, weight even, calm neutral expression.",
+    "CHAR-HARI-WALK": "Walking forward to the right in mid-stride, front leg forward, back heel lifted, opposite arm swinging, relaxed expression.",
+    "CHAR-HARI-TALK": "Talking to someone in front of him, his front hand raised and open in an explaining gesture, leaning slightly forward, earnest expression, mouth slightly open.",
+    "CHAR-HARI-PHONE": "Holding a dark smartphone to his ear with his elbow clearly raised out to the side, other hand in his jeans pocket, eyes looking slightly away and guilty, as if telling a small lie.",
+    "CHAR-HARI-NOTES": "Looking down at a dark smartphone held in both hands at chest height, typing a note with his thumbs, head bowed, focused expression.",
     "CHAR-HARI-OVERHEAR": "Leaning back slightly with his head turned to listen, one hand half-raised near his ear, eyes wide and attentive, secretly eavesdropping.",
     "CHAR-HARI-STARTLED": "Startled awake, shoulders raised, one hand pressed flat on his chest where the shirt has dark damp patches, other arm flung back, wide frightened eyes.",
-    "CHAR-HARI-KEYS":     "Holding up a small car key with a gold key ring in his raised hand, showing it, relieved determined expression.",
+    "CHAR-HARI-KEYS": "Holding up a small car key with a gold key ring in his raised hand, showing it, relieved determined expression.",
     "CHAR-HARI-WHITEOUT": "Leaning back and raising his forearm across his eyes to shield them from a blinding light, grimacing, body recoiling.",
-    "CHAR-HARI-RELIEF":   "Both hands on top of his head, chin raised, eyes closed, exhaling in exhausted relief."
+    "CHAR-HARI-RELIEF": "Both hands on top of his head, chin raised, eyes closed, exhaling in exhausted relief."
   },
   "npcs": {
-    "NPC-MANI-IDLE":  "Full-body character design of a South Indian man in his mid-fifties, a family driver: dark-brown skin, short greying hair, thick grey-streaked moustache, kind tired eyes, a white uniform half-sleeve shirt with the sleeves rolled up, dark grey trousers, simple leather sandals, a thin checked cotton towel over one shoulder. Standing patiently with arms folded, three-quarter front view facing left.",
-    "NPC-ADVAY":      "Full-body character design of a loud 26-year-old Indian man just back from studying abroad: light-brown skin, styled undercut hair, a thin gold chain, a black oversized t-shirt, light blue ripped jeans, white sneakers, holding a small black portable bluetooth speaker in one hand, smug grin, swaggering confident stance, three-quarter front view facing left.",
-    "NPC-KRISHNA":    "Full-body character design of a cheerful 22-year-old South Indian man: medium-dark skin, short curly hair, a bright teal short-sleeve party shirt with a palm-leaf print, beige chinos, white sneakers, holding a glass of soda in one hand and waving with the other, big grin, three-quarter front view facing right."
+    "NPC-MANI-IDLE": "Full-body character design of a South Indian man in his mid-fifties, a family driver: dark-brown skin, short greying hair, thick grey-streaked moustache, kind tired eyes, a white uniform half-sleeve shirt with the sleeves rolled up, dark grey trousers, simple leather sandals, a thin checked cotton towel over one shoulder. Standing patiently with arms folded, three-quarter front view facing left.",
+    "NPC-ADVAY": "Full-body character design of a loud 26-year-old Indian man just back from studying abroad: light-brown skin, styled undercut hair, a thin gold chain, a black oversized t-shirt, light blue ripped jeans, white sneakers, holding a small black portable bluetooth speaker in one hand, smug grin, swaggering confident stance, three-quarter front view facing left.",
+    "NPC-KRISHNA": "Full-body character design of a cheerful 22-year-old South Indian man: medium-dark skin, short curly hair, a bright teal short-sleeve party shirt with a palm-leaf print, beige chinos, white sneakers, holding a glass of soda in one hand and waving with the other, big grin, three-quarter front view facing right."
   },
   "npc_edits": {
     "NPC-MANI-PHONE": "The same man from the reference image, identical face, moustache, white rolled-sleeve shirt, grey trousers and towel on the shoulder, same flat cel-shaded style. Now holding a phone to his ear with one hand, the other hand on his hip, worried expression, speaking quietly. Whole body visible, three-quarter front view facing left."
   },
   "env": {
-    "ENV-VILLA":  "Night exterior of a modern white two-storey beach villa seen straight-on from its pool deck: white stucco walls, flat roof, floor-to-ceiling glass walls glowing warm amber from inside, potted palms, warm string lights hanging across the front, deep indigo night sky. Flat cel-shaded 2D game background, clean outlines, flat colours. No people, no text, no logos.",
-    "ENV-BEACH":  "Night view from a seaside deck railing down onto a quiet beach in Tamil Nadu: calm dark sea with a few distant fishing-boat lamps on the horizon, a single large weathered rock on the sand as a simple shrine with a tiny oil lamp and a few flowers, an old wire fence on wooden posts running down to the waterline, beyond the fence wooden fishing catamarans and drying nets on the sand and a small bonfire, deep indigo sky with faint stars. Flat cel-shaded 2D game background, clean outlines, flat colours. No people, no text.",
+    "ENV-VILLA": "Night exterior of a modern white two-storey beach villa seen straight-on from its pool deck: white stucco walls, flat roof, floor-to-ceiling glass walls glowing warm amber from inside, potted palms, warm string lights hanging across the front, deep indigo night sky. Flat cel-shaded 2D game background, clean outlines, flat colours. No people, no text, no logos.",
+    "ENV-BEACH": "Night view from a seaside deck railing down onto a quiet beach in Tamil Nadu: calm dark sea with a few distant fishing-boat lamps on the horizon, a single large weathered rock on the sand as a simple shrine with a tiny oil lamp and a few flowers, an old wire fence on wooden posts running down to the waterline, beyond the fence wooden fishing catamarans and drying nets on the sand and a small bonfire, deep indigo sky with faint stars. Flat cel-shaded 2D game background, clean outlines, flat colours. No people, no text.",
     "ENV-MARBLE": "Top-down flat texture of polished white Italian marble floor tiles with soft grey veins, large square tiles with thin grout lines, even lighting, no perspective, no objects, stylised flat illustration texture.",
-    "ENV-FIRE":   "A small bonfire and burning fishing nets beside a wooden boat at night, bright orange and yellow flames with a soft glow, isolated on a solid pure black background. Flat cel-shaded 2D game art, clean outlines. No text.",
-    "ENV-SUV":    "A large generic dark grey SUV with tinted windows, no logos, no badges, no number plate text, parked, three-quarter front view facing left. Flat cel-shaded 2D game art, clean dark outlines, flat colours. Solid flat light grey background, no text."
-  }
+    "ENV-FIRE": "A small bonfire and burning fishing nets beside a wooden boat at night, bright orange and yellow flames with a soft glow, isolated on a solid pure black background. Flat cel-shaded 2D game art, clean outlines. No text.",
+    "ENV-SUV": "A large generic dark grey SUV with tinted windows, no logos, no badges, no number plate text, parked, three-quarter front view facing left. Flat cel-shaded 2D game art, clean dark outlines, flat colours. Solid flat light grey background, no text."
+  },
+  "poses_rev2": {
+    "CHAR-HARI-OVERHEAR": "Standing still with his body turned slightly away, head turned back over his shoulder, both hands down at his sides, eyes wide, secretly eavesdropping on someone behind him. No phone, hands not near his face.",
+    "CHAR-HARI-WHITEOUT": "Recoiling backward, leaning back, raising one forearm across his eyes as if blinded by headlights, grimacing. Plain flat lighting on the figure, no light effects, no glow, no sun, no lens flare anywhere in the image."
+  },
+  "_rev2_note": "2026-10-07: OVERHEAR rev1 came back as hand-at-ear (same silhouette as PHONE, predicted failure F5); WHITEOUT rev1 drew a sun-flare into the image. Prompts revised."
 }

@@ -40,5 +40,98 @@
   "by": "Shriram",
   "reason": "not chosen; Shriram picked B (Claude's note: Z-Image faces front, not the 3/4 view the sheet specifies; flatter vector style; mid-blue jeans)",
   "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/CHAR-HARI-OVERHEAR_klein_s301.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "hand at ear duplicates PHONE's silhouette (F5)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-OVERHEAR_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "hand at ear duplicates PHONE's silhouette (F5)",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WHITEOUT_klein_s301.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "sun-flare painted into the image",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WHITEOUT_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "sun-flare painted into the image",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-SUV_klein_s601.png": {
+  "outcome": "rejected",
+  "by": "Claude (spec check)",
+  "reason": "grille badge resembles a real carmaker's logo (no-brands rule)",
+  "used": "\u2014"
  }
 }

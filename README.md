@@ -1,5 +1,54 @@
 # walker-vidiyum-mun-shriram-a: Vidiyum Mun (விடியும் முன், "Before Dawn")
 
-CSYE 7270 Fall 2026, Assignment 2: Generate Art, Sound, and Music for Your Game.
+**CSYE 7270 Fall 2026 · Assignment 2: Generate Art, Sound, and Music for Your Game**
+**Student:** Shriram Alagarasan · **Engine:** Godot 4.7.2.stable.official (macOS) · **Renderer:** Forward+
 
-A time-loop mystery set at a beach-house party on ECR, Chennai. Work in progress: the design docs come first, then generation, then the Godot asset slice.
+A time-loop mystery at the last party on a rich family's illegally fenced beach on ECR, Chennai. You play Hari, a middle-class engineering student. Every dawn ends in tragedy and he wakes at 8 PM again, keeping only what he learned. This repo holds the **asset slice**: one playable 2.5D scene (Telltale-style 3D deck, generated cel-shaded characters) that proves the generated art, sound effects and music work together in the engine.
+
+## Started from
+An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pattern were borrowed from my Assignment 1 repo [walker-jumpman-shriram-a](https://github.com/ShriramAzhagarasan/walker-jumpman-shriram-a), which was based on [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman) by Nik Bear Brown. No art, levels or characters from either are reused.
+
+## Run it
+1. Install [Godot 4.7.2](https://godotengine.org/download) (standard build, no .NET needed).
+2. Clone this repo and import once (this builds the `.godot/` cache, which isn't committed):
+   ```bash
+   GODOT=/Applications/Godot.app/Contents/MacOS/Godot   # adjust to your install
+   "$GODOT" --headless --path godot --import
+   ```
+3. Run: `"$GODOT" --path godot`, or open `godot/project.godot` in the editor and press **F5**.
+
+## Controls
+| Key | Action |
+|---|---|
+| **W A S D** / arrow keys | Walk (camera-relative) |
+| **E** / **Space** | Talk, advance dialogue, pick a choice (W/S to move between choices) |
+| **Hold T** | Fast-forward the night (×8) |
+| **Esc** / **P** | Pause (music is muffled while paused) |
+| **M** | Mute or unmute **music** |
+| **N** | Mute or unmute **sound effects** |
+| **R** | Restart from loop 1 (after the end card) |
+
+## What the slice demonstrates
+- **Hari in 10 states**, one static generated image per state (idle, walk, talk, phone, notes, overhear, startled, keys, white-out, relief). He faces the way he walks (the image flips at runtime). Collision is a 0.28 × 1.70 m capsule.
+- **A generated environment:** a white glass villa, Italian marble, the beach view with the rock shrine, the fence and village boats, a fire overlay, the SUV. **Generated non-player characters:** Manikandan (2 states), Advay, Krishna.
+- **Five generated sound effects on real game events:** Amma's call buzz (loop start), clue chime (new knowledge only), keys (they change hands), dawn horn and screech (failure), waves and crows (safe dawn). Each fires exactly once per event (automated test).
+- **Two generated music loops** (party dance music and village gaana) that crossfade as you walk toward the fence, thin out after 3 AM, muffle on pause, stop at dawn, and restart at 8 PM.
+- **The core loop, once:** loop 1 earns two clues; loop 2 uses them to keep the car keys with Manikandan, and the end card follows.
+- **Readable when muted:** every sound has a visual twin (phone card, notes card, keys icon, headlights and white-out, sunrise).
+
+## Tests
+```bash
+"$GODOT" --headless --path godot -s res://tests/test_sound_triggers.gd   # exact per-event sound counts over a scripted 2-loop run
+"$GODOT" --headless --path godot -s res://tests/test_loop_logic.gd       # knowledge persists, flags reset, keys-safe prevents the crash
+"$GODOT" --headless --path godot -s res://tests/test_slice_smoke.gd      # the 3D scene builds with all nodes
+```
+Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
+
+## Docs
+[CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · my original story and decisions: [design/input/](design/input/)
+
+## Known limitations
+*(final list in TEST-REPORT.md)*
+
+## Film
+*(link, filename and SHA-256 added after render)*
