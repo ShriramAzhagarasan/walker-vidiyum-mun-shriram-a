@@ -7,7 +7,7 @@
 - **GitHub repository/folder URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
 - **Started from:** an empty Godot 4.7.2 project. Test-harness and GDScript conventions were borrowed from my Assignment 1 repo (walker-jumpman-shriram-a, itself based on nikbearbrown/walker-jumpman); no art, levels or characters reused.
 - **Submitted commit SHA:** *(final docs commit; filled in at submission)*
-- **Source revision shown in the film:** `e227f23` (game source frozen; later commits change only docs and film records, not `godot/`)
+- **Source revision shown in the film:** `13f772c` (game source frozen; later commits change only docs and film records, not `godot/`)
 - **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · macOS 26.6.2 (Apple M1 Pro, 16 GB)
 - **Generative models used (name, version, where run, licence):**
   - FLUX.2 [klein] 4B (HF rev `e7b7dc2`, local via mflux 0.20.0 on Apple Silicon, Apache 2.0): every character image, the environment, the intro stills.

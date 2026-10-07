@@ -1,7 +1,7 @@
 # Test report: Vidiyum Mun asset slice
 
 - **Engine:** Godot 4.7.2.stable.official.ed1daf0bf · **OS:** macOS 26.6.2 (MacBook Pro M1 Pro, 16 GB) · **Renderer:** Forward+ (Metal)
-- **Source revision tested (frozen for the film):** *(see the final line of this section; refrozen after the R11 mix fix)*
+- **Source revision tested (frozen for the film):** `13f772c` (main, 2026-10-07 ~17:00 EDT), refrozen after the R11 mix fix. A fresh clone of the earlier freeze `e227f23` imported with 0 errors and passed every check; the fresh-clone check is repeated on the final commit.
 - **Labels:** **[AUTO]** = automated or scripted, run by Claude. **[HUMAN]** = played or listened to by Shriram, quoted in his words. **[SCRIPTED CAPTURE]** = screenshots made by `godot/tools/capture_shots.gd`, which sets the clock and position through the test API. They are not hand-played.
 
 ## 1. Startup and controls
