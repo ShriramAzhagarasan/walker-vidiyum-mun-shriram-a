@@ -119,3 +119,16 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 - **Changed (Claude):** SFX normalised by loudness (RMS), not peak; music −10 dB; music ducks −9 dB while an effect sounds.
 - **Verified:** in an engine capture the phone buzz is +10.2 dB over the music. I paused the film agent before its final take, so the film uses the fixed mix.
 - **Human / Claude / model:** Shriram found it by playing and approved the picks. Claude diagnosed it and fixed the mix. The sounds themselves are unchanged Stable Audio Open outputs, re-mastered.
+
+## 2026-10-07 ~17:00–18:10: the explainer film
+- **Wanted:** one film that traces one asset from design to game and lets the slice's own audio be heard.
+- **What happened:**
+  - The film agent's first 4K take used the `e227f23` build. It was discarded after playtest 4 exposed the masked SFX: on that take the clue and keys sounds were only +1.6 to +2.9 dB over the music.
+  - The final take on `13f772c` measured every SFX event +5.6 to +14.3 dB over the second before it (`capture/run-01-sfx-levels.json`).
+  - The skill's text-legibility gate (GATE T) flagged the small HUD text *inside* the game footage and in the generated images, not the film's captions. The compile ran with every other gate on, and the override is documented (`_qc/GATE-T-OVERRIDE.md`).
+  - **Shriram reviews the final export before upload.**
+- **Human / Claude / model:**
+  - **Claude (a subagent):** wrote the script, capture driver, beat sheet and evidence ledger.
+  - **Kokoro (local TTS, "Liam"):** narration.
+  - **The game:** the gameplay footage and its audio.
+  - **Shriram:** approves the film and uploads it.
