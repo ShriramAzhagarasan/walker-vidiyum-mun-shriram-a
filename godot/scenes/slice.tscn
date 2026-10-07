@@ -1,0 +1,317 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/slice.gd" id="1_slice"]
+[ext_resource type="Script" path="res://scenes/textured_surface.gd" id="2_surface"]
+[ext_resource type="Script" path="res://scenes/deck_dressing.gd" id="3_dressing"]
+[ext_resource type="Script" path="res://scenes/fallback_prop.gd" id="4_prop"]
+[ext_resource type="Script" path="res://scenes/billboard_art.gd" id="5_billboard"]
+[ext_resource type="Script" path="res://scenes/hari.gd" id="6_hari"]
+[ext_resource type="Script" path="res://scenes/camera_rig.gd" id="7_rig"]
+[ext_resource type="Script" path="res://ui/hud.gd" id="8_hud"]
+[ext_resource type="Script" path="res://ui/notes_toast.gd" id="9_toast"]
+[ext_resource type="Script" path="res://ui/dialogue_panel.gd" id="10_dialogue"]
+[ext_resource type="Script" path="res://ui/screen_cards.gd" id="11_cards"]
+[ext_resource type="Script" path="res://ui/whiteout.gd" id="12_white"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.11, 0.1, 0.31, 1)
+sky_horizon_color = Color(0.29, 0.25, 0.53, 1)
+ground_bottom_color = Color(0.03, 0.03, 0.06, 1)
+ground_horizon_color = Color(0.29, 0.25, 0.53, 1)
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 2
+ambient_light_color = Color(0.16, 0.16, 0.3, 1)
+ambient_light_energy = 1.0
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.2, 0.18, 0.36, 1)
+fog_density = 0.006
+
+[sub_resource type="PlaneMesh" id="Driveway"]
+size = Vector2(5, 8)
+
+[sub_resource type="PlaneMesh" id="DeckWest"]
+size = Vector2(4, 8)
+
+[sub_resource type="PlaneMesh" id="DeckEast"]
+size = Vector2(10, 8)
+
+[sub_resource type="PlaneMesh" id="DeckBack"]
+size = Vector2(7, 0.8)
+
+[sub_resource type="PlaneMesh" id="DeckFront"]
+size = Vector2(7, 4.8)
+
+[sub_resource type="PlaneMesh" id="Water"]
+size = Vector2(7, 2.4)
+
+[sub_resource type="QuadMesh" id="BeachQuad"]
+size = Vector2(44, 16)
+
+[sub_resource type="QuadMesh" id="FireQuad"]
+size = Vector2(10, 8)
+
+[sub_resource type="BoxShape3D" id="WallX"]
+size = Vector3(0.5, 3, 8.5)
+
+[sub_resource type="BoxShape3D" id="WallZ"]
+size = Vector3(27, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="PoolShape"]
+size = Vector3(7, 2, 2.4)
+
+[sub_resource type="BoxShape3D" id="SuvShape"]
+size = Vector3(4.6, 2, 1.9)
+
+[node name="Slice" type="Node3D"]
+script = ExtResource("1_slice")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="SkyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, 35, 0)
+light_color = Color(0.56, 0.63, 1, 1)
+light_energy = 0.3
+shadow_enabled = true
+
+[node name="Deck" type="Node3D" parent="."]
+script = ExtResource("3_dressing")
+
+[node name="Driveway" type="MeshInstance3D" parent="Deck"]
+position = Vector3(2.5, 0, 0)
+mesh = SubResource("Driveway")
+script = ExtResource("2_surface")
+fallback_color = Color(0.3, 0.3, 0.33, 1)
+
+[node name="FloorWest" type="MeshInstance3D" parent="Deck"]
+position = Vector3(7, 0, 0)
+mesh = SubResource("DeckWest")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/marble.png"
+fallback_color = Color(0.93, 0.89, 0.82, 1)
+uv_tiles = Vector2(4, 8)
+
+[node name="FloorEast" type="MeshInstance3D" parent="Deck"]
+position = Vector3(21, 0, 0)
+mesh = SubResource("DeckEast")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/marble.png"
+fallback_color = Color(0.93, 0.89, 0.82, 1)
+uv_tiles = Vector2(10, 8)
+
+[node name="FloorBack" type="MeshInstance3D" parent="Deck"]
+position = Vector3(12.5, 0, -3.6)
+mesh = SubResource("DeckBack")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/marble.png"
+fallback_color = Color(0.93, 0.89, 0.82, 1)
+uv_tiles = Vector2(7, 0.8)
+
+[node name="FloorFront" type="MeshInstance3D" parent="Deck"]
+position = Vector3(12.5, 0, 1.6)
+mesh = SubResource("DeckFront")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/marble.png"
+fallback_color = Color(0.93, 0.89, 0.82, 1)
+uv_tiles = Vector2(7, 4.8)
+
+[node name="PoolWater" type="MeshInstance3D" parent="Deck"]
+position = Vector3(12.5, -0.35, -2)
+mesh = SubResource("Water")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/pool_water.png"
+fallback_color = Color(0.1, 0.75, 0.9, 1)
+emission = 1.5
+
+[node name="PoolGlow" type="OmniLight3D" parent="Deck"]
+position = Vector3(12.5, 0.4, -2)
+light_color = Color(0.3, 0.85, 1, 1)
+light_energy = 1.2
+omni_range = 5.0
+
+[node name="Bounds" type="StaticBody3D" parent="Deck"]
+
+[node name="West" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(-0.25, 1.5, 0)
+shape = SubResource("WallX")
+
+[node name="East" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(26.25, 1.5, 0)
+shape = SubResource("WallX")
+
+[node name="Back" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(13, 1.5, -4.25)
+shape = SubResource("WallZ")
+
+[node name="Front" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(13, 1.5, 4.25)
+shape = SubResource("WallZ")
+
+[node name="Pool" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(12.5, 1, -2)
+shape = SubResource("PoolShape")
+
+[node name="Suv" type="CollisionShape3D" parent="Deck/Bounds"]
+position = Vector3(2.4, 1, -2.2)
+shape = SubResource("SuvShape")
+
+[node name="Backdrops" type="Node3D" parent="."]
+
+[node name="Villa" type="Node3D" parent="Backdrops"]
+position = Vector3(11, 0, -8.5)
+script = ExtResource("4_prop")
+art_path = "res://assets/art/env/villa.png"
+art_width_m = 30.0
+kind = "villa"
+
+[node name="BeachBackdrop" type="MeshInstance3D" parent="Backdrops"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 26, 4.5, 16)
+mesh = SubResource("BeachQuad")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/beach_backdrop.png"
+placeholder_kind = "beach"
+unshaded = true
+transparent = true
+
+[node name="FireGlow" type="MeshInstance3D" parent="Backdrops"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 38, 2.5, 15.8)
+mesh = SubResource("FireQuad")
+script = ExtResource("2_surface")
+art_path = "res://assets/art/env/fire_glow.png"
+placeholder_kind = "fire"
+unshaded = true
+transparent = true
+draw_after = 1
+
+[node name="FireLight" type="OmniLight3D" parent="Backdrops"]
+position = Vector3(38, 2, 13.5)
+light_color = Color(1, 0.5, 0.15, 1)
+light_energy = 0.0
+omni_range = 14.0
+
+[node name="SUV" type="Node3D" parent="."]
+position = Vector3(2.4, 0, -2.2)
+script = ExtResource("4_prop")
+art_path = "res://assets/art/env/suv.png"
+art_width_m = 4.6
+kind = "suv"
+
+[node name="Headlights" type="SpotLight3D" parent="SUV"]
+position = Vector3(2.35, 0.9, 0)
+rotation_degrees = Vector3(0, -90, 0)
+light_color = Color(1, 0.97, 0.85, 1)
+light_energy = 0.0
+spot_range = 25.0
+spot_angle = 30.0
+
+[node name="Manikandan" type="Node3D" parent="."]
+position = Vector3(5.2, 0, -0.9)
+
+[node name="Sprite" type="Sprite3D" parent="Manikandan"]
+script = ExtResource("5_billboard")
+art_path = "res://assets/art/npc/manikandan.png"
+height_m = 1.72
+placeholder_kind = "manikandan"
+
+[node name="Advay" type="Node3D" parent="."]
+visible = false
+position = Vector3(5.6, 0, 0.3)
+
+[node name="Sprite" type="Sprite3D" parent="Advay"]
+script = ExtResource("5_billboard")
+art_path = "res://assets/art/npc/advay.png"
+height_m = 1.78
+placeholder_kind = "advay"
+
+[node name="Krishna" type="Node3D" parent="."]
+position = Vector3(15.5, 0, 0.8)
+
+[node name="Sprite" type="Sprite3D" parent="Krishna"]
+script = ExtResource("5_billboard")
+art_path = "res://assets/art/npc/krishna.png"
+height_m = 1.74
+placeholder_kind = "krishna"
+
+[node name="Hari" type="CharacterBody3D" parent="."]
+position = Vector3(7.5, 0, 1)
+motion_mode = 1
+script = ExtResource("6_hari")
+
+[node name="Collision" type="CollisionShape3D" parent="Hari"]
+
+[node name="Sprite" type="Sprite3D" parent="Hari"]
+script = ExtResource("5_billboard")
+art_path = "res://assets/art/hari/idle.png"
+height_m = 1.75
+placeholder_kind = "hari"
+variant = "idle"
+
+[node name="StateLabel" type="Label3D" parent="Hari"]
+position = Vector3(0, 2.0, 0)
+billboard = 1
+pixel_size = 0.004
+font_size = 40
+outline_size = 8
+text = "IDLE"
+
+[node name="KeysIcon" type="Sprite3D" parent="."]
+script = ExtResource("5_billboard")
+art_path = "res://assets/art/ui/keys.png"
+height_m = 0.22
+placeholder_kind = "keys"
+
+[node name="CameraRig" type="Node3D" parent="."]
+script = ExtResource("7_rig")
+target_path = NodePath("../Hari")
+
+[node name="Camera" type="Camera3D" parent="CameraRig"]
+current = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="HUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("8_hud")
+
+[node name="NotesToast" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("9_toast")
+
+[node name="Dialogue" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+mouse_filter = 2
+script = ExtResource("10_dialogue")
+
+[node name="Whiteout" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("12_white")
+
+[node name="ScreenCards" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("11_cards")

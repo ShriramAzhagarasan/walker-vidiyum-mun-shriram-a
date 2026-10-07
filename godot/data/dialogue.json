@@ -1,0 +1,257 @@
+{
+	"_note": "Lines from DIALOGUE.md (ids D1a-D8, K1, N1-N3, C1, E1). text = Tanglish, gloss = English (shown smaller, grey). Conversation/caption/clue keys are referenced by code; do not rename them. hari_state = IDLE, WALK, TALK, PHONE, NOTES, OVERHEAR, STARTLED, KEYS, WHITEOUT or RELIEF. Reused lines (no dedicated line in DIALOGUE.md yet): mani_overheard_again = D3, mani_keys_safe = D6c, mani_after_advay = D2a/D2b.",
+	"speakers": {
+		"hari": "Hari",
+		"hari_thought": "Hari (thinking)",
+		"amma": "Amma (phone)",
+		"manikandan": "Manikandan",
+		"advay": "Advay",
+		"krishna": "Krishna",
+		"notes": "Notes"
+	},
+	"conversations": {
+		"amma_call_first": [
+			{
+				"id": "D1a",
+				"speaker": "amma",
+				"text": "Hari, enga da irukka? Saaptiya?",
+				"gloss": "Hari, where are you? Did you eat?",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D1b",
+				"speaker": "hari",
+				"text": "Krishna veetla dhaan Ma. Padichittu irukom, naalaiku exam la.",
+				"gloss": "At Krishna's place, Ma. We're studying, the exam's tomorrow, right.",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D1c",
+				"speaker": "amma",
+				"text": "Seri, seekiram thoongu. Phone-a silent-la podadha.",
+				"gloss": "OK, sleep early. Don't put your phone on silent.",
+				"hari_state": "PHONE"
+			}
+		],
+		"amma_call_repeat": [
+			{
+				"id": "D8",
+				"speaker": "hari_thought",
+				"text": "Thirumba 8 mani…? Sattai en eerama irukku… pocket-la manal?",
+				"gloss": "Eight o'clock again…? Why is my shirt wet… sand in my pocket?",
+				"hari_state": "STARTLED"
+			},
+			{
+				"id": "D1a",
+				"speaker": "amma",
+				"text": "Hari, enga da irukka? Saaptiya?",
+				"gloss": "Hari, where are you? Did you eat?",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D1b",
+				"speaker": "hari",
+				"text": "Krishna veetla dhaan Ma. Padichittu irukom, naalaiku exam la.",
+				"gloss": "At Krishna's place, Ma. We're studying, the exam's tomorrow, right.",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D1c",
+				"speaker": "amma",
+				"text": "Seri, seekiram thoongu. Phone-a silent-la podadha.",
+				"gloss": "OK, sleep early. Don't put your phone on silent.",
+				"hari_state": "PHONE"
+			}
+		],
+		"mani_generic": [
+			{
+				"id": "D2a",
+				"speaker": "manikandan",
+				"text": "Thambi, party ulla dhaan. Inga enna pannuringa?",
+				"gloss": "The party's inside, boy. What are you doing out here?",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "D2b",
+				"speaker": "hari",
+				"text": "Summa dhaan anna, konjam kaathu vaanga.",
+				"gloss": "Nothing, anna, just getting some air.",
+				"hari_state": "TALK"
+			}
+		],
+		"mani_overhear": [
+			{
+				"id": "D3",
+				"speaker": "manikandan",
+				"text": "Selvam, sonna kelu da. Indha pakkam vaaradha. Ivanga ellam kudichitu irukaanga… Kadal Amma paathukuva. Seri, seri.",
+				"gloss": "Selvam, listen to me. Don't come to this side. They're all drinking… Kadal Amma will look after us. OK, OK.",
+				"hari_state": "OVERHEAR"
+			}
+		],
+		"mani_overheard_again": [
+			{
+				"id": "D3",
+				"speaker": "manikandan",
+				"text": "Selvam, sonna kelu da. Indha pakkam vaaradha. Ivanga ellam kudichitu irukaanga… Kadal Amma paathukuva. Seri, seri.",
+				"gloss": "Selvam, listen to me. Don't come to this side. They're all drinking… Kadal Amma will look after us. OK, OK.",
+				"hari_state": "OVERHEAR"
+			}
+		],
+		"mani_choice": [
+			{
+				"id": "D2a",
+				"speaker": "manikandan",
+				"text": "Thambi, party ulla dhaan. Inga enna pannuringa?",
+				"gloss": "The party's inside, boy. What are you doing out here?",
+				"hari_state": "TALK",
+				"choices": [
+					{
+						"id": "C1",
+						"label": "Ask about Selvam",
+						"action": "ask_selvam"
+					},
+					{
+						"id": "C1",
+						"label": "Just getting some air",
+						"action": "never_mind"
+					}
+				]
+			}
+		],
+		"mani_ask_selvam": [
+			{
+				"id": "D5",
+				"speaker": "hari",
+				"text": "Anna… Selvam epdi irukkaan? Unga nephew dhaane?",
+				"gloss": "Anna… how is Selvam? He's your nephew, right?",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "D6a",
+				"speaker": "manikandan",
+				"text": "…Ungalukku eppadi theriyum? Indha party-la yaarum en peru kooda kekkala, thambi.",
+				"gloss": "…How do you know? Nobody at this party has even asked my name, boy.",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "D6b",
+				"speaker": "hari",
+				"text": "Advay sir keys kettaa, kudukaadheenga. Please anna.",
+				"gloss": "If Advay sir asks for the keys, don't give them. Please, anna.",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "D6c",
+				"speaker": "manikandan",
+				"text": "Seri thambi. Saavi en kitta dhaan irukkum.",
+				"gloss": "OK, boy. The keys stay with me.",
+				"hari_state": "TALK"
+			}
+		],
+		"mani_never_mind": [
+			{
+				"id": "D2b",
+				"speaker": "hari",
+				"text": "Summa dhaan anna, konjam kaathu vaanga.",
+				"gloss": "Nothing, anna, just getting some air.",
+				"hari_state": "TALK"
+			}
+		],
+		"mani_keys_safe": [
+			{
+				"id": "D6c",
+				"speaker": "manikandan",
+				"text": "Seri thambi. Saavi en kitta dhaan irukkum.",
+				"gloss": "OK, boy. The keys stay with me.",
+				"hari_state": "TALK"
+			}
+		],
+		"mani_after_advay": [
+			{
+				"id": "D2a",
+				"speaker": "manikandan",
+				"text": "Thambi, party ulla dhaan. Inga enna pannuringa?",
+				"gloss": "The party's inside, boy. What are you doing out here?",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "D2b",
+				"speaker": "hari",
+				"text": "Summa dhaan anna, konjam kaathu vaanga.",
+				"gloss": "Nothing, anna, just getting some air.",
+				"hari_state": "TALK"
+			}
+		],
+		"krishna_ambient": [
+			{
+				"id": "K1",
+				"speaker": "krishna",
+				"text": "Machan, vandhutiya! Paaru da, idhu dhaan life.",
+				"gloss": "Machan, you came! Look at this, this is life.",
+				"hari_state": "TALK"
+			}
+		]
+	},
+	"captions": {
+		"advay_takes_keys": [
+			{
+				"id": "D4a",
+				"speaker": "advay",
+				"text": "Anna, keys kudunga. Morning naane drive pannikaren, bro. Neenga poi thoongunga.",
+				"gloss": "Anna, give me the keys. I'll drive myself in the morning, bro. You go sleep."
+			},
+			{
+				"id": "D4b",
+				"speaker": "manikandan",
+				"text": "Sir, aana…",
+				"gloss": "Sir, but…"
+			},
+			{
+				"id": "D4c",
+				"speaker": "advay",
+				"text": "Chill bro. Naan paathukaren.",
+				"gloss": "Chill, bro. I'll handle it."
+			}
+		],
+		"advay_refused": [
+			{
+				"id": "D7a",
+				"speaker": "advay",
+				"text": "Anna, keys.",
+				"gloss": "Anna, the keys."
+			},
+			{
+				"id": "D7b",
+				"speaker": "manikandan",
+				"text": "Sir, kaalaila naane ottaren. Boss order.",
+				"gloss": "Sir, I'll drive in the morning myself. Boss's orders."
+			},
+			{
+				"id": "D7c",
+				"speaker": "advay",
+				"text": "Whatever, bro.",
+				"gloss": ""
+			}
+		]
+	},
+	"clues": {
+		"KNOW_SELVAM": {
+			"id": "N1",
+			"text": "Mani anna's nephew = Selvam. From the village. Scared about tonight."
+		},
+		"KNOW_KEYS": {
+			"id": "N2",
+			"text": "1:40 AM: Advay took the car keys. 'I'll drive myself in the morning.'"
+		},
+		"KEYS_WITH_MANI": {
+			"id": "N3",
+			"text": "Mani anna kept the keys. Advay can't drive."
+		}
+	},
+	"end_card": {
+		"id": "E1",
+		"title": "…but someone is missing.",
+		"tamil": "…ஆனால் யாரோ காணவில்லை.",
+		"hint": "R  restart from loop 1      Esc  quit"
+	}
+}
