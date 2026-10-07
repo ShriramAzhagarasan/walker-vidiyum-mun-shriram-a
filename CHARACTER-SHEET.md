@@ -95,5 +95,36 @@ Contrast ratios against the environment (WCAG formula, computed by the script):
 
 ---
 
-## Revision 2: generated reference and poses
-*(to be added after generation, with links to ASSET-LOG rows; revision 1 above stays as committed)*
+## Revision 2 (2026-10-07): generated reference and poses
+*Added after generation; revision 1 above is unchanged. All images: FLUX.2 [klein] 4B, local, Apache 2.0. Rows in [ASSET-LOG.md](ASSET-LOG.md).*
+
+**Reference (chosen by Shriram):** `design/character/gen/hari-ref.png` (CHAR-HARI-REF s102, candidate B in `design/gen-contact/CHAR-HARI-REF.jpg`). Shriram's reason: *"that kind of style, which matches life is strange kind of game like telltale style."* Every pose below was made with Klein's reference-edit pipeline from this one image.
+
+![generated poses with collision overlay](design/character/gen/poses-generated.jpg)
+
+| State | Accepted image | Notes against the rules above |
+|---|---|---|
+| IDLE | IDLE s301 | Matches the reference. Also used as the walk cycle's passing frame. |
+| WALK | WALK s302 (walk_1), WALK-B s322 (walk_3) | The generated "passing" frames came back as strides (rejected), so IDLE serves as the passing frame. Stride reaches past the capsule (fair: no hazards). |
+| TALK | TALK s301 | One open hand; the two-hand version muddied the 208 px silhouette. |
+| PHONE | PHONE s301 | s302 showed **two phones** (caught in Shriram's playtest screenshot) and was replaced. Elbow out per the F5 rule. |
+| NOTES | NOTES s301 | NOTES is reserved for "a clue was saved" (it's the visual twin of the chime). |
+| OVERHEAR | OVERHEAR rev2 s312 | Rev1 copied PHONE's silhouette (F5). Rev2 has no phone, but **stays close to IDLE** (limitation). |
+| STARTLED | STARTLED s302 | Dark damp patches on the shirt (story: he wakes damp). |
+| KEYS | KEYS s301 | Gold fob visible at 300 px. |
+| WHITEOUT | WHITEOUT rev2 s311 | Rev1 had a painted sun-flare; rev2 is clean. |
+| RELIEF | RELIEF s301 | The widest pose: elbows past the capsule, but held only at the end with no movement. |
+
+**Consistency check against the rules:**
+- **Holds in every state:**
+  - (1) proportions, measured as the same capsule fit;
+  - (2) face and hair;
+  - (3) the maroon and cream check, half sleeves, untucked;
+  - (4) dark jeans and blue rubber chappals;
+  - (5) cel shading and outline;
+  - (6) the phone and the key fob.
+- **Drift found:** the check scale varies slightly between images, visible at full size and not at 300 px. That's accepted, judged at game size.
+
+**Silhouette at game size (generated art):** `design/character/gen/silhouette-generated.png`. IDLE and OVERHEAR are nearly the same silhouette (the F5 limitation). The other 8 states read distinctly.
+
+**In engine:** `evidence/shots/state_<state>_{right,left}.png`. Each state is shown facing right (as drawn) and left (runtime `flip_h`). The sprites are tinted by the scene's light (night, string lights, dawn), so they don't glow against the dark deck.

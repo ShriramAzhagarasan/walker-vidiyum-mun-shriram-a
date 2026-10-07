@@ -41,69 +41,6 @@
   "reason": "not chosen; Shriram picked B (Claude's note: Z-Image faces front, not the 3/4 view the sheet specifies; flatter vector style; mid-blue jeans)",
   "used": "\u2014"
  },
- "gen/raw/audio/SFX-PHONE-BUZZ_sao_s11.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-PHONE-BUZZ_sao_s22.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-PHONE-BUZZ_sao_s33.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-CLUE_sao_s11.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-CLUE_sao_s22.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-CLUE_sao_s33.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-KEYS_sao_s11.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-KEYS_sao_s22.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
- "gen/raw/audio/SFX-KEYS_sao_s33.wav": {
-  "outcome": "rejected",
-  "by": "Claude (technical)",
-  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
-  "used": "\u2014",
-  "edits": "moved to gen/raw/audio/failed_silent/"
- },
  "gen/raw/CHAR-HARI-OVERHEAR_klein_s301.png": {
   "outcome": "rejected",
   "by": "Claude (spec check)",
@@ -251,5 +188,434 @@
   "by": "Shriram (playtest 2) / Claude",
   "reason": "replaced by rev2: painted deck railing doubled the 3D railing; 'beach, fence\u2026 not up to the mark'",
   "used": "was beach_backdrop.png until 13:50"
+ },
+ "gen/raw/audio/failed_silent/SFX-PHONE-BUZZ_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-PHONE-BUZZ_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-PHONE-BUZZ_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-CLUE_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-CLUE_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-CLUE_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-KEYS_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-KEYS_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/audio/failed_silent/SFX-KEYS_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (technical)",
+  "reason": "pure silence: all-NaN output from the broken sde sampler (final_sigmas_type=sigma_min); regenerated with the EDM DPM-Solver++ scheduler",
+  "used": "\u2014",
+  "edits": "moved to gen/raw/audio/failed_silent/"
+ },
+ "gen/raw/CHAR-HARI-IDLE_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "matches the reference; calm, readable",
+  "used": "godot/assets/art/hari/idle.png, walk_2.png, walk_4.png (passing frames) (panels 2, 3)"
+ },
+ "gen/raw/CHAR-HARI-IDLE_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "near-identical alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WALK_klein_s302.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "longer stride reads as walking at 300 px",
+  "used": "godot/assets/art/hari/walk.png, walk_1.png (panel 3)"
+ },
+ "gen/raw/CHAR-HARI-WALK_klein_s301.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "shorter stride",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WALK_test_klein_s300.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "pipeline test of the edit model from reference B (kept the face, check and chappals); not used",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WALK-B_klein_s321.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "asked for the opposite leg forward; got a stride close to WALK",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-TALK_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "one open-hand gesture: a clearer silhouette than two hands",
+  "used": "godot/assets/art/hari/talk.png (panels 3, 8)"
+ },
+ "gen/raw/CHAR-HARI-TALK_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "two-hand gesture muddies the silhouette at 208 px",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-NOTES_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "head down, phone at chest, as the sheet specifies",
+  "used": "godot/assets/art/hari/notes.png (panel 4)"
+ },
+ "gen/raw/CHAR-HARI-NOTES_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "near-identical alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-OVERHEAR_rev2_klein_s312.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "no phone (F5 fix); head turn most visible of the three; still close to IDLE (limitation)",
+  "used": "godot/assets/art/hari/overhear.png (panel 4)"
+ },
+ "gen/raw/CHAR-HARI-OVERHEAR_rev2_klein_s311.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "head turn too subtle",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-OVERHEAR_rev2_klein_s313.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "head turn too subtle",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-STARTLED_klein_s302.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "hand on the damp chest, shoulders up: reads as waking in shock",
+  "used": "godot/assets/art/hari/startled.png (panel 7)"
+ },
+ "gen/raw/CHAR-HARI-STARTLED_klein_s301.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "flung arm widens the silhouette past the capsule more than needed",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-KEYS_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "keys raised and visible at 300 px",
+  "used": "godot/assets/art/hari/keys.png (panel 8)"
+ },
+ "gen/raw/CHAR-HARI-KEYS_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "keys held lower, less readable",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WHITEOUT_rev2_klein_s311.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "no painted flare (R3 fix); forearm shields the eyes",
+  "used": "godot/assets/art/hari/whiteout.png (panel 6)"
+ },
+ "gen/raw/CHAR-HARI-WHITEOUT_rev2_klein_s312.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; weaker recoil",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-WHITEOUT_rev2_klein_s313.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; weaker recoil",
+  "used": "\u2014"
+ },
+ "gen/raw/CHAR-HARI-RELIEF_klein_s301.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "hands on head, chin up",
+  "used": "godot/assets/art/hari/relief.png (panel 9)"
+ },
+ "gen/raw/CHAR-HARI-RELIEF_klein_s302.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "near-identical alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-MANI-IDLE_klein_s401.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "white rolled-sleeve shirt, towel, moustache: matches the story bible",
+  "used": "godot/assets/art/npc/manikandan.png (panels 3, 5, 8)"
+ },
+ "gen/raw/NPC-MANI-IDLE_klein_s402.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-MANI-IDLE_klein_s403.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-MANI-PHONE_from401_klein_s501.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "derived from the accepted Manikandan (s401), so he stays the same person",
+  "used": "godot/assets/art/npc/manikandan_phone.png (panel 4)"
+ },
+ "gen/raw/NPC-MANI-PHONE_from402_klein_s501.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "derived from a rejected base",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-MANI-PHONE_from403_klein_s501.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "derived from a rejected base",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-ADVAY_rev2_klein_s411.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "the speaker finally reads at game size (story bible: 'carries a Bluetooth speaker')",
+  "used": "godot/assets/art/npc/advay.png (panel 5)"
+ },
+ "gen/raw/NPC-ADVAY_klein_s401.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "speaker came out phone-sized; doesn't read",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-ADVAY_klein_s402.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "speaker came out phone-sized; doesn't read",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-ADVAY_klein_s403.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "speaker came out phone-sized; doesn't read",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-KRISHNA_klein_s401.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "bright party shirt contrasts with Hari's",
+  "used": "godot/assets/art/npc/krishna.png (panel 2)"
+ },
+ "gen/raw/NPC-KRISHNA_klein_s402.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/NPC-KRISHNA_klein_s403.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-MARBLE_klein_s601.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "clean veins; grout lines added on the edges for tiling",
+  "used": "godot/assets/art/env/marble.png (panels 2, 3, 8)"
+ },
+ "gen/raw/ENV-MARBLE_klein_s602.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-FIRE_klein_s601.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "bonfire beside the boat; black background converted to alpha",
+  "used": "godot/assets/art/env/fire_glow.png (panels 1, 9)"
+ },
+ "gen/raw/ENV-FIRE_klein_s602.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "the tent-like sail reads as a structure fire",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-SUV_klein_s602.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "plain grille, no badge (no-brands rule)",
+  "used": "godot/assets/art/env/suv.png (panels 3, 5, 8)"
+ },
+ "gen/raw/ENV-VILLA_klein_s601.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "rev1 alternate; replaced by rev2 anyway",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-BEACH_klein_s602.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "rev1 alternate; replaced by rev2 anyway",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/MUS-PARTY_musicgen_s8.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "8-bar loop seam step 0.035 vs typical 0.032 (clean)",
+  "used": "godot/assets/audio/music/party_loop.ogg (panels 1, 2, 3, 5, 7)"
+ },
+ "gen/raw/audio/MUS-PARTY_musicgen_s7.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "seam step 2x the typical sample step (click risk)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/MUS-GAANA_musicgen_s7.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "8-bar loop seam step 0.006 vs typical 0.007 (clean); whether it sounds like Chennai is Shriram's call (F8)",
+  "used": "godot/assets/audio/music/gaana_loop.ogg (panels 1, 7) + intro"
+ },
+ "gen/raw/audio/MUS-GAANA_musicgen_s8.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate; seam step slightly above typical",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s11.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "two distinct energy pulses (a buzz pattern) (chosen by measured descriptors; Claude can't listen; Shriram's ears decide)",
+  "used": "godot/assets/audio/sfx/phone_buzz.ogg (panels 2, 7)"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-PHONE-BUZZ_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s11.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "strongest attack then decay (bell-like) (chosen by measured descriptors; Claude can't listen; Shriram's ears decide)",
+  "used": "godot/assets/audio/sfx/clue_saved.ogg (panels 4, 5, 8)"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-CLUE_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-KEYS_sao_s33.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "most high-frequency energy (jingle) (chosen by measured descriptors; Claude can't listen; Shriram's ears decide)",
+  "used": "godot/assets/audio/sfx/keys_exchanged.ogg (panels 5, 8)"
+ },
+ "gen/raw/audio/SFX-DAWN-CRASH_sao_s11.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "energy builds then drops: a horn swell into a screech (chosen by measured descriptors; Claude can't listen; Shriram's ears decide)",
+  "used": "godot/assets/audio/sfx/dawn_crash.ogg (panel 6) + intro panel 4"
+ },
+ "gen/raw/audio/SFX-DAWN-CRASH_sao_s22.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-DAWN-CRASH_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-SAFE-DAWN_sao_s11.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
+ },
+ "gen/raw/audio/SFX-SAFE-DAWN_sao_s22.wav": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "noise texture of surf, steady bed (chosen by measured descriptors; Claude can't listen; Shriram's ears decide)",
+  "used": "godot/assets/audio/sfx/safe_dawn.ogg (panel 9)"
+ },
+ "gen/raw/audio/SFX-SAFE-DAWN_sao_s33.wav": {
+  "outcome": "rejected",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "alternate (descriptor-based provisional pick)",
+  "used": "\u2014"
  }
 }
