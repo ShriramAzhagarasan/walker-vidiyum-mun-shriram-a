@@ -215,5 +215,41 @@
   "by": "Claude (provisional, pending Shriram)",
   "reason": "alternate; the other seed fit the story better (s702 arrival hides Krishna)",
   "used": "\u2014"
+ },
+ "gen/raw/ENV-VILLA_rev2_klein_s611.png": {
+  "outcome": "accepted",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "rev2 after playtest 2: no painted pool or floor (rev1's duplicated the 3D pool), balcony, bougainvillea, interior lamps, 2048 px",
+  "used": "godot/assets/art/env/villa.png (panels 2, 3)"
+ },
+ "gen/raw/ENV-BEACH_rev2_klein_s611.png": {
+  "outcome": "edited",
+  "by": "Claude (provisional, pending Shriram)",
+  "reason": "rev2: no painted railing (rev1's doubled the 3D railing); rock shrine with lamp, fence, fishermen's fire, boats",
+  "used": "godot/assets/art/env/beach_backdrop.png (panels 1, 6, 9)"
+ },
+ "gen/raw/ENV-VILLA_rev2_klein_s612.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional)",
+  "reason": "alternate; s611's symmetric facade frames the deck better",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-BEACH_rev2_klein_s612.png": {
+  "outcome": "rejected",
+  "by": "Claude (provisional)",
+  "reason": "alternate; the rock is small and plain (no lamp visible at game size)",
+  "used": "\u2014"
+ },
+ "gen/raw/ENV-VILLA_klein_s602.png": {
+  "outcome": "rejected",
+  "by": "Shriram (playtest 2) / Claude",
+  "reason": "replaced by rev2: painted pool and lights duplicated the 3D deck; 'house\u2026 not up to the mark'",
+  "used": "was villa.png until 13:50"
+ },
+ "gen/raw/ENV-BEACH_klein_s601.png": {
+  "outcome": "rejected",
+  "by": "Shriram (playtest 2) / Claude",
+  "reason": "replaced by rev2: painted deck railing doubled the 3D railing; 'beach, fence\u2026 not up to the mark'",
+  "used": "was beach_backdrop.png until 13:50"
  }
 }

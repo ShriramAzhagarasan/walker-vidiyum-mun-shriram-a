@@ -28,6 +28,27 @@ func _ready() -> void:
 	_box(Vector3(-1.0, 0.0, -9.0), Vector3(5.0, 2.6, -8.6), STUCCO, 0.8)
 	for z in [-5.0, 3.6]:
 		_lamp(Vector3(-0.45, 2.3, z))
+	# neighbouring coconut groves beyond the wall: dark silhouette masses so the gate view has depth, not sky
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 7
+	for i in 14:
+		var z := -9.0 + i * 1.2
+		var h := rng.randf_range(4.0, 7.5)
+		_box(Vector3(-3.6 - rng.randf() * 1.5, 0.0, z), Vector3(-3.3 - rng.randf() * 1.5, h, z + 0.25), Color("15130f"), 1.0)
+		_crown(Vector3(-3.5 - rng.randf() * 1.5, h, z + 0.12), rng.randf_range(1.2, 1.8))
+
+func _crown(pos: Vector3, r: float) -> void:
+	var mi := MeshInstance3D.new()
+	var s := SphereMesh.new()
+	s.radius = r
+	s.height = r * 0.9
+	mi.mesh = s
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color("0f1a12")
+	mat.roughness = 1.0
+	mi.material_override = mat
+	mi.position = pos
+	add_child(mi)
 
 func _box(a: Vector3, b: Vector3, color: Color, roughness: float) -> void:
 	var mi := MeshInstance3D.new()

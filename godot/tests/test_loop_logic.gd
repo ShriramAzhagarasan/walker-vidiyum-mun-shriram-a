@@ -81,7 +81,8 @@ func run() -> bool:
 	await finish_dialogue()
 	stand_near("krishna", 14.0)
 	await tap(KEY_E)
-	check("krishna ambient line, no flags touched", story.conversation_id == "krishna_ambient" and not ls.flags.KEYS_SAFE, story.conversation_id)
+	var krishna_id := "krishna_ambient_repeat" if ls.loop_index >= 2 else "krishna_ambient"   # loop 2+: Hari notices the repeat
+	check("krishna ambient line for this loop, no flags touched", story.conversation_id == krishna_id and not ls.flags.KEYS_SAFE, story.conversation_id)
 	await finish_dialogue()
 	stand_near("", 7.0)
 	await tap(KEY_E)
@@ -98,8 +99,13 @@ func run() -> bool:
 			ids.append(line.id)
 	for clue in data.clues.values():
 		ids.append(clue.id)
-	var wanted := ["D1a", "D1b", "D1c", "D8", "K1", "D2a", "D2b", "D3", "N1", "D4a", "D4b", "D4c", "N2", "D5", "D6a", "D6b", "D6c", "N3", "D7a", "D7b", "D7c"]
+	var wanted := ["D1a", "D1b", "D1c", "D8", "D8b", "D8c", "D9a", "D9b", "D9c", "D9d", "K1", "K2", "K3", "D3b", "D4d", "D6d", "D2a", "D2b", "D3", "N1", "D4a", "D4b", "D4c", "N2", "D5", "D6a", "D6b", "D6c", "N3", "D7a", "D7b", "D7c"]
 	check("dialogue.json: every DIALOGUE.md id present, no PLACEHOLDER", wanted.all(func(i: String) -> bool: return i in ids) and not raw.contains("PLACEHOLDER"), wanted.filter(func(i: String) -> bool: return not i in ids))
 	check("dialogue.json: C1 choice + E1 end card with Tamil line", data.conversations.mani_choice[0].choices[0].label == "Ask about Selvam" and data.end_card.tamil == "\u2026\u0b86\u0ba9\u0bbe\u0bb2\u0bcd \u0baf\u0bbe\u0bb0\u0bcb \u0b95\u0bbe\u0ba3\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8.", data.end_card)
-	check("loop 2 opens with D8 (Hari's thought) before Amma's call", data.conversations.amma_call_repeat[0].id == "D8" and data.conversations.amma_call_repeat[1].id == "D1a", data.conversations.amma_call_repeat[0].id)
+	# Revised 2026-10-07 (Shriram, playtest 2): loop 2 must not replay loop 1's call. Hari wakes in shock
+	# (thoughts D8-D8c), Amma repeats her exact first line, Hari reacts to the repetition (D9a), then lies again.
+	var rep: Array = data.conversations.amma_call_repeat.map(func(l: Dictionary) -> String: return l.id)
+	var first: Array = data.conversations.amma_call_first.map(func(l: Dictionary) -> String: return l.id)
+	check("loop 2 opens with Hari's thought (D8) before Amma's first line D1a", rep[0] == "D8" and rep.find("D1a") > 0 and rep.slice(0, rep.find("D1a")).all(func(i: String) -> bool: return i.begins_with("D8")), rep)
+	check("loop 2 call differs from loop 1: Hari reacts to the repeated words (D9a after D1a)", rep != first and rep.find("D9a") == rep.find("D1a") + 1, rep)
 	return true

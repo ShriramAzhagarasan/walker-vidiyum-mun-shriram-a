@@ -88,7 +88,7 @@ func press_interact() -> void:
 			if topic != "":
 				start_conversation(topic)
 		"krishna":
-			start_conversation("krishna_ambient")
+			start_conversation("krishna_ambient_repeat" if _ls().loop_index >= 2 else "krishna_ambient")
 
 func move_choice(step: int) -> void:
 	var choices := current_choices()

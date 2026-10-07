@@ -27,3 +27,23 @@
 | D7b | | Manikandan | "Sir, kaalaila naane ottaren. Boss order." | "Sir, I'll drive in the morning myself. Boss's orders." |
 | D7c | | Advay | "Whatever, bro." | |
 | E1 | End card | — | "…but someone is missing." / "…ஆனால் யாரோ காணவில்லை." | |
+
+## Revision 2 (2026-10-07): loop 2 is not a replay
+*After Shriram's playtest 2: "in loop 2 the dialogues seem repeated, since he's in shock of what happenend, shouldn't he feel like why is this happening again". Drafted by Claude; Shriram reviews.* **Amma's words repeat exactly** (that's the loop); **Hari's reactions don't.**
+
+| ID | When | Speaker | Line (Tanglish) | English |
+|---|---|---|---|---|
+| D8 | Loop 2 wake, 8:00 PM | Hari (thought) | "Thirumba 8 mani…?" | "Eight o'clock… again?" |
+| D8b | | Hari (thought) | "Andha horn sattham… apram verum vellai. Adhu kanava?" | "That horn… then nothing but white. Was that a dream?" |
+| D8c | | Hari (thought) | "Sattai en eerama irukku…? Pocket-la manal?" | "Why is my shirt wet…? Sand in my pocket?" |
+| D1a | | Amma | (identical to loop 1) "Hari, enga da irukka? Saaptiya?" | |
+| D9a | | Hari | "Amma… nee… idhe dhaan ippo dhaan sonna…" | "Amma… you… you just said this exact thing…" |
+| D9b | | Amma | "Enna da olarura? Saaptiya illaya?" | "What are you rambling about? Did you eat or not?" |
+| D9c | | Hari | "…Krishna veetla dhaan Ma. Padikkirom." | "…At Krishna's place, Ma. We're studying." (the same lie, quieter) |
+| D1c | | Amma | (identical to loop 1) | |
+| D9d | | Hari (thought) | "Same call. Same words. Indha raathiri thirumba nadakkudhu… aana enakku ellame nyabagam irukku. Notes-um irukku." | "Same call. Same words. This night is happening again… but I remember everything. My notes are still here." |
+| K2 | Loop 2, after Krishna's K1 | Hari | "…Machan, nee idhe dhaan sonna. Word for word." | "…Machan, you said exactly this. Word for word." |
+| K3 | | Krishna | "Enna da, adhukulla adichitiya? Chill pannu!" | "What, already drunk? Chill!" |
+| D3b | Talking to Manikandan again after the overheard call | Manikandan | "Onnum illa thambi. Veetla oru chinna prachanai." | "It's nothing, boy. A small problem at home." |
+| D4d | Talking to Manikandan after Advay took the keys | Manikandan | "Sir saavi vaangittaaru. Naan enna panna mudiyum, thambi? Naan driver dhaane." | "Sir took the keys. What can I do, boy? I'm only the driver." |
+| D6d | Talking to Manikandan after he agreed to keep the keys | Manikandan | "Saavi en kitta dhaan irukku, thambi. Kavalai padaadheenga." | "The keys are with me, boy. Don't worry." |

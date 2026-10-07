@@ -15,7 +15,7 @@ const Whiteout = preload("res://ui/whiteout.gd")
 
 const HARI_START := Vector3(7.5, 0, 1.0)
 const ADVAY_AT_CAR := Vector3(6.5, 0, -0.5)        # beside Manikandan, not in front of him (seen overlapping in shot p05)
-const ADVAY_ON_DECK := Vector3(12.0, 0, 2.2)
+const ADVAY_ON_DECK := Vector3(17.0, 0, -0.6)        # far side of the deck, not through Hari (playtest 2 screenshot)
 const ADVAY_LEAVES_CAR_AFTER := 12.0       ## game minutes after 1:40
 const KEYS_MOVE_SECONDS := 0.6
 const CRASH_FLASH_SECONDS := 1.4
@@ -26,7 +26,7 @@ const SKY_KEYS := [
 	[1290.0, Color("0b0a2a"), Color("1d2055"), Color("100f26"), Color("7f8fe0"), 0.08],
 	[1680.0, Color("0b0a2a"), Color("1d2055"), Color("100f26"), Color("7f8fe0"), 0.08],
 	[1740.0, Color("23235e"), Color("6b4a7d"), Color("3a3058"), Color("b090c0"), 0.3],
-	[1775.0, Color("5a4a8a"), Color("e0897a"), Color("6a4c62"), Color("ffb090"), 0.5],
+	[1775.0, Color("4a4682"), Color("c98a86"), Color("4c4458"), Color("f0b8a0"), 0.32],
 	[1795.0, Color("e98f9a"), Color("ffc477"), Color("a07068"), Color("ffc890"), 0.8],
 ]
 const SUNRISE := [Color("ffb38a"), Color("ffe6a8"), Color("c09080"), Color("fff0d0"), 1.4]
@@ -166,6 +166,7 @@ func _update_lighting() -> void:
 	var m: float = LoopState.clock_minutes
 	var key := Vector2(snappedf(m, 0.5), snappedf(sunrise, 0.02))
 	if key == _lit_key:
+		_tint_characters(m)
 		return                                  # sky material is costly to update; only on change
 	_lit_key = key
 	var c: Array = SKY_KEYS[0].duplicate()
@@ -183,7 +184,8 @@ func _update_lighting() -> void:
 	var sky_mat := env.sky.sky_material as ProceduralSkyMaterial
 	sky_mat.sky_top_color = c[1]
 	sky_mat.sky_horizon_color = c[2]
-	sky_mat.ground_horizon_color = c[2]
+	sky_mat.ground_horizon_color = Color("0c0b16")            # below the horizon reads as dark land, never a flat colour field
+	sky_mat.ground_bottom_color = Color("07070d")
 	env.ambient_light_color = c[3]
 	env.fog_light_color = c[2].darkened(0.3)
 	sky_light.light_color = c[4]
@@ -193,3 +195,16 @@ func _update_lighting() -> void:
 	var glow := clampf((m - LoopState.FIRE_GLOW_TIME) / 20.0, 0.0, 1.0)
 	fire_glow.set_tint(Color(1, 1, 1, glow))
 	fire_light.light_energy = glow * 4.0
+	_tint_characters(m)
+
+## Characters are unshaded billboards (the cel colours stay true), so the scene's light is applied as a tint:
+## cool and dim at night, warm under the deck's string lights, warm-neutral at dawn. Playtest 2: they glowed.
+func _tint_characters(m: float) -> void:
+	var night := Color(0.74, 0.75, 0.88)
+	var dawn := Color(1.0, 0.93, 0.88)
+	var t_dawn := clampf((m - 1740.0) / 60.0, 0.0, 1.0)
+	for pair in [[hari, hari.get_node("Sprite")], [manikandan, manikandan_sprite], [advay, advay.get_node("Sprite")], [krishna, krishna.get_node("Sprite")]]:
+		var x: float = pair[0].global_position.x
+		var warm := smoothstep(4.0, 6.0, x) * (1.0 - smoothstep(19.0, 21.0, x))   # under the string lights
+		var lit := night.lerp(Color(1.0, 0.94, 0.84), warm * 0.85)
+		pair[1].modulate = lit.lerp(dawn, t_dawn).lerp(Color.WHITE, sunrise)

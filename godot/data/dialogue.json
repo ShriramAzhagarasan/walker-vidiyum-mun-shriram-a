@@ -1,5 +1,5 @@
 {
-	"_note": "Lines from DIALOGUE.md (ids D1a-D8, K1, N1-N3, C1, E1). text = Tanglish, gloss = English (shown smaller, grey). Conversation/caption/clue keys are referenced by code; do not rename them. hari_state = IDLE, WALK, TALK, PHONE, NOTES, OVERHEAR, STARTLED, KEYS, WHITEOUT or RELIEF. Reused lines (no dedicated line in DIALOGUE.md yet): mani_overheard_again = D3, mani_keys_safe = D6c, mani_after_advay = D2a/D2b.",
+	"_note": "Lines from DIALOGUE.md (ids D1a-D8, K1, N1-N3, C1, E1). text = Tanglish, gloss = English (shown smaller, grey). Conversation/caption/clue keys are referenced by code; do not rename them. hari_state = IDLE, WALK, TALK, PHONE, NOTES, OVERHEAR, STARTLED, KEYS, WHITEOUT or RELIEF. Loop-2 lines D8b-D9d, K2-K3 and gap lines D3b, D4d, D6d added 2026-10-07 after Shriram's playtest 2 ('in loop 2 the dialogues seem repeated, since he's in shock…').",
 	"speakers": {
 		"hari": "Hari",
 		"hari_thought": "Hari (thinking)",
@@ -37,8 +37,22 @@
 			{
 				"id": "D8",
 				"speaker": "hari_thought",
-				"text": "Thirumba 8 mani…? Sattai en eerama irukku… pocket-la manal?",
-				"gloss": "Eight o'clock again…? Why is my shirt wet… sand in my pocket?",
+				"text": "Thirumba 8 mani…?",
+				"gloss": "Eight o'clock… again?",
+				"hari_state": "STARTLED"
+			},
+			{
+				"id": "D8b",
+				"speaker": "hari_thought",
+				"text": "Andha horn sattham… apram verum vellai. Adhu kanava?",
+				"gloss": "That horn… then nothing but white. Was that a dream?",
+				"hari_state": "STARTLED"
+			},
+			{
+				"id": "D8c",
+				"speaker": "hari_thought",
+				"text": "Sattai en eerama irukku…? Pocket-la manal?",
+				"gloss": "Why is my shirt wet…? Sand in my pocket?",
 				"hari_state": "STARTLED"
 			},
 			{
@@ -49,10 +63,24 @@
 				"hari_state": "PHONE"
 			},
 			{
-				"id": "D1b",
+				"id": "D9a",
 				"speaker": "hari",
-				"text": "Krishna veetla dhaan Ma. Padichittu irukom, naalaiku exam la.",
-				"gloss": "At Krishna's place, Ma. We're studying, the exam's tomorrow, right.",
+				"text": "Amma… nee… idhe dhaan ippo dhaan sonna…",
+				"gloss": "Amma… you… you just said this exact thing…",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D9b",
+				"speaker": "amma",
+				"text": "Enna da olarura? Saaptiya illaya?",
+				"gloss": "What are you rambling about? Did you eat or not?",
+				"hari_state": "PHONE"
+			},
+			{
+				"id": "D9c",
+				"speaker": "hari",
+				"text": "…Krishna veetla dhaan Ma. Padikkirom.",
+				"gloss": "…At Krishna's place, Ma. We're studying.",
 				"hari_state": "PHONE"
 			},
 			{
@@ -61,6 +89,13 @@
 				"text": "Seri, seekiram thoongu. Phone-a silent-la podadha.",
 				"gloss": "OK, sleep early. Don't put your phone on silent.",
 				"hari_state": "PHONE"
+			},
+			{
+				"id": "D9d",
+				"speaker": "hari_thought",
+				"text": "Same call. Same words. Indha raathiri thirumba nadakkudhu… aana enakku ellame nyabagam irukku. Notes-um irukku.",
+				"gloss": "Same call. Same words. This night is happening again… but I remember everything. My notes are still here.",
+				"hari_state": "IDLE"
 			}
 		],
 		"mani_generic": [
@@ -90,11 +125,11 @@
 		],
 		"mani_overheard_again": [
 			{
-				"id": "D3",
+				"id": "D3b",
 				"speaker": "manikandan",
-				"text": "Selvam, sonna kelu da. Indha pakkam vaaradha. Ivanga ellam kudichitu irukaanga… Kadal Amma paathukuva. Seri, seri.",
-				"gloss": "Selvam, listen to me. Don't come to this side. They're all drinking… Kadal Amma will look after us. OK, OK.",
-				"hari_state": "OVERHEAR"
+				"text": "Onnum illa thambi. Veetla oru chinna prachanai.",
+				"gloss": "It's nothing, boy. A small problem at home.",
+				"hari_state": "TALK"
 			}
 		],
 		"mani_choice": [
@@ -159,26 +194,19 @@
 		],
 		"mani_keys_safe": [
 			{
-				"id": "D6c",
+				"id": "D6d",
 				"speaker": "manikandan",
-				"text": "Seri thambi. Saavi en kitta dhaan irukkum.",
-				"gloss": "OK, boy. The keys stay with me.",
+				"text": "Saavi en kitta dhaan irukku, thambi. Kavalai padaadheenga.",
+				"gloss": "The keys are with me, boy. Don't worry.",
 				"hari_state": "TALK"
 			}
 		],
 		"mani_after_advay": [
 			{
-				"id": "D2a",
+				"id": "D4d",
 				"speaker": "manikandan",
-				"text": "Thambi, party ulla dhaan. Inga enna pannuringa?",
-				"gloss": "The party's inside, boy. What are you doing out here?",
-				"hari_state": "TALK"
-			},
-			{
-				"id": "D2b",
-				"speaker": "hari",
-				"text": "Summa dhaan anna, konjam kaathu vaanga.",
-				"gloss": "Nothing, anna, just getting some air.",
+				"text": "Sir saavi vaangittaaru. Naan enna panna mudiyum, thambi? Naan driver dhaane.",
+				"gloss": "Sir took the keys. What can I do, boy? I'm only the driver.",
 				"hari_state": "TALK"
 			}
 		],
@@ -188,6 +216,29 @@
 				"speaker": "krishna",
 				"text": "Machan, vandhutiya! Paaru da, idhu dhaan life.",
 				"gloss": "Machan, you came! Look at this, this is life.",
+				"hari_state": "TALK"
+			}
+		],
+		"krishna_ambient_repeat": [
+			{
+				"id": "K1",
+				"speaker": "krishna",
+				"text": "Machan, vandhutiya! Paaru da, idhu dhaan life.",
+				"gloss": "Machan, you came! Look at this, this is life.",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "K2",
+				"speaker": "hari",
+				"text": "…Machan, nee idhe dhaan sonna. Word for word.",
+				"gloss": "…Machan, you said exactly this. Word for word.",
+				"hari_state": "TALK"
+			},
+			{
+				"id": "K3",
+				"speaker": "krishna",
+				"text": "Enna da, adhukulla adichitiya? Chill pannu!",
+				"gloss": "What, already drunk? Chill!",
 				"hari_state": "TALK"
 			}
 		]
