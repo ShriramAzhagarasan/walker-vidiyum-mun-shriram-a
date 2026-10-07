@@ -15,7 +15,7 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
    GODOT=/Applications/Godot.app/Contents/MacOS/Godot   # adjust to your install
    "$GODOT" --headless --path godot --import
    ```
-3. Run: `"$GODOT" --path godot`, or open `godot/project.godot` in the editor and press **F5**.
+3. Run: `"$GODOT" --path godot`, or open `godot/project.godot` in the editor and press **F5**. It opens on the **title screen**: press **Enter** for the ~30 s intro (Enter skips a panel, **Esc** skips the intro), then the slice starts at 8 PM.
 
 ## Controls
 | Key | Action |
@@ -27,6 +27,7 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
 | **M** | Mute or unmute **music** |
 | **N** | Mute or unmute **sound effects** |
 | **R** | Restart from loop 1 (after the end card) |
+| **Enter / Esc** | Title: start the intro / skip the intro |
 
 ## What the slice demonstrates
 - **Hari in 10 states**, one static generated image per state (idle, walk, talk, phone, notes, overhear, startled, keys, white-out, relief). He faces the way he walks (the image flips at runtime). Collision is a 0.28 × 1.70 m capsule.
@@ -34,13 +35,17 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
 - **Five generated sound effects on real game events:** Amma's call buzz (loop start), clue chime (new knowledge only), keys (they change hands), dawn horn and screech (failure), waves and crows (safe dawn). Each fires exactly once per event (automated test).
 - **Two generated music loops** (party dance music and village gaana) that crossfade as you walk toward the fence, thin out after 3 AM, muffle on pause, stop at dawn, and restart at 8 PM.
 - **The core loop, once:** loop 1 earns two clues; loop 2 uses them to keep the car keys with Manikandan, and the end card follows.
+- **A title screen and intro motion comic** (4 generated stills, story captions) that set up the story, then cut to 8 PM. It covers storyboard panel 1.
+- **Loop 2 isn't a replay:** Hari wakes in shock and notices people repeating themselves word for word.
 - **Readable when muted:** every sound has a visual twin (phone card, notes card, keys icon, headlights and white-out, sunrise).
 
 ## Tests
 ```bash
+"$GODOT" --headless --path godot -s res://tests/test_assets_present.gd   # every generated asset is present and well-formed (70 checks)
 "$GODOT" --headless --path godot -s res://tests/test_sound_triggers.gd   # exact per-event sound counts over a scripted 2-loop run
 "$GODOT" --headless --path godot -s res://tests/test_loop_logic.gd       # knowledge persists, flags reset, keys-safe prevents the crash
 "$GODOT" --headless --path godot -s res://tests/test_slice_smoke.gd      # the 3D scene builds with all nodes
+python3 tools/check/loop_seam_check.py                                   # music loop seams (needs numpy + soundfile)
 ```
 Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 
@@ -48,7 +53,11 @@ Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · my original story and decisions: [design/input/](design/input/)
 
 ## Known limitations
-*(final list in TEST-REPORT.md)*
+- **2.5D:** characters, the SUV and the backdrops are flat generated images in a 3D deck, so they read as cards when the camera turns. Natural character motion would need rigged 3D models. **Next step (A3):** build the SUV, the rock shrine and the fence as Blender models.
+- OVERHEAR's silhouette is close to IDLE. The walk cycle is a 4-frame swap (IDLE serves as the passing frame).
+- The in-game camera doesn't reproduce the storyboard's special angles (see TEST-REPORT, section 4).
+- Music (MusicGen) is CC-BY-NC: fine for coursework, not for a commercial release.
+- Full list: [TEST-REPORT.md, section 9](TEST-REPORT.md).
 
 ## Film
 *(link, filename and SHA-256 added after render)*
