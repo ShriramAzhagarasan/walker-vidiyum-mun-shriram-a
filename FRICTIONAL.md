@@ -132,3 +132,25 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
   - **Kokoro (local TTS, "Liam"):** narration.
   - **The game:** the gameplay footage and its audio.
   - **Shriram:** approves the film and uploads it.
+
+## 2026-10-07 ~20:45: reflection, in Shriram's own words
+*Written by Shriram and pasted here verbatim, unedited (typos kept). Claude supplied only the five questions and the factual background for each; none of the answers below are Claude's.*
+
+**1. Why I picked reference B**
+> so i picked B over the others as i wanted hari to have a bit of a character as he should be a little charming, even though he's broke, they want him to be a little bit cool so that they think he won't fit out of the blue and this guy looked like a funny guy and that he could be someone who could be both charming and also funny so the rich kid vatsav will think he won't be a bore in his party
+
+**2. My biggest frustration**
+> the biggest frustration for me was getting my prompts and my vision of what the game i wanted to be built in action, that was the hard part, i had a story, i didn;t know how to get it working, then i chose this telltale approach , i would obviosly make it better into a prope 3d game with. much better characters and stuff in the future assignemtn, this was jsut to have things to get working/s tarted so i understand how i want my game ti be
+
+**3. The 2D vs 3D problem**
+> The 2d problem was really big as the game didn't loook polished at all, i am going to use other ai models which generate good images for designing all the characters that i want in my game, i want to make this game scalable and as good as a real game that can maybe publisjhed on steam or something. I will make it look as good and playable as all the other AAA games in a similar pattern so the players who play this don't feel bland
+
+**4. Does it feel like Chennai?**
+> I mean this feels like my city as chennai is my city and i know about all the houses in this rich suburb area which is the ecr which is kinda like the malibu of chennai, there are local fisherman who believe in a local diety like this and land grabbing is pretty common by the influential people ion myc ity so this is soemthing i cooked up taking inspiration from that scene, and also anyone can make a game about LA but i feel there should be someone representing chennai for its party scenes and not stereotype it for being a religiois or a too-good city, we can be cool too
+
+**5. What I learned about making a game with generative AI**
+> I honestly love this approach as earluer coding a gaem by myself or an engineer would take a lot of effort and diging and researching on how to collobratively connect things so i can get it to work, i feel i have my personal agent and i can jus tbe the mind and creative angle for the game where i can tell it how i want it to look, work, decide on the look of my characters and i can personalize everything and gen ai could be the bridge or the agent that helps me achieve all of this
+
+**Still unresolved (from the answers above and TEST-REPORT, section 9):**
+- the flat 2.5D look, which needs real 3D characters and props;
+- the licences, if the game goes to Steam: MusicGen is CC-BY-NC, and Stable Audio Open's community licence has a revenue limit, so the music and possibly the sound effects would need replacing or re-licensing for a commercial release.
