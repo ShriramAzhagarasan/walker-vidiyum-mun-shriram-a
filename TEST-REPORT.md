@@ -40,6 +40,8 @@ All of those need human eyes and ears (sections 5–8).
   - `evidence/shots/state_<state>_{right,left}.jpg` [SCRIPTED CAPTURE]: each state in engine, facing right and flipped left.
   - `design/character/poses-spec.png`: the spec.
 
+**Side by side (spec | generated image | in engine facing right | facing left):** ![sheet vs engine](evidence/comparisons/character-sheet-vs-engine.jpg)
+
 | State | Spec pose | In engine (right / left) | Mismatch with the sheet or collision |
 |---|---|---|---|
 | IDLE | 1 | state_idle_right / _left | none |
@@ -57,6 +59,8 @@ All of those need human eyes and ears (sections 5–8).
 
 ## 4. Storyboard against the slice
 In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's camera is a Telltale-style eye-level follow camera. **The special angles drawn in the storyboard (bird's-eye, over-the-shoulder, low, Dutch, close-up high) are not reproduced by the in-game camera.** Where a panel depends on one, the meaning is carried another way, as listed below.
+
+**Side by side (storyboard panel | in-engine screenshot at `13f772c`):** ![storyboard vs slice](evidence/comparisons/storyboard-vs-slice.jpg)
 
 | Panel | Slice evidence | Matches | Differences, and why |
 |---|---|---|---|
