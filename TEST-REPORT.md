@@ -77,6 +77,7 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 | [AUTO] 6 s Movie Maker capture of the real game: audio present | Mean −13.3 dB, music audible (before the −4 dB headroom change) |
 | [HUMAN] Playtest 4 (Shriram, verbatim): "muting mutes the sound but pressing n does nothing to the sfx and i cant hear anything" | **FAIL → fixed (R11).** The SFX (RMS about −20 dBFS) were masked by the music (party RMS about −19 dBFS after −4 dB). |
 | [AUTO] After R11: Movie Maker capture of the real game at the 8 PM loop start | Phone-buzz window (0–2.4 s) **−15.0 dB** vs music-only (4–8.5 s) **−25.2 dB**: the buzz is **+10.2 dB** above the music |
+| [HUMAN] Playtest 5 after R11 (Shriram): "yes it works, all's good now" | **PASS**: each sound heard in real play; N mutes the effects |
 | [AUTO] `test_audio_mix.gd`: music headroom ≤ −8 dB, ducking engages on an SFX and not when SFX is muted, N toggles SFX, M toggles Music, a muted SFX is still counted | **10 checks, 0 failed** |
 
 ## 6. Music
@@ -90,7 +91,7 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 | Check | Result |
 |---|---|
 | [AUTO] Both buses muted → identical game outcome and event counts | PASS (section 2) |
-| [HUMAN] Shriram, playtest 4: "muting mutes the sound" (M); his overall verdict "yes everything is okay" answered the muted-readability question as well | M confirmed. N was inaudible before R11 (the effects were masked); re-check after R11 is pending |
+| [HUMAN] Shriram, playtest 4: "muting mutes the sound" (M); his overall verdict "yes everything is okay" answered the muted-readability question as well | M confirmed. N was inaudible before R11 (the effects were masked). **Playtest 5 re-check after R11 (Shriram, verbatim): "yes it works, all's good now"**: SFX audible, N/M work, muted play OK |
 
 ## 8. Inspect-and-revise cycles
 | # | Observation (evidence) | Change | Result |
