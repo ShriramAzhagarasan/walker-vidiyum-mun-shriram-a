@@ -30,4 +30,4 @@
   - The audio picks were provisional, made from measurements, pending my listening verdict.
   - MusicGen's licence is non-commercial.
   - The first 7 commits carry my work git identity by mistake (explained in SOURCES.md).
-  - The film's text-legibility gate flagged the small text inside game footage and generated images; the override is documented in the reel's `_qc/GATE-T-OVERRIDE.md`.
+  - The film's text-legibility gate flagged the small text inside game footage and generated images; the override is documented in the reel's `_qc/GATE-T-OVERRIDE.md` and approved by me.

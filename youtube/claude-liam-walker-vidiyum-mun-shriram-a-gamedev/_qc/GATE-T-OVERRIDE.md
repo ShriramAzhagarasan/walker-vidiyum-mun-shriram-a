@@ -19,3 +19,6 @@ Decision (Claude, following the A1 precedent `walker-jumpman-shriram-a/…/_qc/G
 coordinator's PHASE 2 GO for `BUILD-PROMPT.md` step 11): compile with `runtime/scripts/compile.py` directly, the
 exact command `./art final` runs after GATE T. Every other gate still runs (paperwork, beat lint, shape gate,
 approvals, no slates, audio presence/duration, full decode, final-frame QC, receipt). Flag for human review.
+
+
+**Human approval:** Shriram approved this override on 2026-10-07 at ~21:05 EDT ("OK"; recorded in `design/input/SHRIRAM-DECISIONS.md`).
