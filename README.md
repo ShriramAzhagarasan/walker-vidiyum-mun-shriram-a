@@ -62,7 +62,7 @@ Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 
 ## Film
 Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160, 30 fps, **6:18**.
-- **Link:** *(Northeastern OneDrive link: added after upload)*
+- **Link (Northeastern OneDrive):** [claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQCsgk2bE-sbTo2EHyuUU-r5AQHG8865pDMU0TWLaO7khVw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YVnmag)
 - **File:** `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` · **SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`
 - **Source revision shown:** `13f772c` (the game source is unchanged after it; later commits are docs and film records only)
 - **Film records:** [youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/](youtube/claude-liam-walker-vidiyum-mun-shriram-a-gamedev/), containing the beat sheet, script and prompts (`PROMPTS.md`, `RIFF.md`), `FACTCHECK.md`, `SHOTLIST.md`, the evidence ledger (`gamedev-evidence.json`), capture logs, the capture driver and QC.

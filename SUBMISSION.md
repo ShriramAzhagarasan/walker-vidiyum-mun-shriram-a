@@ -6,7 +6,7 @@
 - **Game concept in one sentence:** A middle-class Chennai student at the last party on a rich family's illegally fenced ECR beach keeps waking at 8 PM after every tragic dawn, and must notice the people the party ignores to change what happens before sunrise.
 - **GitHub repository/folder URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
 - **Started from:** an empty Godot 4.7.2 project. Test-harness and GDScript conventions were borrowed from my Assignment 1 repo (walker-jumpman-shriram-a, itself based on nikbearbrown/walker-jumpman); no art, levels or characters reused.
-- **Submitted commit SHA:** *(final docs commit; filled in at submission)*
+- **Submitted commit SHA:** the final commit on `main` (also tagged `a2`). Its SHA is given in the Canvas submission note, because a commit can't contain its own SHA.
 - **Source revision shown in the film:** `13f772c` (game source frozen; later commits change only docs and film records, not `godot/`)
 - **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · macOS 26.6.2 (Apple M1 Pro, 16 GB)
 - **Generative models used (name, version, where run, licence):**
@@ -15,7 +15,7 @@
   - Stable Audio Open 1.0 (HF rev `f21265c`, local via diffusers 0.40 on MPS, Stability AI Community License): 5 sound effects.
   - MusicGen stereo-medium (HF rev `2747e61`, local via transformers 5.18 on MPS, CC-BY-NC 4.0, non-commercial): 2 music loops.
   - rembg 2.0.85 with isnet-anime / BiRefNet (MIT / Apache 2.0): background removal.
-- **Final film URL and filename:** *(OneDrive link)* · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` (3840×2160, 30 fps, 6:18)
+- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQCsgk2bE-sbTo2EHyuUU-r5AQHG8865pDMU0TWLaO7khVw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YVnmag · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` (3840×2160, 30 fps, 6:18)
 - **Final film SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`
 - **Summary of my work:**
   - **Story and design input (mine):** I chose the game and wrote its story, characters, setting and tone as an homage to Chennai (`design/input/`). I corrected Claude's generic local details.
