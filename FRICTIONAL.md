@@ -154,3 +154,35 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 **Still unresolved (from the answers above and TEST-REPORT, section 9):**
 - the flat 2.5D look, which needs real 3D characters and props;
 - the licences, if the game goes to Steam: MusicGen is CC-BY-NC, and Stable Audio Open's community licence has a revenue limit, so the music and possibly the sound effects would need replacing or re-licensing for a commercial release.
+
+---
+
+# Assignment 3: three Blender assets (Claude, the Blender MCP, Blender)
+
+## 2026-10-12 22:38–22:47: MCP setup, following the brief's manual steps (AI-recorded)
+*Claude ran the commands; the exact transcript is `evidence/a3/mcp-setup-log.txt`.*
+- **Expected:** the chapter's four lines would just work: `brew install uv` → `claude mcp add …` → `uvx mcp-for-blender install-addon` → enable in Blender.
+- **What happened, step by step:**
+  1. `uv` was already installed (0.12.21, Homebrew).
+  2. `claude mcp add -e DISABLE_TELEMETRY=true blender -- uvx mcp-for-blender` failed: *"Invalid environment variable format: blender"*. The `-e` option takes several values and swallowed the server name. Moving the name first (`claude mcp add blender -e DISABLE_TELEMETRY=true -- uvx mcp-for-blender`) worked. The server is registered **local to this project only**.
+  3. `uvx mcp-for-blender --version` isn't a version flag. It started the server, which reported *"Connection refused"* (Blender wasn't running). The real version came from the package metadata: **mcp-for-blender 2.1.9**, matching the brief's 6 October tool list.
+  4. `install-addon` failed: *"Could not find a Blender user addons directory."* Blender had never been opened on this Mac, so its user folders didn't exist. After Shriram opened Blender once (2026-10-14), the same command installed `blender_mcp.py`.
+- **A security finding along the way:** `claude mcp list` prints every server's arguments, and a Gemini API key from an unrelated MCP config appeared in plain text in the setup log. Claude redacted it before any commit, then searched the repo and its whole git history (no match). Shriram was advised to rotate the key. Lesson: setup logs are evidence, and evidence can leak secrets, so read them before committing.
+
+## 2026-10-14 18:28–18:55: "Learn the window" (Shriram), then the brief committed before building
+- Shriram explored Blender by hand (orbit, pan, zoom, the toolbar tools including Measure, the Outliner's eye icon, Tab into Edit Mode), took their own screenshot, and wrote BLENDER-NOTES.md. Claude fixed typos and made three edits Shriram asked for: it removed an unverified "command T" shortcut and added the Dimensions and Material-tab lines, both visible in the screenshot.
+- The A3 brief was committed at **18:55 (`a9fe0a1`)**, after this session and **before any asset existed**. Git shows the order the assignment asks for.
+
+## 2026-10-14 19:01: the MCP connects
+- Shriram enabled *Interface: MCP for Blender* and clicked **Connect to MCP server**. Every asset-library and AI-generation box was left **off** (Poly Haven, Sketchfab, Poly Pizza, Hyper3D Rodin, Hunyuan3D).
+- Claude verified it independently: Blender was listening on **127.0.0.1:9876 only** (localhost), and a read-only `get_scene_info` returned *success* with the scene's Cube, Light and Camera.
+- **Unexplained:** the add-on panel says *"Addon 1.8 · up to date"* while the package is 2.1.9. The add-on and the server seem to be versioned separately. Not resolved.
+- Shriram was advised to Disconnect and disable the add-on while away (the socket has no authentication).
+
+## 2026-10-14 ~19:15–21:00: the check was written before the assets (AI-recorded; Shriram away)
+- `tests/check_a3_selftest.gd` feeds the measurement BoxMesh stand-ins: first correct, then broken the ways the brief predicts. It catches all of them: floating 0.5 m, scaled ×0.1, lying on its side, a lost colour, over the triangle budget, the SUV facing backwards (**17/17**).
+- **Design choice:** "upright" is judged by the briefed height on Godot's Y axis, **not** "the tallest axis is Y". The SUV (4.6 m long, 1.85 m tall) would fail a tallest-axis test even when it's correct.
+- `check_a3_assets.gd` currently **fails 3/3** (no `.glb` yet). That's the honest baseline, kept in `evidence/a3/`.
+
+## [Pending] The build, the hand edit, the look check, and Shriram's reflection
+*(To be written after the MCP build session, in Shriram's own words for their parts.)*

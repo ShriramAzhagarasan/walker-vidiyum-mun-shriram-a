@@ -48,3 +48,16 @@ The first 7 commits (up to `4e665a4`) were authored as `shrirampolarace <sazhaga
 
 ## Asset log
 See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered generation, with the exact prompt, seed, settings, outcome and edits.
+
+## Assignment 3 (three Blender assets)
+| Tool | Version | Use |
+|---|---|---|
+| Blender | 5.2.2 LTS (Homebrew cask `blender`) | modelling the SUV, rock shrine and fence from basic shapes; glTF export |
+| MCP for Blender (community project named in the syllabus) | `mcp-for-blender` 2.1.9 via `uvx`; add-on panel shows "Addon 1.8" | lets Claude Code run Blender Python in Shriram's open session over a localhost socket (127.0.0.1:9876) |
+| uv / uvx | 0.12.21 | runs the MCP server |
+| GNU coreutils `timeout` | 9.12 | bounds the headless Godot checks |
+| Godot | 4.7.2.stable.official | import, the showcase scene, the headless check |
+
+**Switched off and unused:** Poly Haven, Sketchfab, Poly Pizza, Hyper3D Rodin, Hunyuan3D, Tripo, and the MCP tools `generate_3d`, `search_assets`, `import_asset`. Every mesh is built from Blender's basic shapes; no downloaded or AI-generated mesh is used. Telemetry was disabled with `DISABLE_TELEMETRY=true`. No credentials are committed.
+**Colours:** the SUV reuses A2's stand-in colours (`fallback_prop.gd`); the other hex values were chosen in the A3 brief.
+**Who did what (A3 so far):** Shriram chose the three assets, did the window session and notes, enabled and connected the add-on, and approves each build. Claude drafted the brief from the game's numbers, ran the MCP setup (logged), and wrote the check, its self-test and the showcase scene.

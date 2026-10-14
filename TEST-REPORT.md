@@ -120,3 +120,30 @@ In-engine screenshots are [SCRIPTED CAPTURE] in `evidence/shots/`. The game's ca
 5. **Sound and music picks** were provisional, made from measured descriptors (Claude can't listen). Whether the gaana sounds like Chennai is pending Shriram's ears. The music model's non-commercial licence (MusicGen, CC-BY-NC) would need replacing for a commercial release.
 6. **Intro arrival still:** Hari is shown driving, not riding pillion (prompt not followed), and that villa has a different design from the in-game villa (F11).
 7. **The first 7 commits** carry the git identity `shrirampolarace` (Shriram's work config, by mistake). From `97b6e7f` onward, commits use `Shriram Alagarasan <azhagarasan.s@northeastern.edu>`.
+
+---
+
+# Assignment 3: three Blender assets
+
+**Versions:** Blender 5.2.2 LTS (the chapter used 5.1.2) · Godot 4.7.2.stable.official.ed1daf0bf · mcp-for-blender 2.1.9 (add-on panel: "Addon 1.8") · uv 0.12.21 · macOS (Apple M1 Pro).
+**Check commands** (run from the repo root; `timeout` is GNU coreutils 9.12):
+```bash
+G=~/Downloads/Godot.app/Contents/MacOS/Godot          # where Godot lives on this Mac
+timeout 120 "$G" --headless --path godot --script res://tests/check_a3_selftest.gd --fixed-fps 60   # the check can fail
+timeout 120 "$G" --headless --path godot --script res://tests/check_a3_assets.gd   --fixed-fps 60   # the real assets vs the brief
+```
+
+| Check | Result | Evidence |
+|---|---|---|
+| Interface notes | **Done.** Six parts in Shriram's own words, plus their own screenshot | [BLENDER-NOTES.md](BLENDER-NOTES.md) |
+| The check can fail (self-test) | **PASS 17/17.** Every predicted failure (A3-F1…F7) is caught on BoxMesh stand-ins | `godot/tests/check_a3_selftest.gd` |
+| Baseline before assets | **FAIL 3/3** (no `.glb` yet). The expected honest starting point | `evidence/a3/check-a3-1792019299.json` |
+| Size (Blender sidebar vs brief vs Godot bounding box) | *pending build* | |
+| Upright and node scale 1,1,1 | *pending build* | |
+| Origin (sits on the floor, measured from mesh vertices) | *pending build* | |
+| Triangle count (Blender scene statistics vs Godot) | *pending build* | |
+| Imports and appears in `scenes/a3_showcase.tscn` | *pending build* | |
+| **HUMAN CHECK: look** (Shriram orbits each asset, including from behind and below, beside Hari) | *pending, Shriram* | |
+| What Claude got wrong | *pending build* | |
+
+**What the check does and does not show:** it measures what arrived in Godot: mesh-vertex bounding box, node scales, the lowest vertex height, triangles, mesh count and albedo colours. It cannot tell whether an asset reads as an SUV, a shrine or a fence, whether its colours suit the night lighting, or whether it fits the game's cel-shaded style. Those are Shriram's human checks. Shape count is inferred from mesh nodes, so objects joined in Blender would hide it.

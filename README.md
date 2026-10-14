@@ -50,6 +50,15 @@ python3 tools/check/loop_seam_check.py                                   # music
 ```
 Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 
+## Assignment 3: three Blender assets (in progress)
+Three game assets built from Blender's basic shapes by directing Claude through the **Blender MCP**: **the SUV** (4.60 × 1.90 × 1.85 m), **the rock shrine** (1.20 × 1.00 × 1.50 m) and **a fence segment** (2.40 × 0.12 × 2.10 m), exported as `.glb` and shown together in `godot/scenes/a3_showcase.tscn` beside Hari's 1.75 m billboard.
+- **Versions:** Blender 5.2.2 LTS · Godot 4.7.2 · mcp-for-blender 2.1.9 · macOS.
+- **Brief (committed before building):** [CHANGE-BRIEF.md](CHANGE-BRIEF.md), the "Assignment 3" section, plus `godot/tests/data/a3_brief.json`. Interface notes: [BLENDER-NOTES.md](BLENDER-NOTES.md).
+- **Open the scene:** `"$GODOT" --path godot res://scenes/a3_showcase.tscn`. Drag or arrow keys orbit (including from behind and below), scroll zooms, 1/2/3 focus each asset, 0 shows all, H toggles Hari, L toggles labels.
+- **Run the check:** `timeout 120 "$GODOT" --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60`, and its self-test `check_a3_selftest.gd`. Results: [TEST-REPORT.md](TEST-REPORT.md), section "Assignment 3".
+- **Blender sources:** `blender/<asset>.blend` and the exact code Claude ran in `tools/blender/build_<asset>.py` *(pending build)*.
+- **Film and limitations:** *pending*.
+
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · my original story and decisions: [design/input/](design/input/)
 
