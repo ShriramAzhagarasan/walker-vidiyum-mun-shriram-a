@@ -53,3 +53,7 @@ mcp-for-blender 2.1.9
 $ uvx mcp-for-blender install-addon
 Installed MCP for Blender addon to /Users/shriramalagarasan/Library/Application Support/Blender/5.2/scripts/addons/blender_mcp.py. In Blender: Preferences → Add-ons → disable then enable 'Interface: MCP for Blender', or restart Blender, then click Start MCP Server.
 exit=0
+
+== 19:01:27 Read-only handshake: get_scene_info over the add-on's localhost socket (port 9876) ==
+status: success
+scene: Scene | objects: ['Cube', 'Light', 'Camera']
