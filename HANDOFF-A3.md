@@ -45,7 +45,7 @@ Due: **Thu 2026-10-15 23:59**. Shriram approves every build step and judges the 
 6. `godot/tests/check_a3_assets.gd`: for each asset, the mesh AABB size vs `a3_brief.json` (±5 %), node scale (1,1,1),
    tallest axis = Y, **lowest mesh point y = 0 ± 0.01 m measured from mesh vertices (not a collider)**, triangle and
    surface counts vs budget, albedo vs hex, SUV cabin centre x < 0. Print a table, exit nonzero on failure.
-   Run: `timeout 120 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60`
+   Run: `timeout 120 ~/Downloads/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60` (Godot lives in ~/Downloads on this Mac). Self-test of the check: `…--script res://tests/check_a3_selftest.gd` (17/17 must pass). Showcase scene and check already exist (built before the assets); the scene shows labelled placeholders until each .glb is exported.
 7. TEST-REPORT (A3 section), SOURCES, README, FRICTIONAL (AI-recorded entries labelled; Shriram writes their own).
 8. Film: Brutalist `godot-gamedev` **walker** mode (`../brutalist.art/skills/make/godot-gamedev/SKILL.md`), reusing
    Shriram's own Blender screen recording. Then tag `a3`, push the tag, fresh clone of the tag, ZIP, Canvas note.

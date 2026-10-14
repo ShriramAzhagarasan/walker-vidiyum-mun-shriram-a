@@ -1,0 +1,35 @@
+{
+  "assets": {
+    "fence_segment": {
+      "rows": [
+        {
+          "id": "imported .glb exists",
+          "observed": "missing; run --import after exporting",
+          "pass": false
+        }
+      ]
+    },
+    "rock_shrine": {
+      "rows": [
+        {
+          "id": "imported .glb exists",
+          "observed": "missing; run --import after exporting",
+          "pass": false
+        }
+      ]
+    },
+    "suv": {
+      "rows": [
+        {
+          "id": "imported .glb exists",
+          "observed": "missing; run --import after exporting",
+          "pass": false
+        }
+      ]
+    }
+  },
+  "brief": "res://tests/data/a3_brief.json",
+  "checks": 3,
+  "engine": "4.7.2-stable (official)",
+  "failures": 3
+}

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/a3_showcase.gd" id="1_show"]
+[ext_resource type="Script" path="res://scenes/billboard_art.gd" id="2_bill"]
+
+[sub_resource type="PlaneMesh" id="FloorMesh"]
+size = Vector2(16, 8)
+
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.78, 0.72, 0.6, 1)
+roughness = 0.95
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.3, 0.38, 0.55, 1)
+sky_horizon_color = Color(0.82, 0.7, 0.58, 1)
+ground_bottom_color = Color(0.25, 0.22, 0.2, 1)
+ground_horizon_color = Color(0.82, 0.7, 0.58, 1)
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+tonemap_mode = 2
+
+[node name="A3Showcase" type="Node3D"]
+script = ExtResource("1_show")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, -0.663414, 0.556670, 0, 6, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("FloorMesh")
+surface_material_override/0 = SubResource("FloorMat")
+
+[node name="HariReference" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0, 1.6)
+script = ExtResource("2_bill")
+art_path = "res://assets/art/hari/idle.png"
+height_m = 1.75
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 13)
+fov = 50.0

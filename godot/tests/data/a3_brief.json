@@ -4,11 +4,56 @@
   "floor_tolerance_m": 0.01,
   "colour_tolerance": 0.04,
   "assets": {
-    "suv":           {"glb": "res://assets/models/suv.glb",           "size_xyz": [4.60, 1.85, 1.90], "max_tris": 250, "max_shapes": 6,
-                      "colours": {"body": "#2e2d38", "glass": "#7d93b8", "tyre": "#15141a"}},
-    "rock_shrine":   {"glb": "res://assets/models/rock_shrine.glb",   "size_xyz": [1.20, 1.50, 1.00], "max_tris": 200, "max_shapes": 6,
-                      "colours": {"rock": "#6f6a63", "plinth": "#e8e2d4", "shrine": "#d9822b", "roof": "#b23a2a", "lamp": "#c9a24a"}},
-    "fence_segment": {"glb": "res://assets/models/fence_segment.glb", "size_xyz": [2.40, 2.10, 0.12], "max_tris": 100, "max_shapes": 6,
-                      "colours": {"post": "#8a8f96", "sign": "#c0392b", "wire": "#3a3d42"}}
+    "suv": {
+      "glb": "res://assets/models/suv.glb",
+      "size_xyz": [
+        4.6,
+        1.85,
+        1.9
+      ],
+      "max_tris": 250,
+      "max_shapes": 6,
+      "colours": {
+        "body": "#2e2d38",
+        "glass": "#7d93b8",
+        "tyre": "#15141a"
+      },
+      "front_check": {
+        "part": "cabin",
+        "rule": "the cabin box sits behind the chassis centre, so its centre x < 0 when the front faces +X (A3-F7)"
+      }
+    },
+    "rock_shrine": {
+      "glb": "res://assets/models/rock_shrine.glb",
+      "size_xyz": [
+        1.2,
+        1.5,
+        1.0
+      ],
+      "max_tris": 200,
+      "max_shapes": 6,
+      "colours": {
+        "rock": "#6f6a63",
+        "plinth": "#e8e2d4",
+        "shrine": "#d9822b",
+        "roof": "#b23a2a",
+        "lamp": "#c9a24a"
+      }
+    },
+    "fence_segment": {
+      "glb": "res://assets/models/fence_segment.glb",
+      "size_xyz": [
+        2.4,
+        2.1,
+        0.12
+      ],
+      "max_tris": 100,
+      "max_shapes": 6,
+      "colours": {
+        "post": "#8a8f96",
+        "sign": "#c0392b",
+        "wire": "#3a3d42"
+      }
+    }
   }
 }
