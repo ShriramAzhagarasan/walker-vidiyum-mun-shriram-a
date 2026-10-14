@@ -16,3 +16,7 @@ __pycache__/
 # Credentials
 .env
 *token*
+
+# Blender save-version backups (A3)
+*.blend1
+*.blend2

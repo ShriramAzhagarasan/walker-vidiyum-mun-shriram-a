@@ -1,0 +1,55 @@
+== 2026-10-12 22:38:40 EDT MCP setup (manual steps from the A3 brief) ==
+$ uv --version
+uv 0.12.21 (Homebrew 2026-09-29 aarch64-apple-darwin)
+
+$ claude mcp add -e DISABLE_TELEMETRY=true blender -- uvx mcp-for-blender
+Invalid environment variable format: blender, environment variables should be added as: -e KEY1=value1 -e KEY2=value2
+exit=1
+
+$ uvx mcp-for-blender --version
+2026-10-12 22:38:45,529 - BlenderMCPServer - WARNING - Could not connect to Blender on startup: Could not connect to Blender. Make sure the Blender addon is running.
+2026-10-12 22:38:45,529 - BlenderMCPServer - WARNING - Make sure the Blender addon is running before using Blender resources or tools
+2026-10-12 22:38:45,537 - BlenderMCPServer - ERROR - Failed to connect to Blender: [Errno 61] Connection refused
+2026-10-12 22:38:45,537 - BlenderMCPServer - ERROR - Failed to connect to Blender
+2026-10-12 22:38:45,537 - BlenderMCPServer - INFO - BlenderMCP server shut down
+exit=0
+
+$ uvx mcp-for-blender install-addon
+Could not find a Blender user addons directory. Set BLENDERMCP_ADDONS_DIR to your Blender scripts/addons path, or install addon.py manually from the repo.
+exit=0
+
+$ claude mcp list
+claude.ai Clinical Trials: https://hcls.mcp.claude.com/clinical_trials/mcp - ✓ Connected
+claude.ai ChEMBL: https://hcls.mcp.claude.com/chembl/mcp - ✓ Connected
+claude.ai bioRxiv: https://hcls.mcp.claude.com/biorxiv/mcp - ✓ Connected
+claude.ai BioRender: https://mcp.services.biorender.com/mcp - ! Needs authentication
+claude.ai Adobe for creativity: https://adobe-creativity.adobe.io/mcp - ! Needs authentication
+claude.ai Canva: https://mcp.canva.com/mcp - ! Needs authentication
+stitch: https://stitch.googleapis.com/mcp (HTTP) - ✓ Connected
+nano-banana: npx nano-banana-mcp -e GEMINI_API_KEY=[REDACTED] - ✓ Connected
+
+== 22:39:15 Retry: server name before -e (the -e option is variadic and swallowed 'blender') ==
+$ claude mcp add blender -e DISABLE_TELEMETRY=true -- uvx mcp-for-blender
+Added stdio MCP server blender with command: uvx mcp-for-blender to local config
+File modified: /Users/shriramalagarasan/.claude.json [project: /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a]
+exit=0
+
+$ claude mcp get blender
+blender:
+  Scope: Local config (private to you in this project)
+  Status: ✓ Connected
+  Type: stdio
+  Command: uvx
+  Args: mcp-for-blender
+  Environment:
+    DISABLE_TELEMETRY=true
+
+To remove this server, run: claude mcp remove "blender" -s local
+
+$ installed mcp-for-blender version
+mcp-for-blender 2.1.9
+
+== 22:47:27 Retry install-addon after Blender was opened once (its user folders now exist) ==
+$ uvx mcp-for-blender install-addon
+Installed MCP for Blender addon to /Users/shriramalagarasan/Library/Application Support/Blender/5.2/scripts/addons/blender_mcp.py. In Blender: Preferences → Add-ons → disable then enable 'Interface: MCP for Blender', or restart Blender, then click Start MCP Server.
+exit=0

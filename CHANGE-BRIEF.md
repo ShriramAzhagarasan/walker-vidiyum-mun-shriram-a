@@ -118,3 +118,54 @@ Driven by observations, not planned in revision 1:
 | **SFX scheduler:** EDM DPM-Solver++ | Stable Audio Open's default sampler crashed and the first workaround produced silence | `tools/gen/gen_audio.py` |
 
 **New predicted failure, F11:** the intro's generated stills may not match the in-game art (Hari's face drifts in INTRO-3; the villa doesn't match ENV-VILLA). Check: the stills side by side with the reference and the villa backdrop at full screen. Shriram judges.
+
+---
+
+# Change brief: Assignment 3, three Blender assets (A3)
+
+*Revision 1, 2026-10-12, written after Shriram's "Learn the window" session and committed **before any asset is built**. Drafted by Claude from the A2 game's own numbers (`logic/hari_spec.gd`, `scenes/fallback_prop.gd`, `scenes/slice.tscn`). The asset choice is Shriram's: these are the three models the A2 README named as the A3 next step. Later changes go in dated revisions below; this text is not rewritten.*
+
+**Tools:** Blender 5.2.2 LTS (the chapter used 5.1.2), Godot 4.7.2, MCP for Blender (`uvx mcp-for-blender`, version recorded when installed), macOS. Blender is Z-up, 1 unit = 1 m; Godot is Y-up, metres. The glTF exporter's **+Y Up** converts the axes, so nothing is rescaled.
+
+**Shared rules for all three:**
+- Each asset gets its own `.blend` and is built around **Blender's world origin**, with its base on the floor (Z = 0) there.
+- Rotation and scale are **applied** before export (sidebar shows rotation 0,0,0 and scale 1,1,1).
+- At most **6 basic shapes**, flat Principled BSDF colours, no textures, sculpting, rigging or animation.
+- **Front faces +X** in both Blender and Godot, matching the game's existing SUV stand-in (headlights at +X in `fallback_prop.gd`).
+- Size reference: **Hari is 1.75 m tall** (sprite) with a 1.70 m collision capsule, feet at y = 0.
+
+## A3-1. The SUV (`suv`)
+- **What it is:** the black SUV whose keys decide whether dawn ends in a crash: Manikandan leans on it, the headlights white out the screen. It replaces A2's flat SUV card and placeholder boxes.
+- **Where:** the driveway beside the deck, at the existing `SUV` node in `slice.tscn`.
+- **Size (W × D × H, m): 4.60 (length, X) × 1.90 (width, Y) × 1.85 (height, Z).** Why: the footprint matches the deck's existing SUV collider (4.6 × 1.9), so Hari can't walk through it, and the roof sits just above Hari's 1.75 m head, which is what a Fortuner-class SUV looks like beside a person.
+- **Origin:** centre of the underside (the point between the four tyre contact patches), so the tyres sit on the floor when placed at y = 0.
+- **Look (6 shapes):** chassis box, a narrower cabin box set back from the front, four short cylinder wheels (12 segments). Body `#2e2d38`, cabin glass `#7d93b8`, tyres `#15141a` (the A2 stand-in's colours, so it reads as the same car).
+- **Budget: 250 triangles.** Two boxes (12 each) + four 12-segment cylinders (44 each) = 200, with 50 spare for one correction. A default 32-segment cylinder would cost 124 each and blow the budget.
+
+## A3-2. The rock shrine (`rock_shrine`)
+- **What it is:** the small roadside shrine on the rock that the fishermen have always prayed to, now behind the fence: the story's reason the fence is an injustice (intro panel 2).
+- **Where:** on the beach past the railing, near the fence line (it is currently painted into `beach_backdrop.png`).
+- **Size: 1.20 (X) × 1.00 (Y) × 1.50 (Z) m.** Why: a waist-to-chest-high shrine for someone kneeling, with its roof tip below Hari's 1.75 m head, so it reads as small and humble beside the villa.
+- **Origin:** centre of the rock's underside, so it sits on the sand.
+- **Look (5 shapes):** a flattened low-poly rock (icosphere, subdivisions 1), a whitewashed plinth box, a small saffron shrine box, a red cone roof (8 segments), a brass lamp cylinder (8 segments). Rock `#6f6a63`, plinth `#e8e2d4`, shrine `#d9822b`, roof `#b23a2a`, lamp `#c9a24a`.
+- **Budget: 200 triangles.** Icosphere 80 + two boxes 24 + cone 14 + lamp cylinder 28 = 146. A default UV sphere (960 triangles) alone would be nearly double the course limit.
+
+## A3-3. The fence segment (`fence_segment`)
+- **What it is:** one panel of the illegal fence the rich family put across the public beach: the story's central injustice, and the visual line between the party and the village.
+- **Where:** along the beach edge, repeated end to end.
+- **Size: 2.40 (X) × 0.12 (Y) × 2.10 (Z) m.** Why: 2.10 m is taller than Hari (1.75 m), so it reads as a barrier he can't step over, and a 2.4 m panel tiles evenly.
+- **Origin:** centre of the underside, so a row of panels is just `x = i × 2.40`.
+- **Look (6 shapes):** two square posts, two horizontal rails, a red warning sign, and a thin wire along the top (6-segment cylinder). Posts and rails galvanised grey `#8a8f96`, sign `#c0392b`, wire `#3a3d42`.
+- **Budget: 100 triangles.** Five boxes (60) + a 6-segment wire cylinder (20) = 80.
+
+## A3 predicted failure cases and how each gets checked
+| ID | Prediction | Check |
+|---|---|---|
+| A3-F1 | An asset arrives **lying on its side** (Z-up vs Y-up confusion, or +Y Up off) | The check script reports which axis is tallest and whether it is Godot's Y; I also look at it in the Godot scene |
+| A3-F2 | **Wrong size by ×10 or ×100** (centimetre scene units, or unapplied scale) | Godot bounding box vs this brief, ±5 %; the Blender sidebar dimensions are recorded beside both |
+| A3-F3 | **Origin in the middle**, so it floats half-sunk or hovers | Check: the mesh's lowest point is at y = 0 ± 1 cm, measured from the **mesh**, not a collider (the chapter's floor check passed on its own collider); then I place it on the floor and look |
+| A3-F4 | **Scale not applied** in Blender, so the Godot node scale isn't 1, 1, 1 | Check: node scale = (1, 1, 1); Blender sidebar shows scale 1 after applying |
+| A3-F5 | Claude builds **more detail than asked** (default 32-segment cylinders, a 960-triangle sphere, extra parts) | Triangle count per asset (Blender scene statistics and the Godot mesh) vs each budget; shape count ≤ 6 |
+| A3-F6 | A **colour doesn't survive the export** (e.g. arrives white or grey) | Check: each surface's albedo vs the brief's hex, within a small tolerance; then I look under the scene light |
+| A3-F7 | The SUV **faces backwards** (front at −X) | Check: the cabin's centre is behind the chassis centre (x < 0), as specified; I also look |
+| A3-F8 | **The MCP server won't connect** | A 2-hour time box with every step and exact error logged in FRICTIONAL.md; then the script route (Blender with no window, `--python-exit-code 1`) |

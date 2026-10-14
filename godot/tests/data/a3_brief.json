@@ -1,0 +1,14 @@
+{
+  "_comment": "Machine-readable copy of CHANGE-BRIEF.md (A3 revision 1). Sizes in metres, Godot axes: X = length/width as briefed, Y = up, Z = depth. Blender (X, Y, Z-up) maps to Godot (X, Z, Y) via the glTF exporter's +Y Up.",
+  "tolerance_size_fraction": 0.05,
+  "floor_tolerance_m": 0.01,
+  "colour_tolerance": 0.04,
+  "assets": {
+    "suv":           {"glb": "res://assets/models/suv.glb",           "size_xyz": [4.60, 1.85, 1.90], "max_tris": 250, "max_shapes": 6,
+                      "colours": {"body": "#2e2d38", "glass": "#7d93b8", "tyre": "#15141a"}},
+    "rock_shrine":   {"glb": "res://assets/models/rock_shrine.glb",   "size_xyz": [1.20, 1.50, 1.00], "max_tris": 200, "max_shapes": 6,
+                      "colours": {"rock": "#6f6a63", "plinth": "#e8e2d4", "shrine": "#d9822b", "roof": "#b23a2a", "lamp": "#c9a24a"}},
+    "fence_segment": {"glb": "res://assets/models/fence_segment.glb", "size_xyz": [2.40, 2.10, 0.12], "max_tris": 100, "max_shapes": 6,
+                      "colours": {"post": "#8a8f96", "sign": "#c0392b", "wire": "#3a3d42"}}
+  }
+}
