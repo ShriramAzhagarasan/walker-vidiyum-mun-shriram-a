@@ -1,7 +1,7 @@
 # BLENDER-NOTES (Assignment 3)
 
 Blender 5.2.2 LTS on macOS. "Learn the window" session done by Shriram on 2026-10-14, before any prompting.
-**The six notes below are Shriram's own words.** At Shriram's request, Claude made three small edits:
+**The six notes below are Shriram's own words.** At Shriram's request, Claude fixed spelling typos and made three small edits:
 it removed an unverified shortcut ("command T"), and added the Dimensions reading and the Material tab, both visible in the screenshot below.
 Reference: the Blender manual's interface chapter and 3D Viewport pages.
 
