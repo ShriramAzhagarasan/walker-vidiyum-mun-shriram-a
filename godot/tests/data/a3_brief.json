@@ -1,5 +1,5 @@
 {
-  "_comment": "Machine-readable copy of CHANGE-BRIEF.md (A3 revision 1). Sizes in metres, Godot axes: X = length/width as briefed, Y = up, Z = depth. Blender (X, Y, Z-up) maps to Godot (X, Z, Y) via the glTF exporter's +Y Up.",
+  "_comment": "Machine-readable copy of CHANGE-BRIEF.md (A3 revision 1). Sizes in metres, Godot axes: X = length/width as briefed, Y = up, Z = depth. Blender (X, Y, Z-up) maps to Godot (X, Z, Y) via the glTF exporter's +Y Up. Revision 2 (2026-10-15): SUV rebuilt to 1.70 m with new colours and a 350-triangle budget; shrine reshaped to the lore (no roof), 1.10 m.",
   "tolerance_size_fraction": 0.05,
   "floor_tolerance_m": 0.01,
   "colour_tolerance": 0.04,
@@ -8,15 +8,19 @@
       "glb": "res://assets/models/suv.glb",
       "size_xyz": [
         4.6,
-        1.85,
+        1.7,
         1.9
       ],
-      "max_tris": 250,
+      "max_tris": 350,
       "max_shapes": 6,
       "colours": {
-        "body": "#2e2d38",
-        "glass": "#7d93b8",
-        "tyre": "#15141a"
+        "body": "#333738",
+        "glass": "#1f2633",
+        "grille": "#0e0f12",
+        "headlight": "#f4f1e6",
+        "taillight": "#b3121b",
+        "tyre": "#15141a",
+        "wheel_face": "#b8bcc4"
       },
       "front_check": {
         "part": "cabin",
@@ -27,17 +31,17 @@
       "glb": "res://assets/models/rock_shrine.glb",
       "size_xyz": [
         1.2,
-        1.5,
+        1.1,
         1.0
       ],
       "max_tris": 200,
       "max_shapes": 6,
       "colours": {
         "rock": "#6f6a63",
-        "plinth": "#e8e2d4",
-        "shrine": "#d9822b",
-        "roof": "#b23a2a",
-        "lamp": "#c9a24a"
+        "niche": "#3a3632",
+        "lamp": "#c9a24a",
+        "flame": "#ffb347",
+        "jasmine": "#f2efe6"
       }
     },
     "fence_segment": {

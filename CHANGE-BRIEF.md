@@ -169,3 +169,20 @@ Driven by observations, not planned in revision 1:
 | A3-F6 | A **colour doesn't survive the export** (e.g. arrives white or grey) | Check: each surface's albedo vs the brief's hex, within a small tolerance; then I look under the scene light |
 | A3-F7 | The SUV **faces backwards** (front at −X) | Check: the cabin's centre is behind the chassis centre (x < 0), as specified; I also look |
 | A3-F8 | **The MCP server won't connect** | A 2-hour time box with every step and exact error logged in FRICTIONAL.md; then the script route (Blender with no window, `--python-exit-code 1`) |
+
+## A3 brief revision 2 (2026-10-15, ~20:05 EDT): after inspecting SUV build 1, before building the shrine
+*Revision 1 above is kept as written. These changes come from Shriram's own observations; numbers drafted by Claude.*
+
+**SUV (`suv`): rebuilt.** Shriram, looking at build 1 in Blender (`tools/blender/build_suv.py`, 200 triangles, sizes matched revision 1 exactly): *"the suv in this blender should resemble a modern mercedes or a bmw suv, the one on blender looks pretty basic, rework on that accordingly this is not what i asked for"*. Claude's own note on build 1: the cabin set far back left a 1.7 m bonnet, so it read as an old jeep or pickup. Revision 2:
+- **Size: 4.60 × 1.90 × 1.70 m** (was 1.85 high). The footprint stays on the deck's 4.6 × 1.9 collider; a modern mid-size luxury SUV is about 1.65–1.70 m tall, so the roof now sits just below Hari's 1.75 m head.
+- **Shape (still 6 basic shapes):** the body box gets a sloped bonnet and raised nose; the glasshouse box is long, starts close to the front, has a raked windscreen, a sloped rear and narrows toward the roof. Detail comes from faces and flat materials, not extra parts: a body-coloured roof, a black grille, a full-width light bar front (white) and back (red), silver wheel faces.
+- **Colours:** body `#333738` (sampled from the A2 SUV art, so it is the same car), tinted glass `#1f2633`, grille `#0e0f12`, headlight `#f4f1e6`, tail light `#b3121b`, tyre `#15141a`, wheel face `#b8bcc4`.
+- **Budget: 350 triangles** (was 250). Silver wheel faces and the light bars cost faces; still under the course's 500.
+
+**Rock shrine (`rock_shrine`): reshaped to match the game's lore.** Revision 1 put a saffron shrine box and a cone roof on the rock, which contradicts Shriram's story bible (*"Her shrine on the beach is just a rock, with no building"*) and the A2 beach art (a dark rock, a small niche, a brass lamp, white flowers). Shriram chose to follow the lore (*"option A as it matches the lore and that is important for the game we are creating"*).
+- **Size: 1.20 × 1.00 × 1.10 m** (was 1.50 high): the rock is 0.90 m, the lamp and its flame sit on top.
+- **Look (5 shapes):** a flattened icosphere rock with a flat base, a dark niche set into its front face, a small brass lamp on top with a flame cone, and a white jasmine band around the rock. Rock `#6f6a63`, niche `#3a3632`, lamp `#c9a24a`, flame `#ffb347`, jasmine `#f2efe6`.
+- **Budget: 200 triangles** (unchanged); estimate 158.
+- **Correction of Claude's error in revision 1:** it priced an icosphere at "subdivisions 1" as 80 triangles. In Blender, subdivisions 1 is the bare icosahedron (20 triangles); 80 needs subdivisions 2, which is what is built.
+
+**Fence segment:** unchanged for now; to be judged against the A2 beach art when built.
