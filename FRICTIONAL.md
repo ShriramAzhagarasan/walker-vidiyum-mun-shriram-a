@@ -199,5 +199,20 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 ## 2026-10-15 ~20:47: look check in Godot (Shriram)
 Shriram orbited each asset in the running showcase, including behind and below, beside Hari. Shriram's words are in TEST-REPORT.md ("HUMAN CHECK: look"): the fence is one segment of a longer, electrified line, with the red rectangle standing in for "private property"; the SUV is satisfying given the shape limits; the shrine "looks great", and a more realistic goddess is future work.
 
-## Shriram's reflection
-*(Shriram's own words; to be written by Shriram.)*
+## Shriram's reflection (2026-10-15, ~22:45)
+*Drafted by Claude only from Shriram's own messages and actions in the session, at Shriram's request; Shriram read it and submitted it as their own, unchanged. Nothing here was added that Shriram didn't say or do in the session (see the quotes in TEST-REPORT.md and `tools/blender/`).*
+
+**1. What I expected vs. what happened**
+i expected claude to build the suv the way i pictured it the first time, but the first one was just a box on a box with wheels, it looked pretty basic and not what i asked for. i wanted it to look like a modern mercedes or bmw suv. for the shrine, the brief had a little temple roof on the rock, but in my story the shrine is just a rock, so that didn't match what i had in mind. i also thought the red sign was in front of the fence, but when i looked it was behind the ropes.
+
+**2. What I checked, changed or rejected, and why**
+- SUV: i rejected three versions of the suv. First it was too basic. Then i asked for a front glass, 4 doors, windows, a boot with an opener, a grille, separate headlights, fog lamps and an exhaust. Then the doors weren't equal and the lines didn't look like a separation, so i asked for that to be fixed.
+- Shrine: i chose to follow my lore instead of the brief, because the lore is important for the game. i asked for the goddess to be on the rock and for a proper lamp holder with an orange flame. i asked for the lamp to be small and placed where someone can reach it, since vastav's dad would light it every night or get someone to.
+- Fence: i picked the wooden posts and ropes so it matches my beach art.
+- Hand edit: i duplicated the sign, deleted the copies because of the 6-shape limit, and moved it to the centre by typing exact values.
+- Look check: in godot i orbited everything, including behind and below.
+
+**3. What I learned, and what's still unresolved**
+i learned how x, y and z work in blender, that front and back depend on which side you look from, and that typing exact numbers is better than dragging. i also learned that claude can build what i describe but can't tell if it looks right, so i had to keep checking it myself, and every change i asked for came from looking at it. still unresolved: within 6 shapes the suv will never look like a real one, and when i design it properly it won't be restricted to these shapes. i want to make the goddess look more realistic. the fence is one segment of a much longer electrified fence around the house. i haven't seen the assets in the actual night scene of my game yet.
+
+**Traceability:** SUV builds `18b3c9c` → `18d683e` → `1863c9b` → `09a9c16`; shrine `18d683e` → `1863c9b`; fence `231495e`; export and check `d6e9466`; showcase revision `f93ec6e`; self-test fix `81c1666`; screen recording `blendersession.mov` (film clips at 7:48–7:53 PM and 8:31–8:36 PM).
