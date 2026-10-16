@@ -188,7 +188,7 @@ Driven by observations, not planned in revision 1:
 **Fence segment:** unchanged for now; to be judged against the A2 beach art when built.
 
 ## A3 brief revision 3 (2026-10-15, ~20:12 EDT): after inspecting SUV build 2 and the shrine
-*From Shriram's inspection in Blender (his words are quoted in `tools/blender/build_suv.py` and `build_rock_shrine.py`); numbers drafted by Claude.*
+*From Shriram's inspection in Blender (Shriram's words are quoted in `tools/blender/build_suv.py` and `build_rock_shrine.py`); numbers drafted by Claude.*
 
 **SUV:** Shriram asked for a windscreen, four doors, separate windows, an opening tailgate with a handle, a grille, individual headlights, fog lamps and an exhaust. Still 6 basic shapes: a taller body (z 0.45–1.12, nearly flat bonnet, visible ground clearance), a glasshouse with B and C pillars, and four wheels. The details are faces with flat colours: door seams `#121315`, headlights `#f4f1e6`, fog lamps `#fff1c4`, grille `#0e0f12`, dark bumpers `#1c1d20`, tailgate handle `#b8bcc4`, recessed exhaust `#050506`, tail-light bar `#b3121b`. **Size unchanged: 4.60 × 1.90 × 1.70 m. Budget raised to 480 triangles** (the course limit is 500); the wheels drop from 12 to 10 segments to pay for the detail. A round exhaust pipe would be a 7th shape, so the exhaust is a recessed opening.
 
