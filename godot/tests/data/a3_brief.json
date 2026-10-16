@@ -58,12 +58,12 @@
         2.1,
         0.12
       ],
-      "max_tris": 100,
+      "max_tris": 120,
       "max_shapes": 6,
       "colours": {
-        "post": "#8a8f96",
-        "sign": "#c0392b",
-        "wire": "#3a3d42"
+        "wood": "#5b4632",
+        "rope": "#8c7a5b",
+        "sign": "#c0392b"
       }
     }
   }
