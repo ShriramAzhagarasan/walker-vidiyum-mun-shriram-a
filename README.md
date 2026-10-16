@@ -50,14 +50,26 @@ python3 tools/check/loop_seam_check.py                                   # music
 ```
 Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 
-## Assignment 3: three Blender assets (in progress)
-Three game assets built from Blender's basic shapes by directing Claude through the **Blender MCP**: **the SUV** (4.60 × 1.90 × 1.85 m), **the rock shrine** (1.20 × 1.00 × 1.50 m) and **a fence segment** (2.40 × 0.12 × 2.10 m), exported as `.glb` and shown together in `godot/scenes/a3_showcase.tscn` beside Hari's 1.75 m billboard.
+## Assignment 3: three Blender assets (tag `a3`)
+Three game assets built from Blender's basic shapes by directing Claude through the **Blender MCP**, then exported as `.glb` and shown together in `godot/scenes/a3_showcase.tscn` beside Hari's 1.75 m billboard:
+  - **The SUV:** 4.60 × 1.90 × 1.70 m, 456 triangles.
+  - **The rock shrine:** the sea goddess in relief, with a brass lamp; 1.20 × 1.00 × 0.90 m, 266 triangles.
+  - **A fence segment:** wooden posts and ropes; 2.40 × 0.12 × 2.10 m, 108 triangles.
+
+  Each is at most 6 shapes. The final sizes come from brief revisions 2–3, which were driven by my inspection in Blender.
 - **Versions:** Blender 5.2.2 LTS · Godot 4.7.2 · mcp-for-blender 2.1.9 · macOS.
 - **Brief (committed before building):** [CHANGE-BRIEF.md](CHANGE-BRIEF.md), the "Assignment 3" section, plus `godot/tests/data/a3_brief.json`. Interface notes: [BLENDER-NOTES.md](BLENDER-NOTES.md).
 - **Open the scene:** `"$GODOT" --path godot res://scenes/a3_showcase.tscn`. Drag or arrow keys orbit (including from behind and below), scroll zooms, 1/2/3 focus each asset, 0 shows all, H toggles Hari, L toggles labels.
 - **Run the check:** `timeout 120 "$GODOT" --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60`, and its self-test `check_a3_selftest.gd`. Results: [TEST-REPORT.md](TEST-REPORT.md), section "Assignment 3".
-- **Blender sources:** `blender/<asset>.blend` and the exact code Claude ran in `tools/blender/build_<asset>.py` *(pending build)*.
-- **Film and limitations:** *pending*.
+- **Blender sources:** `blender/<asset>.blend` and the exact code Claude ran in `tools/blender/build_<asset>.py` (plus `export_glb.py`).
+- **What this assignment added:** the three models and their sources, `scenes/a3_showcase.tscn` (with a flickering lamp light), the headless check `tests/check_a3_assets.gd` (**31/31 PASS**) and its self-test (**17/17**), and the A3 sections of every doc. My hand edit is in BLENDER-NOTES.md.
+- **A3 film:** [claude-liam-vidiyum-mun-a3-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQA4dYF_0V_BSpYUUXYgVdkjAaIpfKV-HliF7n9IKG8jTEc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xe2yTl) (Northeastern OneDrive), 3840×2160, 30 fps, 4:21, SHA-256 `40e99c7d4e55ecb2b7e004f608e3c55bd43010fd8776b86c66e2f8ed66b3a91e`. It shows game source `81c1666`. Records: [youtube/claude-liam-vidiyum-mun-a3-gamedev/](youtube/claude-liam-vidiyum-mun-a3-gamedev/).
+- **A3 known limitations:**
+  - The assets are silhouettes, with no lettering on the sign.
+  - The flame is static in the model; the flicker is a Godot light.
+  - They aren't in the night slice yet.
+
+  Full list in TEST-REPORT.md.
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · my original story and decisions: [design/input/](design/input/)

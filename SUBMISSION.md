@@ -1,33 +1,31 @@
 # Submission
 
-- **Assignment:** Assignment 2 - Generate Art, Sound, and Music for Your Game
+- **Assignment:** Assignment 3 - Your First 3D Game Assets with Claude, the Blender MCP, and Blender
 - **Student:** Shriram Alagarasan (azhagarasan.s@northeastern.edu)
 - **Project name:** walker-vidiyum-mun-shriram-a, *Vidiyum Mun* (விடியும் முன், "Before Dawn")
-- **Game concept in one sentence:** A middle-class Chennai student at the last party on a rich family's illegally fenced ECR beach keeps waking at 8 PM after every tragic dawn, and must notice the people the party ignores to change what happens before sunrise.
-- **GitHub repository/folder URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
-- **Started from:** an empty Godot 4.7.2 project. Test-harness and GDScript conventions were borrowed from my Assignment 1 repo (walker-jumpman-shriram-a, itself based on nikbearbrown/walker-jumpman); no art, levels or characters reused.
-- **Submitted commit SHA:** the final commit on `main` (also tagged `a2`). Its SHA is given in the Canvas submission note, because a commit can't contain its own SHA.
-- **Source revision shown in the film:** `13f772c` (game source frozen; later commits change only docs and film records, not `godot/`)
-- **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · macOS 26.6.2 (Apple M1 Pro, 16 GB)
-- **Generative models used (name, version, where run, licence):**
-  - FLUX.2 [klein] 4B (HF rev `e7b7dc2`, local via mflux 0.20.0 on Apple Silicon, Apache 2.0): every character image, the environment, the intro stills.
-  - Z-Image-Turbo (HF rev `f332072`, local, Apache 2.0): comparison only, not used.
-  - Stable Audio Open 1.0 (HF rev `f21265c`, local via diffusers 0.40 on MPS, Stability AI Community License): 5 sound effects.
-  - MusicGen stereo-medium (HF rev `2747e61`, local via transformers 5.18 on MPS, CC-BY-NC 4.0, non-commercial): 2 music loops.
-  - rembg 2.0.85 with isnet-anime / BiRefNet (MIT / Apache 2.0): background removal.
-- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQCsgk2bE-sbTo2EHyuUU-r5AQHG8865pDMU0TWLaO7khVw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YVnmag · `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` (3840×2160, 30 fps, 6:18)
-- **Final film SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`
-- **Summary of my work:**
-  - **Story and design input (mine):** I chose the game and wrote its story, characters, setting and tone as an homage to Chennai (`design/input/`). I corrected Claude's generic local details.
-  - **Look and style (mine):** I picked the 3D/Telltale direction (built as 2.5D) and chose Hari's reference image, which set the style for every pose.
-  - **Playtests (mine):** I played the slice three times, and my notes drove the revisions: static motion → walk cycle and motion feel; a two-phone pose → replaced; loop-2 dialogue that just repeated → Hari now reacts in shock; flat "slapped-on" backdrops → regenerated and re-framed.
-  - **What Claude built:** design-doc drafts, prompts, generation and audio tools, the Godot code and tests, and the film pipeline. The local models generated every asset. See SOURCES.md and FRICTIONAL.md for the full split.
+- **GitHub repository URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
+- **Git tag and submitted commit SHA:** tag `a3`. The submitted commit's SHA is given in the Canvas submission note, because a commit can't contain its own SHA.
+- **Game-source revision shown in the film:** `81c1666`. Later commits change only docs and film records; `git diff 81c1666 a3 -- godot tools/blender blender` is empty.
+- **Godot version, Blender version, and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · Blender 5.2.2 LTS · macOS 26.6.2 (Apple M1 Pro)
+- **The three assets and what each is for:**
+  - **SUV** (`suv`, 4.60 × 1.90 × 1.70 m, 456 triangles): the car whose keys decide whether dawn ends in a crash. It replaces A2's flat SUV card.
+  - **Rock shrine** (`rock_shrine`, 1.20 × 1.00 × 0.90 m, 266 triangles): the sea goddess Manimekala's rock, which the rich family fenced off. The goddess is in relief on its face, with a brass lamp at its foot.
+  - **Fence segment** (`fence_segment`, 2.40 × 0.12 × 2.10 m, 108 triangles): one panel of the illegal fence across the public beach, with wooden posts and ropes as in the A2 beach art.
+- **MCP project and version, or "script route":** MCP route for all three assets: MCP for Blender (`mcp-for-blender` 2.1.9 via `uvx`, add-on panel "Addon 1.8"), with telemetry, asset libraries and generators all off. Every `execute_blender_code` body is in `tools/blender/build_suv.py`, `build_rock_shrine.py`, `build_fence_segment.py` and `export_glb.py`.
+- **My hand edit in Blender:** on the fence, I moved the red sign to the centre and in front of the ropes, and typed exact values in the Item tab (X 0, Y −0.03) so it sits flush on the rope. I had duplicated it twice and deleted the copies because of the 6-shape limit. It taught me the three axes and that typed values beat dragging. Details in BLENDER-NOTES.md.
+- **Checks run (command and result):**
+  - `timeout 120 godot --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60` → **31 checks, 0 failed → PASS** (size ±5 %, upright, node scale 1, lowest vertex y = 0, origin, triangles, ≤ 6 shapes, colours, SUV front)
+  - `timeout 120 godot --headless --path godot --script res://tests/check_a3_selftest.gd --fixed-fps 60` → **17 checks, 0 failed → PASS** (the check catches floating, ×0.1 scale, lying on its side, a lost colour, over budget, facing backwards)
+  - `godot --headless --path godot --import`: all three `.glb` files imported with no errors; `scenes/a3_showcase.tscn` opens with no errors.
+  - Human look check (mine): I orbited each asset in the running scene, including behind and below, beside Hari. My words are in TEST-REPORT.md.
+- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQA4dYF_0V_BSpYUUXYgVdkjAaIpfKV-HliF7n9IKG8jTEc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xe2yTl · `claude-liam-vidiyum-mun-a3-gamedev.mp4` (3840×2160, 30 fps, 4:21)
+- **Final film SHA-256:** `40e99c7d4e55ecb2b7e004f608e3c55bd43010fd8776b86c66e2f8ed66b3a91e`
+- **Summary of my changes:** I chose the three assets for my game and approved the brief before anything was built. I approved every build plan and judged every build in Blender. I rejected three SUV builds (too basic; then missing doors, windows, lights, tailgate and exhaust; then unequal doors) until it read as a modern SUV. I kept the shrine true to my story's lore, as a rock with the goddess on it and a lamp someone can reach, and I matched the fence to my beach art. I made the hand edit and did the look check. Claude wrote the brief's numbers, all the Blender code, the export, the Godot scene, check and self-test, and the film. Full split in SOURCES.md and FRICTIONAL.md; every revision is in CHANGE-BRIEF.md (revisions 2–3) and TEST-REPORT.md.
 - **Known limitations:**
-  - **2.5D:** flat generated characters, SUV and backdrops read as cards when the camera turns, with no rigged 3D motion. The next step is Blender props in A3.
-  - OVERHEAR is close to IDLE in silhouette.
-  - The walk cycle is 4 frames, with IDLE as the passing frame.
-  - The in-game camera doesn't do the storyboard's special angles.
-  - The audio picks were provisional, made from measurements, pending my listening verdict.
-  - MusicGen's licence is non-commercial.
-  - The first 7 commits carry my work git identity by mistake (explained in SOURCES.md).
-  - The film's text-legibility gate flagged the small text inside game footage and generated images; the override is documented in the reel's `_qc/GATE-T-OVERRIDE.md` and approved by me.
+  - Each asset is a silhouette of at most 6 basic shapes (no wheel arches, mirrors or handles; the goddess is a figure, not a portrait).
+  - The sign has no lettering (that would need a painted texture).
+  - The flame doesn't animate in the model; the flicker is a Godot light.
+  - The assets are in the A3 showcase, not yet in the A2 night slice, so they haven't been judged under the game's night lighting.
+  - The film's Godot orbit is a set of engine screenshots, not a motion capture.
+  - My screen recording (`blendersession.mov`, 2.8 GB) stays out of Git; the film uses labelled clips from it.
+- **Changed games since Assignment 2:** no.
