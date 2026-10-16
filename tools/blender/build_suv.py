@@ -888,3 +888,229 @@ print("asset size X x Y x Z:", tuple(round(v, 3) for v in (hi - lo)), "lowest z:
 bpy.ops.wm.save_mainfile()
 print("saved", bpy.data.filepath)
 # Result: body 188, cabin 44, wheels 4 x 56; asset size X x Y x Z: (4.6, 1.9, 1.7) lowest z: 0.0 | shapes: 6 triangles: 456
+
+
+# =====================================================================================================
+# BUILD 4 (doors), ~20:28-20:31 EDT. Shriram, looking at the side of build 3 in Blender: "the sides of the suv
+# doesn't look good and proper, it is not equal sized,a dn that doesn;t look like a speartion, fix that".
+# Claude's diagnosis: 2 cm dark-grey seams on a dark body, front door 1.10 m vs a windscreen base at 1.10 and a
+# C pillar off the seam, so the windows did not line up with the doors. Fix: equal 1.05 m doors, 3.5 cm near-black
+# seams, pillars centred on the seams. Wheels unchanged from build 3.
+# =====================================================================================================
+
+# --- SUV r4 call 0: open the SUV's own file (rock_shrine.blend was saved first)
+import bpy
+bpy.ops.wm.open_mainfile(filepath="/Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/blender/suv.blend")
+print("opened", bpy.data.filepath, [o.name for o in bpy.data.objects])
+
+# calls 1 and 2 were exec() lines running these snippet files:
+# --- SUV r4 call 1: SUV_Body again, door seams fixed after Shriram's look: "the sides of the suv doesn't look good and proper, it is not equal sized,a dn that doesn;t look like a speartion, fix that".
+#     Two equal 1.05 m doors (seams centred at x +1.05, 0.00, -1.05, lined up with the A, B and C pillars), seams 3.5 cm wide and near-black #060607.
+#     Everything else as in r3 call 1:
+#     a nearly flat bonnet (1.05 at the nose). Face cuts + flat materials, no extra shapes:
+#     front: two separate headlights, a grille, two fog lamps in a dark lower bumper;
+#     rear: full-width tail-light bar, tailgate handle, dark bumper with a recessed exhaust;
+#     sides: three thin seams = front door, rear door (4 doors with the other side).
+import bpy, bmesh
+from mathutils import Vector
+
+def flat_material(name, hex_colour, roughness=0.6, metallic=0.0, emission=0.0):
+    mat = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+    if hasattr(mat, "use_nodes") and not mat.use_nodes:
+        mat.use_nodes = True
+    h = hex_colour.lstrip("#")
+    srgb = [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    lin = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in srgb]
+    bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+    bsdf.inputs["Base Color"].default_value = (*lin, 1.0)
+    bsdf.inputs["Roughness"].default_value = roughness
+    bsdf.inputs["Metallic"].default_value = metallic
+    if "Emission Strength" in bsdf.inputs:
+        bsdf.inputs["Emission Color"].default_value = (*lin, 1.0)
+        bsdf.inputs["Emission Strength"].default_value = emission
+    mat.diffuse_color = (*lin, 1.0)
+    return mat
+
+Z0 = 0.785                                            # body centre height; local z = world z - Z0
+def W(z): return z - Z0
+
+def cut(bm, faces, co, no):
+    if not faces:
+        return
+    edges = list({e for f in faces for e in f.edges})
+    verts = list({v for f in faces for v in f.verts})
+    bmesh.ops.bisect_plane(bm, geom=faces + edges + verts, plane_co=co, plane_no=no)
+
+def C(f): return f.calc_center_median()
+def front(bm): return [f for f in bm.faces if f.normal.x > 0.9]
+def rear(bm):  return [f for f in bm.faces if f.normal.x < -0.9]
+def sides(bm): return [f for f in bm.faces if abs(f.normal.y) > 0.9]
+
+root = bpy.data.objects["suv"]
+old = bpy.data.objects.get("SUV_Body")
+if old:
+    bpy.data.objects.remove(old, do_unlink=True)
+bpy.ops.object.select_all(action="DESELECT")
+bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.0, 0.0, Z0))
+obj = bpy.context.active_object
+obj.name = "SUV_Body"
+obj.data.name = "SUV_Body"
+obj.scale = (4.60, 1.84, 0.67)
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+
+me = obj.data
+me.materials.clear()
+SLOTS = [("SUV_body", "#333738", 0.35, 0.5, 0.0), ("SUV_grille", "#0e0f12", 0.5, 0.0, 0.0),
+         ("SUV_headlight", "#f4f1e6", 0.2, 0.0, 3.0), ("SUV_taillight", "#b3121b", 0.3, 0.0, 1.5),
+         ("SUV_foglamp", "#fff1c4", 0.2, 0.0, 1.0), ("SUV_bumper", "#1c1d20", 0.7, 0.0, 0.0),
+         ("SUV_seam", "#060607", 0.9, 0.0, 0.0), ("SUV_chrome", "#b8bcc4", 0.25, 0.9, 0.0),
+         ("SUV_exhaust", "#050506", 0.9, 0.0, 0.0)]
+for s in SLOTS:
+    me.materials.append(flat_material(*s))
+BODY, GRILLE, HEAD, TAIL, FOG, BUMPER, SEAM, CHROME, EXHAUST = range(9)
+
+bm = bmesh.new(); bm.from_mesh(me)
+for v in bm.verts:
+    if v.co.x > 0 and v.co.z > 0:
+        v.co.z = W(1.05)                              # bonnet: 7 cm drop to the nose, nearly flat like a modern SUV
+X, Y, Z = Vector((1, 0, 0)), Vector((0, 1, 0)), Vector((0, 0, 1))
+
+# front: rows at 0.60 / 0.88, columns at +-0.40; fog-lamp cells at |y| 0.62-0.80 in the lowest row
+cut(bm, front(bm), Vector((0, 0, W(0.88))), Z)
+cut(bm, front(bm), Vector((0, 0.40, 0)), Y); cut(bm, front(bm), Vector((0, -0.40, 0)), Y)
+cut(bm, [f for f in front(bm) if abs(C(f).y) > 0.40 and C(f).z < W(0.88)], Vector((0, 0, W(0.60))), Z)
+for y in (0.62, 0.80, -0.62, -0.80):
+    cut(bm, [f for f in front(bm) if C(f).z < W(0.60) and abs(C(f).y) > 0.40], Vector((0, y, 0)), Y)
+heads = [f for f in front(bm) if C(f).z > W(0.88) and abs(C(f).y) > 0.40]
+grille = [f for f in front(bm) if C(f).z < W(0.88) and abs(C(f).y) < 0.40]
+fogs = [f for f in front(bm) if C(f).z < W(0.60) and 0.62 < abs(C(f).y) < 0.80]
+front_low = [f for f in front(bm) if C(f).z < W(0.60) and f not in fogs]
+bmesh.ops.inset_individual(bm, faces=heads, thickness=0.035, depth=0.0)
+bmesh.ops.inset_individual(bm, faces=grille, thickness=0.05, depth=0.0)
+bmesh.ops.inset_individual(bm, faces=fogs, thickness=0.03, depth=0.0)
+
+# rear: rows at 0.62 / 0.80 / 0.92; tailgate handle cell |y| < 0.10 in the 0.62-0.80 row; exhaust cell y -0.72..-0.50 in the bumper row
+for z in (0.62, 0.80, 0.92):
+    cut(bm, rear(bm), Vector((0, 0, W(z))), Z)
+for y in (0.10, -0.10):
+    cut(bm, [f for f in rear(bm) if W(0.62) < C(f).z < W(0.80)], Vector((0, y, 0)), Y)
+for y in (-0.50, -0.72):
+    cut(bm, [f for f in rear(bm) if C(f).z < W(0.62)], Vector((0, y, 0)), Y)
+handle = [f for f in rear(bm) if W(0.62) < C(f).z < W(0.80) and abs(C(f).y) < 0.10]
+exhaust = [f for f in rear(bm) if C(f).z < W(0.62) and -0.72 < C(f).y < -0.50]
+tail = [f for f in rear(bm) if W(0.80) < C(f).z < W(0.92)]
+bmesh.ops.inset_individual(bm, faces=handle, thickness=0.025, depth=0.0)
+bmesh.ops.inset_individual(bm, faces=exhaust, thickness=0.03, depth=-0.04)   # recessed opening
+rear_low = [f for f in rear(bm) if C(f).z < W(0.62) and f not in exhaust]
+
+# sides: thin seams (2 cm) at x 1.10 (front edge of the front door), 0.00 (between the doors), -1.10 (rear edge of the rear door)
+SEAMS = ((1.0325, 1.0675), (-0.0175, 0.0175), (-1.0675, -1.0325))
+for x in (a for s in SEAMS for a in s):
+    cut(bm, sides(bm), Vector((x, 0, 0)), X)
+seams = [f for f in sides(bm) if any(a < C(f).x < b for a, b in SEAMS)]
+
+for f in bm.faces:
+    c = C(f)
+    f.material_index = BODY
+    if c.x > 2.25 and c.z < W(0.60):                  # front lower bumper, including the fog lamps' surrounds
+        f.material_index = BUMPER
+    if c.x < -2.25 and c.z < W(0.62):                 # rear bumper; the exhaust recess walls are dark
+        f.material_index = EXHAUST if -0.72 < c.y < -0.50 else BUMPER
+for group, idx in ((heads, HEAD), (grille, GRILLE), (fogs, FOG),
+                   (tail, TAIL), (handle, CHROME), (exhaust, EXHAUST), (seams, SEAM)):
+    for f in group:
+        if f.is_valid:
+            f.material_index = idx
+bm.to_mesh(me); bm.free(); me.update()
+obj.parent = root
+me.calc_loop_triangles()
+print(obj.name, "loc", tuple(round(v, 3) for v in obj.location), "dims", tuple(round(v, 3) for v in obj.dimensions),
+      "scale", tuple(obj.scale), "faces", len(me.polygons), "tris", len(me.loop_triangles))
+print("faces per material", {SLOTS[i][0]: sum(1 for p in me.polygons if p.material_index == i) for i in range(len(SLOTS))})
+# Result: dims (4.6, 1.84, 0.67) scale (1,1,1) tris 188
+
+
+# --- SUV r4 call 2: SUV_Cabin again, lined up with the r4 doors: windscreen base (A pillar) at x 1.05 (roof front 0.25), B pillar x -0.05..0.05
+#     over the middle seam, C pillar x -1.11..-0.99 over the rear seam. Otherwise as r3 call 2:
+#     sides lean in (1.76 -> 1.48 wide). Windscreen = front face, rear window = back face. B pillar (x -0.05..0.05) and
+#     C pillar (x -1.16..-1.04) cut into each side so the front-door, rear-door and quarter windows read separately.
+#     Roof and pillars body-coloured, windows tinted glass.
+import bpy, bmesh
+from mathutils import Vector
+
+def flat_material(name, hex_colour, roughness=0.6, metallic=0.0, emission=0.0):
+    mat = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+    if hasattr(mat, "use_nodes") and not mat.use_nodes:
+        mat.use_nodes = True
+    h = hex_colour.lstrip("#")
+    srgb = [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    lin = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in srgb]
+    bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+    bsdf.inputs["Base Color"].default_value = (*lin, 1.0)
+    bsdf.inputs["Roughness"].default_value = roughness
+    bsdf.inputs["Metallic"].default_value = metallic
+    if "Emission Strength" in bsdf.inputs:
+        bsdf.inputs["Emission Color"].default_value = (*lin, 1.0)
+        bsdf.inputs["Emission Strength"].default_value = emission
+    mat.diffuse_color = (*lin, 1.0)
+    return mat
+
+root = bpy.data.objects["suv"]
+old = bpy.data.objects.get("SUV_Cabin")
+if old:
+    bpy.data.objects.remove(old, do_unlink=True)
+cx, cz = -0.575, 1.375
+bpy.ops.object.select_all(action="DESELECT")
+bpy.ops.mesh.primitive_cube_add(size=1.0, location=(cx, 0.0, cz))
+obj = bpy.context.active_object
+obj.name = "SUV_Cabin"
+obj.data.name = "SUV_Cabin"
+obj.scale = (3.25, 1.76, 0.65)
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+me = obj.data
+me.materials.clear()
+me.materials.append(flat_material("SUV_glass", "#1f2633", 0.12))            # 0
+me.materials.append(flat_material("SUV_body", "#333738", 0.35, 0.5))        # 1
+
+bm = bmesh.new(); bm.from_mesh(me)
+for v in bm.verts:                                     # local coordinates around (cx, 0, cz)
+    if v.co.z > 0:
+        v.co.x = (0.25 - cx) if v.co.x > 0 else (-1.95 - cx)
+        v.co.y = 0.74 if v.co.y > 0 else -0.74
+bm.normal_update()
+pillars = ((-0.05, 0.05), (-1.11, -0.99))
+for x in (a for p in pillars for a in p):
+    side = [f for f in bm.faces if abs(f.normal.y) > 0.8]
+    edges = list({e for f in side for e in f.edges}); verts = list({v for f in side for v in f.verts})
+    bmesh.ops.bisect_plane(bm, geom=side + edges + verts, plane_co=Vector((x - cx, 0, 0)), plane_no=Vector((1, 0, 0)))
+for f in bm.faces:
+    c = f.calc_center_median()
+    is_roof = f.normal.z > 0.9
+    is_pillar = abs(f.normal.y) > 0.8 and any(a < c.x + cx < b for a, b in pillars)
+    f.material_index = 1 if (is_roof or is_pillar) else 0
+bm.to_mesh(me); bm.free(); me.update()
+obj.parent = root
+me.calc_loop_triangles()
+xs = [v.co.x + cx for v in me.vertices]
+print(obj.name, "loc", tuple(round(v, 3) for v in obj.location), "dims", tuple(round(v, 3) for v in obj.dimensions),
+      "scale", tuple(obj.scale), "tris", len(me.loop_triangles), "vertex-centre x", round(sum(xs) / len(xs), 3),
+      "| glass/body faces", [sum(1 for p in me.polygons if p.material_index == i) for i in range(2)])
+# Result: dims (3.25, 1.76, 0.65) scale (1,1,1) tris 44, vertex-centre x -0.588
+
+
+# --- SUV r4 call 3 (read-only) + save
+import bpy
+from mathutils import Vector
+root = bpy.data.objects["suv"]
+lo = Vector((1e9,) * 3); hi = Vector((-1e9,) * 3); tris = 0
+for o in root.children:
+    for v in o.data.vertices:
+        w = o.matrix_world @ v.co
+        lo = Vector(map(min, lo, w)); hi = Vector(map(max, hi, w))
+    o.data.calc_loop_triangles(); tris += len(o.data.loop_triangles)
+seam_x = sorted({round((o.matrix_world @ p.center).x, 3) for o in [bpy.data.objects["SUV_Body"]] for p in o.data.polygons if o.data.materials[p.material_index].name == "SUV_seam"})
+print("asset size X x Y x Z:", tuple(round(v, 3) for v in (hi - lo)), "lowest z:", round(lo.z, 4), "| shapes:", len(root.children), "triangles:", tris, "| seam centres x:", seam_x)
+bpy.ops.object.select_all(action="DESELECT")
+bpy.ops.wm.save_mainfile()
+print("saved", bpy.data.filepath)
+# Result: asset size X x Y x Z: (4.6, 1.9, 1.7) lowest z: 0.0 | shapes: 6 triangles: 456 | seam centres x: [-1.05, 0.0, 1.05]
