@@ -347,3 +347,185 @@ print("shapes:", len(root.children), "triangles:", tris)
 import bpy
 bpy.ops.wm.save_mainfile()
 print("saved", bpy.data.filepath)
+
+
+# =====================================================================================================
+# BUILD 3 (brief revision 3), ~20:22-20:27 EDT. Shriram inspected build 2 and asked: "the flame on top doesn't
+# resemble a flame at all, rather it just looks like a sharp triangleon top, it should have a lamp holder and the
+# top should have an orange flame which keeps burning and the size of it need not be way too big as vastav's dad
+# would burn it every night or would get someone to burn it for him so wherever it's kept needs to be accessible,
+# also for the devi, instead of jsut shapes could we not do something to make her resemble more on the rock?
+# implement al of this" (then: "no go ahead").
+# Each execute_blender_code body was one line running a snippet file saved first:
+#     exec(compile(open(".../shrine_r3_<n>.py").read(), "shrine_r3_<n>.py", "exec"))
+# The snippets, and the helper file they all run first, follow verbatim. (Call 4 made two objects, the holder
+# and the flame, in one call.)
+# =====================================================================================================
+
+# ---- shrine_r3_common.py (run at the top of calls 1-4)
+import bpy, bmesh, math
+from mathutils import Vector
+
+def flat_material(name, hex_colour, roughness=0.8, metallic=0.0, emission=0.0):
+    mat = bpy.data.materials.get(name) or bpy.data.materials.new(name)
+    if hasattr(mat, "use_nodes") and not mat.use_nodes:
+        mat.use_nodes = True
+    h = hex_colour.lstrip("#")
+    srgb = [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    lin = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in srgb]
+    bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+    bsdf.inputs["Base Color"].default_value = (*lin, 1.0)
+    bsdf.inputs["Roughness"].default_value = roughness
+    bsdf.inputs["Metallic"].default_value = metallic
+    if "Emission Strength" in bsdf.inputs:
+        bsdf.inputs["Emission Color"].default_value = (*lin, 1.0)
+        bsdf.inputs["Emission Strength"].default_value = emission
+    mat.diffuse_color = (*lin, 1.0)
+    return mat
+
+def replace_with(kind, name, location, **kw):
+    """Remove the old part of this name and add a fresh primitive in its place."""
+    old = bpy.data.objects.get(name)
+    if old:
+        bpy.data.objects.remove(old, do_unlink=True)
+    bpy.ops.object.select_all(action="DESELECT")
+    getattr(bpy.ops.mesh, kind)(location=location, **kw)
+    obj = bpy.context.active_object
+    obj.name = name
+    obj.data.name = name
+    return obj
+
+def bisect_z(bm, z_local):
+    geom = bm.verts[:] + bm.edges[:] + bm.faces[:]
+    bmesh.ops.bisect_plane(bm, geom=geom, plane_co=Vector((0, 0, z_local)), plane_no=Vector((0, 0, 1)))
+
+def report(obj):
+    obj.data.calc_loop_triangles()
+    print(obj.name, "loc", tuple(round(v, 4) for v in obj.location), "dims", tuple(round(v, 3) for v in obj.dimensions),
+          "rot", tuple(round(math.degrees(v), 1) for v in obj.rotation_euler), "scale", tuple(obj.scale),
+          "tris", len(obj.data.loop_triangles))
+
+
+# --- SHRINE r3 call 0: open the shrine's own file (suv.blend was saved first)
+import bpy
+bpy.ops.wm.open_mainfile(filepath="/Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-vidiyum-mun-shriram-a/blender/rock_shrine.blend")
+print("opened", bpy.data.filepath, [o.name for o in bpy.data.objects])
+
+
+# --- SHRINE r3 call 1: Shrine_Panel becomes an arched niche (a pointed top, like a temple niche) with a sea-blue wave band at its foot,
+#     so the goddess stands on the sea. Same box, x 0.50-0.555, y +-0.18, z 0.20-0.64, peak raised to 0.72. Stone #3a3632, sea #2b6f8e
+exec(compile(open("/private/tmp/claude-501/-Users-shriramalagarasan-Desktop-NortheasternUniversity-Fall2026-walker-vidiyum-mun-shriram-a/dc44086f-b290-4df3-9577-22f3faebd0de/scratchpad/blender/shrine_r3_common.py").read(), "shrine_r3_common.py", "exec"))
+root = bpy.data.objects["rock_shrine"]
+obj = replace_with("primitive_cube_add", "Shrine_Panel", (0.5275, 0.0, 0.42), size=1.0)
+obj.scale = (0.055, 0.36, 0.44)
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+me = obj.data
+me.materials.clear()
+me.materials.append(flat_material("Shrine_niche", "#3a3632", 0.9))     # 0
+me.materials.append(flat_material("Shrine_sea", "#2b6f8e", 0.5))       # 1
+bm = bmesh.new(); bm.from_mesh(me)
+geom = bm.verts[:] + bm.edges[:] + bm.faces[:]
+bmesh.ops.bisect_plane(bm, geom=geom, plane_co=Vector((0, 0, 0)), plane_no=Vector((0, 1, 0)))
+for v in bm.verts:
+    if abs(v.co.y) < 1e-5 and v.co.z > 0:
+        v.co.z += 0.08                                  # the arch's peak, 0.72 m
+front = [f for f in bm.faces if f.normal.x > 0.9]
+edges = list({e for f in front for e in f.edges}); verts = list({v for f in front for v in f.verts})
+bmesh.ops.bisect_plane(bm, geom=front + edges + verts, plane_co=Vector((0, 0, 0.27 - 0.42)), plane_no=Vector((0, 0, 1)))
+for f in bm.faces:
+    f.material_index = 1 if (f.normal.x > 0.9 and f.calc_center_median().z < 0.27 - 0.42) else 0
+bm.to_mesh(me); bm.free(); me.update()
+obj.parent = root
+report(obj)
+
+
+# --- SHRINE r3 call 2: Goddess_Robe rebuilt as a figure in relief: an 8-sided cylinder with rings at 0.40 / 0.415 / 0.47 shaped into a
+#     flared saree skirt (0.22 wide at 0.27), a waist (0.09 at 0.40), shoulders (0.15 at 0.47) and a neck (0.056 at 0.505); 0.044 deep.
+#     A gold band at the waist (0.40-0.415): Manimekala means "jewelled girdle". Kumkum #b3202a, gold #c9a24a
+exec(compile(open("/private/tmp/claude-501/-Users-shriramalagarasan-Desktop-NortheasternUniversity-Fall2026-walker-vidiyum-mun-shriram-a/dc44086f-b290-4df3-9577-22f3faebd0de/scratchpad/blender/shrine_r3_common.py").read(), "shrine_r3_common.py", "exec"))
+root = bpy.data.objects["rock_shrine"]
+CZ = 0.3875                                             # z 0.27-0.505
+obj = replace_with("primitive_cylinder_add", "Goddess_Robe", (0.5775, 0.0, CZ), vertices=8, radius=0.1, depth=0.235, end_fill_type="NGON")
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+me = obj.data
+me.materials.clear()
+me.materials.append(flat_material("Goddess_kumkum", "#b3202a", 0.7))  # 0
+me.materials.append(flat_material("Shrine_brass", "#c9a24a", 0.35, 0.8))  # 1 gold girdle
+bm = bmesh.new(); bm.from_mesh(me)
+for z in (0.40, 0.415, 0.47):
+    bisect_z(bm, z - CZ)
+profile = {0.27: 0.11, 0.40: 0.045, 0.415: 0.047, 0.47: 0.075, 0.505: 0.028}   # world z -> half-width in Y
+for v in bm.verts:
+    zw = round(v.co.z + CZ, 3)
+    r = profile[min(profile, key=lambda k: abs(k - zw))]
+    a = math.atan2(v.co.y, v.co.x)
+    v.co.x = math.cos(a) * r * 0.2                     # flattened: a relief 0.044 m deep at the hem
+    v.co.y = math.sin(a) * r
+for f in bm.faces:
+    zc = f.calc_center_median().z + CZ
+    f.material_index = 1 if (abs(f.normal.z) < 0.9 and 0.40 < zc < 0.415) else 0
+bm.to_mesh(me); bm.free(); me.update()
+obj.parent = root
+report(obj)
+
+
+# --- SHRINE r3 call 3: Goddess_Head rebuilt with a pointed crown (kireedam): icosphere subdivisions 1, 0.12 m, flattened to 0.045 deep,
+#     top vertex raised 0.045 m; the crown faces gold, the face turmeric #d9a21b
+exec(compile(open("/private/tmp/claude-501/-Users-shriramalagarasan-Desktop-NortheasternUniversity-Fall2026-walker-vidiyum-mun-shriram-a/dc44086f-b290-4df3-9577-22f3faebd0de/scratchpad/blender/shrine_r3_common.py").read(), "shrine_r3_common.py", "exec"))
+root = bpy.data.objects["rock_shrine"]
+obj = replace_with("primitive_ico_sphere_add", "Goddess_Head", (0.5775, 0.0, 0.565), subdivisions=1, radius=0.06)
+obj.scale = (0.375, 1.0, 1.0)
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+me = obj.data
+me.materials.clear()
+me.materials.append(flat_material("Shrine_turmeric", "#d9a21b"))          # 0 face
+me.materials.append(flat_material("Shrine_brass", "#c9a24a", 0.35, 0.8))  # 1 crown
+top = max(me.vertices, key=lambda v: v.co.z)
+top.co.z += 0.045
+for p in me.polygons:
+    p.material_index = 1 if top.index in p.vertices else 0
+me.update()
+obj.parent = root
+report(obj)
+
+
+# --- SHRINE r3 call 4: the lamp moves off the top of the rock to the front, on the sand beside the goddess (x 0.52, y 0.30), where
+#     whoever lights it each night can reach it. Shrine_Lamp = a brass holder from one 8-sided cylinder: a 0.09 m foot, a 0.032 m stem
+#     at 0.08 and a 0.11 m bowl at 0.14 (a small kuthu-vilakku shape). Shrine_Flame = a teardrop on the bowl: icosphere subdivisions 1,
+#     stretched 1.5x upward with its tip pulled up 0.045 m, glowing orange #ff8c1a. The model can't animate (course rule); in Godot its light can flicker.
+exec(compile(open("/private/tmp/claude-501/-Users-shriramalagarasan-Desktop-NortheasternUniversity-Fall2026-walker-vidiyum-mun-shriram-a/dc44086f-b290-4df3-9577-22f3faebd0de/scratchpad/blender/shrine_r3_common.py").read(), "shrine_r3_common.py", "exec"))
+root = bpy.data.objects["rock_shrine"]
+LX, LY, CZ = 0.52, 0.30, 0.07
+lamp = replace_with("primitive_cylinder_add", "Shrine_Lamp", (LX, LY, CZ), vertices=8, radius=0.04, depth=0.14, end_fill_type="NGON")
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+bm = bmesh.new(); bm.from_mesh(lamp.data)
+bisect_z(bm, 0.08 - CZ)
+profile = {0.0: 0.045, 0.08: 0.016, 0.14: 0.055}
+for v in bm.verts:
+    zw = v.co.z + CZ
+    r = profile[min(profile, key=lambda k: abs(k - zw))]
+    a = math.atan2(v.co.y, v.co.x)
+    v.co.x = math.cos(a) * r
+    v.co.y = math.sin(a) * r
+bm.to_mesh(lamp.data); bm.free(); lamp.data.update()
+lamp.data.materials.clear()
+lamp.data.materials.append(flat_material("Shrine_brass", "#c9a24a", 0.35, 0.8))
+lamp.parent = root
+report(lamp)
+
+flame = replace_with("primitive_ico_sphere_add", "Shrine_Flame", (LX, LY, 0.18), subdivisions=1, radius=0.028)
+flame.scale = (1.0, 1.0, 1.5)
+bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+tip = max(flame.data.vertices, key=lambda v: v.co.z)
+tip.co.z += 0.045
+flame.data.update()
+flame.data.materials.clear()
+flame.data.materials.append(flat_material("Shrine_flame", "#ff8c1a", 0.5, 0.0, 4.0))
+flame.parent = root
+report(flame)
+
+
+# Results (get_scene_info / measured from vertices): Panel 0.055 x 0.36 x 0.52 (z 0.20-0.72, arch peak), 26 tris; Robe 0.044 x 0.22 x 0.235,
+# 76 tris; Head 0.04 x 0.10 x 0.165 with crown (z 0.505-0.67), 20 tris; Lamp holder 0.11 x 0.11 x 0.14 on the floor, 44 tris;
+# Flame 0.05 x 0.05 x 0.13 (z 0.138-0.267), 20 tris. Whole asset: 1.20 x 1.00 x 0.90 m, lowest z 0.0, 6 shapes, 266 triangles,
+# all rotations 0 and scales 1. Then: bpy.ops.wm.save_mainfile()

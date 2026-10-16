@@ -1,5 +1,5 @@
 {
-  "_comment": "Machine-readable copy of CHANGE-BRIEF.md (A3 revision 1). Sizes in metres, Godot axes: X = length/width as briefed, Y = up, Z = depth. Blender (X, Y, Z-up) maps to Godot (X, Z, Y) via the glTF exporter's +Y Up. Revision 2 (2026-10-15): SUV rebuilt to 1.70 m with new colours and a 350-triangle budget; shrine reshaped to the lore (no roof), 1.10 m.",
+  "_comment": "Machine-readable copy of CHANGE-BRIEF.md (A3 revision 1). Sizes in metres, Godot axes: X = length/width as briefed, Y = up, Z = depth. Blender (X, Y, Z-up) maps to Godot (X, Z, Y) via the glTF exporter's +Y Up. Revision 2 (2026-10-15): SUV rebuilt to 1.70 m with new colours and a 350-triangle budget; shrine reshaped to the lore (no roof), 1.10 m. Revision 3 (2026-10-15): SUV details as faces, budget 480; shrine goddess relief and front lamp, 0.90 m tall, budget 280.",
   "tolerance_size_fraction": 0.05,
   "floor_tolerance_m": 0.01,
   "colour_tolerance": 0.04,
@@ -11,7 +11,7 @@
         1.7,
         1.9
       ],
-      "max_tris": 350,
+      "max_tris": 480,
       "max_shapes": 6,
       "colours": {
         "body": "#333738",
@@ -20,7 +20,11 @@
         "headlight": "#f4f1e6",
         "taillight": "#b3121b",
         "tyre": "#15141a",
-        "wheel_face": "#b8bcc4"
+        "foglamp": "#fff1c4",
+        "bumper": "#1c1d20",
+        "seam": "#121315",
+        "chrome": "#b8bcc4",
+        "exhaust": "#050506"
       },
       "front_check": {
         "part": "cabin",
@@ -31,17 +35,20 @@
       "glb": "res://assets/models/rock_shrine.glb",
       "size_xyz": [
         1.2,
-        1.1,
+        0.9,
         1.0
       ],
-      "max_tris": 200,
+      "max_tris": 280,
       "max_shapes": 6,
       "colours": {
         "rock": "#6f6a63",
+        "turmeric": "#d9a21b",
+        "jasmine": "#f2efe6",
         "niche": "#3a3632",
-        "lamp": "#c9a24a",
-        "flame": "#ffb347",
-        "jasmine": "#f2efe6"
+        "sea": "#2b6f8e",
+        "kumkum": "#b3202a",
+        "gold": "#c9a24a",
+        "flame": "#ff8c1a"
       }
     },
     "fence_segment": {
