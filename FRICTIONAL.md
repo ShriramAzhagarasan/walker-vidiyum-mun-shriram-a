@@ -184,5 +184,20 @@ Entries for 2026-10-01 and 2026-10-02 are **retrospective**, written on 2026-10-
 - **Design choice:** "upright" is judged by the briefed height on Godot's Y axis, **not** "the tallest axis is Y". The SUV (4.6 m long, 1.85 m tall) would fail a tallest-axis test even when it's correct.
 - `check_a3_assets.gd` currently **fails 3/3** (no `.glb` yet). That's the honest baseline, kept in `evidence/a3/`.
 
-## [Pending] The build, the hand edit, the look check, and Shriram's reflection
-*(To be written after the MCP build session, in Shriram's own words for their parts.)*
+## 2026-10-15 19:46–20:39: the MCP build, recorded on screen (AI-recorded log; Shriram's words quoted)
+*Shriram's screen recording of the whole session: `blendersession.mov` (52:50, kept out of Git; clips are in the film). Every `execute_blender_code` body is in `tools/blender/`. Commits are listed in order.*
+- **The MCP route worked for all three assets.** Before building, `get_addon_status` confirmed Blender 5.2.2, every library and generator **off**, telemetry **off**. Claude proposed each plan; nothing was built until Shriram replied (the first reply: *"approved"*). After every object Claude reported location, size, rotation and scale (`get_scene_info`) and looked (`look`).
+- **SUV, four builds driven by Shriram's eye** (`18b3c9c`, `18d683e`, `1863c9b`, `09a9c16`). Build 1 matched the brief exactly, and Shriram rejected it: *"the one on blender looks pretty basic … this is not what i asked for"*. Build 2 added a glasshouse and light bars; Shriram then listed doors, windows, a tailgate handle, a grille, separate headlights, fog lamps and an exhaust; build 3 did those as faces on the same 6 shapes; Shriram then saw unequal doors and seams that didn't read as gaps, and build 4 fixed them. **Accepted:** the final silhouette. **Rejected by Shriram:** builds 1–3.
+- **Shrine.** Claude noticed the brief's temple roof contradicted Shriram's own story bible; Shriram chose the lore (*"option A as it matches the lore and that is important for the game we are creating"*), then interrupted the build to ask for the goddess inscribed on the rock, and later for a real lamp holder and a flame that someone could reach every night. Claude proposed the relief figure, the gold girdle (*Manimekala* = "jewelled girdle") and moving the lamp to the front; Shriram approved.
+- **Fence.** Claude noticed the brief's steel fence didn't match the A2 beach art; Shriram chose wooden posts and ropes ("A").
+- **Hand edit (Shriram):** see BLENDER-NOTES.md. The measurement caught two problems in it (8 shapes; the sign 5.5 cm off the rope, making the fence 33 % too deep), which Shriram then fixed by typing exact values.
+- **Export and Godot (Claude):** the exporter failed twice before working (an empty enum list; a lost window context after opening a file); fixes are in `tools/blender/export_glb.py`. Import was clean. `check_a3_assets.gd` **31/31 PASS** on the real `.glb` files (`d6e9466`).
+- **Revision found in the engine, not in Blender:** a Godot screenshot showed the goddess facing the SUV's tail in the showcase row; the slot now turns her toward the camera, and a flickering light stands in for the burning flame the model can't animate (`f93ec6e`).
+- **A check that failed after a correct change:** the self-test dropped to 16/17 because its "correct" fence stand-in still used the old steel colours. The stand-in was updated; the assertion was not removed (`81c1666`).
+- **Unresolved:** the add-on reports "Addon 1.8" while the package is 2.1.9; the assets haven't been judged under the A2 night lighting yet; nobody other than Shriram has looked at the scene.
+
+## 2026-10-15 ~20:47: look check in Godot (Shriram)
+Shriram orbited each asset in the running showcase, including behind and below, beside Hari. Shriram's words are in TEST-REPORT.md ("HUMAN CHECK: look"): the fence is one segment of a longer, electrified line, with the red rectangle standing in for "private property"; the SUV is satisfying given the shape limits; the shrine "looks great", and a more realistic goddess is future work.
+
+## Shriram's reflection
+*(Shriram's own words; to be written by Shriram.)*

@@ -59,5 +59,12 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
 | Godot | 4.7.2.stable.official | import, the showcase scene, the headless check |
 
 **Switched off and unused:** Poly Haven, Sketchfab, Poly Pizza, Hyper3D Rodin, Hunyuan3D, Tripo, and the MCP tools `generate_3d`, `search_assets`, `import_asset`. Every mesh is built from Blender's basic shapes; no downloaded or AI-generated mesh is used. Telemetry was disabled with `DISABLE_TELEMETRY=true`. No credentials are committed.
-**Colours:** the SUV reuses A2's stand-in colours (`fallback_prop.gd`); the other hex values were chosen in the A3 brief.
-**Who did what (A3 so far):** Shriram chose the three assets, did the window session and notes, enabled and connected the add-on, and approves each build. Claude drafted the brief from the game's numbers, ran the MCP setup (logged), and wrote the check, its self-test and the showcase scene.
+**Colours:** the SUV body `#333738` was sampled from the A2 SUV art (`godot/assets/art/env/suv.png`); the fence's wood and rope match the A2 beach art; every other hex value was chosen in the A3 brief (revisions 1–3 in CHANGE-BRIEF.md). No colour or material comes from an outside source.
+**Who did what (A3):**
+| Area | Shriram (human) | Claude (AI) |
+|---|---|---|
+| Assets and brief | Chose the three assets; approved the brief; chose the lore-faithful shrine and the wooden fence; set the SUV's look (modern luxury SUV, doors, windows, lights, tailgate, exhaust) | Drafted the brief's numbers from the game's code; spotted the brief/lore and brief/art conflicts; wrote revisions 2–3 from Shriram's words |
+| Blender | "Learn the window" notes and screenshot; enabled and connected the add-on; approved each plan; judged every build (rejected SUV builds 1–3); the hand edit on the fence sign | All Blender Python run through the MCP (`tools/blender/`), measurements after each object, the glTF export code |
+| Godot | The look check, orbiting each asset including behind and below | The showcase scene and its two revisions, the headless check and self-test, the screenshot capture script |
+| Film | Recorded the Blender session (`blendersession.mov`); watches and uploads the film | Beat sheet, script, narration, edit (Brutalist `godot-gamedev`, walker) |
+| Docs | Interface notes, hand-edit paragraph (approved as their own), look-check words, reflection | TEST-REPORT, FRICTIONAL AI-recorded entries, SOURCES, README |
