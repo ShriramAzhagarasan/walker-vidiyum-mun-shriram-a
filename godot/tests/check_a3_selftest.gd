@@ -23,13 +23,15 @@ func _box(parent: Node3D, name: String, size: Vector3, centre: Vector3, colour: 
 	mi.position = centre
 	parent.add_child(mi)
 
-## A fence-sized stand-in: two posts, a sign. Base on y = 0, footprint centred on the origin.
+## A fence-sized stand-in: two posts, a sign, a rope. Base on y = 0, footprint centred on the origin.
+## Colours follow brief revision 3 (wood and rope). With revision 1's steel colours (#8a8f96 posts, #3a3d42 wire)
+## this "correct" stand-in failed the colour row after the brief changed, which is the check doing its job.
 func _fence() -> Node3D:
 	var n := Node3D.new()
-	_box(n, "post_a", Vector3(0.12, 2.10, 0.12), Vector3(-1.14, 1.05, 0), Color("#8a8f96"))
-	_box(n, "post_b", Vector3(0.12, 2.10, 0.12), Vector3(1.14, 1.05, 0), Color("#8a8f96"))
+	_box(n, "post_a", Vector3(0.12, 2.10, 0.12), Vector3(-1.14, 1.05, 0), Color("#5b4632"))
+	_box(n, "post_b", Vector3(0.12, 2.10, 0.12), Vector3(1.14, 1.05, 0), Color("#5b4632"))
 	_box(n, "sign", Vector3(0.6, 0.4, 0.04), Vector3(0, 1.2, 0), Color("#c0392b"))
-	_box(n, "wire", Vector3(2.40, 0.02, 0.02), Vector3(0, 2.09, 0), Color("#3a3d42"))
+	_box(n, "rope", Vector3(2.40, 0.02, 0.02), Vector3(0, 2.09, 0), Color("#8c7a5b"))
 	return n
 
 func _result(node: Node3D, spec: Dictionary, brief: Dictionary) -> Dictionary:
