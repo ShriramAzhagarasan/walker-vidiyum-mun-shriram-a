@@ -10,6 +10,12 @@ extends Node3D
 const Brief := "res://tests/data/a3_brief.json"
 const ORDER := ["rock_shrine", "suv", "fence_segment"]
 const SLOT_X := {"rock_shrine": -4.2, "suv": 0.0, "fence_segment": 4.6}
+## The shrine's goddess faces the asset's +X, which in this row pointed her at the SUV's tail 1.3 m away
+## (seen in evidence/a3/godot-shrine-front.png, 2026-10-15). Turn her slot so she faces the camera side (+Z).
+## The slot turns, not the asset: the asset's own transform stays identity, as the check requires.
+const SLOT_YAW_DEG := {"rock_shrine": -90.0, "suv": 0.0, "fence_segment": 0.0}
+## The lamp flame's centre in the shrine's Godot coordinates (Blender x 0.52, y 0.30, z 0.20 -> Godot x, z-up->y, -y).
+const FLAME_POS := Vector3(0.52, 0.20, -0.30)
 
 @onready var cam: Camera3D = $Camera3D
 var focus := Vector3(0, 0.9, 0)
@@ -18,6 +24,8 @@ var pitch := deg_to_rad(16.0)
 var dist := 13.0
 var dragging := false
 var labels: Array[Label3D] = []
+var lamp_light: OmniLight3D = null
+var t := 0.0
 
 func _ready() -> void:
 	var brief: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(Brief))
@@ -26,6 +34,7 @@ func _ready() -> void:
 		var slot := Node3D.new()
 		slot.name = "Slot_" + id
 		slot.position = Vector3(SLOT_X[id], 0, 0)
+		slot.rotation_degrees.y = SLOT_YAW_DEG[id]
 		add_child(slot)
 		var asset: Node3D = null
 		if ResourceLoader.exists(spec.glb):
@@ -34,6 +43,15 @@ func _ready() -> void:
 			asset = _placeholder(Vector3(spec.size_xyz[0], spec.size_xyz[1], spec.size_xyz[2]))
 		asset.name = id
 		slot.add_child(asset)
+		if id == "rock_shrine" and ResourceLoader.exists(spec.glb):
+			# The model can't animate (course rule), so the "keeps burning" flicker lives here, in the scene.
+			lamp_light = OmniLight3D.new()
+			lamp_light.name = "LampLight"
+			lamp_light.position = FLAME_POS
+			lamp_light.light_color = Color("ff9a3c")
+			lamp_light.omni_range = 2.2
+			lamp_light.light_energy = 1.2
+			asset.add_child(lamp_light)
 		var label := Label3D.new()
 		label.text = "%s\nbrief %.2f × %.2f × %.2f m" % [id, spec.size_xyz[0], spec.size_xyz[2], spec.size_xyz[1]]
 		label.position = Vector3(0, spec.size_xyz[1] + 0.45, 0)
@@ -97,6 +115,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	_update_camera()
 
 func _process(delta: float) -> void:
+	t += delta
+	if lamp_light:
+		lamp_light.light_energy = 1.2 + 0.25 * sin(t * 13.0) + 0.15 * sin(t * 7.3 + 1.0)
 	var turn := Input.get_axis("ui_left", "ui_right")
 	var tilt := Input.get_axis("ui_down", "ui_up")
 	if turn != 0.0 or tilt != 0.0:
