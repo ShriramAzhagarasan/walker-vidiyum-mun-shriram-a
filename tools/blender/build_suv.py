@@ -891,7 +891,7 @@ print("saved", bpy.data.filepath)
 
 
 # =====================================================================================================
-# BUILD 4 (doors), ~20:28-20:31 EDT. Shriram, looking at the side of build 3 in Blender: "the sides of the suv
+# BUILD 4 (doors), ~20:25-20:27 EDT. Shriram, looking at the side of build 3 in Blender: "the sides of the suv
 # doesn't look good and proper, it is not equal sized,a dn that doesn;t look like a speartion, fix that".
 # Claude's diagnosis: 2 cm dark-grey seams on a dark body, front door 1.10 m vs a windscreen base at 1.10 and a
 # C pillar off the seam, so the windows did not line up with the doors. Fix: equal 1.05 m doors, 3.5 cm near-black
