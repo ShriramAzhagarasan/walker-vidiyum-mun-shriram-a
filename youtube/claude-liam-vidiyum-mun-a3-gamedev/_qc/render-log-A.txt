@@ -1,0 +1,15 @@
+[remotion] B00: ok: ClaudeComposerAsk -> media/B00.mp4
+[remotion] stamped provenance in beat_sheet.json + updated consumers.json
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B01: ok: BrutalistHesitantWriter -> media/B01.mp4
+[remotion] stamped provenance in beat_sheet.json + updated consumers.json
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B03: ok: GodotDesignBoard -> media/B03.mp4
+[remotion] stamped provenance in beat_sheet.json + updated consumers.json
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B06: ok: GodotDevWorkbench -> media/B06.mp4
+[remotion] stamped provenance in beat_sheet.json + updated consumers.json
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B08: ok: GodotDevWorkbench -> media/B08.mp4
+[remotion] stamped provenance in beat_sheet.json + updated consumers.json
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut

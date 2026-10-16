@@ -1,0 +1,383 @@
+[
+ {
+  "beat_id": "B02",
+  "act": "FOOTAGE",
+  "role_note": "Shriram's own recording: the Claude chat beside Blender, the SUV plan and Shriram's 'approved'.",
+  "narration_text": "This is Shriram's own screen recording, cropped to the Claude chat beside Blender. Claude laid out the SUV plan, six shapes with sizes and colours, and asked for one word before building anything. Shriram typed it: approved. Then Claude answers, already building.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "SHRIRAM'S SCREEN RECORDING · chat beside Blender, 7:51–7:52 PM · 2× speed · cropped",
+   "segments": [
+    {
+     "kind": "clip",
+     "src": "rec",
+     "start": 352.0,
+     "end": 382.0,
+     "speed": 2.0,
+     "crop": [
+      600,
+      0,
+      1900,
+      2234
+     ]
+    }
+   ],
+   "evidence_media": "media/B02.mp4",
+   "show": [
+    {
+     "at": "0.0",
+     "event": "chat: the plan ends 'reply \"approved\"'"
+    },
+    {
+     "at": "0.5",
+     "event": "'approved' (7:48 PM) and Claude's reply"
+    }
+   ],
+   "note": "The prompt and Claude's reply, from Shriram's recording."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B02.wav",
+  "actual_duration_s": 15.0,
+  "hold_s": 0.0,
+  "speech_duration_s": 14.357,
+  "render_duration_s": 15.0
+ },
+ {
+  "beat_id": "B04",
+  "act": "RESULT-BLENDER",
+  "role_note": "Result of B03: Shriram's recording, the SUV appearing part by part (4x), then the final SUV in Godot (engine screenshot).",
+  "narration_text": "And here it lands, in Shriram's recording, four times faster. The chassis appears, then the cabin, then four wheels. That was build one: two hundred triangles. Shriram's verdict: it looks pretty basic. Three more builds followed, each from what Shriram saw, to this one in Godot.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "SHRIRAM'S SCREEN RECORDING · Blender, 7:48–7:49 PM · 4× speed",
+   "segments": [
+    {
+     "kind": "clip",
+     "src": "rec",
+     "start": 113.0,
+     "end": 173.0,
+     "speed": 4.0
+    },
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-suv-front.png",
+     "min": 4.0,
+     "label": "GODOT ENGINE SCREENSHOT · a3_showcase.tscn · final SUV (build 4) · git 81c1666"
+    }
+   ],
+   "evidence_media": "media/B04.mp4",
+   "show": [
+    {
+     "at": "0.0",
+     "event": "chassis, cabin, wheels appear (build 1)"
+    },
+    {
+     "at": "0.75",
+     "event": "final SUV, Godot engine screenshot"
+    }
+   ],
+   "note": "Build 1 appearing; final build 4 in Godot."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B04.wav",
+  "actual_duration_s": 19.0,
+  "hold_s": 0.0,
+  "speech_duration_s": 14.805,
+  "render_duration_s": 19.0
+ },
+ {
+  "beat_id": "B05",
+  "act": "HAND-EDIT",
+  "role_note": "Shriram's own hand edit by mouse (recording 20:31–20:36, 16x).",
+  "narration_text": "Now Shriram's own hand edit, by mouse, sixteen times faster. The fence sign floated between the ropes. Shriram duplicated it twice, then deleted the copies to stay at six shapes, and moved it to the centre, in front. By eye, it sat about five centimetres off the rope. Typing X zero and Y minus zero point zero three put it flush. The lesson, in Shriram's words: front and back depend on the Y axis.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "SHRIRAM'S SCREEN RECORDING · Shriram's hand edit in Blender, 8:31–8:36 PM · 16× speed",
+   "segments": [
+    {
+     "kind": "clip",
+     "src": "rec",
+     "start": 2696.0,
+     "end": 3016.0,
+     "speed": 16.0
+    }
+   ],
+   "evidence_media": "media/B05.mp4",
+   "show": [
+    {
+     "at": "0.1",
+     "event": "sign duplicated twice"
+    },
+    {
+     "at": "0.4",
+     "event": "copies deleted; sign dragged to centre"
+    },
+    {
+     "at": "0.85",
+     "event": "Item tab: X 0, Y −0.03"
+    }
+   ],
+   "note": "Hand edit: duplicate, delete, move, exact values."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B05.wav",
+  "actual_duration_s": 21.8,
+  "hold_s": 1.8,
+  "speech_duration_s": 21.291,
+  "render_duration_s": 21.8
+ },
+ {
+  "beat_id": "B07",
+  "act": "RESULT",
+  "role_note": "Result of B06: actual headless stdout of check_a3_assets.gd, rendered (labelled headless).",
+  "narration_text": "The headless run, on this revision. Thirty-one checks, zero failed. The S U V measures four point six, by one point seven up, by one point nine metres, four hundred fifty-six triangles under a budget of four eighty, lowest vertex at zero. The shrine, two sixty-six. The fence, one hundred eight.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "HEADLESS · check_a3_assets.gd stdout · Godot 4.7.2 · git 81c1666",
+   "segments": [
+    {
+     "kind": "still",
+     "src": "evidence/check_a3_assets.png",
+     "min": 1.0
+    }
+   ],
+   "evidence_media": "media/B07.mp4",
+   "show": [
+    {
+     "at": "0.0",
+     "event": "SUV block"
+    },
+    {
+     "at": "0.8",
+     "event": "31 checks, 0 failed -> PASS"
+    }
+   ],
+   "note": "Recorded output, not reconstructed."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B07.wav",
+  "actual_duration_s": 17.233333333333334,
+  "hold_s": 0.0,
+  "speech_duration_s": 16.725,
+  "render_duration_s": 17.233333333333334
+ },
+ {
+  "beat_id": "B09",
+  "act": "RESULT",
+  "role_note": "Result of B08: actual headless stdout of check_a3_selftest.gd, rendered.",
+  "narration_text": "Every break is caught. Seventeen of seventeen. One honest scar: the correct stand-in once failed, because it still wore the first brief's steel colours. The stand-in was updated, the assertion was not. And a pass proves size, scale and orientation, not that a model looks right.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "HEADLESS · check_a3_selftest.gd stdout · Godot 4.7.2 · git 81c1666",
+   "segments": [
+    {
+     "kind": "still",
+     "src": "evidence/check_a3_selftest.png",
+     "min": 1.0
+    }
+   ],
+   "evidence_media": "media/B09.mp4",
+   "show": [
+    {
+     "at": "0.0",
+     "event": "correct stand-in passes"
+    },
+    {
+     "at": "0.5",
+     "event": "each break caught"
+    },
+    {
+     "at": "0.85",
+     "event": "17 checks, 0 failed"
+    }
+   ],
+   "note": "Recorded output, not reconstructed."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B09.wav",
+  "actual_duration_s": 15.033333333333333,
+  "hold_s": 0.0,
+  "speech_duration_s": 14.528,
+  "render_duration_s": 15.033333333333333
+ },
+ {
+  "beat_id": "B11",
+  "act": "RESULT",
+  "role_note": "Result of B10 + the running scene: real engine screenshots (before / after; orbit incl. behind and below).",
+  "narration_text": "Before: she faces the tail light. After: she faces the camera, lit by a flickering lamp light that lives in the scene, because the model itself can't animate. Then around the running showcase, beside Hari's one point seven five metre billboard: the S U V from behind and from below, wheels on the floor, and the fence from the side.",
+  "shot": {
+   "type": "GAMEPLAY",
+   "class": "SHOW",
+   "source": "own",
+   "treatment": "none",
+   "label": "GODOT ENGINE SCREENSHOTS · a3_showcase.tscn · real renders",
+   "segments": [
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-shrine-front-BEFORE-facing-suv.png",
+     "w": 0.2,
+     "label": "BEFORE THE FIX · goddess faces the SUV's tail · engine screenshot"
+    },
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-shrine-front.png",
+     "w": 0.2,
+     "label": "AFTER · slot yaw −90° · engine screenshot · git 81c1666"
+    },
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-suv-rear.png",
+     "w": 0.2,
+     "label": "ORBIT · SUV from behind · engine screenshot"
+    },
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-suv-below.png",
+     "w": 0.2,
+     "label": "ORBIT · SUV from below · engine screenshot"
+    },
+    {
+     "kind": "still",
+     "src": "evidence/a3/godot-fence-side.png",
+     "w": 0.2,
+     "label": "ORBIT · fence from the side · engine screenshot"
+    }
+   ],
+   "evidence_media": "media/B11.mp4",
+   "show": [
+    {
+     "at": "0.0",
+     "event": "BEFORE: goddess faces the SUV"
+    },
+    {
+     "at": "0.2",
+     "event": "AFTER: faces the camera"
+    },
+    {
+     "at": "0.45",
+     "event": "SUV rear"
+    },
+    {
+     "at": "0.65",
+     "event": "SUV below"
+    },
+    {
+     "at": "0.85",
+     "event": "fence side"
+    }
+   ],
+   "note": "Engine screenshots, labelled; not a recording of motion."
+  },
+  "qc": {
+   "contrast_regions": [
+    {
+     "label": "caption band (film label)",
+     "box": [
+      0.074,
+      0.905,
+      0.62,
+      0.955
+     ]
+    }
+   ],
+   "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+  },
+  "voice": "am_onyx",
+  "engine": "kokoro",
+  "audio_file": "mp3/conformed/B11.wav",
+  "actual_duration_s": 18.166666666666668,
+  "hold_s": 0.0,
+  "speech_duration_s": 17.643,
+  "render_duration_s": 18.166666666666668
+ }
+]

@@ -1,0 +1,1426 @@
+{
+  "metadata": {
+    "title": "Vidiyum Mun, Built from Boxes",
+    "slug": "claude-liam-vidiyum-mun-a3-gamedev",
+    "topic": "WALKER · GODOT GAMEDEV · A3",
+    "kind": "godot-gamedev",
+    "mode": "walker",
+    "brand": "claude-liam",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "crop",
+    "captions": false,
+    "channel": "@NikBearBrown",
+    "channel_title": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "greeting": "Vanakkam, Liam",
+    "greeting_note": "hello lexicon: Vanakkam (Tamil), fits the Chennai setting.",
+    "persona": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "audience": "CSYE 7270 reviewers and makers building Blender assets for a Godot game",
+    "source_revision": "81c1666",
+    "recording": "Shriram's screen recording blendersession.mov (not in git; clips in clips/)",
+    "game": {
+      "name": "walker-vidiyum-mun-shriram-a",
+      "build_id": "86c31cd97ab7375485334776d11c7e975ba8824f401a72927ad686bdf52ddb45",
+      "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+      "renderer": "Forward+ (Metal)",
+      "git": "81c1666"
+    },
+    "fps": 30,
+    "build": {
+      "at": "2026-10-15T21:28:28",
+      "cut": "master",
+      "filled": 17,
+      "of": 17,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "Walker B00. Illustrative reconstruction of the ask (labelled), never a transcript.",
+      "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment three: three Blender models for Vidiyum Mun, built by Claude through the Blender M C P, judged by Shriram, and checked in Godot.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "composer; greeting"
+          },
+          {
+            "at": "0.15",
+            "event": "topic: ILLUSTRATIVE RECONSTRUCTION"
+          },
+          {
+            "at": "0.25",
+            "event": "the Walker ask types"
+          },
+          {
+            "at": "0.7",
+            "event": "three result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Vanakkam, Liam",
+            "topic": "ILLUSTRATIVE RECONSTRUCTION · NOT A TRANSCRIPT",
+            "segment": "Vidiyum Mun · A3",
+            "command": "Please use Walker to convert my game design document about Vidiyum Mun, a time-loop mystery on a fenced private beach on ECR, Chennai, into three game assets built in Blender through the MCP: the SUV whose keys decide the dawn crash, Manimekala's rock shrine, and one segment of the illegal fence. Six basic shapes each, flat colours, exported to Godot.",
+            "runningText": "reading godot/ and CHANGE-BRIEF.md…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "SUV 4.60 × 1.90 × 1.70 m · 456 triangles.",
+              "Rock shrine 1.20 m · 266 · fence 2.40 m · 108.",
+              "Godot headless: 31 checks, 0 failed."
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-10-16T01:14:05.035304+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B00.wav",
+      "actual_duration_s": 14.033333333333333,
+      "speech_duration_s": 13.717,
+      "render_duration_s": 14.033333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "lead_silence_s": 0.6,
+      "role_note": "Hesitant writer; single-word correction 'downloaded' -> 'built'.",
+      "narration_text": "Three models, built for the game, not downloaded. Each one is six basic shapes, placed by code Claude ran inside Blender. Then measured in Godot, and judged by Shriram's eye.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.08",
+            "event": "line one types"
+          },
+          {
+            "at": "0.3",
+            "event": "'downloaded' struck; 'built' typed"
+          },
+          {
+            "at": "0.55",
+            "event": "lines two and three"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "contextTitle": "What this film shows",
+            "text": "Three models, downloaded for the game.\nSix shapes each, placed by code in Blender.\nMeasured in Godot. Judged by Shriram.",
+            "triggerWords": "downloaded",
+            "replacementWords": "built",
+            "fontSize": 84,
+            "lineSpacing": 2.6,
+            "align": "center",
+            "seed": "vidiyum-a3",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "charMs": 8,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5",
+            "durationSeconds": 11.3
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-10-16T01:15:01.568099+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B01.wav",
+      "actual_duration_s": 11.3,
+      "speech_duration_s": 10.368,
+      "render_duration_s": 11.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "FOOTAGE",
+      "role_note": "Shriram's own recording: the Claude chat beside Blender, the SUV plan and Shriram's 'approved'.",
+      "narration_text": "This is Shriram's own screen recording, cropped to the Claude chat beside Blender. Claude laid out the SUV plan, six shapes with sizes and colours, and asked for one word before building anything. Shriram typed it: approved. Then Claude answers, already building.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SHRIRAM'S SCREEN RECORDING · chat beside Blender, 7:51–7:52 PM · 2× speed · cropped",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "rec",
+            "start": 352.0,
+            "end": 382.0,
+            "speed": 2.0,
+            "crop": [
+              600,
+              0,
+              1900,
+              2234
+            ]
+          }
+        ],
+        "evidence_media": "media/B02.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "chat: the plan ends 'reply \"approved\"'"
+          },
+          {
+            "at": "0.5",
+            "event": "'approved' (7:48 PM) and Claude's reply"
+          }
+        ],
+        "note": "The prompt and Claude's reply, from Shriram's recording."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B02.wav",
+      "actual_duration_s": 15.0,
+      "hold_s": 0.0,
+      "speech_duration_s": 14.357,
+      "render_duration_s": 15.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "CODE-BLENDER",
+      "role_note": "One execute_blender_code body, verbatim (tools/blender/build_suv.py, outside godot/; GodotDesignBoard excerpt).",
+      "narration_text": "Here's one of the calls Claude ran, saved word for word in build S U V dot p y. Add a one metre cube. Name it S U V chassis. Scale it to four point six, by one point eight, by zero point seven five. Apply the scale, so the node stays at one. Then a flat body colour.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "verbatim excerpt"
+          },
+          {
+            "at": "0.25",
+            "event": "cards light in order"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "One call Claude ran in Blender",
+            "section": "tools/blender/build_suv.py · lines 53–62 · SUV call 1 (build 1), verbatim",
+            "excerpt": "root = bpy.data.objects[\"suv\"]\nbpy.ops.object.select_all(action=\"DESELECT\")\nbpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.0, 0.0, 0.725))\nobj = bpy.context.active_object\nobj.name = \"SUV_Chassis\"\nobj.data.name = \"SUV_Chassis\"\nobj.scale = (4.60, 1.80, 0.75)\nbpy.ops.object.transform_apply(location=False, rotation=True, scale=True)\nobj.data.materials.clear()\nobj.data.materials.append(flat_material(\"SUV_body\", \"#2e2d38\"))",
+            "source": "execute_blender_code body via mcp-for-blender 2.1.9 · Blender 5.2.2 LTS · git 81c1666",
+            "status": "CODE · run by Claude through the Blender MCP",
+            "visualLabel": "What it does",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Shape",
+                "text": "one cube, 1 m"
+              },
+              {
+                "label": "Size",
+                "text": "4.60 × 1.80 × 0.75 m"
+              },
+              {
+                "label": "Scale",
+                "text": "applied → node stays 1, 1, 1"
+              },
+              {
+                "label": "Colour",
+                "text": "flat #2e2d38"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.25,
+                "card": 0
+              },
+              {
+                "frac": 0.45,
+                "card": 1
+              },
+              {
+                "frac": 0.65,
+                "card": 2
+              },
+              {
+                "frac": 0.82,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 4.07
+              },
+              {
+                "card": 1,
+                "at": 7.32
+              },
+              {
+                "card": 2,
+                "at": 10.57
+              },
+              {
+                "card": 3,
+                "at": 13.34
+              }
+            ],
+            "durationSeconds": 16.266666666666666
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": "2026-10-16T01:16:23.511975+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B03.wav",
+      "actual_duration_s": 16.266666666666666,
+      "speech_duration_s": 15.957,
+      "render_duration_s": 16.266666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "RESULT-BLENDER",
+      "role_note": "Result of B03: Shriram's recording, the SUV appearing part by part (4x), then the final SUV in Godot (engine screenshot).",
+      "narration_text": "And here it lands, in Shriram's recording, four times faster. The chassis appears, then the cabin, then four wheels. That was build one: two hundred triangles. Shriram's verdict: it looks pretty basic. Three more builds followed, each from what Shriram saw, to this one in Godot.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SHRIRAM'S SCREEN RECORDING · Blender, 7:48–7:49 PM · 4× speed",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "rec",
+            "start": 113.0,
+            "end": 173.0,
+            "speed": 4.0
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-suv-front.png",
+            "min": 4.0,
+            "label": "GODOT ENGINE SCREENSHOT · a3_showcase.tscn · final SUV (build 4) · git 81c1666"
+          }
+        ],
+        "evidence_media": "media/B04.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "chassis, cabin, wheels appear (build 1)"
+          },
+          {
+            "at": "0.75",
+            "event": "final SUV, Godot engine screenshot"
+          }
+        ],
+        "note": "Build 1 appearing; final build 4 in Godot."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B04.wav",
+      "actual_duration_s": 19.0,
+      "hold_s": 0.0,
+      "speech_duration_s": 14.805,
+      "render_duration_s": 19.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "HAND-EDIT",
+      "role_note": "Shriram's own hand edit by mouse (recording 20:31–20:36, 16x).",
+      "narration_text": "Now Shriram's own hand edit, by mouse, sixteen times faster. The fence sign floated between the ropes. Shriram duplicated it twice, then deleted the copies to stay at six shapes, and moved it to the centre, in front. By eye, it sat about five centimetres off the rope. Typing X zero and Y minus zero point zero three put it flush. The lesson, in Shriram's words: front and back depend on the Y axis.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SHRIRAM'S SCREEN RECORDING · Shriram's hand edit in Blender, 8:31–8:36 PM · 16× speed",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "rec",
+            "start": 2696.0,
+            "end": 3016.0,
+            "speed": 16.0
+          }
+        ],
+        "evidence_media": "media/B05.mp4",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "sign duplicated twice"
+          },
+          {
+            "at": "0.4",
+            "event": "copies deleted; sign dragged to centre"
+          },
+          {
+            "at": "0.85",
+            "event": "Item tab: X 0, Y −0.03"
+          }
+        ],
+        "note": "Hand edit: duplicate, delete, move, exact values."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B05.wav",
+      "actual_duration_s": 21.8,
+      "hold_s": 1.8,
+      "speech_duration_s": 21.291,
+      "render_duration_s": 21.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "CODE",
+      "role_note": "Measurement from mesh vertices (a3_measure.gd). Paired result B07 (headless output).",
+      "narration_text": "Then Godot checks the exported files. This loop walks every mesh vertex in world space. The lowest one is the floor height, measured from the mesh, not from a collider, which is how an earlier floor check fooled itself. The same loop counts triangles.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: every vertex, in world space"
+          },
+          {
+            "at": "0.45",
+            "event": "line highlight: lowest point = the floor height"
+          },
+          {
+            "at": "0.8",
+            "event": "line highlight: triangle count"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Measure from vertices, not a collider",
+            "project": "Vidiyum Mun",
+            "path": "godot/tests/a3_measure.gd",
+            "source": "Godot editor reconstruction · godot/tests/a3_measure.gd lines 29–41 · git 81c1666",
+            "code": "\t\tfor s in mi.mesh.get_surface_count():\n\t\t\tsurfaces += 1\n\t\t\tvar arrays := mi.mesh.surface_get_arrays(s)\n\t\t\tvar verts: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]\n\t\t\tvar idx = arrays[Mesh.ARRAY_INDEX]\n\t\t\ttris += (idx.size() if idx != null and idx.size() > 0 else verts.size()) / 3\n\t\t\tfor v in verts:\n\t\t\t\tvar w := mi.global_transform * v\n\t\t\t\tlo = lo.min(w); hi = hi.max(w)\n\t\t\t\tp_lo = p_lo.min(w); p_hi = p_hi.max(w)\n\t\t\tvar mat := mi.get_active_material(s)\n\t\t\tif mat is BaseMaterial3D:\n\t\t\t\tcolours.append((mat as BaseMaterial3D).albedo_color)",
+            "startLine": 29,
+            "codeFontSize": 27,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "lo / hi",
+                "value": "world-space bounds of every vertex"
+              },
+              {
+                "label": "tris",
+                "value": "index count / 3, per surface"
+              },
+              {
+                "label": "floor rule",
+                "value": "lowest vertex y = 0 ± 0.01 m"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 36,
+                "label": "every vertex, in world space"
+              },
+              {
+                "frac": 0.45,
+                "line": 37,
+                "label": "lowest point = the floor height"
+              },
+              {
+                "frac": 0.8,
+                "line": 34,
+                "label": "triangle count"
+              }
+            ],
+            "cues": [
+              {
+                "line": 36,
+                "label": "every vertex, in world space",
+                "at": 2.78
+              },
+              {
+                "line": 37,
+                "label": "lowest point = the floor height",
+                "at": 6.25
+              },
+              {
+                "line": 34,
+                "label": "triangle count",
+                "at": 11.12
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 81c1666"
+            ],
+            "durationSeconds": 13.9
+          },
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": "2026-10-16T01:17:21.192314+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B06.wav",
+      "actual_duration_s": 13.9,
+      "speech_duration_s": 13.589,
+      "render_duration_s": 13.9,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "RESULT",
+      "role_note": "Result of B06: actual headless stdout of check_a3_assets.gd, rendered (labelled headless).",
+      "narration_text": "The headless run, on this revision. Thirty-one checks, zero failed. The S U V measures four point six, by one point seven up, by one point nine metres, four hundred fifty-six triangles under a budget of four eighty, lowest vertex at zero. The shrine, two sixty-six. The fence, one hundred eight.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · check_a3_assets.gd stdout · Godot 4.7.2 · git 81c1666",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/check_a3_assets.png",
+            "min": 1.0
+          }
+        ],
+        "evidence_media": "media/B07.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "SUV block"
+          },
+          {
+            "at": "0.8",
+            "event": "31 checks, 0 failed -> PASS"
+          }
+        ],
+        "note": "Recorded output, not reconstructed."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B07.wav",
+      "actual_duration_s": 17.233333333333334,
+      "hold_s": 0.0,
+      "speech_duration_s": 16.725,
+      "render_duration_s": 17.233333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "CODE",
+      "role_note": "Self-test: deliberately broken stand-ins. Paired result B09.",
+      "narration_text": "A check that always passes proves nothing. So the self-test breaks things on purpose: a box stand-in floated half a metre, shrunk to a tenth, laid on its side, a sign colour turned white, a budget squeezed below the triangle count.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.15",
+            "event": "line highlight: floats by 0.5 m"
+          },
+          {
+            "at": "0.35",
+            "event": "line highlight: scaled ×0.1"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: lying on its side"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: colour lost"
+          },
+          {
+            "at": "0.9",
+            "event": "line highlight: over budget"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "The check must be able to fail",
+            "project": "Vidiyum Mun",
+            "path": "godot/tests/check_a3_selftest.gd",
+            "source": "Godot editor reconstruction · godot/tests/check_a3_selftest.gd lines 64–78 · git 81c1666",
+            "code": "\tvar n := _fence(); n.position.y = 0.5                    # A3-F3: origin in the middle -> floats\n\texpect(\"floating by 0.5 m\", await _result(n, spec, brief), \"base on the floor\", false)\n\tn = _fence(); n.scale = Vector3(0.1, 0.1, 0.1)           # A3-F2/F4: wrong size, unapplied scale\n\tvar by := await _result(n, spec, brief)\n\texpect(\"scaled x0.1\", by, \"size within\", false)\n\texpect(\"scaled x0.1\", by, \"every node scale\", false)\n\tn = _fence(); n.rotation_degrees = Vector3(90, 0, 0)     # A3-F1: lying on its side\n\tby = await _result(n, spec, brief)\n\texpect(\"lying on its side\", by, \"upright\", false)\n\texpect(\"lying on its side\", by, \"root not rotated\", false)\n\tn = _fence()                                              # A3-F6: a colour lost in export\n\t((n.get_child(2) as MeshInstance3D).mesh.material as StandardMaterial3D).albedo_color = Color.WHITE\n\texpect(\"sign colour lost\", await _result(n, spec, brief), \"colour\", false)\n\tvar tight := spec.duplicate(true); tight.max_tris = 40    # A3-F5: over budget (4 boxes = 48 tris)\n\texpect(\"over the triangle budget\", await _result(_fence(), tight, brief), \"triangles\", false)",
+            "startLine": 64,
+            "codeFontSize": 27,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "stand-in",
+                "value": "BoxMesh fence: posts, sign, rope"
+              },
+              {
+                "label": "A3-F1…F7",
+                "value": "predicted failures, each expected to be caught"
+              },
+              {
+                "label": "expect(…, false)",
+                "value": "a pass here would be a test failure"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.15,
+                "line": 64,
+                "label": "floats by 0.5 m"
+              },
+              {
+                "frac": 0.35,
+                "line": 66,
+                "label": "scaled ×0.1"
+              },
+              {
+                "frac": 0.55,
+                "line": 70,
+                "label": "lying on its side"
+              },
+              {
+                "frac": 0.75,
+                "line": 75,
+                "label": "colour lost"
+              },
+              {
+                "frac": 0.9,
+                "line": 77,
+                "label": "over budget"
+              }
+            ],
+            "cues": [
+              {
+                "line": 64,
+                "label": "floats by 0.5 m",
+                "at": 1.97
+              },
+              {
+                "line": 66,
+                "label": "scaled ×0.1",
+                "at": 4.61
+              },
+              {
+                "line": 70,
+                "label": "lying on its side",
+                "at": 7.24
+              },
+              {
+                "line": 75,
+                "label": "colour lost",
+                "at": 9.88
+              },
+              {
+                "line": 77,
+                "label": "over budget",
+                "at": 11.85
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 81c1666"
+            ],
+            "durationSeconds": 13.166666666666666
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": "2026-10-16T01:18:13.395503+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B08.wav",
+      "actual_duration_s": 13.166666666666666,
+      "speech_duration_s": 12.843,
+      "render_duration_s": 13.166666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "RESULT",
+      "role_note": "Result of B08: actual headless stdout of check_a3_selftest.gd, rendered.",
+      "narration_text": "Every break is caught. Seventeen of seventeen. One honest scar: the correct stand-in once failed, because it still wore the first brief's steel colours. The stand-in was updated, the assertion was not. And a pass proves size, scale and orientation, not that a model looks right.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · check_a3_selftest.gd stdout · Godot 4.7.2 · git 81c1666",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/check_a3_selftest.png",
+            "min": 1.0
+          }
+        ],
+        "evidence_media": "media/B09.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "correct stand-in passes"
+          },
+          {
+            "at": "0.5",
+            "event": "each break caught"
+          },
+          {
+            "at": "0.85",
+            "event": "17 checks, 0 failed"
+          }
+        ],
+        "note": "Recorded output, not reconstructed."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B09.wav",
+      "actual_duration_s": 15.033333333333333,
+      "hold_s": 0.0,
+      "speech_duration_s": 14.528,
+      "render_duration_s": 15.033333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "CODE",
+      "role_note": "The slot fix found by a screenshot (a3_showcase.gd). Paired result B11 (engine screenshots, before/after + orbit).",
+      "narration_text": "One problem only a picture found. In the showcase row, the goddess faced the asset's plus X: straight at the S U V's tail. The fix turns the shrine's slot by ninety degrees. The slot turns, not the asset, so the check still sees an unrotated model.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: she faced the SUV tail"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: turn the slot to face the camera"
+          },
+          {
+            "at": "0.8",
+            "event": "line highlight: rock_shrine: −90°"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A screenshot found it; the slot turns",
+            "project": "Vidiyum Mun",
+            "path": "godot/scenes/a3_showcase.gd",
+            "source": "Godot editor reconstruction · godot/scenes/a3_showcase.gd lines 13–16 · git 81c1666",
+            "code": "## The shrine's goddess faces the asset's +X, which in this row pointed her at the SUV's tail 1.3 m away\n## (seen in evidence/a3/godot-shrine-front.png, 2026-10-15). Turn her slot so she faces the camera side (+Z).\n## The slot turns, not the asset: the asset's own transform stays identity, as the check requires.\nconst SLOT_YAW_DEG := {\"rock_shrine\": -90.0, \"suv\": 0.0, \"fence_segment\": 0.0}",
+            "startLine": 13,
+            "codeFontSize": 27,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "found in",
+                "value": "godot-shrine-front.png (before)"
+              },
+              {
+                "label": "rock_shrine slot",
+                "value": "yaw −90°"
+              },
+              {
+                "label": "asset transform",
+                "value": "stays identity (checked)"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 13,
+                "label": "she faced the SUV tail"
+              },
+              {
+                "frac": 0.55,
+                "line": 14,
+                "label": "turn the slot to face the camera"
+              },
+              {
+                "frac": 0.8,
+                "line": 16,
+                "label": "rock_shrine: −90°"
+              }
+            ],
+            "cues": [
+              {
+                "line": 13,
+                "label": "she faced the SUV tail",
+                "at": 2.91
+              },
+              {
+                "line": 14,
+                "label": "turn the slot to face the camera",
+                "at": 8.01
+              },
+              {
+                "line": 16,
+                "label": "rock_shrine: −90°",
+                "at": 11.65
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 81c1666"
+            ],
+            "durationSeconds": 14.566666666666666
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": "2026-10-16T01:13:57.428382+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B10.wav",
+      "actual_duration_s": 14.566666666666666,
+      "speech_duration_s": 14.251,
+      "render_duration_s": 14.566666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "RESULT",
+      "role_note": "Result of B10 + the running scene: real engine screenshots (before / after; orbit incl. behind and below).",
+      "narration_text": "Before: she faces the tail light. After: she faces the camera, lit by a flickering lamp light that lives in the scene, because the model itself can't animate. Then around the running showcase, beside Hari's one point seven five metre billboard: the S U V from behind and from below, wheels on the floor, and the fence from the side.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "GODOT ENGINE SCREENSHOTS · a3_showcase.tscn · real renders",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-shrine-front-BEFORE-facing-suv.png",
+            "w": 0.2,
+            "label": "BEFORE THE FIX · goddess faces the SUV's tail · engine screenshot"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-shrine-front.png",
+            "w": 0.2,
+            "label": "AFTER · slot yaw −90° · engine screenshot · git 81c1666"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-suv-rear.png",
+            "w": 0.2,
+            "label": "ORBIT · SUV from behind · engine screenshot"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-suv-below.png",
+            "w": 0.2,
+            "label": "ORBIT · SUV from below · engine screenshot"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a3/godot-fence-side.png",
+            "w": 0.2,
+            "label": "ORBIT · fence from the side · engine screenshot"
+          }
+        ],
+        "evidence_media": "media/B11.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "BEFORE: goddess faces the SUV"
+          },
+          {
+            "at": "0.2",
+            "event": "AFTER: faces the camera"
+          },
+          {
+            "at": "0.45",
+            "event": "SUV rear"
+          },
+          {
+            "at": "0.65",
+            "event": "SUV below"
+          },
+          {
+            "at": "0.85",
+            "event": "fence side"
+          }
+        ],
+        "note": "Engine screenshots, labelled; not a recording of motion."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real footage/screenshots reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside Shriram's recording, engine screenshots and recorded terminal output belongs to the evidence and is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B11.wav",
+      "actual_duration_s": 18.166666666666668,
+      "hold_s": 0.0,
+      "speech_duration_s": 17.643,
+      "render_duration_s": 18.166666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "media",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "REVISION",
+      "role_note": "What Claude got wrong + Shriram's look check (TEST-REPORT / FACTS).",
+      "narration_text": "What Claude got wrong. It priced an icosphere at eighty triangles; it's twenty. It raised the S U V's whole underside when only the nose was meant. It measured the rock at one point one four metres, not one point two. It floated the fence sign, and the export failed twice. Shriram's look check: the shrine looks great. The S U V is fine for six shapes; a real one would be smoother.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "the wrong list"
+          },
+          {
+            "at": "0.72",
+            "event": "look-check cards"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What Claude got wrong",
+            "section": "TEST-REPORT.md · inspect-and-revise · Shriram's look check (paraphrased)",
+            "excerpt": "Icosphere 'subdivisions 1' priced at 80 tris (it is 20).\nSUV build 2 raised the whole underside, not just the nose.\nWheel silver faces didn't apply at first (caught with look).\nRock measured 1.14 m, not 1.20 (stretched).\nFence sign floated between the ropes.\nExport failed twice; in Godot the goddess faced the SUV.\nSelf-test stand-in kept revision-1 colours (1/17 failed).",
+            "source": "TEST-REPORT.md, tools/blender/build_*.py comments · git 81c1666",
+            "status": "REVISION · every fix came from a measurement, a look, a screenshot or Shriram",
+            "visualLabel": "Shriram's look check",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Shrine",
+                "text": "looks great; goddess and side flame work"
+              },
+              {
+                "label": "SUV",
+                "text": "fine for 6 shapes; real design smoother"
+              },
+              {
+                "label": "Fence",
+                "text": "one segment of a long electrified line"
+              },
+              {
+                "label": "Sign",
+                "text": "red = 'private property' (no text allowed)"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.72,
+                "card": 0
+              },
+              {
+                "frac": 0.84,
+                "card": 1
+              },
+              {
+                "frac": 0.9,
+                "card": 2
+              },
+              {
+                "frac": 0.95,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 14.14
+              },
+              {
+                "card": 1,
+                "at": 16.49
+              },
+              {
+                "card": 2,
+                "at": 17.67
+              },
+              {
+                "card": 3,
+                "at": 18.65
+              }
+            ],
+            "durationSeconds": 19.633333333333333
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-10-16T01:15:46.212005+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B12.wav",
+      "actual_duration_s": 19.633333333333333,
+      "speech_duration_s": 19.307,
+      "render_duration_s": 19.633333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "CREDITS",
+      "role_note": "Human vs AI; source revision shown on screen.",
+      "narration_text": "Who did what. Shriram chose the assets, judged every build, drove every revision, and did the hand edit and the look check. Claude wrote the brief's numbers, all the Blender code, the export, the Godot checks, the showcase scene, and this film. Source revision, eight one c one six six six.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "Shriram / Claude"
+          },
+          {
+            "at": "0.88",
+            "event": "revision 81c1666"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Who did what",
+            "section": "SOURCES.md · source revision git 81c1666",
+            "excerpt": "Shriram: chose the three assets; judged every build; asked for every revision (SUV builds 2–4, the goddess relief, the wooden fence); did the hand edit and the look check; recorded the session.\nClaude: brief numbers, every execute_blender_code body, the .glb export, check_a3_assets.gd, the self-test, a3_showcase.tscn, this film.",
+            "source": "git 81c1666 · godot/ snapshot 86c31cd9 · Blender 5.2.2 LTS · mcp-for-blender 2.1.9 · Godot 4.7.2",
+            "status": "CREDITS · source revision 81c1666",
+            "visualLabel": "The assets",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "SUV",
+                "text": "the car whose keys decide the dawn"
+              },
+              {
+                "label": "Rock shrine",
+                "text": "Manimekala's rock, fenced off"
+              },
+              {
+                "label": "Fence",
+                "text": "the illegal fence on a public beach"
+              },
+              {
+                "label": "Revision",
+                "text": "git 81c1666"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.55,
+                "card": 0
+              },
+              {
+                "frac": 0.65,
+                "card": 1
+              },
+              {
+                "frac": 0.75,
+                "card": 2
+              },
+              {
+                "frac": 0.88,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 8.73
+              },
+              {
+                "card": 1,
+                "at": 10.31
+              },
+              {
+                "card": 2,
+                "at": 11.9
+              },
+              {
+                "card": 3,
+                "at": 13.96
+              }
+            ],
+            "durationSeconds": 15.866666666666667
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-10-16T01:16:54.651241+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B13.wav",
+      "actual_duration_s": 15.866666666666667,
+      "speech_duration_s": 15.552,
+      "render_duration_s": 15.866666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "VERDICT",
+      "lead_silence_s": 0.4,
+      "role_note": "Verdict: checked / uncertain / limits / next.",
+      "narration_text": "Let's recap with Claude. Checked: three models at the briefed size, on the floor, under budget, thirty-one of thirty-one. Uncertain: whether they read at night, under the game's own lighting. A pass can't say. Limits: six-shape silhouettes, and no text on the sign. Next: place all three in the actual night slice.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "verdict card"
+          },
+          {
+            "at": "0.25",
+            "event": "checked"
+          },
+          {
+            "at": "0.45",
+            "event": "uncertain"
+          },
+          {
+            "at": "0.65",
+            "event": "limits"
+          },
+          {
+            "at": "0.85",
+            "event": "next"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Vidiyum Mun A3 assets, git 81c1666.",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Checked: size, floor, scale, budget, colours, facing · 31/31 headless.",
+              "Uncertain: do they read at night, under the slice's lighting?",
+              "Limits: 6-shape silhouettes; no text on the sign; flame flicker is a Godot light.",
+              "Next: place SUV, shrine and fence in slice.tscn."
+            ]
+          },
+          "rendered": {
+            "out": "media/B14.mp4",
+            "at": "2026-10-16T01:18:45.501451+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B14.wav",
+      "actual_duration_s": 16.666666666666668,
+      "speech_duration_s": 15.936,
+      "render_duration_s": 16.666666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "HANDOFF",
+      "role_note": "Your Turn: prompt read aloud; one bounded change + prediction; signs off.",
+      "narration_text": "Your turn. Ask Claude for a headless check on one model you exported: size and floor from the mesh vertices, not a collider, triangles against your budget, and one broken stand-in it must catch. Predict which row fails before you run it. Liam, in for Bear.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "prompt types"
+          },
+          {
+            "at": "0.75",
+            "event": "result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT GAMEDEV · A3",
+            "segment": "Your One Model",
+            "command": "Write a Godot headless check for one model I exported from Blender: measure its size and lowest vertex from the mesh vertices (not a collider), count triangles against my budget, and add one deliberately broken stand-in the check must catch.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Size + floor from vertices.",
+              "Triangles vs your budget.",
+              "One broken stand-in: predict, then run."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B15.mp4",
+            "at": "2026-10-16T01:20:13.061200+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B15.wav",
+      "actual_duration_s": 14.233333333333333,
+      "speech_duration_s": 13.931,
+      "render_duration_s": 14.233333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-15T21:28:28"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "OUTRO",
+      "kind": "outro_voice",
+      "tail_hold_s": 1.0,
+      "role_note": "OUTRO-LOCK: ClaudeTitleOutro, exact title, @NikBearBrown, slug-seeded mascot; spoken, no jingle.",
+      "narration_text": "Vidiyum Mun, Built from Boxes. At Nik Bear Brown.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title card"
+          },
+          {
+            "at": "0.3",
+            "event": "@NikBearBrown + mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Vidiyum Mun, Built from Boxes",
+            "slug": "claude-liam-vidiyum-mun-a3-gamedev"
+          },
+          "rendered": {
+            "out": "media/B16.mp4",
+            "at": "2026-10-16T01:12:21.598799+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B16.wav",
+      "actual_duration_s": 5.0,
+      "speech_duration_s": 3.691,
+      "render_duration_s": 5.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-10-15T21:28:28"
+      }
+    }
+  ]
+}

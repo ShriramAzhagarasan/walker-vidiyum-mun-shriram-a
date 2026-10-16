@@ -1,0 +1,660 @@
+{
+ "schema_version": 1,
+ "teaching_contract": "code-then-result-v1",
+ "game": {
+  "project": "godot/",
+  "build_id": "86c31cd97ab7375485334776d11c7e975ba8824f401a72927ad686bdf52ddb45",
+  "git": "81c1666"
+ },
+ "files": [
+  {
+   "path": "assets/models/fence_segment.glb",
+   "sha256": "094fa2ca3ac760b048f56d7b8925f3ec67d1ce6951319009c9749afe7e51e6fc",
+   "role": "exported Blender asset (glTF binary, +Y Up)",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "assets/models/fence_segment.glb.import",
+   "sha256": "0d34303ab2a6ff342762d3cc77c3b46385cc7503275397e2453978a556fefbdf",
+   "role": "Godot import settings for an A3 asset",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "assets/models/rock_shrine.glb",
+   "sha256": "453f2fd97e2a07184cd4b66ef5fa7346e32c0b62edc7c0c7f16d22878b50552e",
+   "role": "exported Blender asset (glTF binary, +Y Up)",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "assets/models/rock_shrine.glb.import",
+   "sha256": "223fa2639994002807e935c49788f62fb2927b065f895cd66a956ecb8ffe9e5f",
+   "role": "Godot import settings for an A3 asset",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "assets/models/suv.glb",
+   "sha256": "71bcd0bfad50c366da5db61054deb583c3bfd3ccf49982a547a6cdfdf13d56d4",
+   "role": "exported Blender asset (glTF binary, +Y Up)",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "assets/models/suv.glb.import",
+   "sha256": "f7e768c03372d1248baa907806b6962f5efc4fe5888a6a2837a3c4b04c02c273",
+   "role": "Godot import settings for an A3 asset",
+   "component_ids": [
+    "a3-models"
+   ]
+  },
+  {
+   "path": "scenes/a3_showcase.gd",
+   "sha256": "95932d4fc1cf1862b26bbd05ce3943978b172c1e5def12fc85f447af1e1177e7",
+   "role": "showcase controller: slots, slot yaw fix, lamp flicker, orbit camera",
+   "component_ids": [
+    "a3-showcase"
+   ]
+  },
+  {
+   "path": "scenes/a3_showcase.tscn",
+   "sha256": "a1734b323ca07a154ee0f60a2cf1166cd0e87fd6b2d9ec8281925b2527c761ad",
+   "role": "the saved showcase scene",
+   "component_ids": [
+    "a3-showcase"
+   ]
+  },
+  {
+   "path": "tests/a3_measure.gd",
+   "sha256": "166ce8df4df884960ab7d062c7699371e63fc44e9059d8f482467f0106403846",
+   "role": "vertex-based measurement shared by the check and the self-test",
+   "component_ids": [
+    "a3-check"
+   ]
+  },
+  {
+   "path": "tests/capture_a3.gd",
+   "sha256": "694a2424f0eed9955bcbf54ed1f8dce6a1d9524a2d0d766793bb76217e6b29cb",
+   "role": "scripted engine screenshots of the showcase (evidence/a3/godot-*.png)",
+   "component_ids": [
+    "a3-check"
+   ]
+  },
+  {
+   "path": "tests/check_a3_assets.gd",
+   "sha256": "ec9c36f8fb41adb0a6b90d84a775cbb5cb6df9bbf8049cf5dfcd53f06dbb0e16",
+   "role": "headless check of the three .glb files against the brief",
+   "component_ids": [
+    "a3-check"
+   ]
+  },
+  {
+   "path": "tests/check_a3_selftest.gd",
+   "sha256": "1e8f3ccf73c53ed18a7797f040e7ddaf9c4f923a98d0d8b578b363b2950daf33",
+   "role": "self-test: broken stand-ins the check must catch",
+   "component_ids": [
+    "a3-check"
+   ]
+  },
+  {
+   "path": "tests/data/a3_brief.json",
+   "sha256": "3c24034cc43f284a3d0154978fc1f047ae0abbbb5bdb25fc45e1264de4c32d09",
+   "role": "machine-readable brief: sizes, budgets, colours, tolerances",
+   "component_ids": [
+    "a3-check"
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": "a3-models",
+   "explanation": "The three A3 assets as exported glTF (+Y Up) from Blender 5.2.2: suv.glb (6 shapes, 456 tris), rock_shrine.glb (6 shapes, 266 tris), fence_segment.glb (6 shapes, 108 tris), each built by execute_blender_code bodies Claude ran through the Blender MCP (tools/blender/build_*.py, outside godot/), plus Godot's import settings.",
+   "beat_ids": [
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B07",
+    "B11"
+   ],
+   "files": [
+    "assets/models/fence_segment.glb",
+    "assets/models/fence_segment.glb.import",
+    "assets/models/rock_shrine.glb",
+    "assets/models/rock_shrine.glb.import",
+    "assets/models/suv.glb",
+    "assets/models/suv.glb.import"
+   ]
+  },
+  {
+   "id": "a3-check",
+   "explanation": "The headless asset check: a3_brief.json holds sizes, budgets and colours; a3_measure.gd measures every mesh vertex in world space (floor from vertices, not a collider), triangles, shapes, scales, colours; check_a3_assets.gd compares the real .glb files with the brief (31 checks); check_a3_selftest.gd proves the check can fail on deliberately broken BoxMesh stand-ins (17 checks); capture_a3.gd takes the engine screenshots.",
+   "beat_ids": [
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+   ],
+   "files": [
+    "tests/a3_measure.gd",
+    "tests/capture_a3.gd",
+    "tests/check_a3_assets.gd",
+    "tests/check_a3_selftest.gd",
+    "tests/data/a3_brief.json"
+   ]
+  },
+  {
+   "id": "a3-showcase",
+   "explanation": "a3_showcase.tscn/.gd: the three assets in a row at game scale beside Hari's 1.75 m billboard, an orbit camera (behind and below), the shrine slot turned -90 degrees so the goddess faces the camera, and a flickering OmniLight3D for the lamp, because the model cannot animate.",
+   "beat_ids": [
+    "B10",
+    "B11"
+   ],
+   "files": [
+    "scenes/a3_showcase.gd",
+    "scenes/a3_showcase.tscn"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B06",
+   "path": "tests/a3_measure.gd",
+   "start_line": 29,
+   "end_line": 41,
+   "text": "\t\tfor s in mi.mesh.get_surface_count():\n\t\t\tsurfaces += 1\n\t\t\tvar arrays := mi.mesh.surface_get_arrays(s)\n\t\t\tvar verts: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]\n\t\t\tvar idx = arrays[Mesh.ARRAY_INDEX]\n\t\t\ttris += (idx.size() if idx != null and idx.size() > 0 else verts.size()) / 3\n\t\t\tfor v in verts:\n\t\t\t\tvar w := mi.global_transform * v\n\t\t\t\tlo = lo.min(w); hi = hi.max(w)\n\t\t\t\tp_lo = p_lo.min(w); p_hi = p_hi.max(w)\n\t\t\tvar mat := mi.get_active_material(s)\n\t\t\tif mat is BaseMaterial3D:\n\t\t\t\tcolours.append((mat as BaseMaterial3D).albedo_color)"
+  },
+  {
+   "beat_id": "B08",
+   "path": "tests/check_a3_selftest.gd",
+   "start_line": 64,
+   "end_line": 78,
+   "text": "\tvar n := _fence(); n.position.y = 0.5                    # A3-F3: origin in the middle -> floats\n\texpect(\"floating by 0.5 m\", await _result(n, spec, brief), \"base on the floor\", false)\n\tn = _fence(); n.scale = Vector3(0.1, 0.1, 0.1)           # A3-F2/F4: wrong size, unapplied scale\n\tvar by := await _result(n, spec, brief)\n\texpect(\"scaled x0.1\", by, \"size within\", false)\n\texpect(\"scaled x0.1\", by, \"every node scale\", false)\n\tn = _fence(); n.rotation_degrees = Vector3(90, 0, 0)     # A3-F1: lying on its side\n\tby = await _result(n, spec, brief)\n\texpect(\"lying on its side\", by, \"upright\", false)\n\texpect(\"lying on its side\", by, \"root not rotated\", false)\n\tn = _fence()                                              # A3-F6: a colour lost in export\n\t((n.get_child(2) as MeshInstance3D).mesh.material as StandardMaterial3D).albedo_color = Color.WHITE\n\texpect(\"sign colour lost\", await _result(n, spec, brief), \"colour\", false)\n\tvar tight := spec.duplicate(true); tight.max_tris = 40    # A3-F5: over budget (4 boxes = 48 tris)\n\texpect(\"over the triangle budget\", await _result(_fence(), tight, brief), \"triangles\", false)"
+  },
+  {
+   "beat_id": "B10",
+   "path": "scenes/a3_showcase.gd",
+   "start_line": 13,
+   "end_line": 16,
+   "text": "## The shrine's goddess faces the asset's +X, which in this row pointed her at the SUV's tail 1.3 m away\n## (seen in evidence/a3/godot-shrine-front.png, 2026-10-15). Turn her slot so she faces the camera side (+Z).\n## The slot turns, not the asset: the asset's own transform stays identity, as the check requires.\nconst SLOT_YAW_DEG := {\"rock_shrine\": -90.0, \"suv\": 0.0, \"fence_segment\": 0.0}"
+  }
+ ],
+ "exclusions": [
+  {
+   "path": "assets/art/env/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/fire_glow.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/fire_glow.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/marble.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/marble.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/suv.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/suv.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/villa.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/env/villa.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/idle.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/idle.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/keys.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/keys.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/notes.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/notes.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/overhear.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/overhear.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/phone.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/phone.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/relief.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/relief.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/startled.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/startled.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/talk.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/talk.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_1.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_1.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_2.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_2.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_3.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_3.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_4.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/walk_4.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/whiteout.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/hari/whiteout.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_1.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_1.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_2.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_2.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_3.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_3.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_4.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/intro/intro_4.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/advay.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/advay.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/krishna.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/krishna.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/manikandan.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/manikandan.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/art/ui/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/music/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/.gitkeep",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg.import",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "autoload/controls.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "autoload/loop_state.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "autoload/sound_bank.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "autoload/story.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "data/dialogue.json",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "default_bus_layout.tres",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "logic/hari_spec.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "logic/input_setup.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "logic/story_data.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "project.godot",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/art3d.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/billboard_art.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/blob_shadow.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/camera_rig.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/deck_dressing.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/environment_fill.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/fallback_prop.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/hari.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/intro.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/intro.tscn",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/slice.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/slice.tscn",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "scenes/textured_surface.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/harness.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/test_assets_present.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/test_audio_mix.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/test_loop_logic.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/test_slice_smoke.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tests/test_sound_triggers.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tools/capture_intro.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "tools/capture_shots.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "ui/dialogue_panel.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "ui/hud.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "ui/notes_toast.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "ui/screen_cards.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  },
+  {
+   "path": "ui/whiteout.gd",
+   "reason": "A2 vertical-slice file (runtime, art, audio, UI or A2 tests), unchanged scope for this A3 film; explained in the A2 film claude-liam-walker-vidiyum-mun-shriram-a-gamedev. The A3 assets are not yet placed in slice.tscn (a stated limitation)."
+  }
+ ],
+ "code_result_pairs": [
+  {
+   "code_beat": "B06",
+   "result_beat": "B07",
+   "observation": "Recorded headless output: every briefed row passes for all three assets; lowest mesh vertex y = +0.0000 m, SUV 456 triangles (<= 480), 31 checks, 0 failed.",
+   "media": {
+    "path": "media/B07.mp4",
+    "sha256": "348f35fe680dcb953089897125e0955e99daaed93e31d4fb9e712889620129d9"
+   }
+  },
+  {
+   "code_beat": "B08",
+   "result_beat": "B09",
+   "observation": "Recorded headless output: the correct stand-in passes every row and each deliberate break (float, x0.1 scale, on its side, colour lost, budget, SUV backwards) is caught: 17/17.",
+   "media": {
+    "path": "media/B09.mp4",
+    "sha256": "8a8273077cc978a280f3d40c2785ff3c8a1f32ca6f1138a2071a5ab237ab7947"
+   }
+  },
+  {
+   "code_beat": "B10",
+   "result_beat": "B11",
+   "observation": "Engine screenshots: before the fix the goddess faces the SUV tail; after the -90 degree slot yaw she faces the camera; orbit views from behind and below show the assets on the floor.",
+   "media": {
+    "path": "media/B11.mp4",
+    "sha256": "618b44c39417ffc74c28f5d578d0cc428b0af684652bbe58c1604f27282ea0e7"
+   }
+  }
+ ]
+}

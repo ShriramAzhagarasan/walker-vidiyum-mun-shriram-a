@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+A3 asset check · 4.7.2-stable (official) · brief res://tests/data/a3_brief.json
+
+== suv  (res://assets/models/suv.glb)
+[PASS] imported .glb instantiates   6 mesh nodes
+[PASS] size within ±5 % of brief (x, y=up, z)   4.600 × 1.700 × 1.900 m vs brief 4.60 × 1.70 × 1.90
+[PASS] upright: Godot Y extent = briefed height   y extent 1.700 m (brief height 1.70 m)
+[PASS] every node scale = (1, 1, 1)   all 1,1,1 (8 nodes)
+[PASS] root not rotated   basis identity
+[PASS] base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)   lowest vertex y = +0.0000 m
+[PASS] origin under the footprint centre (±10 % of each footprint side)   footprint centre at x=+0.000, z=+0.000 m
+[PASS] triangles ≤ 480   456 triangles
+[PASS] mesh parts ≤ 6 basic shapes   6 mesh nodes, 19 surfaces (joined objects would hide shape count)
+[PASS] every briefed colour arrives (albedo within ±0.04)   all 11 found; seen #333738, #0e0f12, #f4f1e6, #b3121b, #fff1c4, #1c1d20, #060607, #b8bcc4, #050506, #1f2633, #333738, #15141a, #b8bcc4, #15141a, #b8bcc4, #15141a, #b8bcc4, #15141a, #b8bcc4
+[PASS] front faces +X: 'cabin' centre behind the middle (x < 0)   suv_cabin centre x = -0.575 m
+
+== rock_shrine  (res://assets/models/rock_shrine.glb)
+[PASS] imported .glb instantiates   6 mesh nodes
+[PASS] size within ±5 % of brief (x, y=up, z)   1.200 × 0.900 × 1.000 m vs brief 1.20 × 0.90 × 1.00
+[PASS] upright: Godot Y extent = briefed height   y extent 0.900 m (brief height 0.90 m)
+[PASS] every node scale = (1, 1, 1)   all 1,1,1 (8 nodes)
+[PASS] root not rotated   basis identity
+[PASS] base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)   lowest vertex y = +0.0000 m
+[PASS] origin under the footprint centre (±10 % of each footprint side)   footprint centre at x=-0.000, z=+0.000 m
+[PASS] triangles ≤ 280   266 triangles
+[PASS] mesh parts ≤ 6 basic shapes   6 mesh nodes, 11 surfaces (joined objects would hide shape count)
+[PASS] every briefed colour arrives (albedo within ±0.04)   all 8 found; seen #d9a21b, #c9a24a, #b3202a, #c9a24a, #ff8c1a, #c9a24a, #3a3632, #2b6f8e, #6f6a63, #d9a21b, #f2efe6
+
+== fence_segment  (res://assets/models/fence_segment.glb)
+[PASS] imported .glb instantiates   6 mesh nodes
+[PASS] size within ±5 % of brief (x, y=up, z)   2.400 × 2.100 × 0.120 m vs brief 2.40 × 2.10 × 0.12
+[PASS] upright: Godot Y extent = briefed height   y extent 2.100 m (brief height 2.10 m)
+[PASS] every node scale = (1, 1, 1)   all 1,1,1 (8 nodes)
+[PASS] root not rotated   basis identity
+[PASS] base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)   lowest vertex y = +0.0000 m
+[PASS] origin under the footprint centre (±10 % of each footprint side)   footprint centre at x=+0.000, z=+0.000 m
+[PASS] triangles ≤ 120   108 triangles
+[PASS] mesh parts ≤ 6 basic shapes   6 mesh nodes, 6 surfaces (joined objects would hide shape count)
+[PASS] every briefed colour arrives (albedo within ±0.04)   all 3 found; seen #5b4632, #5b4632, #8c7a5b, #8c7a5b, #8c7a5b, #c0392b
+
+check_a3_assets.gd: 31 checks, 0 failed -> PASS
+exit=0

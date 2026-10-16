@@ -1,0 +1,69 @@
+diff --git a/TEST-REPORT.md b/TEST-REPORT.md
+index 35ef51a..d72c005 100644
+--- a/TEST-REPORT.md
++++ b/TEST-REPORT.md
+@@ -136,14 +136,56 @@ timeout 120 "$G" --headless --path godot --script res://tests/check_a3_assets.gd
+ | Check | Result | Evidence |
+ |---|---|---|
+ | Interface notes | **Done.** Six parts in Shriram's own words, plus their own screenshot | [BLENDER-NOTES.md](BLENDER-NOTES.md) |
+-| The check can fail (self-test) | **PASS 17/17.** Every predicted failure (A3-F1…F7) is caught on BoxMesh stand-ins | `godot/tests/check_a3_selftest.gd` |
++| The check can fail (self-test) | **PASS 17/17** (after the stand-in fix below). Every predicted failure (A3-F1…F7) is caught on BoxMesh stand-ins | `godot/tests/check_a3_selftest.gd` |
+ | Baseline before assets | **FAIL 3/3** (no `.glb` yet). The expected honest starting point | `evidence/a3/check-a3-1792019299.json` |
+-| Size (Blender sidebar vs brief vs Godot bounding box) | *pending build* | |
+-| Upright and node scale 1,1,1 | *pending build* | |
+-| Origin (sits on the floor, measured from mesh vertices) | *pending build* | |
+-| Triangle count (Blender scene statistics vs Godot) | *pending build* | |
+-| Imports and appears in `scenes/a3_showcase.tscn` | *pending build* | |
+-| **HUMAN CHECK: look** (Shriram orbits each asset, including from behind and below, beside Hari) | *pending, Shriram* | |
+-| What Claude got wrong | *pending build* | |
++| Size (Blender vs brief vs Godot bounding box) | **PASS, all three** (table below; within ±5 %, in fact exact to the millimetre) | `evidence/a3/check-a3-1792111213.json` |
++| Upright and node scale 1,1,1 | **PASS.** Godot Y extent = briefed height; all 8 nodes per asset at scale (1, 1, 1); root basis identity | same |
++| Origin (sits on the floor, measured from mesh vertices) | **PASS.** Lowest mesh vertex y = +0.0000 m for each; origin under the footprint centre | same; `godot/tests/a3_measure.gd` |
++| Triangle count (Blender vs Godot, vs budget) | **PASS.** SUV 456 / 456 (≤ 480), shrine 266 / 266 (≤ 280), fence 108 / 108 (≤ 120); course limit 500 | Blender: `tools/blender/build_*.py` results; Godot: check |
++| Shape count (≤ 6 basic shapes) | **PASS.** 6 mesh nodes each | check |
++| Colours survive export | **PASS.** Every briefed colour found within ±0.04 (SUV 11, shrine 8, fence 3) | check |
++| SUV front faces +X | **PASS.** Cabin centre x = −0.575 m | check |
++| Imports and appears in `scenes/a3_showcase.tscn` | **PASS.** `godot --headless --path godot --import` reimported all three with no errors; the scene opens with no errors and shows the three beside Hari's 1.75 m billboard | `evidence/a3/godot-*.png` (engine screenshots) |
++| **HUMAN CHECK: look** (Shriram orbited each asset in the running scene, including behind and below) | **Done, Shriram's words below** | below |
++| What Claude got wrong | **Nine things, listed below**, each caught by a measurement, a `look`, a screenshot or Shriram | below |
++
++**Final numbers (2026-10-15 20:44, brief revision 3):**
++
++| Asset | Brief W × D × H (m) | Blender, measured from vertices | Godot headless bounding box (x × y-up × z) | Triangles | Shapes |
++|---|---|---|---|---|---|
++| SUV | 4.60 × 1.90 × 1.70 | 4.600 × 1.900 × 1.700, lowest z 0.000 | 4.600 × 1.700 × 1.900, lowest y 0.0000 | 456 (≤ 480) | 6 |
++| Rock shrine | 1.20 × 1.00 × 0.90 | 1.200 × 1.000 × 0.900, lowest z 0.000 | 1.200 × 0.900 × 1.000, lowest y 0.0000 | 266 (≤ 280) | 6 |
++| Fence segment | 2.40 × 0.12 × 2.10 | 2.400 × 0.120 × 2.100, lowest z 0.000 | 2.400 × 2.100 × 0.120, lowest y 0.0000 | 108 (≤ 120) | 6 |
++
++Blender is Z-up and Godot is Y-up: the glTF exporter's +Y Up swaps the axes, so Blender's depth (Y) becomes Godot's Z and the height moves to Y with no rescale. The Blender column comes from the read-only measurement call at the end of each build (`tools/blender/build_*.py`), which reads the same numbers the sidebar's Dimensions show, but per asset rather than per part.
++
++**Inspect-and-revise cycles (all from observation; full code history in `tools/blender/`, brief revisions 2 and 3 in CHANGE-BRIEF.md):**
++1. **SUV, build 1 → 2** (`18b3c9c` → `18d683e`). Build 1 matched revision 1 exactly (4.60 × 1.90 × 1.85 m, 200 tris). Shriram, in Blender: *"the suv in this blender should resemble a modern mercedes or a bmw suv, the one on blender looks pretty basic"*. Build 2: long glasshouse, raked windscreen, light bars, silver wheels, 1.70 m.
++2. **SUV, build 2 → 3** (`1863c9b`). Shriram asked for a windscreen, four doors, separate windows, an opening tailgate with a handle, a grille, individual headlights, fog lamps and an exhaust. Build 3 does it with faces and flat colours on the same 6 shapes; the wheels dropped from 12 to 10 segments to stay under 500 triangles.
++3. **SUV, build 3 → 4** (`09a9c16`). Shriram: *"the sides of the suv doesn't look good and proper, it is not equal sized,a dn that doesn;t look like a speartion, fix that"*. Equal 1.05 m doors, 3.5 cm near-black seams centred on the A, B and C pillars (measured seam centres x = −1.05, 0.00, +1.05).
++4. **Shrine.** Revision 1's saffron box and cone roof contradicted the story bible (*"just a rock, with no building"*); Shriram chose the lore, then asked for the goddess on the rock and a reachable lamp with a real flame. Result: a relief goddess (saree silhouette, gold girdle, crown) on a sea-blue wave band in an arched niche, a brass lamp holder and teardrop flame on the sand at the front.
++5. **Fence.** Revision 1's steel fence didn't match the A2 beach art; Shriram chose wooden posts and ropes.
++6. **In Godot** (`f93ec6e`): the engine screenshot `evidence/a3/godot-shrine-front-BEFORE-facing-suv.png` showed the goddess facing the SUV's tail 1.3 m away. The showcase now turns the shrine's *slot* −90° (the asset keeps an identity transform, so the check still holds) and adds a flickering lamp light, since the model itself can't animate.
++
++**HUMAN CHECK: look**: Shriram ran the showcase, pressed 1/2/3 and orbited each asset, including behind and below, beside Hari's billboard. Shriram's words, verbatim (typos included):
++- **Fence:** *"this fence might be small , but this will be the one in the middle and there will be abunch of long fences surrounding it to cover the full lenth of the house so the villagers won't be able to enter, and the other things will be electrecuted as well, which is why it looks small, and because of the limitation, it was not able to say private porterty so i added a red rectangle in the middle"* (Claude built the sign; Shriram moved it to the middle in the hand edit).
++- **SUV:** *"the suv is perfect for its colour and everyhting but in reality when i design it will be much better as it will not be refined to these shapes and it will look like a regular suv and not rectangle like this, with the wheels and everything bu t i'ms atisfied how it kookes given the conditons"*
++- **Shrine:** *"the shrine actually looks great and it depicts the goddes on the rocka dn the flame on the side looks great too, in future i will work on getting the goddess right nd making it much more look realistic"*
++- No missing faces or wrong colours were reported. No other person has looked at the scene; none is claimed.
++
++**What Claude got wrong (each caught, each logged where it happened):**
++1. The brief priced an icosphere at "subdivisions 1" as 80 triangles. In Blender that's the bare 20-triangle icosahedron; 80 needs subdivisions 2 (corrected in revision 2).
++2. The rock first measured 1.141 m long, not 1.20: an icosphere doesn't reach its radius along X. Caught by `get_scene_info`; stretched to 1.200 (shrine call 1b).
++3. SUV build 2: "raise the nose and tail" raised the whole underside, because a cube only has corner vertices (kept, disclosed).
++4. SUV build 2: the silver wheel face didn't apply on the first wheel; caught with `look`, fixed (call 3b). Cause: material indices set before the mesh had material slots.
++5. SUV build 3: door seams too thin and dark, front door longer than the pillars implied. Caught by Shriram (cycle 3).
++6. Fence: the sign first floated between the ropes, touching nothing. Caught with `look`, moved onto the middle rope (call 6b).
++7. Export: reading the exporter's format list returned an empty list (dynamic enum); then opening a `.blend` inside the same call lost the window context the exporter needs. Fixed by passing `"GLB"` and opening and exporting in separate calls (`tools/blender/export_glb.py`).
++8. Godot showcase: the goddess faced the SUV (cycle 6).
++9. The self-test's "correct" fence stand-in kept revision 1's steel colours after the brief changed, so it failed 1 of 17. The assertion was kept; the stand-in now uses revision 3's colours (`81c1666`). A green report would have been easy to get by deleting the colour row; that wasn't done.
++
++**Shriram's hand edit** is recorded in [BLENDER-NOTES.md](BLENDER-NOTES.md). The check also caught it mid-way: with the sign dragged by eye to y = −0.085, the fence measured **0.16 m deep instead of 0.12** (a 33 % size failure) and the scene had **8 shapes** after the duplicates. Both were fixed by Shriram before the export.
+ 
+ **What the check does and does not show:** it measures what arrived in Godot: mesh-vertex bounding box, node scales, the lowest vertex height, triangles, mesh count and albedo colours. It cannot tell whether an asset reads as an SUV, a shrine or a fence, whether its colours suit the night lighting, or whether it fits the game's cel-shaded style. Those are Shriram's human checks. Shape count is inferred from mesh nodes, so objects joined in Blender would hide it.
++
++**Known limitations:** each asset is a silhouette of at most 6 basic shapes (no wheel arches, mirrors or door handles on the SUV; a figure, not a portrait, for the goddess); the sign can't carry lettering without a painted texture; the flame is static in the model (the flicker is a Godot light); the assets sit in the A3 showcase, not yet in the A2 night slice, so they haven't been judged under the game's night lighting; the triangle and shape counts trust Godot's mesh nodes (objects joined in Blender would hide the shape count).

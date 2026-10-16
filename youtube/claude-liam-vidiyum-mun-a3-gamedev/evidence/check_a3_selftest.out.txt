@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] correct stand-in: 'size within ±5 % of brief (x, y=up, z)' passes
+[PASS] correct stand-in: 'upright: Godot Y extent = briefed height' passes
+[PASS] correct stand-in: 'every node scale = (1, 1, 1)' passes
+[PASS] correct stand-in: 'root not rotated' passes
+[PASS] correct stand-in: 'base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)' passes
+[PASS] correct stand-in: 'origin under the footprint centre (±10 % of each footprint side)' passes
+[PASS] correct stand-in: 'triangles ≤ 120' passes
+[PASS] correct stand-in: 'mesh parts ≤ 6 basic shapes' passes
+[PASS] correct stand-in: 'every briefed colour arrives (albedo within ±0.04)' passes
+[PASS] floating by 0.5 m: 'base on the floor' is caught
+[PASS] scaled x0.1: 'size within' is caught
+[PASS] scaled x0.1: 'every node scale' is caught
+[PASS] lying on its side: 'upright' is caught
+[PASS] lying on its side: 'root not rotated' is caught
+[PASS] sign colour lost: 'colour' is caught
+[PASS] over the triangle budget: 'triangles' is caught
+[PASS] SUV facing backwards: 'front faces +X' is caught
+
+check_a3_selftest.gd: 17 checks, 0 failed -> PASS
+exit=0

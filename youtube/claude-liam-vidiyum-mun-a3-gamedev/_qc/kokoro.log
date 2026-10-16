@@ -1,0 +1,19 @@
+[kokoro] beat-B00.mp3  13.72s  voice=am_onyx
+[kokoro] beat-B01.mp3  10.37s  voice=am_onyx
+[kokoro] beat-B02.mp3  14.36s  voice=am_onyx
+[kokoro] beat-B03.mp3  15.96s  voice=am_onyx
+[kokoro] beat-B04.mp3  14.81s  voice=am_onyx
+[kokoro] beat-B05.mp3  21.29s  voice=am_onyx
+[kokoro] beat-B06.mp3  13.59s  voice=am_onyx
+[kokoro] beat-B07.mp3  16.73s  voice=am_onyx
+[kokoro] beat-B08.mp3  12.84s  voice=am_onyx
+[kokoro] beat-B09.mp3  14.53s  voice=am_onyx
+[kokoro] beat-B10.mp3  14.25s  voice=am_onyx
+[kokoro] beat-B11.mp3  17.64s  voice=am_onyx
+[kokoro] beat-B12.mp3  19.31s  voice=am_onyx
+[kokoro] beat-B13.mp3  15.55s  voice=am_onyx
+[kokoro] beat-B14.mp3  15.94s  voice=am_onyx
+[kokoro] beat-B15.mp3  13.93s  voice=am_onyx
+[kokoro] beat-B16.mp3  3.69s  voice=am_onyx
+[kokoro] 17 beat(s) generated · cost $0.00 · durations are GROUND TRUTH, same as generate_audio.py
+python3 runtime/scripts/generate_audio_kokoro.py $REEL  269.15s user 7.72s system 417% cpu 1:06.39 total
