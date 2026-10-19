@@ -1,6 +1,8 @@
 # Vidiyum Mun (விடியும் முன், "Before Dawn"): the whole game
 
-*Draft for Shriram's approval, 2026-10-19. One document that puts together the story bible (v1, v2, v3 with its additions) and
+**Approved by Shriram, 2026-10-19 ("approved"), including the five new details listed below.**
+
+*Written 2026-10-19. One document that puts together the story bible (v1, v2, v3 with its additions) and
 how the game plays, so it can be read start to finish. The story, setting, cast and every big decision are Shriram's or were
 adopted by Shriram; Claude wrote it up. A few details appear here for the first time, so they're listed for approval:*
 
