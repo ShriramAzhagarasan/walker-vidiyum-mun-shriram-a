@@ -14,6 +14,10 @@ review of the game on 2026-10-19:*
 **Provenance key** (same as v1): **(Shriram)** = decided by Shriram. **(Claude, proposed)** = drafted by Claude in this
 revision; nothing here is adopted until Shriram marks it. Everything not changed below stands as in v1 and v2.
 
+**Adopted (2026-10-19):** Shriram read sections 1–11 and wrote *"yea all of this is great"*, so every (Claude, proposed)
+item in them is adopted, names included. In the same message Shriram added the party's ordinary guests and a love track
+with a girl called Disha (§5a, §5b).
+
 ---
 
 ## 1. What changes, in one paragraph
@@ -86,6 +90,61 @@ Advay, Manikandan, Selvam, Muthu, the old woman at the rock, Perumal, Vastav's f
 | **Ilango**, 40s, a lorry driver resting at the tea stall | ECR, leaves at 5:25 | Driving fish to the city; hasn't slept. | He is the **other vehicle in the crash**: the horn in every failed dawn is his. | Keep him talking 10 minutes and the crash timing changes. A human face for the sound you never see. |
 | **SI Kalaiselvi**, 30s, sub-inspector on night patrol | the checkpoint; the kuppam if called | Fair, procedural, tired of rich-boy cases. | — | Arrests whoever looks guilty when she arrives. Bring her at the right moment with the right evidence and she stops Raghavan; at the wrong moment, she takes Selvam. |
 
+## 5a. The ordinary guests (Shriram: "4 girls and 2 guys in the party random who you can just interact with regular stuff")
+They're just people at a party. They talk about the party, college and life, and they carry **no clues** (Shriram).
+Their job is to make the night feel full and real, and to give the loop a human texture: they say the same things every
+night, word for word, and only Hari notices. *(Names, personalities and topics: Claude, proposed.)*
+
+| Who | Where | What they talk about |
+|---|---|---|
+| **Ananya**, 22 | by the pool, phone in hand | placements, the company she "almost" got; asks everyone which branch they're in |
+| **Sneha**, 21 | the dessert table | the food; complains the biryani ran out before 9:30 every year |
+| **Keerthana**, 22 | dancing near the speaker | wants the DJ to play "something Tamil, not this"; drags people to dance |
+| **Priya**, 23 | the swing on the deck | her arrear exam (the same subject as Hari's); trades professor horror stories |
+| **Arjun**, 22 | the drinks counter | cricket, his bike, ECR traffic; insists he can "handle" one more drink |
+| **Vikram**, 23 | the steps to the beach | his band, his breakup, his plan to move to Bangalore; asks Hari for a lighter every loop |
+
+- **A small loop joke (Claude, proposed):** from loop 3 on, Hari can finish their sentences for them, which freaks them
+  out a little ("bro, how do you know what I'm going to say?"). No plot effect; it's there to make the loop felt.
+- In loop 2, Hari's shock (A2's rewritten dialogue) starts here: these are the first people he hears repeat themselves.
+
+## 5b. The love track: Disha (Shriram: "hari needs a love track … he sees someone and he likes her … that outcome happens only if you go talk to her, let's call that girl Disha")
+*Disha's name and the rule that the romance only happens if Hari talks to her: Shriram. Who she is and how it plays out:
+Claude, proposed.*
+
+**Who she is.** Disha, 22, a final-year architecture student from another college, who came with Nila. She doesn't
+belong to the rich crowd either. She spends the party **sketching**: the glass villa, the pool, and then, more and more, the
+village boats across the wire. She's the only guest who walks to the fence on her own to look at the other side.
+
+**How Hari meets her.** He sees her at 8:30 PM on the deck steps, sketchbook on her knee. Nothing happens unless the
+player chooses to walk over and talk to her (Shriram's rule). If you never do, she leaves by cab at 1 AM, and the night
+plays out without her.
+
+**The loop makes it bittersweet.** Every night, Disha meets Hari for the first time; only he remembers. So the romance is
+about **learning her**: what she's drawing, why she chose architecture, the house in Madurai her grandfather built, the song
+she hums. Each thing Hari remembers lets him reach her a little faster the next night. Get it wrong (fake interest, or
+quoting her own words back too obviously) and she pulls away for that loop.
+
+**It costs time.** Every minute with Disha is a minute not spent saving someone. The player chooses.
+
+**It matters to the story, without gating it:**
+- If she trusts Hari, she shows him her sketch from 11 PM: **men carrying cable to the fence**. That's a second way to the
+  wired-fence clue (Revathi is the first). The love track opens a path; it's never the only path.
+- **If you talk to her, she stays past 1 AM**, and that has a cost: in a loop where Hari doesn't stop it, she accepts
+  Advay's offer of a ride at 5:30 and is **in the SUV at the bend**. Talking to her puts her in the night's danger, which
+  makes protecting her part of the puzzle. *(Claude, proposed; it follows Shriram's rule: she's only at risk if you talk to her.)*
+- Around the third loop, she notices Hari's damp shirt and the sand in his pocket, and she's the first guest to ask
+  *"are you okay?"* and mean it.
+
+**Outcomes (only if Hari talked to her):**
+- **In the true ending:** at dawn she's at the rock with Ponnamma paati, sketching the open beach. After Hari calls Amma,
+  Disha sits beside him on the overturned boat. It's the first morning she remembers him, because it's the first morning
+  that doesn't reset. She asks his name; he tells her again.
+- **In the Hollow Dawn:** she sees Hari standing with Raghavan as the village is blamed, and walks away. Hari has the
+  referral and not her.
+- **In The Witness:** she gives him her number; whether they meet again is left open.
+- **If Hari never talked to her:** she isn't in any ending. Nobody tells the player what they missed.
+
 ## 6. The second mystery: who really started the fire (Claude, proposed)
 v1's chain said the rocket that burned the nets was Advay's. **In this revision that's what everyone believes, and it's
 only half true.** Advay fires his rockets into the sky. The one that lands on the nets was aimed there by **Raghavan's
@@ -129,7 +188,9 @@ Short, in-engine, skippable after the first time:
 6. 5:15 AM, Muthu in the surf.
 7. The bend at dawn (heard, then the white-out; never shown head-on).
 8. The chappal at the tide line (loop 5).
-9. Each ending.
+9. **The terrace at 2 AM with Disha** (only if Hari has talked to her): she shows him the sketchbook (Shriram's love
+   track; scene: Claude, proposed).
+10. Each ending, with the Disha epilogue when it applies.
 
 ## 10. What this needs technically (Claude)
 | Feature | What it takes | Size |
@@ -146,8 +207,9 @@ Short, in-engine, skippable after the first time:
 ECR stretch. **Phase 3:** the kuppam, the second mystery, colliding fixes. **Phase 4:** cutscenes and the four endings.
 
 ## 11. Open decisions for Shriram
-1. Adopt, change or reject each **(Claude, proposed)** item above, especially: Raghavan and the wired fence; the
-   engineered fire (second mystery); Manikandan as morally grey; the shrinking loops; the four endings.
-2. Names: Ponnamma paati for the old woman; the new characters' names.
+1. ~~Adopt each proposed item in §1–11~~: adopted 2026-10-19 ("yea all of this is great").
+2. The ordinary guests and Disha (§5a, §5b): Shriram's idea; the details are Claude's proposals, pending Shriram's read.
 3. What A4–A10 ask for, so the phases match what each assignment grades.
 4. Whether the 3D characters are built in Blender from basic shapes (like A3) or another way allowed by later briefs.
+5. The repo still says "Krishna" in the A2 dialogue, art names and docs; rename to Krish across the game in A4 (not on the
+   submitted `a3` tag).
