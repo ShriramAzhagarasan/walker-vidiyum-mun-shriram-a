@@ -100,7 +100,7 @@ night, word for word, and only Hari notices. *(Names, personalities and topics: 
 | **Ananya**, 22 | by the pool, phone in hand | placements, the company she "almost" got; asks everyone which branch they're in |
 | **Sneha**, 21 | the dessert table | the food; complains the biryani ran out before 9:30 every year |
 | **Keerthana**, 22 | dancing near the speaker | wants the DJ to play "something Tamil, not this"; drags people to dance |
-| **Priya**, 23 | the swing on the deck | her arrear exam (the same subject as Hari's); trades professor horror stories |
+| **Julie**, 23 | the swing on the deck | her arrear exam (the same subject as Hari's); trades professor horror stories |
 | **Arjun**, 22 | the drinks counter | cricket, his bike, ECR traffic; insists he can "handle" one more drink |
 | **Vikram**, 23 | the steps to the beach | his band, his breakup, his plan to move to Bangalore; asks Hari for a lighter every loop |
 
