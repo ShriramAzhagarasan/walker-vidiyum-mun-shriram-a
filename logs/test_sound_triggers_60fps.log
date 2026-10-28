@@ -1,0 +1,96 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+--- scenario: unmuted ---
+[PASS] unmuted L1 phone_buzz on start   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] unmuted L1 Hari PHONE + locked during call   PHONE
+[FAIL] unmuted L1 Hari back to IDLE after call   PHONE
+[FAIL] unmuted L1 WALK while moving   PHONE
+[FAIL] unmuted L1 generic line before 1:20, Hari TALK   amma_call_first PHONE
+[PASS] unmuted L1 Manikandan on the phone 1:20-1:40   1530.0
+[FAIL] unmuted L1 Hari OVERHEAR while the call is open   PHONE
+[FAIL] unmuted L1 call heard -> clue saved once + NOTES   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 } PHONE
+[FAIL] unmuted L1 held E re-triggers nothing   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[FAIL] unmuted L1 Advay took keys (+ NOTES for the new clue)   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] unmuted L1 Advay present   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[FAIL] unmuted L1 talking after Advay re-triggers nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] unmuted L1 fire glow at 4:45   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": false }
+[PASS] unmuted L1 dawn_crash once   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L1 mashing / clock pokes during crash re-trigger nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L1 Hari WHITEOUT before reset   WHITEOUT loop=1
+[PASS] unmuted reset to loop 2 at 8:00 PM   loop=2 clock=1200.0
+[PASS] unmuted L2 phone_buzz again   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] unmuted L2 Hari STARTLED first, D8 before Amma   STARTLED
+[FAIL] unmuted L2 knowledge kept, KEYS_SAFE reset   { "KNOW_SELVAM": false, "KNOW_KEYS": true } { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[FAIL] unmuted L2 'Ask about Selvam' offered   []
+[FAIL] unmuted L2 keys safe after asking, Hari KEYS   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 } STARTLED
+[FAIL] unmuted L2 talking again re-triggers nothing   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[FAIL] unmuted L2 Advay refused, keys stay   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[FAIL] unmuted L2 safe_dawn once, no crash   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 2, "safe_dawn": 0 }
+[FAIL] unmuted L2 Hari RELIEF   STARTLED
+[FAIL] unmuted slice ended   0
+[FAIL] unmuted music stopped at end   true
+[FAIL] unmuted exact count phone_buzz == 2   3
+[FAIL] unmuted exact count clue_saved == 3   1
+[PASS] unmuted exact count keys_exchanged == 2   2
+[FAIL] unmuted exact count dawn_crash == 1   2
+[FAIL] unmuted exact count safe_dawn == 1   0
+[PASS] unmuted clue_saved == number of new clues   ["KNOW_KEYS"]
+[FAIL] unmuted all 10 Hari states shown   ["IDLE", "WALK", "TALK", "OVERHEAR", "KEYS", "RELIEF"]
+[FAIL] unmuted state order matches the script   ["PHONE", "NOTES", "PHONE", "WHITEOUT", "STARTLED", "WHITEOUT", "STARTLED"]
+[FAIL] unmuted NOTES shown ~1.5 s each time   [1]
+[FAIL] unmuted KEYS shown ~1.5 s each time   []
+[FAIL] unmuted STARTLED >= ~1.2 s, then PHONE   [16] -> WHITEOUT
+--- scenario: muted ---
+[PASS] muted L1 phone_buzz on start   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted L1 Hari PHONE + locked during call   PHONE
+[FAIL] muted L1 Hari back to IDLE after call   PHONE
+[FAIL] muted L1 WALK while moving   PHONE
+[FAIL] muted L1 generic line before 1:20, Hari TALK   amma_call_first PHONE
+[PASS] muted L1 Manikandan on the phone 1:20-1:40   1530.0
+[FAIL] muted L1 Hari OVERHEAR while the call is open   PHONE
+[FAIL] muted L1 call heard -> clue saved once + NOTES   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 } PHONE
+[FAIL] muted L1 held E re-triggers nothing   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
+[FAIL] muted L1 Advay took keys (+ NOTES for the new clue)   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 } NOTES
+[PASS] muted L1 Advay present   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[FAIL] muted L1 talking after Advay re-triggers nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 0, "safe_dawn": 0 }
+[PASS] muted L1 fire glow at 4:45   { "KEYS_SAFE": false, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": false }
+[PASS] muted L1 dawn_crash once   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L1 mashing / clock pokes during crash re-trigger nothing   { "phone_buzz": 1, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L1 Hari WHITEOUT before reset   WHITEOUT loop=1
+[PASS] muted reset to loop 2 at 8:00 PM   loop=2 clock=1200.0
+[PASS] muted L2 phone_buzz again   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[PASS] muted L2 Hari STARTLED first, D8 before Amma   STARTLED
+[FAIL] muted L2 knowledge kept, KEYS_SAFE reset   { "KNOW_SELVAM": false, "KNOW_KEYS": true } { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[FAIL] muted L2 'Ask about Selvam' offered   []
+[FAIL] muted L2 keys safe after asking, Hari KEYS   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 } STARTLED
+[FAIL] muted L2 talking again re-triggers nothing   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 1, "dawn_crash": 1, "safe_dawn": 0 }
+[FAIL] muted L2 Advay refused, keys stay   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 1, "safe_dawn": 0 }
+[FAIL] muted L2 safe_dawn once, no crash   { "phone_buzz": 2, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 2, "safe_dawn": 0 }
+[FAIL] muted L2 Hari RELIEF   STARTLED
+[FAIL] muted slice ended   0
+[FAIL] muted music stopped at end   true
+[FAIL] muted exact count phone_buzz == 2   3
+[FAIL] muted exact count clue_saved == 3   1
+[PASS] muted exact count keys_exchanged == 2   2
+[FAIL] muted exact count dawn_crash == 1   2
+[FAIL] muted exact count safe_dawn == 1   0
+[PASS] muted clue_saved == number of new clues   ["KNOW_KEYS"]
+[FAIL] muted all 10 Hari states shown   ["WALK", "TALK", "OVERHEAR", "KEYS", "RELIEF"]
+[FAIL] muted state order matches the script   ["IDLE", "PHONE", "NOTES", "PHONE", "WHITEOUT", "STARTLED", "WHITEOUT", "STARTLED"]
+[FAIL] muted NOTES shown ~1.5 s each time   [1]
+[FAIL] muted KEYS shown ~1.5 s each time   []
+[FAIL] muted STARTLED >= ~1.2 s, then PHONE   [16] -> WHITEOUT
+[PASS] mute: same loop_index   3 vs 3
+[PASS] mute: same knowledge   { "KNOW_SELVAM": false, "KNOW_KEYS": true } vs { "KNOW_SELVAM": false, "KNOW_KEYS": true }
+[PASS] mute: same per-loop flags   { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false } vs { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }
+[PASS] mute: same notes   ["KNOW_KEYS"] vs ["KNOW_KEYS"]
+[FAIL] mute: end reached both times   false / false
+[PASS] mute: same trigger counts   { "phone_buzz": 3, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 2, "safe_dawn": 0 } vs { "phone_buzz": 3, "clue_saved": 1, "keys_exchanged": 2, "dawn_crash": 2, "safe_dawn": 0 }
+[PASS] test script ran to completion   true
+
+test_sound_triggers.gd: 86 checks, 53 failed -> FAIL
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
