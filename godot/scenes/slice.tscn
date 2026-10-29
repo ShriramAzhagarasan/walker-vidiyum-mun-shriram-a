@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://ui/dialogue_panel.gd" id="10_dialogue"]
 [ext_resource type="Script" path="res://ui/screen_cards.gd" id="11_cards"]
 [ext_resource type="Script" path="res://ui/whiteout.gd" id="12_white"]
+[ext_resource type="Script" path="res://ui/status_bar.gd" id="13_status"]
+[ext_resource type="Script" path="res://ui/night_skip_driver.gd" id="14_skipdrv"]
+[ext_resource type="Material" path="res://materials/night_skip.tres" id="15_skipmat"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 sky_top_color = Color(0.11, 0.1, 0.31, 1)
@@ -277,6 +280,18 @@ current = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
+
+[node name="StatusBar" type="Control" parent="HUD"]
+material = ExtResource("15_skipmat")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("13_status")
+
+[node name="NightSkipDriver" type="Node" parent="HUD/StatusBar"]
+script = ExtResource("14_skipdrv")
 
 [node name="HUD" type="Control" parent="HUD"]
 layout_mode = 3

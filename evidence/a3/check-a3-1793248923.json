@@ -1,0 +1,199 @@
+{
+  "assets": {
+    "fence_segment": {
+      "meshes": 6,
+      "min_y": 0.0,
+      "rows": [
+        {
+          "id": "imported .glb instantiates",
+          "observed": "6 mesh nodes",
+          "pass": true
+        },
+        {
+          "id": "size within ±5 % of brief (x, y=up, z)",
+          "observed": "2.400 × 2.100 × 0.120 m vs brief 2.40 × 2.10 × 0.12",
+          "pass": true
+        },
+        {
+          "id": "upright: Godot Y extent = briefed height",
+          "observed": "y extent 2.100 m (brief height 2.10 m)",
+          "pass": true
+        },
+        {
+          "id": "every node scale = (1, 1, 1)",
+          "observed": "all 1,1,1 (8 nodes)",
+          "pass": true
+        },
+        {
+          "id": "root not rotated",
+          "observed": "basis identity",
+          "pass": true
+        },
+        {
+          "id": "base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)",
+          "observed": "lowest vertex y = +0.0000 m",
+          "pass": true
+        },
+        {
+          "id": "origin under the footprint centre (±10 % of each footprint side)",
+          "observed": "footprint centre at x=+0.000, z=+0.000 m",
+          "pass": true
+        },
+        {
+          "id": "triangles ≤ 120",
+          "observed": "108 triangles",
+          "pass": true
+        },
+        {
+          "id": "mesh parts ≤ 6 basic shapes",
+          "observed": "6 mesh nodes, 6 surfaces (joined objects would hide shape count)",
+          "pass": true
+        },
+        {
+          "id": "every briefed colour arrives (albedo within ±0.04)",
+          "observed": "all 3 found; seen #5b4632, #5b4632, #8c7a5b, #8c7a5b, #8c7a5b, #c0392b",
+          "pass": true
+        }
+      ],
+      "size": [
+        2.39999985694885,
+        2.09999990463257,
+        0.119999997317791
+      ],
+      "tris": 108
+    },
+    "rock_shrine": {
+      "meshes": 6,
+      "min_y": 0.0,
+      "rows": [
+        {
+          "id": "imported .glb instantiates",
+          "observed": "6 mesh nodes",
+          "pass": true
+        },
+        {
+          "id": "size within ±5 % of brief (x, y=up, z)",
+          "observed": "1.200 × 0.900 × 1.000 m vs brief 1.20 × 0.90 × 1.00",
+          "pass": true
+        },
+        {
+          "id": "upright: Godot Y extent = briefed height",
+          "observed": "y extent 0.900 m (brief height 0.90 m)",
+          "pass": true
+        },
+        {
+          "id": "every node scale = (1, 1, 1)",
+          "observed": "all 1,1,1 (8 nodes)",
+          "pass": true
+        },
+        {
+          "id": "root not rotated",
+          "observed": "basis identity",
+          "pass": true
+        },
+        {
+          "id": "base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)",
+          "observed": "lowest vertex y = +0.0000 m",
+          "pass": true
+        },
+        {
+          "id": "origin under the footprint centre (±10 % of each footprint side)",
+          "observed": "footprint centre at x=-0.000, z=+0.000 m",
+          "pass": true
+        },
+        {
+          "id": "triangles ≤ 280",
+          "observed": "266 triangles",
+          "pass": true
+        },
+        {
+          "id": "mesh parts ≤ 6 basic shapes",
+          "observed": "6 mesh nodes, 11 surfaces (joined objects would hide shape count)",
+          "pass": true
+        },
+        {
+          "id": "every briefed colour arrives (albedo within ±0.04)",
+          "observed": "all 8 found; seen #d9a21b, #c9a24a, #b3202a, #c9a24a, #ff8c1a, #c9a24a, #3a3632, #2b6f8e, #6f6a63, #d9a21b, #f2efe6",
+          "pass": true
+        }
+      ],
+      "size": [
+        1.19950008392334,
+        0.899999976158142,
+        0.999999940395355
+      ],
+      "tris": 266
+    },
+    "suv": {
+      "meshes": 6,
+      "min_y": 0.0,
+      "rows": [
+        {
+          "id": "imported .glb instantiates",
+          "observed": "6 mesh nodes",
+          "pass": true
+        },
+        {
+          "id": "size within ±5 % of brief (x, y=up, z)",
+          "observed": "4.600 × 1.700 × 1.900 m vs brief 4.60 × 1.70 × 1.90",
+          "pass": true
+        },
+        {
+          "id": "upright: Godot Y extent = briefed height",
+          "observed": "y extent 1.700 m (brief height 1.70 m)",
+          "pass": true
+        },
+        {
+          "id": "every node scale = (1, 1, 1)",
+          "observed": "all 1,1,1 (8 nodes)",
+          "pass": true
+        },
+        {
+          "id": "root not rotated",
+          "observed": "basis identity",
+          "pass": true
+        },
+        {
+          "id": "base on the floor: lowest mesh vertex y = 0 ± 0.01 m (vertices, not a collider)",
+          "observed": "lowest vertex y = +0.0000 m",
+          "pass": true
+        },
+        {
+          "id": "origin under the footprint centre (±10 % of each footprint side)",
+          "observed": "footprint centre at x=+0.000, z=+0.000 m",
+          "pass": true
+        },
+        {
+          "id": "triangles ≤ 480",
+          "observed": "456 triangles",
+          "pass": true
+        },
+        {
+          "id": "mesh parts ≤ 6 basic shapes",
+          "observed": "6 mesh nodes, 19 surfaces (joined objects would hide shape count)",
+          "pass": true
+        },
+        {
+          "id": "every briefed colour arrives (albedo within ±0.04)",
+          "observed": "all 11 found; seen #333738, #0e0f12, #f4f1e6, #b3121b, #fff1c4, #1c1d20, #060607, #b8bcc4, #050506, #1f2633, #333738, #15141a, #b8bcc4, #15141a, #b8bcc4, #15141a, #b8bcc4, #15141a, #b8bcc4",
+          "pass": true
+        },
+        {
+          "id": "front faces +X: 'cabin' centre behind the middle (x < 0)",
+          "observed": "suv_cabin centre x = -0.575 m",
+          "pass": true
+        }
+      ],
+      "size": [
+        4.59999990463257,
+        1.70000004768372,
+        1.89999997615814
+      ],
+      "tris": 456
+    }
+  },
+  "brief": "res://tests/data/a3_brief.json",
+  "checks": 31,
+  "engine": "4.7.2-stable (official)",
+  "failures": 0
+}

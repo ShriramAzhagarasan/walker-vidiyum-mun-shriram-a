@@ -256,3 +256,24 @@ i learned how x, y and z work in blender, that front and back depend on which si
   - **Out of scope** didn't protect the source model and texture files.
   Added a "Headless facts" block (the Godot symlink, `timeout`, `--fixed-fps` vs wall-clock time, the dummy renderer)
   and the baseline counts, then rewrapped the file from 133 lines to 105 (the limit is 120). The other references were correct.
+
+## 2026-10-29 ~00:30–01:15: driver and test for the night-skip glow (AI-recorded)
+- **How it was run:** `prompts/a5/prompt-2.txt` (the course's prompt), run inside the interactive Claude Code session
+  in VS Code rather than as `claude -p`, because the step needs plan → approval → implement. Claude proposed a 4-step
+  plan; Shriram approved all of it ("could you do things from your end"). The `Edit(godot/shaders/**)` deny rule from the
+  course's command wasn't in force in this session, so the guarantee is the diff:
+  `git diff --stat -- godot/shaders/` printed nothing after the step.
+- **What changed:**
+  - the status bar's drawing moved from `ui/hud.gd` into its own node (`ui/status_bar.gd`, `HUD/StatusBar`), with
+    `materials/night_skip.tres` pointing at Shriram's shader;
+  - a driver (`ui/night_skip_driver.gd`) moves `skip_amount` with `move_toward` by `delta`;
+  - the new test `tests/test_night_skip.gd` has 33 checks.
+- **Results:**
+  - the new test: 33/33 at 30, 60 and 144 fps. Fade-in 0.2667 / 0.2500 / 0.2500 s and fade-out 0.5000 s each; at
+    30 fps the fade-in takes 8 frames, one frame period over 0.25. Under `time_scale = 0.5` it takes 15 / 30 / 72
+    real frames, i.e. 0.5 s.
+  - the 7 existing tests at 60: exactly the baseline counts, and the three wall-clock tests still pass unpinned
+    (`logs/after-driver-no-fixed-fps/`).
+- **Friction:** to reach the dawn crash (R9), the test must close Amma's call with E. Under `--fixed-fps`,
+  `Story._now()` drops presses that come too fast in wall-clock time, so the test waits 400 ms of real time before
+  each E (`OS.delay_msec`), like a player would. The game code wasn't changed to make the test pass.
