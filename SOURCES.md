@@ -78,3 +78,7 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
   requirements."
 - **Used for:** the predictions in CHANGE-BRIEF.md §1.8 (pixel values, transparency, contrast ratios) and §2.5 (hint
   experiment). Claude recomputed every value independently on 2026-10-28 and they match.
+- **Also used for (2026-10-29):** writing `godot/shaders/deck_marble.gdshader` and `godot/shaders/hint_experiment.gdshader`.
+  Shriram's words: "i used chatgpt's help as i'm learning all of this for the first time." Claude Code gave a slot-by-slot
+  outline (names, hints and built-ins from CHANGE-BRIEF.md §2.3 and §2.5) and reviewed both files in prose. It did not
+  write or edit either file. `night_skip.gdshader` (commit `51e18aa`) is separate from this note.

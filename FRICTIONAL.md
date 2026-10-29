@@ -277,3 +277,22 @@ i learned how x, y and z work in blender, that front and back depend on which si
 - **Friction:** to reach the dawn crash (R9), the test must close Amma's call with E. Under `--fixed-fps`,
   `Story._now()` drops presses that come too fast in wall-clock time, so the test waits 400 ms of real time before
   each E (`OS.delay_msec`), like a player would. The game code wasn't changed to make the test pass.
+
+## 2026-10-29 ~17:35–18:00: mutations, textures, curl calibration, and the two Part 2 shaders (AI-recorded)
+- **Mutations on the night-skip shader** (Shriram edited the shader by hand; Claude ran nothing on it):
+  - m1, `;` deleted: `SHADER ERROR: Expected a ';'`, 4 checks fail (empty uniform list), exit 1.
+  - m2, `skip_amount` renamed to `skip_amt`: 2 checks fail (source regex, uniform-list type), exit 1. **All 22 rule
+    checks still passed.** The driver kept writing `skip_amount` to a uniform that no longer existed, and Godot raised no
+    error. Only the uniform-list assertion catches a rename. Logs: `logs/mutations/` (commit `fbc03be`).
+- **Curl check:** Claude first wrote its own curl formula, then found that the assignment gives a specific
+  `curl_ratio()`, which the audit prompt preloads. Claude replaced it with the course function, unchanged, before
+  committing. Calibrated on Floor Tiles 06: GL file 0.162 read as OpenGL, 1.838 as DirectX; DX file the reverse. The sign
+  is not reversed. Marble 01: 0.637 / 1.363, i.e. drifted toward 1 as the assignment warns for flat maps, but in the
+  right direction (commit `c27ce5a`).
+- **Import settings:** Claude also set `detect_3d/compress_to=0` on every A5 texture. The brief's table doesn't mention
+  it, but without it the editor may change a Lossless texture to VRAM on first use in 3D (F9).
+- **The two Part 2 shaders:** Claude gave an outline per slot. Shriram wrote both shaders with ChatGPT's help. The first
+  text Shriram pasted carried a ChatGPT citation, so Claude asked who wrote it. Shriram: "you can say i used chatgpt's
+  help as i'm learning all of this for the first time." Disclosed in SOURCES.md. Claude's prose review found no errors:
+  names, hints and defaults match §2.3; world-XZ UVs line up with the PlaneMesh tangents, so the normal map isn't flipped;
+  roughness is clamped.
