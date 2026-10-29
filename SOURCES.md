@@ -68,3 +68,13 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
 | Godot | The look check, orbiting each asset including behind and below | The showcase scene and its two revisions, the headless check and self-test, the screenshot capture script |
 | Film | Recorded the Blender session (`blendersession.mov`); watches and uploads the film | Beat sheet, script, narration, edit (Brutalist `godot-gamedev`, walker) |
 | Docs | Interface notes, hand-edit paragraph (approved as their own), look-check words, reflection | TEST-REPORT, FRICTIONAL AI-recorded entries, SOURCES, README |
+
+## Assignment 5 (shaders and materials)
+### AI assistance outside Claude Code (Shriram's disclosure, 2026-10-28)
+- **Tool:** OpenAI ChatGPT (model as shown in the ChatGPT app at the time).
+- **Purpose (Shriram's words):** "I provided the shader requirements, initial pixel values, blending formula, uniform
+  parameters, and colour-space experiment setup. I used ChatGPT to help calculate and verify the expected RGB values, explain
+  sRGB decoding and encoding, and organize the mathematical working. I reviewed the outputs against the assignment
+  requirements."
+- **Used for:** the predictions in CHANGE-BRIEF.md §1.8 (pixel values, transparency, contrast ratios) and §2.5 (hint
+  experiment). Claude recomputed every value independently on 2026-10-28 and they match.

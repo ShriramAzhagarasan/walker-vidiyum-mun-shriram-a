@@ -216,3 +216,29 @@ i expected claude to build the suv the way i pictured it the first time, but the
 i learned how x, y and z work in blender, that front and back depend on which side you look from, and that typing exact numbers is better than dragging. i also learned that claude can build what i describe but can't tell if it looks right, so i had to keep checking it myself, and every change i asked for came from looking at it. still unresolved: within 6 shapes the suv will never look like a real one, and when i design it properly it won't be restricted to these shapes. i want to make the goddess look more realistic. the fence is one segment of a much longer electrified fence around the house. i haven't seen the assets in the actual night scene of my game yet.
 
 **Traceability:** SUV builds `18b3c9c` → `18d683e` → `1863c9b` → `09a9c16`; shrine `18d683e` → `1863c9b`; fence `231495e`; export and check `d6e9466`; showcase revision `f93ec6e`; self-test fix `81c1666`; screen recording `blendersession.mov` (film clips at 7:48–7:53 PM and 8:31–8:36 PM).
+
+---
+
+# Assignment 5: shaders, materials and the Godot shading language
+
+## 2026-10-28 ~15:30–18:00: planning, then the brief (AI-recorded; Shriram's words quoted)
+- **Before the brief.** A planning chat with Claude Code read the repo and the assignment. No shader existed and no
+  build prompt had been sent. Setup was committed first: the course's `scripts/run-test.sh` and the baseline (`18cdc12`),
+  then the A2/A3 briefs archived (`6a37d5f`).
+- **Found while taking the baseline:** three existing tests (`test_sound_triggers`, `test_loop_logic`,
+  `test_slice_smoke`) fail under `--fixed-fps 60` and pass without it. The cause is `Story._now()` using wall-clock
+  time (`godot/autoload/story.gd:203`). Recorded, not fixed.
+- **Decisions (Shriram, chosen from options in the chat):**
+  - the effect: sodium orange, fade in 0.25 s and out 0.5 s, continue on re-press, freeze on pause, scaled game time;
+  - the marble: Marble 01 in the slice, with the wet strip glossier;
+  - Claude's six recommendations, accepted ("these recommendations are okay, proceed with them");
+  - `tint_strength = 0.5` "to make the orange glow visible".
+- **Rejected idea (Shriram's):** the battery turning from orange to red as the night runs out ("an indicator that it's
+  going to be dawn"). Claude pointed out that it is a continuous clock effect, not an on/off state, and that one `mix()`
+  tints the whole bar. It is kept as the A5 "next step".
+- **Difficulty:** Shriram wasn't sure how to answer the prediction questions at first. Claude explained `mix()` slot by
+  slot, with worked examples on different numbers.
+- **Shriram's own account of the ChatGPT help:** "I used ChatGPT as a calculation and explanation aid while working
+  through shader colour blending and the source_color experiment. I supplied the equations, pixel values, and experiment
+  conditions, then used its responses to check the arithmetic and understand why missing source_color makes the displayed
+  pixels brighter. The main difficulty was understanding how linear and sRGB colour values differ."
