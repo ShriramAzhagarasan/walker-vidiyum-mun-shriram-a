@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/deck_marble.gdshader" id="1_marble"]
+[ext_resource type="Texture2D" path="res://assets/textures/marble_01/marble_01_diff_2k.png" id="2_diff"]
+[ext_resource type="Texture2D" path="res://assets/textures/marble_01/marble_01_rough_2k.png" id="3_rough"]
+[ext_resource type="Texture2D" path="res://assets/textures/marble_01/marble_01_nor_gl_2k.png" id="4_nor"]
+
+[resource]
+shader = ExtResource("1_marble")
+shader_parameter/albedo_tex = ExtResource("2_diff")
+shader_parameter/roughness_tex = ExtResource("3_rough")
+shader_parameter/normal_tex = ExtResource("4_nor")
+shader_parameter/roughness_scale = 0.3
+shader_parameter/specular_amount = 0.8

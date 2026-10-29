@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://materials/hint_a_source_color.tres" id="1_a"]
+[ext_resource type="Material" path="res://materials/hint_b_no_hint.tres" id="2_b"]
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0, 0, 0, 1)
+tonemap_mode = 0
+tonemap_exposure = 1.0
+glow_enabled = false
+fog_enabled = false
+adjustment_enabled = false
+
+[sub_resource type="QuadMesh" id="Strip"]
+size = Vector2(3, 1)
+
+[node name="HintExperiment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+projection = 1
+size = 3.0
+current = true
+
+[node name="QuadA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("Strip")
+material_override = ExtResource("1_a")
+
+[node name="QuadB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("Strip")
+material_override = ExtResource("2_b")

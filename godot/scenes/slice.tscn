@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://ui/status_bar.gd" id="13_status"]
 [ext_resource type="Script" path="res://ui/night_skip_driver.gd" id="14_skipdrv"]
 [ext_resource type="Material" path="res://materials/night_skip.tres" id="15_skipmat"]
+[ext_resource type="Material" path="res://materials/marble_dry.tres" id="16_marbledry"]
+[ext_resource type="Material" path="res://materials/marble_wet.tres" id="17_marblewet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 sky_top_color = Color(0.11, 0.1, 0.31, 1)
@@ -97,34 +99,22 @@ fallback_color = Color(0.3, 0.3, 0.33, 1)
 [node name="FloorWest" type="MeshInstance3D" parent="Deck"]
 position = Vector3(7, 0, 0)
 mesh = SubResource("DeckWest")
-script = ExtResource("2_surface")
-art_path = "res://assets/art/env/marble.png"
-fallback_color = Color(0.93, 0.89, 0.82, 1)
-uv_tiles = Vector2(4, 8)
+material_override = ExtResource("16_marbledry")
 
 [node name="FloorEast" type="MeshInstance3D" parent="Deck"]
 position = Vector3(21, 0, 0)
 mesh = SubResource("DeckEast")
-script = ExtResource("2_surface")
-art_path = "res://assets/art/env/marble.png"
-fallback_color = Color(0.93, 0.89, 0.82, 1)
-uv_tiles = Vector2(10, 8)
+material_override = ExtResource("16_marbledry")
 
 [node name="FloorBack" type="MeshInstance3D" parent="Deck"]
 position = Vector3(12.5, 0, -3.6)
 mesh = SubResource("DeckBack")
-script = ExtResource("2_surface")
-art_path = "res://assets/art/env/marble.png"
-fallback_color = Color(0.93, 0.89, 0.82, 1)
-uv_tiles = Vector2(7, 0.8)
+material_override = ExtResource("17_marblewet")
 
 [node name="FloorFront" type="MeshInstance3D" parent="Deck"]
 position = Vector3(12.5, 0, 1.6)
 mesh = SubResource("DeckFront")
-script = ExtResource("2_surface")
-art_path = "res://assets/art/env/marble.png"
-fallback_color = Color(0.93, 0.89, 0.82, 1)
-uv_tiles = Vector2(7, 4.8)
+material_override = ExtResource("16_marbledry")
 
 [node name="PoolWater" type="MeshInstance3D" parent="Deck"]
 position = Vector3(12.5, -0.35, -2)

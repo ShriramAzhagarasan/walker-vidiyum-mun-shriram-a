@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/hint_experiment.gdshader" id="1_hint"]
+[ext_resource type="Texture2D" path="res://assets/textures/hint_strip_3x1.png" id="2_strip"]
+
+[resource]
+shader = ExtResource("1_hint")
+shader_parameter/strip_as_colour = ExtResource("2_strip")
+shader_parameter/strip_as_data = ExtResource("2_strip")
+shader_parameter/use_source_color = true
