@@ -242,3 +242,17 @@ i learned how x, y and z work in blender, that front and back depend on which si
   through shader colour blending and the source_color experiment. I supplied the equations, pixel values, and experiment
   conditions, then used its responses to check the arithmetic and understand why missing source_color makes the displayed
   pixels brighter. The main difficulty was understanding how linear and sRGB colour values differ."
+
+## 2026-10-28 23:54 – 2026-10-29 00:20: CLAUDE.md, agent draft then review (AI-recorded)
+- Shriram ran `prompts/a5/prompt-1.txt` with `claude -p` and the course's read-only tool list. The final result event in
+  `prompts/a5/session-1.jsonl` says `success`, 29 turns, no permission denials. `git diff --stat -- godot/shaders/` was
+  empty. (Without `--`, the command errors, because the folder doesn't exist yet.) The draft was committed unedited
+  (`29a0890`).
+- **Review (reference check by Claude, decisions approved by Shriram):** every file:line in the draft was opened. Errors:
+  - **Wrong lines:** all four deck-floor references were off by 6–9 lines (`slice.tscn:100-105` etc.). The nodes are at
+    94, 102, 110 and 118.
+  - **Missing tests:** the test list left out two real tests, `check_a3_assets.gd` and `check_a3_selftest.gd`.
+  - **No headless facts:** nothing said `--fixed-fps` breaks wall-clock code, which the baseline had just shown.
+  - **Out of scope** didn't protect the source model and texture files.
+  Added a "Headless facts" block (the Godot symlink, `timeout`, `--fixed-fps` vs wall-clock time, the dummy renderer)
+  and the baseline counts, then rewrapped the file from 133 lines to 105 (the limit is 120). The other references were correct.

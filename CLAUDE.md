@@ -2,55 +2,34 @@
 
 ## Project context
 
-- **Engine:** Godot 4.7.2.stable.official, macOS (`README.md:4`;
-  `godot/project.godot:16` lists feature `"4.7"`).
-- **Renderer:** Forward+ (`godot/project.godot:38`).
-- **Main scene:** `res://scenes/intro.tscn` (`godot/project.godot:15`).
-  The gameplay scene the A5 effects live in is `res://scenes/slice.tscn`
-  (loaded from the intro; root node `Slice` is a `Node3D`).
+- **Engine:** Godot 4.7.2.stable.official, macOS (`README.md:4`; feature `"4.7"` at `godot/project.godot:16`).
+- **Renderer:** Forward+ (`godot/project.godot:38`). **Main scene:** `res://scenes/intro.tscn` (`project.godot:15`);
+  the A5 effects live in the gameplay scene `res://scenes/slice.tscn` (root `Slice`, a `Node3D`).
 
 ### Part 1 shaded object (phone status bar)
 
-- Drawn today by `HUD/HUD`, a `Control` with script `res://ui/hud.gd`,
-  inside the `HUD` `CanvasLayer` of the slice
-  (`godot/scenes/slice.tscn:278-287`).
-- The status bar itself is the `draw_rect` / `draw_string` calls in
-  `HUD._draw()` at `godot/ui/hud.gd:38-49` (bar background `:42`, clock
-  text `:43`, signal bars `:44-45`, battery `:46-48`, "loop N" `:49`).
-  `HUD._process()` (`hud.gd:25-36`) polls state and uses
-  `LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT`
-  at `hud.gd:26` for ">> x8" (`hud.gd:50-51`).
-- Per `CHANGE-BRIEF.md` §1.2, the status bar moves into its own Control
-  node for A5 so only that node gets the shader material.
+- Drawn today by `HUD/HUD`, a `Control` with `res://ui/hud.gd`, inside the `HUD` `CanvasLayer`
+  (`godot/scenes/slice.tscn:278-287`). The bar is the `draw_rect`/`draw_string` calls in `HUD._draw()`
+  (`godot/ui/hud.gd:38-49`: background `:42`, clock `:43`, signal `:44-45`, battery `:46-48`, "loop N" `:49`).
+- `HUD._process()` (`hud.gd:25-36`) shows ">> x8" (`hud.gd:50-51`) on
+  `LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT` (`hud.gd:26`).
+- The status bar moves into its own Control node for A5 (`CHANGE-BRIEF.md` §1.2).
 
 ### Game state that drives the night-skip shader
 
-- Owned by `res://autoload/loop_state.gd` (autoloaded as `LoopState`,
-  `godot/project.godot:20`). The state is `LoopState.fast_forward`
-  (declared `loop_state.gd:43`, consumed by the clock tick `:58-59`)
-  combined with `LoopState.phase == LoopState.Phase.NIGHT` (enum
-  `loop_state.gd:18`).
-- `LoopState.fast_forward` is written every frame from the
-  `fast_forward` input action by `Controls` at
-  `godot/autoload/controls.gd:27`. `Controls` stops updating it while
-  paused (`controls.gd:25-26`).
+- `LoopState.fast_forward` (`godot/autoload/loop_state.gd:43`; autoload at `project.godot:20`; used by the clock at
+  `loop_state.gd:58-59`), combined with `phase == Phase.NIGHT` (enum `loop_state.gd:18`).
+- Written every frame from the `fast_forward` action by `Controls` (`godot/autoload/controls.gd:27`), which stops
+  updating it while paused (`controls.gd:25-26`).
 
 ### Part 2 textured shader (deck floors)
 
-- 3D objects: `MeshInstance3D` nodes under `Slice/Deck` in
-  `godot/scenes/slice.tscn`:
-  - **Dry marble:** `FloorWest` (`slice.tscn:100-105`), `FloorEast`
-    (`:107-113`), `FloorFront` (`:121-127`).
-  - **Wet marble:** `FloorBack` (`:114-120`).
-- Today each has `res://scenes/textured_surface.gd` attached, which
-  builds a `StandardMaterial3D` in code at
-  `godot/scenes/textured_surface.gd:18-39` from
-  `res://assets/art/env/marble.png` and assigns it as
-  `material_override` (`textured_surface.gd:39`).
-- Per `CHANGE-BRIEF.md` §2.1, §2.4, A5 replaces this with
-  `godot/materials/marble_dry.tres` (FloorWest/East/Front) and
-  `godot/materials/marble_wet.tres` (FloorBack), both backed by
-  `godot/shaders/deck_marble.gdshader`.
+- `MeshInstance3D` nodes under `Slice/Deck` in `godot/scenes/slice.tscn`. **Dry marble:** `FloorWest` (`:94`),
+  `FloorEast` (`:102`), `FloorFront` (`:118`). **Wet marble:** `FloorBack` (`:110`).
+- Today each uses `res://scenes/textured_surface.gd`, which builds a `StandardMaterial3D` in code from
+  `res://assets/art/env/marble.png` (`textured_surface.gd:18-39`) and sets it as `material_override` (`:39`).
+- A5 replaces this with `godot/materials/marble_dry.tres` (West/East/Front) and `marble_wet.tres` (Back), both on
+  `godot/shaders/deck_marble.gdshader` (`CHANGE-BRIEF.md` §2.1, §2.4).
 
 ### Tests (all through `scripts/run-test.sh`)
 
@@ -59,19 +38,31 @@
 with a 120 s timeout, tees to `logs/<name>_<fps>fps.log`, and exits 1 on
 `SHADER ERROR` or `SCRIPT ERROR` (`scripts/run-test.sh:1-9`).
 
-Current A2/A3 tests in `godot/tests/`:
+Current A2/A3 tests in `godot/tests/`, with the baseline counts (commit `18cdc12`, `logs/`):
 
 ```bash
-scripts/run-test.sh test_assets_present.gd 60
-scripts/run-test.sh test_audio_mix.gd 60
-scripts/run-test.sh test_sound_triggers.gd 60
-scripts/run-test.sh test_loop_logic.gd 60
-scripts/run-test.sh test_slice_smoke.gd 60
+scripts/run-test.sh test_assets_present.gd 60   # 70/70 PASS
+scripts/run-test.sh test_audio_mix.gd 60        # 10/10 PASS
+scripts/run-test.sh test_sound_triggers.gd 60   # 53/86 FAIL under --fixed-fps (86/86 unpinned)
+scripts/run-test.sh test_loop_logic.gd 60       # 4/36 FAIL under --fixed-fps (36/36 unpinned)
+scripts/run-test.sh test_slice_smoke.gd 60      # 4/13 FAIL under --fixed-fps (13/13 unpinned)
+scripts/run-test.sh check_a3_assets.gd 60       # 31/31 PASS
+scripts/run-test.sh check_a3_selftest.gd 60     # 17/17 PASS
 ```
+`harness.gd` is the shared base class, and `a3_measure.gd` and `capture_a3.gd` are helpers: none of them is a test.
 
-The new A5 tests specified in `CHANGE-BRIEF.md` §1.7 and §2.6 (e.g. for
-`skip_amount` at 30/60/144 fps, uniform-list assertions, material/import
-assertions) run through the same wrapper with the matching fps argument.
+### Headless facts (confirmed on this machine)
+- `godot` on PATH is a symlink, `/opt/homebrew/bin/godot` → `~/Downloads/Godot.app/Contents/MacOS/Godot`
+  (4.7.2.stable.official.ed1daf0bf). The README's `/Applications` path is wrong for this machine.
+- `timeout` is GNU coreutils at `/opt/homebrew/bin/timeout`. Exit status 124 means the test hung.
+- `--fixed-fps` runs headless faster than real time. Code that measures wall-clock time (`Story._now()`,
+  `godot/autoload/story.gd:203`) breaks under it, which is why three baseline tests fail only through the wrapper.
+  New A5 code and tests must use frame `delta`, never `Time.get_ticks_msec()`.
+- A headless run uses a dummy renderer that draws nothing. It can show that a shader parses (`SHADER ERROR`
+  lines, `get_shader_uniform_list()`), but **not** how anything looks, and it doesn't report uniform defaults
+  (read them from the `.gdshader` text). Never add `--rendering-driver`. Every visual rule ends in a human check.
+
+New A5 tests (`CHANGE-BRIEF.md` §1.7, §2.6) run through the same wrapper: the driver test at 30, 60 and 144.
 
 ## Current change
 
@@ -103,14 +94,12 @@ The A5 change must not touch:
 - The known A2 wall-clock limitation in `Story._now()`
   (`godot/autoload/story.gd:203`) stays as-is.
 - `godot/project.godot` renderer, display, and autoload settings.
+- Source model and texture files (`godot/assets/models/*.glb`, `godot/assets/art/`, downloaded texture PNGs).
+  Their `.import` settings may change only as `CHANGE-BRIEF.md` §2.2 specifies.
+- `scripts/run-test.sh`: diff it in every review.
 
 ## Unconfirmed
 
 - No `AGENTS.md` exists at the repository root.
-- The A5 shaders (`godot/shaders/night_skip.gdshader`,
-  `deck_marble.gdshader`, `hint_experiment.gdshader`), materials
-  (`godot/materials/marble_dry.tres`, `marble_wet.tres`), textures under
-  `godot/assets/textures/marble_01/`, and the generator
-  `godot/tools/write_hint_strip.gd` are specified in `CHANGE-BRIEF.md`
-  but do not exist yet. The new A5 test scripts named in §1.7 and §2.6
-  do not exist yet either; only the five A2/A3 tests above are present.
+- Everything A5 adds (the three shaders, the materials, the textures, `write_hint_strip.gd`, the new tests) is specified
+  in `CHANGE-BRIEF.md` but doesn't exist yet. Only the seven A2/A3 tests above are present.
