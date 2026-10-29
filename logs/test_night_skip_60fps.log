@@ -10,6 +10,76 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] uniform list: skip_amount is float   float
 [PASS] uniform list: skip_tint is Color   Color
 [PASS] uniform list: tint_strength is float   float
+ERROR: Cannot load shader: res://shaders/deck_marble.gdshader
+   at: load (scene/resources/shader_resource_format.cpp:43)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: Failed loading resource: res://shaders/deck_marble.gdshader.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://materials/marble_dry.tres:9 - Parse Error: [ext_resource] referenced non-existent resource at: res://shaders/deck_marble.gdshader.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://materials/marble_dry.tres:9 - Parse Error: [ext_resource] referenced non-existent resource at: res://shaders/deck_marble.gdshader.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: Failed loading resource: res://materials/marble_dry.tres.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: Cannot load shader: res://shaders/deck_marble.gdshader
+   at: load (scene/resources/shader_resource_format.cpp:43)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: Failed loading resource: res://shaders/deck_marble.gdshader.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://materials/marble_wet.tres:9 - Parse Error: [ext_resource] referenced non-existent resource at: res://shaders/deck_marble.gdshader.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://materials/marble_wet.tres:9 - Parse Error: [ext_resource] referenced non-existent resource at: res://shaders/deck_marble.gdshader.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: Failed loading resource: res://materials/marble_wet.tres.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://scenes/slice.tscn:102 - Parse Error: [ext_resource] referenced non-existent resource at: res://materials/marble_dry.tres.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://scenes/slice.tscn:107 - Parse Error: [ext_resource] referenced non-existent resource at: res://materials/marble_dry.tres.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://scenes/slice.tscn:112 - Parse Error: [ext_resource] referenced non-existent resource at: res://materials/marble_wet.tres.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
+ERROR: res://scenes/slice.tscn:117 - Parse Error: [ext_resource] referenced non-existent resource at: res://materials/marble_dry.tres.
+   at: _printerr (scene/resources/resource_format_text.cpp:41)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_night_skip.gd:43)
+       [1] _run_and_report (res://tests/harness.gd:24)
 [PASS] R8 StatusBar has the night-skip ShaderMaterial   (res://materials/night_skip.tres):<ShaderMaterial#-9223371994475526608>
 [PASS] R8 that material uses the hand-written shader   (res://shaders/night_skip.gdshader):<Shader#-9223371994525858257>
 [PASS] F3 no other HUD node carries a material (mute icons and talk hint stay untinted)   []
