@@ -135,5 +135,5 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
   - Claude organized Shriram's decisions into CHANGE-BRIEF.md and filled in the project facts (brief header).
   - Claude explained `mix()` with worked examples before Shriram wrote the colour line.
   - Claude gave the slot outline for the two Part 2 shaders.
-  - Claude reviewed CLAUDE.md (`1ccf2ff`) and the audit (`b8179c3`). Shriram approved the CLAUDE.md review. His own
+  - Claude reviewed CLAUDE.md (`1ccf2ff`) and the audit (`b8179c3`). Shriram approved the CLAUDE.md review. Their own
     checks are the human checks in TEST-REPORT A5.8.
