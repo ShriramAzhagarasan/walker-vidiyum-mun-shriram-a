@@ -276,18 +276,32 @@ Captures: `evidence/a5/glow_*.png`.
 
 **Debug key (the course's `capture()` in a real windowed run):** `night_skip_driver.gd` binds **F9** in debug builds.
 It stops the driver, sets each value, waits for `RenderingServer.frame_post_draw` and saves the viewport. Shriram
-pressed it in a normal run (`godot --path godot`, not paused). Captures: `evidence/a5/debug-key/skip_*.png`.
+pressed it in a normal run (`godot --path godot`, not paused, full screen, so the frame is 3456×1944 and the predicted
+pixels are scaled by 2.7). Captures: `evidence/a5/debug-key/skip_*.png`.
 
 | skip_amount | P1 (F9) | P2 (F9) |
 |---|---|---|
-| 0.0 | (245, 244, 243) | (63, 53, 67) |
-| 0.5 | (247, 221, 195) | (99, 74, 72) |
-| 1.0 | (249, 197, 147) | (136, 96, 76) |
-| 2.0 | (252, 151, 51) | (209, 139, 85) |
+| 0.0 | (245, 244, 244) | (63, 53, 67) |
+| 0.5 | (247, 221, 195) | (100, 75, 72) |
+| 1.0 | (249, 198, 147) | (136, 96, 77) |
+| 2.0 | (253, 151, 51) | (210, 139, 86) |
 
 These are within 1–2 per channel of the tool captures. The scene behind the semi-transparent bar was not frozen this time.
 
-**OS screenshot vs engine capture:** *pending (see A5.8).*
+**OS screenshot vs engine capture** (Shriram took a macOS screenshot of the same full-screen run; neither image is
+paused, so they are a few frames apart): `evidence/a5/os-vs-engine/`.
+
+| Pixel | Engine capture (F9) | OS screenshot (3452×2108, letterboxed, profile "Display") | Δ |
+|---|---|---|---|
+| P1 battery fill | (245, 244, 244) | (243, 243, 244); (243, 243, 244) after converting the profile to sRGB | ≤ 2 |
+| P2 bar | (63, 53, 67) | (73, 61, 66); (75, 60, 66) after conversion | up to 12 |
+
+**Which I trust: the engine capture.** It is the frame Godot drew, at viewport resolution, before macOS scales it
+or tags it with the display's colour profile. The OS screenshot is 4 px narrower than the engine frame, has
+letterbox bars, and its own colour profile, so a predicted coordinate lands on a resampled pixel. The near-opaque
+battery fill agrees within 2. The bar is 60 % transparent over a scene that moved between the two images, and it
+differs by up to 12; that difference can't be blamed on the profile alone. Every measurement in this report uses
+engine captures.
 
 ## A5.5 Marble: textures, imports, normal map, materials
 
