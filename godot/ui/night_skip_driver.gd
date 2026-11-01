@@ -30,3 +30,28 @@ func _process(delta: float) -> void:
 func _apply() -> void:
 	if _material:
 		_material.set_shader_parameter(PARAM, skip_amount)
+
+## Debug key F9 (debug builds only): the controlled-value captures for the A5 human check, in a real windowed run.
+## Writes evidence/a5/debug-key/skip_<value>.png at viewport resolution; 2.0 answers the hint_range question.
+const CAPTURE_KEY := KEY_F9
+const CAPTURE_VALUES := [0.0, 0.5, 1.0, 2.0]
+
+func _unhandled_input(event: InputEvent) -> void:
+	var key := event as InputEventKey
+	if OS.is_debug_build() and key and key.pressed and not key.echo and key.keycode == CAPTURE_KEY:
+		_capture_all()
+
+func _capture_all() -> void:
+	var dir := ProjectSettings.globalize_path("res://").path_join("../evidence/a5/debug-key")
+	DirAccess.make_dir_recursive_absolute(dir)
+	for v: float in CAPTURE_VALUES:
+		await capture(self, _material, PARAM, v, dir.path_join("skip_%s.png" % str(v).replace(".", "_")))
+	print("F9 captures written to ", dir)
+
+## The course's capture function, unchanged.
+func capture(driver: Node, mat: ShaderMaterial, param: StringName, value: float, path: String) -> void:
+	driver.set_process(false)  # also set_physics_process(false) if the driver writes there
+	mat.set_shader_parameter(param, value)
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png(path)
+	driver.set_process(true)

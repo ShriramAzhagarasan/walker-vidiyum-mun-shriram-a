@@ -194,7 +194,8 @@ Blender is Z-up and Godot is Y-up: the glTF exporter's +Y Up swaps the axes, so 
 
 # Assignment 5: shaders and materials
 
-Commands run through `scripts/run-test.sh` (Godot 4.7.2, macOS, Forward+). A headless run proves that the shaders
+Godot 4.7.2.stable.official.ed1daf0bf, renderer Forward+, macOS 26.6.2 (Apple M1 Pro). Source revision: the commit
+tagged `a5`; the fresh-clone run of that tag (A5.11) repeats every count below. Commands run through `scripts/run-test.sh`. A headless run proves that the shaders
 parse, that their uniforms are declared and driven as specified, and that the materials are wired as audited. It proves
 nothing about the look: every visual rule below ends in a capture with the real renderer or a human check.
 
@@ -236,6 +237,7 @@ The test holds T through `Input.parse_input_event` and samples `skip_amount` eve
 
 | Rule | 30 fps | 60 fps | 144 fps |
 |---|---|---|---|
+| R1 first value (before T) / last value (T held) | 0.0 / 1.0 | 0.0 / 1.0 | 0.0 / 1.0 |
 | R1–R3 fade-in 0.25 s ± one frame | 0.2667 s (8 frames) | 0.2500 s | 0.2500 s |
 | R1–R3 fade-out 0.5 s ± one frame | 0.5000 s | 0.5000 s | 0.5000 s |
 | R4 re-press mid-fade-out continues, no drop | PASS | PASS | PASS |
@@ -271,6 +273,21 @@ are the colour out of `fragment()`. The capture shows it after alpha blending, s
   bar lowers the real contrast, which §1.8 anticipated. `tint_strength` stays 0.5.
 
 Captures: `evidence/a5/glow_*.png`.
+
+**Debug key (the course's `capture()` in a real windowed run):** `night_skip_driver.gd` binds **F9** in debug builds.
+It stops the driver, sets each value, waits for `RenderingServer.frame_post_draw` and saves the viewport. Shriram
+pressed it in a normal run (`godot --path godot`, not paused). Captures: `evidence/a5/debug-key/skip_*.png`.
+
+| skip_amount | P1 (F9) | P2 (F9) |
+|---|---|---|
+| 0.0 | (245, 244, 243) | (63, 53, 67) |
+| 0.5 | (247, 221, 195) | (99, 74, 72) |
+| 1.0 | (249, 197, 147) | (136, 96, 76) |
+| 2.0 | (252, 151, 51) | (209, 139, 85) |
+
+These are within 1–2 per channel of the tool captures. The scene behind the semi-transparent bar was not frozen this time.
+
+**OS screenshot vs engine capture:** *pending (see A5.8).*
 
 ## A5.5 Marble: textures, imports, normal map, materials
 
@@ -315,6 +332,11 @@ The tree is paused, so every frame has the same framing. Sheet: `evidence/a5/swe
 | `normal_depth` | 0.0 | 2.0 | Barely visible: Marble 01 is polished and its normal map is very flat (same reason the curl ratio drifts toward 1) |
 | `albedo_tint` | — | — | colour, not swept |
 
+Defaults: `sweep_defaults.png` and `sweep_back_to_defaults.png`, identical framing. **Settings that break the look**
+(Claude's reading of the sheet): `tile_size_m = 0.25` shrinks the slabs into a busy, gravel-like texture that no longer
+reads as marble flooring at this camera distance. `roughness_scale = 2.0` clamps most of the roughness map to 1, so
+the polished look is lost. The other ends stay plausible.
+
 ## A5.8 Human checks
 
 | Check | Status |
@@ -325,9 +347,18 @@ The tree is paused, so every frame has the same framing. Sheet: `evidence/a5/swe
 | **One shader, two materials: shader edit** (Shriram, editor, 2026-11-01) | Shriram changed `deck_marble.gdshader:27` to multiply `ALBEDO` by 0.3 and saved. All four floors went dark, the three dry floors and the wet strip behind the pool, because both materials use the one shader. Shriram: "yes it does, and once it is removed it is lighter." Restored; `git diff -- godot/shaders/` empty. `evidence/a5/human/checkA_*.png` |
 | **One shader, two materials: material edit** (Shriram, editor) | Shriram set `albedo_tint` on `marble_wet.tres` to red in the Inspector: only the strip behind the pool turned red; the three dry floors did not change. Shriram: "it is changed, now back." Undone without saving; `git diff -- godot/materials/` empty. `evidence/a5/human/checkB_*.png` |
 | **Playtest: glow and seams** (Shriram, F5, real input) | Shriram held T several times in a real run (`>> x8` and the orange bar in `checkC_playtest_T_held_x8.png`) and walked the deck to check where the floor planes meet (`checkC_floor_seam.png`: the tile pattern continues across the seam, as world-XZ UVs intend, F10). Shriram: "i did everythig that you tolod me to do, everything is perfect now." |
-| Editor rewrites on first open (F9) | Observed: opening the editor rewrote `project.godot` (dropped default-valued keys, including the explicit `forward_plus` line) and added a uid to `default_bus_layout.tres`. Saved as `logs/editor_rewrite_f9.diff` and restored. No `.import` file changed. |
+| Editor rewrites on first open (F9) | Observed: opening the editor rewrote `project.godot` (dropped default-valued keys, including the explicit `forward_plus` line) and added a uid to `default_bus_layout.tres`. Saved as `logs/editor_rewrite_f9.diff` and restored. In the second session (human checks, F5) it also re-saved `slice.tscn` and `intro.tscn` with uids and reordering: `logs/editor_rewrite_f9_session2.diff`, restored, A5 tests rerun 33/33 and 156/156. **No `.import` file was rewritten in either session.** |
 
 ## A5.9 What no headless run here can show
 Whether the glow reads as "skipping" to a player; whether the marble looks like polished stone, or the wet strip like
 wet stone; whether the tiling seams line up at the plane edges. Headless never draws, so all of these come from captures
 and my own eyes.
+
+## A5.10 Inspect-and-revise cycles (each driven by an observation)
+
+| # | Observation | Revision | Result |
+|---|---|---|---|
+| 1 | The first marble sweep frames had different framing: the camera rig and Hari kept moving between shots, so min/max could not be compared. | `tools/capture_a5.gd` pauses the tree after placing Hari, then sweeps. | Recaptured with identical framing (`evidence/a5/sweep_sheet.png`). |
+| 2 | Reading the audit's test: the hint checks were substring matches, so a data sampler that gained `source_color` (F6) would still pass 145/145. | One assertion per data sampler that `source_color` is absent; imported formats and slice environment pinned. Own commit `b8179c3`, no assertion deleted or weakened. | 156/156; fresh cache 156/156; m3 still exits 1. |
+| 3 | Claude's first `normal_map_check.gd` used its own curl formula, but the audit prompt preloads the course's `curl_ratio()`. | Replaced it with the course function before committing, and recalibrated. | Floor Tiles 06: 0.162 / 1.838; the threshold is set from that pair. |
+| 4 | On-screen contrast at full glow measured 3.46:1, not the predicted 4.47:1. | None needed: the brief's rule is ≥ 3:1 and §1.3 says to lower `tint_strength` only below 3:1. The cause, the scene behind the 60 % bar, is recorded. | `tint_strength` stays 0.5. |
