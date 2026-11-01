@@ -8,12 +8,11 @@
 
 ### Part 1 shaded object (phone status bar)
 
-- Drawn today by `HUD/HUD`, a `Control` with `res://ui/hud.gd`, inside the `HUD` `CanvasLayer`
-  (`godot/scenes/slice.tscn:278-287`). The bar is the `draw_rect`/`draw_string` calls in `HUD._draw()`
-  (`godot/ui/hud.gd:38-49`: background `:42`, clock `:43`, signal `:44-45`, battery `:46-48`, "loop N" `:49`).
-- `HUD._process()` (`hud.gd:25-36`) shows ">> x8" (`hud.gd:50-51`) on
-  `LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT` (`hud.gd:26`).
-- The status bar moves into its own Control node for A5 (`CHANGE-BRIEF.md` §1.2).
+- *(Updated 2026-11-01 for A5.)* Drawn by `HUD/StatusBar`, a `Control` with `res://ui/status_bar.gd`
+  (`godot/scenes/slice.tscn:274`), material `materials/night_skip.tres`. The bar is `status_bar.gd:32-39`
+  (background `:32`, clock `:33`, signal `:34-35`, battery `:36-38`, "loop N" `:39`).
+- Its child `NightSkipDriver` (`slice.tscn:283`, `godot/ui/night_skip_driver.gd`) sets `skip_amount`. `HUD/HUD`
+  (`hud.gd`) still draws ">> x8" (`hud.gd:31`), the mute icons and the talk hint.
 
 ### Game state that drives the night-skip shader
 
@@ -24,12 +23,10 @@
 
 ### Part 2 textured shader (deck floors)
 
-- `MeshInstance3D` nodes under `Slice/Deck` in `godot/scenes/slice.tscn`. **Dry marble:** `FloorWest` (`:94`),
-  `FloorEast` (`:102`), `FloorFront` (`:118`). **Wet marble:** `FloorBack` (`:110`).
-- Today each uses `res://scenes/textured_surface.gd`, which builds a `StandardMaterial3D` in code from
-  `res://assets/art/env/marble.png` (`textured_surface.gd:18-39`) and sets it as `material_override` (`:39`).
-- A5 replaces this with `godot/materials/marble_dry.tres` (West/East/Front) and `marble_wet.tres` (Back), both on
-  `godot/shaders/deck_marble.gdshader` (`CHANGE-BRIEF.md` §2.1, §2.4).
+- *(Updated 2026-11-01 for A5.)* `MeshInstance3D` nodes under `Slice/Deck` in `godot/scenes/slice.tscn`.
+  - **Dry marble** (`material_override = marble_dry.tres`): `FloorWest` (`:99`), `FloorEast` (`:104`), `FloorFront` (`:114`).
+  - **Wet marble** (`marble_wet.tres`): `FloorBack` (`:109`).
+  - Both materials use `godot/shaders/deck_marble.gdshader` and replace the old `textured_surface.gd` StandardMaterial3D.
 
 ### Tests (all through `scripts/run-test.sh`)
 
@@ -101,5 +98,7 @@ The A5 change must not touch:
 ## Unconfirmed
 
 - No `AGENTS.md` exists at the repository root.
-- Everything A5 adds (the three shaders, the materials, the textures, `write_hint_strip.gd`, the new tests) is specified
-  in `CHANGE-BRIEF.md` but doesn't exist yet. Only the seven A2/A3 tests above are present.
+- *(Updated 2026-11-01.)* The A5 files now exist. New tests: `test_night_skip.gd` (30/60/144: 33/33),
+  `test_materials.gd` (156/156), `normal_map_check.gd` (11/11); results in TEST-REPORT.md "Assignment 5".
+- Opening the editor rewrites `project.godot`, `default_bus_layout.tres` and the scenes. Restore them with git after
+  every editor session (TEST-REPORT A5.8).
