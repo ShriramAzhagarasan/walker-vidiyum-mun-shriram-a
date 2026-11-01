@@ -189,3 +189,145 @@ Blender is Z-up and Godot is Y-up: the glTF exporter's +Y Up swaps the axes, so 
 **What the check does and does not show:** it measures what arrived in Godot: mesh-vertex bounding box, node scales, the lowest vertex height, triangles, mesh count and albedo colours. It cannot tell whether an asset reads as an SUV, a shrine or a fence, whether its colours suit the night lighting, or whether it fits the game's cel-shaded style. Those are Shriram's human checks. Shape count is inferred from mesh nodes, so objects joined in Blender would hide it.
 
 **Known limitations:** each asset is a silhouette of at most 6 basic shapes (no wheel arches, mirrors or door handles on the SUV; a figure, not a portrait, for the goddess); the sign can't carry lettering without a painted texture; the flame is static in the model (the flicker is a Godot light); the assets sit in the A3 showcase, not yet in the A2 night slice, so they haven't been judged under the game's night lighting; the triangle and shape counts trust Godot's mesh nodes (objects joined in Blender would hide the shape count).
+
+---
+
+# Assignment 5: shaders and materials
+
+Commands run through `scripts/run-test.sh` (Godot 4.7.2, macOS, Forward+). A headless run proves that the shaders
+parse, that their uniforms are declared and driven as specified, and that the materials are wired as audited. It proves
+nothing about the look: every visual rule below ends in a capture with the real renderer or a human check.
+
+## A5.1 Test results (final run, 2026-11-01)
+
+| Test | fps | Result | Log |
+|---|---|---|---|
+| `test_night_skip.gd` (new) | 30 / 60 / 144 | **33/33** each | `logs/test_night_skip_{30,60,144}fps.log` |
+| `test_materials.gd` (new: audit + review) | 60 | **156/156** | `logs/test_materials_60fps.log` |
+| `test_materials.gd` from an empty cache (`rm -rf godot/.godot`, reimport) | 60 | **156/156**, no `.import` diff | `logs/fresh-cache/` |
+| `normal_map_check.gd` (new) | 60 | **11/11** | `logs/normal_map_check_60fps.log` |
+| `test_assets_present.gd` | 60 | 70/70 (baseline 70/70) | |
+| `test_audio_mix.gd` | 60 | 10/10 (baseline 10/10) | |
+| `test_sound_triggers.gd` | 60 | 53/86 FAIL (baseline 53/86); unpinned 86/86 | `logs/final-no-fixed-fps/` |
+| `test_loop_logic.gd` | 60 | 4/36 FAIL (baseline 4/36); unpinned 36/36 | `logs/final-no-fixed-fps/` |
+| `test_slice_smoke.gd` | 60 | 4/13 FAIL (baseline 4/13); unpinned 13/13 | `logs/final-no-fixed-fps/` |
+| `check_a3_assets.gd` / `check_a3_selftest.gd` | 60 | 31/31, 17/17 (baseline) | |
+
+The three failing suites fail only under `--fixed-fps`, before and after A5, because `Story._now()` measures wall-clock
+time (`godot/autoload/story.gd:203`). This is a known A2 limitation and out of scope for A5 (CHANGE-BRIEF.md §1.6).
+
+## A5.2 Mutations (each must exit 1)
+
+| # | Change (made by hand by Shriram, then restored) | Test | Result | Evidence |
+|---|---|---|---|---|
+| m1 | `night_skip.gdshader`: deleted the `;` on the colour line | `test_night_skip.gd` | 4 fail, exit 1: `SHADER ERROR: Expected a ';'`, empty uniform list | `logs/mutations/m1_*` |
+| m2 | `night_skip.gdshader`: renamed `skip_amount` to `skip_amt` | `test_night_skip.gd` | 2 fail, exit 1 (source regex + uniform list). **All 22 rule checks still passed.** | `logs/mutations/m2_*` |
+| m3 | `deck_marble.gdshader`: removed `source_color` from `albedo_tex` | `test_materials.gd` | 1 fail, exit 1 | `logs/mutations/m3_*` |
+
+m2 is the important one: the driver kept calling `set_shader_parameter("skip_amount", …)` on a shader that no longer
+declared it, and Godot raised no error. Reading the value back returns what was stored, so a round-trip test passes.
+Only the assertion on `get_shader_uniform_list()` catches a rename. After each mutation `git diff -- godot/shaders/`
+was empty.
+
+## A5.3 Night-skip rules (CHANGE-BRIEF.md §1.5): machine checks
+
+The test holds T through `Input.parse_input_event` and samples `skip_amount` every frame from a node with
+`process_priority = 1000`.
+
+| Rule | 30 fps | 60 fps | 144 fps |
+|---|---|---|---|
+| R1–R3 fade-in 0.25 s ± one frame | 0.2667 s (8 frames) | 0.2500 s | 0.2500 s |
+| R1–R3 fade-out 0.5 s ± one frame | 0.5000 s | 0.5000 s | 0.5000 s |
+| R4 re-press mid-fade-out continues, no drop | PASS | PASS | PASS |
+| R5 release mid-fade-in falls from the peak at the fade-out rate | PASS | PASS | PASS |
+| R6 `Engine.time_scale = 0.5`: 0.25 s game time = 0.5 s real | 15 frames | 30 frames | 72 frames |
+| R7 paused tree: value frozen, resumes on unpause | PASS | PASS | PASS |
+| R8 material on `HUD/StatusBar` only; F3 no other HUD node has one | PASS | PASS | PASS |
+| R9 crash phase with T held: falls to 0 | PASS | PASS | PASS |
+
+At 30 fps the fade-in ends one frame period late (8 × 1/30 s), which is inside the stated tolerance. F1 (counting frames)
+would have made it 0.5 s.
+
+## A5.4 Night-skip colour: captures against the predictions (CHANGE-BRIEF.md §1.8)
+
+`tools/capture_a5.gd -- glow`: a windowed run with the real renderer. This is a **scripted capture**: the driver is
+stopped, `skip_amount` is set from code, and the tree is paused so nothing behind the bar moves. The predictions in §1.8
+are the colour out of `fragment()`. The capture shows it after alpha blending, so the predicted on-screen value is the
+§1.8 transparency formula applied to the scene pixel, measured with the bar hidden (P1 (132, 61, 50), P2 (143, 119, 141)).
+
+| skip_amount | P1 battery (200, 31) captured | predicted on screen | P2 bar (300, 46) captured | predicted on screen |
+|---|---|---|---|---|
+| 0.0 | (245, 244, 244) | (245, 244, 244) | (63, 54, 69) | (63, 54, 68) |
+| 0.5 | (247, 221, 196) | (247, 221, 196) | (100, 75, 73) | (100, 75, 73) |
+| 1.0 | (249, 197, 147) | (249, 197, 147) | (137, 97, 78) | (137, 97, 78) |
+| 2.0 (set from code) | (253, 151, 51) | — | (210, 139, 87) | — |
+
+- **All predictions hold within 1 per channel.** So `skip_tint` arrives unconverted, as the §1.8 assumption said.
+- **`hint_range` does not clamp a value set from code:** at 2.0 the blend fraction is 1.0 and P1 becomes the pure tint
+  over the bar. This confirms Part 3 answer 7. The driver keeps the value in 0–1 with `move_toward`.
+- **F3:** 0 pixels changed outside the status bar between 0.0 and 2.0.
+- **Contrast on screen** (battery vs bar, from the captured pixels): 10.48:1 at 0.0, 6.09:1 at 0.5, **3.46:1 at 1.0**
+  (≥ 3:1, PASS), 1.27:1 at 2.0. The prediction before transparency was 4.47:1 at 1.0. The bright scene behind the 60 %
+  bar lowers the real contrast, which §1.8 anticipated. `tint_strength` stays 0.5.
+
+Captures: `evidence/a5/glow_*.png`.
+
+## A5.5 Marble: textures, imports, normal map, materials
+
+- **Provenance:** Poly Haven Marble 01 and Floor Tiles 06, Rob Tuytel, CC0, downloaded 2026-10-29; file sizes match the
+  API listing (`godot/assets/textures/marble_01/ATTRIBUTION.md`).
+- **Imports:** set explicitly per §2.2 and pinned by `test_materials.gd` through `ConfigFile`. The resulting format is
+  measured with `get_image().get_format()`: diff/rough DXT1, nor_gl RGTC_RG, nor_dx and hint strip RGB8 uncompressed.
+- **Curl check calibration** (course `curl_ratio`, stride 4): Floor Tiles 06 GL file 0.162 read as OpenGL / 1.838 read as
+  DirectX; the DX file is the reverse. So the sign is not reversed. Threshold from that pair: < 0.5 right convention,
+  > 1.5 wrong. Marble 01: 0.637 / 1.363. It is too flat to clear the calibrated thresholds (it drifts toward 1, as the
+  assignment warns), but the direction is right; asserted as direction only.
+- **Audit:** `prompts/a5/prompt-3.txt`, run as a scoped `claude -p` (`prompts/a5/session-3.jsonl`), unedited in commit
+  `a1acfaa`. The agent tried three times to run `git checkout` on `project.godot`; all three were denied by the scope.
+  Review in commit `b8179c3`: every enum was confirmed by measurement, one unmeasured number ("~2700 K") deleted, one
+  finding corrected, one added (fog). The test had a real gap: hint checks were substring matches, so `source_color`
+  added to a **data** sampler (F6) still passed. Fixed with one assertion per data sampler.
+
+## A5.6 Hint experiment (CHANGE-BRIEF.md §2.5)
+
+`tools/capture_a5.gd -- hint`, real renderer, centre pixel of each band:
+
+| Quad | band 64 | band 128 | band 192 | Prediction |
+|---|---|---|---|---|
+| A `source_color` | 64 | 128 | 192 | 64 / 128 / 192 ✓ |
+| B no hint | 137 | 188 | 225 | 137 / 188 / 225 ✓ |
+
+Capture: `evidence/a5/hint_quads.png`. The same bytes are shown unchanged when they are decoded as sRGB colour, and
+brighter when the data is encoded for the screen without being decoded first.
+
+## A5.7 Interface sweep (marble_dry, slice at 10:00 PM held, glow off for comparison)
+
+`tools/capture_a5.gd -- sweep`. Each float uniform is set to both ends of its `hint_range`, then back to the default.
+The tree is paused, so every frame has the same framing. Sheet: `evidence/a5/sweep_sheet.png`.
+
+"Observed" is Claude's reading of the captures; Shriram's own look check is in A5.8.
+
+| Uniform | Low end | High end | Observed |
+|---|---|---|---|
+| `tile_size_m` | 0.25 | 4.0 | Clear: tiny busy slabs at 0.25; large slabs with visible veins at 4.0 |
+| `roughness_scale` | 0.0 | 2.0 | Moderate: glossier, warmer reflection near Hari at 0; flatter and chalkier at 2 |
+| `specular_amount` | 0.0 | 1.0 | Clear: the light pool under the string lights grows and brightens at 1.0 |
+| `normal_depth` | 0.0 | 2.0 | Barely visible: Marble 01 is polished and its normal map is very flat (same reason the curl ratio drifts toward 1) |
+| `albedo_tint` | — | — | colour, not swept |
+
+## A5.8 Human checks
+
+| Check | Status |
+|---|---|
+| Glow colour at 0 / 0.5 / 1 against predictions | Done by capture (A5.4) |
+| `hint_range` with 2.0 from code | Done by capture (A5.4) |
+| Hint experiment | Done by capture (A5.6) |
+| One shader edit changes both floor materials; one material edit changes only its floor | **TO DO (Shriram, in the editor)** |
+| Glow reads as "skipping" in play (hold T several times) | **TO DO (Shriram)** |
+| Marble at the plane seams (F10) | **TO DO (Shriram)** |
+| Editor rewrites on first open (F9) | Observed: opening the editor rewrote `project.godot` (dropped default-valued keys, including the explicit `forward_plus` line) and added a uid to `default_bus_layout.tres`. Saved as `logs/editor_rewrite_f9.diff` and restored. No `.import` file changed. |
+
+## A5.9 What no headless run here can show
+Whether the glow reads as "skipping" to a player; whether the marble looks like polished stone, or the wet strip like
+wet stone; whether the tiling seams line up at the plane edges. Headless never draws, so all of these come from captures
+and my own eyes.

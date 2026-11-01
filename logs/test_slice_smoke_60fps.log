@@ -8,7 +8,7 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [FAIL] Hari WALK then IDLE   PHONE
 [FAIL] within 1.6 m of Manikandan -> nearby_target + talk hint   manikandan
 [PASS] away from NPCs -> no target   
-[PASS] capsule r=0.28 h=1.70, bottom at the feet   ():<CapsuleShape3D#-9223371988905490721>
+[PASS] capsule r=0.28 h=1.70, bottom at the feet   ():<CapsuleShape3D#-9223371988284733726>
 [PASS] sprite image height maps to 1.75 m   0.00252890167758
 [FAIL] state change swaps Hari's image   PHONE
 [PASS] camera presets by zone   { "gate": 0.0, "deck": 0.5, "railing": 0.5 }

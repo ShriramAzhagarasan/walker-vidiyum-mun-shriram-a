@@ -2,7 +2,7 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
 [PASS] music headroom is at least 8 dB under full scale   -10.0
-[PASS] phone buzz ducks the music (duck window open)   2.39400009536743
+[PASS] phone buzz ducks the music (duck window open)   2.39500009536743
 [PASS] music is ducked by >= 6 dB while the buzz sounds   -9.0
 [PASS] N mutes the SFX bus   true
 [PASS] M mutes the Music bus   true

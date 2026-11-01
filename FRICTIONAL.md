@@ -296,3 +296,20 @@ i learned how x, y and z work in blender, that front and back depend on which si
   help as i'm learning all of this for the first time." Disclosed in SOURCES.md. Claude's prose review found no errors:
   names, hints and defaults match §2.3; world-XZ UVs line up with the PlaneMesh tangents, so the normal map isn't flipped;
   roughness is clamped.
+
+## 2026-10-29 ~18:00 – 2026-11-01 ~15:00: captures, audit, review, Step 4 (AI-recorded; Shriram's actions noted)
+- **Captures before the audit:** the hint quads matched Shriram's predictions exactly (64/128/192, 137/188/225), and the
+  glow pixels were within 1 of the predicted on-screen blend at 0, 0.5 and 1. The first marble sweep was unusable
+  because the camera drifted between frames. Claude paused the tree in the capture tool and reran it.
+- **The audit** (scoped `claude -p`, `prompts/a5/session-3.jsonl`) ran while Shriram had the Godot editor open for Step 4.
+  The editor rewrote `project.godot` and `default_bus_layout.tres`. The audit agent saw the diff, blamed its own headless
+  run, and tried `git checkout` three times; the scope denied all three. Claude restored both files after the editor
+  closed, kept the diff as `logs/editor_rewrite_f9.diff`, and recorded it as F9. The same rewrite happened when Shriram
+  reopened the editor on 2026-11-01, and was restored again. **Lesson:** close the editor before any agent or test run.
+- **Review of the audit** (Claude, commit `b8179c3`): every enum was correct when checked with `get_format()` and the
+  engine constants. The audit invented "~2700 K", and one finding claimed both marble materials were shared by the
+  three dry floors. The real gap was in the test: its hint checks were substring matches, so `source_color` added to the
+  roughness or normal sampler (F6) would have passed 145/145. Fixed with one assertion per data sampler; now 156 checks.
+- **Mutation 3** (Shriram, by hand): `source_color` removed from `albedo_tex`, 1 fail, exit 1; restored.
+- **Step 4** (Shriram, in the editor): converted a StandardMaterial3D (diff, rough, nor_gl) to
+  `standard_generated.gdshader`. Claude gave click-by-click steps from screenshots.

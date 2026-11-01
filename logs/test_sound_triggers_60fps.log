@@ -80,7 +80,7 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [FAIL] muted state order matches the script   ["IDLE", "PHONE", "NOTES", "PHONE", "WHITEOUT", "STARTLED", "WHITEOUT", "STARTLED"]
 [FAIL] muted NOTES shown ~1.5 s each time   [1]
 [FAIL] muted KEYS shown ~1.5 s each time   []
-[FAIL] muted STARTLED >= ~1.2 s, then PHONE   [16] -> WHITEOUT
+[FAIL] muted STARTLED >= ~1.2 s, then PHONE   [17] -> WHITEOUT
 [PASS] mute: same loop_index   3 vs 3
 [PASS] mute: same knowledge   { "KNOW_SELVAM": false, "KNOW_KEYS": true } vs { "KNOW_SELVAM": false, "KNOW_KEYS": true }
 [PASS] mute: same per-loop flags   { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false } vs { "KEYS_SAFE": false, "ADVAY_DONE": false, "FIRE_GLOW_DONE": false, "DAWN_DONE": false }

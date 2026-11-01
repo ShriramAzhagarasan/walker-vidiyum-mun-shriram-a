@@ -71,8 +71,46 @@ Three game assets built from Blender's basic shapes by directing Claude through 
 
   Full list in TEST-REPORT.md.
 
+## Assignment 5: shaders and materials (tag `a5`)
+Two shaders added to the night slice (`scenes/slice.tscn`), plus a hint experiment. The specification and Shriram's
+predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader existed.
+- **"The night is slipping"** (`godot/shaders/night_skip.gdshader`, `canvas_item`, hand-written by Shriram): while you
+  **hold T** at night, Hari's phone status bar glows sodium orange, fading in over 0.25 s and out over 0.5 s.
+  `ui/night_skip_driver.gd` sets `skip_amount` from `LoopState.fast_forward` and the phase, stepping by `delta`. The bar
+  is now its own node (`ui/status_bar.gd`), so only it glows.
+- **Marble deck** (`godot/shaders/deck_marble.gdshader`, `spatial`, written by Shriram with ChatGPT's help, disclosed in
+  SOURCES.md): Poly Haven Marble 01 (CC0) as colour (`source_color`), roughness and an OpenGL normal map as data,
+  world-XZ tiling, and 5 Inspector uniforms in 2 groups.
+  - `materials/marble_dry.tres` (defaults) is on three deck floors.
+  - `materials/marble_wet.tres` (roughness 0.3, specular 0.8: glossier) is on the strip at the pool's back edge.
+- **Hint experiment:** `scenes/hint_experiment.tscn` shows one 3×1 grey strip (`tools/write_hint_strip.gd`) read with and
+  without `source_color`. Captured 64/128/192 and 137/188/225, exactly as predicted.
+- **Language notes:** [LANGUAGE-NOTES.md](LANGUAGE-NOTES.md), on `godot/shaders/standard_generated.gdshader`
+  (a StandardMaterial3D converted in the editor; unused by the game).
+- **Tests** (Godot on PATH; each writes `logs/<name>_<fps>fps.log`):
+  ```bash
+  ./scripts/run-test.sh test_night_skip.gd 30    # also 60 and 144: 33/33 each, real T presses, fades timed by delta
+  ./scripts/run-test.sh test_materials.gd 60     # 156/156: hints, uniforms, materials, imports, formats, wiring
+  ./scripts/run-test.sh normal_map_check.gd 60   # 11/11: curl-ratio convention check, calibrated on Floor Tiles 06
+  ```
+  Three mutations (deleted `;`, renamed uniform, removed `source_color`) each make their test exit 1. Results:
+  [TEST-REPORT.md](TEST-REPORT.md), "Assignment 5".
+- **Captures** (windowed, real renderer, scripted): `godot --path godot -s res://tools/capture_a5.gd -- <glow|hint|marble|sweep>`
+  writes to `evidence/a5/` and prints measured pixels next to the predictions.
+- **Docs:** [MATERIALS.md](godot/MATERIALS.md) (audit + review) · texture credits in
+  [ATTRIBUTION.md](godot/assets/textures/marble_01/ATTRIBUTION.md).
+- **A5 known limitations:**
+  - Marble 01's normal map is very flat, so `normal_depth` barely changes the look (and the curl ratio is 0.637, not near 0).
+  - The glow's on-screen contrast at full strength is 3.46:1. It passes 3:1, but it depends on the scene behind the
+    semi-transparent bar.
+  - The three A2 wall-clock tests still fail under `--fixed-fps` (unchanged, out of scope).
+  - Opening the editor rewrites `project.godot`; this is restored after every session (TEST-REPORT A5.8).
+- **Next step:** let the battery icon drain from orange to red as dawn approaches (Shriram's idea from the planning
+  session), so the phone also warns how little night is left.
+- **A5 film:** *link, filename and SHA-256 to be added after rendering.*
+
 ## Docs
-[CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A5; the A2/A3 briefs are in [design/briefs/](design/briefs/CHANGE-BRIEF-A2-A3.md)) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · my original story and decisions: [design/input/](design/input/)
+[CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A5; the A2/A3 briefs are in [design/briefs/](design/briefs/CHANGE-BRIEF-A2-A3.md)) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)
 
 ## Known limitations
 - **2.5D:** characters, the SUV and the backdrops are flat generated images in a 3D deck, so they read as cards when the camera turns. Natural character motion would need rigged 3D models. **Next step (A3):** build the SUV, the rock shrine and the fence as Blender models.
