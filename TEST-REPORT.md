@@ -195,7 +195,7 @@ Blender is Z-up and Godot is Y-up: the glTF exporter's +Y Up swaps the axes, so 
 # Assignment 5: shaders and materials
 
 Godot 4.7.2.stable.official.ed1daf0bf, renderer Forward+, macOS 26.6.2 (Apple M1 Pro). Source revision: the commit
-tagged `a5`; the fresh-clone run of that tag (A5.11) repeats every count below. Commands run through `scripts/run-test.sh`. A headless run proves that the shaders
+tagged `a5`; a fresh clone (A5.11) repeats every A5 count below. Commands run through `scripts/run-test.sh`. A headless run proves that the shaders
 parse, that their uniforms are declared and driven as specified, and that the materials are wired as audited. It proves
 nothing about the look: every visual rule below ends in a capture with the real renderer or a human check.
 
@@ -381,3 +381,23 @@ and my own eyes.
 | 2 | Reading the audit's test: the hint checks were substring matches, so a data sampler that gained `source_color` (F6) would still pass 145/145. | One assertion per data sampler that `source_color` is absent; imported formats and slice environment pinned. Own commit `b8179c3`, no assertion deleted or weakened. | 156/156; fresh cache 156/156; m3 still exits 1. |
 | 3 | Claude's first `normal_map_check.gd` used its own curl formula, but the audit prompt preloads the course's `curl_ratio()`. | Replaced it with the course function before committing, and recalibrated. | Floor Tiles 06: 0.162 / 1.838; the threshold is set from that pair. |
 | 4 | On-screen contrast at full glow measured 3.46:1, not the predicted 4.47:1. | None needed: the brief's rule is ≥ 3:1 and §1.3 says to lower `tint_strength` only below 3:1. The cause, the scene behind the 60 % bar, is recorded. | `tint_strength` stays 0.5. |
+
+## A5.11 Fresh clone (2026-11-01, ~19:00)
+
+`git clone` of commit `0f1d1d5` into an empty folder, so there's no `.godot` cache. Then `godot --headless --path godot --import`
+(rc 0), then each test through `scripts/run-test.sh`. The game source in that commit is identical to the film's revision
+`bb2c156` (`git diff --stat bb2c156 0f1d1d5 -- godot scripts` is empty). Commits after it change only docs and film records,
+so the `a5` tag has the same game source. Logs: `logs/fresh-clone/`.
+
+| Test | fps | Result |
+|---|---|---|
+| `test_materials.gd` | 60 | 156/156 PASS (first import, from the clone) |
+| `normal_map_check.gd` | 60 | 11/11 PASS |
+| `test_night_skip.gd` | 30 / 60 / 144 | 33/33 PASS at each |
+| `test_assets_present.gd` | 60 | 70/70 PASS |
+| `test_audio_mix.gd` | 60 | 10/10 PASS |
+| `check_a3_assets.gd` | 60 | 31/31 PASS |
+| `check_a3_selftest.gd` | 60 | 17/17 PASS |
+
+Not rerun here: the three A2 suites that fail only under `--fixed-fps` (`Story._now()` wall clock, A5.1). Their counts
+are unchanged and out of scope.
