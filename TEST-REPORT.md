@@ -271,6 +271,10 @@ are the colour out of `fragment()`. The capture shows it after alpha blending, s
 - **Contrast on screen** (battery vs bar, from the captured pixels): 10.48:1 at 0.0, 6.09:1 at 0.5, **3.46:1 at 1.0**
   (≥ 3:1, PASS), 1.27:1 at 2.0. The prediction before transparency was 4.47:1 at 1.0. The bright scene behind the 60 %
   bar lowers the real contrast, which §1.8 anticipated. `tint_strength` stays 0.5.
+  Method (same as §1.8): each captured channel c/255 is decoded from sRGB (c ≤ 0.04045: c/12.92, else
+  ((c+0.055)/1.055)^2.4), then L = 0.2126 R + 0.7152 G + 0.0722 B and ratio = (L_light + 0.05) / (L_dark + 0.05).
+  At 1.0: P1 (249, 197, 147) gives L = 0.6218, and P2 (137, 97, 78) gives L = 0.1442, so (0.6218 + 0.05) / (0.1442 + 0.05) = **3.46**.
+  Inputs: `evidence/a5/glow_skip_1_0.png` at (200, 31) and (300, 46).
 
 Captures: `evidence/a5/glow_*.png`.
 
