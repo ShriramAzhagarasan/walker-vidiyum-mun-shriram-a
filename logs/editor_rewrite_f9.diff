@@ -1,0 +1,41 @@
+diff --git a/godot/default_bus_layout.tres b/godot/default_bus_layout.tres
+index cc4dd1c..a6beb64 100644
+--- a/godot/default_bus_layout.tres
++++ b/godot/default_bus_layout.tres
+@@ -1,4 +1,4 @@
+-[gd_resource type="AudioBusLayout" load_steps=2 format=3]
++[gd_resource type="AudioBusLayout" format=3 uid="uid://dcxw7isuueuj2"]
+ 
+ [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_pause"]
+ resource_name = "LowPassFilter"
+diff --git a/godot/project.godot b/godot/project.godot
+index 5039c38..2f8b729 100644
+--- a/godot/project.godot
++++ b/godot/project.godot
+@@ -22,22 +22,16 @@ Story="*res://autoload/story.gd"
+ SoundBank="*res://autoload/sound_bank.gd"
+ Controls="*res://autoload/controls.gd"
+ 
+-[audio]
+-
+-buses/default_bus_layout="res://default_bus_layout.tres"
+-
+ [display]
+ 
+ window/size/viewport_width=1280
+ window/size/viewport_height=720
+ window/stretch/mode="canvas_items"
+-window/stretch/aspect="keep"
+-
+-[rendering]
+-
+-renderer/rendering_method="forward_plus"
+-environment/defaults/default_clear_color=Color(0.07, 0.06, 0.16, 1)
+ 
+ [physics]
+ 
+ common/physics_interpolation=true
++
++[rendering]
++
++environment/defaults/default_clear_color=Color(0.07, 0.06, 0.16, 1)

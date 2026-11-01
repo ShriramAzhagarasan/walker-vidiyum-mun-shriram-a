@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://jofw0mf4gcjb"]
+
+[ext_resource type="Shader" uid="uid://iqx0153xruh7" path="res://shaders/standard_generated.gdshader" id="1_1dv14"]
+[ext_resource type="Texture2D" uid="uid://bdl7ja2t2lji8" path="res://assets/textures/marble_01/marble_01_diff_2k.png" id="1_v41k1"]
+[ext_resource type="Texture2D" uid="uid://b4bcy0v17uvyk" path="res://assets/textures/marble_01/marble_01_nor_gl_2k.png" id="2_1dv14"]
+[ext_resource type="Texture2D" uid="uid://creo6vqto6trc" path="res://assets/textures/marble_01/marble_01_rough_2k.png" id="3_h2yfd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ny2ia"]
+render_priority = 0
+shader = ExtResource("1_1dv14")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_v41k1")
+shader_parameter/albedo_texture_size = Vector2i(2048, 2048)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("3_h2yfd")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("2_1dv14")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tfj0k"]
+
+[node name="ScratchStandard" type="Node3D" unique_id=2058718794]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1208335483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011416793, -0.03158796, 0.021777749)
+material_override = SubResource("ShaderMaterial_ny2ia")
+mesh = SubResource("SphereMesh_tfj0k")
