@@ -255,3 +255,15 @@ Claude's check are marked.*
 7. **Does `hint_range` clamp a value set from code?** My prediction is that `hint_range` only controls the slider range
    in the Inspector and doesn't clamp values assigned through code. So if I set `skip_amount` to 2.0, I expect the
    shader to receive 2.0, even though the slider range ends at 1.0.
+
+---
+
+## Revision 2, 2026-11-01 (Claude, recording deviations found in review; the text above is unchanged)
+- **§2.2 import settings:** every A5 texture also has `detect_3d/compress_to=0`, which §2.2 doesn't list. It stops the
+  editor changing a Lossless texture to VRAM on first use in 3D (F9). No editor session rewrote an `.import` file
+  (TEST-REPORT A5.8). Pinned by `test_materials.gd`.
+- **§2.1 lighting:** the slice also has fog on (`fog_density 0.011`, `slice.tscn:38-40`), which tints the far floor. It
+  is part of the light the marble is judged under (MATERIALS.md finding K). Not changed.
+- **§1.8:** the header of the prediction table appears twice (an editing slip). The table under it is the one used.
+- **§1.8 on-screen check:** the background behind P2 was measured from a capture with the bar hidden (TEST-REPORT A5.4).
+  The predictions out of `fragment()` are unchanged.

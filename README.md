@@ -1,6 +1,8 @@
 # walker-vidiyum-mun-shriram-a: Vidiyum Mun (விடியும் முன், "Before Dawn")
 
-**CSYE 7270 Fall 2026 · Assignment 2: Generate Art, Sound, and Music for Your Game**
+**CSYE 7270 Fall 2026 · current submission: Assignment 5, Shaders, Materials, and the Godot Shading Language (tag `a5`; see
+["Assignment 5"](#assignment-5-shaders-and-materials-tag-a5)). The game began in Assignment 2 (art, sound and music);
+Assignment 3 added Blender models.**
 **Student:** Shriram Alagarasan · **Engine:** Godot 4.7.2.stable.official (macOS) · **Renderer:** Forward+
 
 A time-loop mystery at the last party on a rich family's illegally fenced beach on ECR, Chennai. You play Hari, a middle-class engineering student. Every dawn ends in tragedy and he wakes at 8 PM again, keeping only what he learned. This repo holds the **asset slice**: one playable 2.5D scene (Telltale-style 3D deck, generated cel-shaded characters) that proves the generated art, sound effects and music work together in the engine.
@@ -119,7 +121,7 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
 - Music (MusicGen) is CC-BY-NC: fine for coursework, not for a commercial release.
 - Full list: [TEST-REPORT.md, section 9](TEST-REPORT.md).
 
-## Film
+## Film (Assignment 2)
 Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160, 30 fps, **6:18**.
 - **Link (Northeastern OneDrive):** [claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQCsgk2bE-sbTo2EHyuUU-r5AQHG8865pDMU0TWLaO7khVw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YVnmag)
 - **File:** `claude-liam-walker-vidiyum-mun-shriram-a-gamedev.mp4` · **SHA-256:** `e948a875752d4e1f3745054ad4fc0921d9d2dfd81313ed0e5b832db8b06502fe`

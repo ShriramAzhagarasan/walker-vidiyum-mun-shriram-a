@@ -259,12 +259,13 @@ are the colour out of `fragment()`. The capture shows it after alpha blending, s
 
 | skip_amount | P1 battery (200, 31) captured | predicted on screen | P2 bar (300, 46) captured | predicted on screen |
 |---|---|---|---|---|
-| 0.0 | (245, 244, 244) | (245, 244, 244) | (63, 54, 69) | (63, 54, 68) |
+| 0.0 | (245, 244, 244) | (245, 244, 244) | (63, 54, 69) | (63, 54, 69) |
 | 0.5 | (247, 221, 196) | (247, 221, 196) | (100, 75, 73) | (100, 75, 73) |
 | 1.0 | (249, 197, 147) | (249, 197, 147) | (137, 97, 78) | (137, 97, 78) |
 | 2.0 (set from code) | (253, 151, 51) | — | (210, 139, 87) | — |
 
-- **All predictions hold within 1 per channel.** So `skip_tint` arrives unconverted, as the §1.8 assumption said.
+- **All predictions hold within 1 per channel.** (Corrected in review: the predicted P2 at 0.0 was first printed as
+  (63, 54, 68) by a rounding step in the capture tool; 0.6 × 20.4 + 0.4 × 141 = 68.64, so the prediction is 69.) So `skip_tint` arrives unconverted, as the §1.8 assumption said.
 - **`hint_range` does not clamp a value set from code:** at 2.0 the blend fraction is 1.0 and P1 becomes the pure tint
   over the bar. This confirms Part 3 answer 7. The driver keeps the value in 0–1 with `move_toward`.
 - **F3:** 0 pixels changed outside the status bar between 0.0 and 2.0.
@@ -318,7 +319,7 @@ engine captures.
   > 1.5 wrong. Marble 01: 0.637 / 1.363. It is too flat to clear the calibrated thresholds (it drifts toward 1, as the
   assignment warns), but the direction is right; asserted as direction only.
 - **Audit:** `prompts/a5/prompt-3.txt`, run as a scoped `claude -p` (`prompts/a5/session-3.jsonl`), unedited in commit
-  `a1acfaa`. The agent tried three times to run `git checkout` on `project.godot`; all three were denied by the scope.
+  `a1acfaa`. The agent tried three times to restore `project.godot` (twice `git checkout`, once `git restore`); all three were denied by the scope.
   Review in commit `b8179c3`: every enum was confirmed by measurement, one unmeasured number ("~2700 K") deleted, one
   finding corrected, one added (fog). The test had a real gap: hint checks were substring matches, so `source_color`
   added to a **data** sampler (F6) still passed. Fixed with one assertion per data sampler.
