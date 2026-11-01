@@ -82,3 +82,7 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
   Shriram's words: "i used chatgpt's help as i'm learning all of this for the first time." Claude Code gave a slot-by-slot
   outline (names, hints and built-ins from CHANGE-BRIEF.md §2.3 and §2.5) and reviewed both files in prose. It did not
   write or edit either file. `night_skip.gdshader` (commit `51e18aa`) is separate from this note.
+- **LANGUAGE-NOTES.md (2026-11-01):** the answers and reasoning are Shriram's. ChatGPT was used only to paraphrase the
+  wording. Shriram's words: "i had to be sure so i used it for just paraphrasing but the thought and everything was done
+  by me." Claude Code checked every line reference (four were wrong at first, corrected by Shriram) and did not write or
+  change any answer.
