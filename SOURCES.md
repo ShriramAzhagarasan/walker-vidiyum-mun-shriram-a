@@ -71,7 +71,8 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
 
 ## Assignment 5 (shaders and materials)
 ### AI assistance outside Claude Code (Shriram's disclosure, 2026-10-28)
-- **Tool:** OpenAI ChatGPT (model as shown in the ChatGPT app at the time).
+- **Tool:** OpenAI ChatGPT, the latest model offered in the ChatGPT app at the time (Shriram, 2026-11-01: "whatever is
+  the latest chatgpt model"). The exact version wasn't noted.
 - **Purpose (Shriram's words):** "I provided the shader requirements, initial pixel values, blending formula, uniform
   parameters, and colour-space experiment setup. I used ChatGPT to help calculate and verify the expected RGB values, explain
   sRGB decoding and encoding, and organize the mathematical working. I reviewed the outputs against the assignment
@@ -84,10 +85,13 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
   write or edit either file. `night_skip.gdshader` (commit `51e18aa`) is separate from this note: Shriram typed that
   file themself. Its colour line is the one from CHANGE-BRIEF.md §1.4, which Shriram worked out with ChatGPT's help
   on the maths and wording (Shriram, 2026-11-01: answer "a" to "did ChatGPT help write the shader file?").
-- **LANGUAGE-NOTES.md (2026-11-01):** the answers and reasoning are Shriram's. ChatGPT was used only to paraphrase the
-  wording. Shriram's words: "i had to be sure so i used it for just paraphrasing but the thought and everything was done
-  by me." Claude Code checked every line reference (four were wrong at first, corrected by Shriram) and did not write or
-  change any answer.
+- **LANGUAGE-NOTES.md (2026-11-01):** rewritten by Shriram in their own words on 2026-11-01; an earlier draft was
+  paraphrased by ChatGPT. That earlier draft (commit `bd1c458`) had Shriram's answers and reasoning, with ChatGPT used
+  only to paraphrase the wording ("i had to be sure so i used it for just paraphrasing but the thought and everything
+  was done by me"). For the final version, which adds the annotation of the generated shader, Shriram said: "i wrote it".
+  Claude Code checked every line reference in both versions (four were wrong in the first draft and Shriram corrected
+  them). In the final version it pointed out two accuracy slips without supplying wording. It did not write or change
+  any answer.
 
 ### Textures (A5)
 | Asset | Author | Licence | Source | Used for |
@@ -104,7 +108,7 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
     times, the re-press and pause rules, the time scale, the marble, where it goes, and wet vs dry;
   - wrote the colour line, the pixel and hint predictions and the Part 3 answers (maths with ChatGPT, above);
   - hand-wrote `night_skip.gdshader`; wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help;
-    converted the StandardMaterial3D for Step 4 in the editor; wrote LANGUAGE-NOTES.md (wording paraphrased with ChatGPT);
+    converted the StandardMaterial3D for Step 4 in the editor; wrote LANGUAGE-NOTES.md in their own words (an earlier draft was paraphrased by ChatGPT);
   - ran all three shader mutations by hand;
   - did the human checks (shader edit, material edit, playtest, seams, sweep check);
   - approved the driver plan and the docs.

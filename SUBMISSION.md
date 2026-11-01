@@ -35,8 +35,8 @@
     explanations (disclosed in SOURCES.md).
   - I hand-wrote `night_skip.gdshader`. I wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help,
     since I'm learning shaders for the first time (disclosed in SOURCES.md).
-  - I converted a StandardMaterial3D in the editor and wrote LANGUAGE-NOTES.md. The answers are mine; ChatGPT only
-    paraphrased the wording.
+  - I converted a StandardMaterial3D in the editor. I wrote LANGUAGE-NOTES.md, including the annotation of the generated
+    shader, in my own words. An earlier draft was paraphrased by ChatGPT.
   - I ran all three mutations by hand and did the human checks: the shader edit changed all four floors, the material
     edit changed only the wet strip, and I playtested the glow and the seams.
   - Claude wrote the driver, the tests, the capture tool, the material wiring, the audit review and the film. A scoped
