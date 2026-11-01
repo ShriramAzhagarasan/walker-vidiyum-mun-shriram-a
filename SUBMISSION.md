@@ -31,10 +31,12 @@
   - I chose the state, the object, the sodium-orange colour, both fade times, and the re-press, pause and time-scale
     rules. I also chose the marble, where it goes, and that the pool edge is wet (glossier).
   - I committed those choices, my colour line, my pixel and hint-experiment predictions and my short answers in
-    CHANGE-BRIEF.md before any shader existed.
+    CHANGE-BRIEF.md before any shader existed. I used ChatGPT to help with the prediction maths and the sRGB
+    explanations (disclosed in SOURCES.md).
   - I hand-wrote `night_skip.gdshader`. I wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help,
     since I'm learning shaders for the first time (disclosed in SOURCES.md).
-  - I converted a StandardMaterial3D in the editor and wrote LANGUAGE-NOTES.md.
+  - I converted a StandardMaterial3D in the editor and wrote LANGUAGE-NOTES.md. The answers are mine; ChatGPT only
+    paraphrased the wording.
   - I ran all three mutations by hand and did the human checks: the shader edit changed all four floors, the material
     edit changed only the wet strip, and I playtested the glow and the seams.
   - Claude wrote the driver, the tests, the capture tool, the material wiring, the audit review and the film. A scoped

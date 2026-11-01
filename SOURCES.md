@@ -81,7 +81,9 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
 - **Also used for (2026-10-29):** writing `godot/shaders/deck_marble.gdshader` and `godot/shaders/hint_experiment.gdshader`.
   Shriram's words: "i used chatgpt's help as i'm learning all of this for the first time." Claude Code gave a slot-by-slot
   outline (names, hints and built-ins from CHANGE-BRIEF.md §2.3 and §2.5) and reviewed both files in prose. It did not
-  write or edit either file. `night_skip.gdshader` (commit `51e18aa`) is separate from this note.
+  write or edit either file. `night_skip.gdshader` (commit `51e18aa`) is separate from this note: Shriram typed that
+  file themself. Its colour line is the one from CHANGE-BRIEF.md §1.4, which Shriram worked out with ChatGPT's help
+  on the maths and wording (Shriram, 2026-11-01: answer "a" to "did ChatGPT help write the shader file?").
 - **LANGUAGE-NOTES.md (2026-11-01):** the answers and reasoning are Shriram's. ChatGPT was used only to paraphrase the
   wording. Shriram's words: "i had to be sure so i used it for just paraphrasing but the thought and everything was done
   by me." Claude Code checked every line reference (four were wrong at first, corrected by Shriram) and did not write or
@@ -102,11 +104,13 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
     times, the re-press and pause rules, the time scale, the marble, where it goes, and wet vs dry;
   - wrote the colour line, the pixel and hint predictions and the Part 3 answers (maths with ChatGPT, above);
   - hand-wrote `night_skip.gdshader`; wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help;
-    converted the StandardMaterial3D for Step 4 in the editor; wrote LANGUAGE-NOTES.md;
+    converted the StandardMaterial3D for Step 4 in the editor; wrote LANGUAGE-NOTES.md (wording paraphrased with ChatGPT);
   - ran all three shader mutations by hand;
   - did the human checks (shader edit, material edit, playtest, seams, sweep check);
   - approved the driver plan and the docs.
-- **Claude Code (Claude Opus 5.5)** drafted CLAUDE.md (reviewed and corrected) and wrote:
+- **Claude Code.** Models, read from the transcripts: the CLAUDE.md draft (`prompts/a5/session-1.jsonl`) and the
+  audit (`session-3.jsonl`) ran as `claude -p` on `claude-opus-4-7`; the interactive session that did everything else
+  ran on Claude Opus 5.5 (`claude-opus-5-5`). Claude Code drafted CLAUDE.md (reviewed and corrected) and wrote:
   - the status-bar split, the driver and `test_night_skip.gd`;
   - the texture downloads and import settings, the materials and floor wiring, the hint strip script, scene and
     materials;
