@@ -86,3 +86,35 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
   wording. Shriram's words: "i had to be sure so i used it for just paraphrasing but the thought and everything was done
   by me." Claude Code checked every line reference (four were wrong at first, corrected by Shriram) and did not write or
   change any answer.
+
+### Textures (A5)
+| Asset | Author | Licence | Source | Used for |
+|---|---|---|---|---|
+| Marble 01 (`marble_01`), 2K PNG: diff, rough, nor_gl, nor_dx | Rob Tuytel | CC0 1.0 | <https://polyhaven.com/a/marble_01> | the deck floors (`marble_dry`, `marble_wet`); nor_dx only for the curl check |
+| Floor Tiles 06 (`floor_tiles_06`), 2K PNG: nor_gl, nor_dx | Rob Tuytel | CC0 1.0 | <https://polyhaven.com/a/floor_tiles_06> | curl-check calibration only (`godot/tests/data/curl/`) |
+| `hint_strip_3x1.png` | written by `godot/tools/write_hint_strip.gd` | project file | this repo | the hint experiment |
+
+Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `godot/assets/textures/marble_01/ATTRIBUTION.md`.
+
+### Who did what in A5
+- **Shriram:**
+  - chose the state (night skip on T), the object (the phone status bar), the colour (sodium orange), both fade
+    times, the re-press and pause rules, the time scale, the marble, where it goes, and wet vs dry;
+  - wrote the colour line, the pixel and hint predictions and the Part 3 answers (maths with ChatGPT, above);
+  - hand-wrote `night_skip.gdshader`; wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help;
+    converted the StandardMaterial3D for Step 4 in the editor; wrote LANGUAGE-NOTES.md;
+  - ran all three shader mutations by hand;
+  - did the human checks (shader edit, material edit, playtest, seams, sweep check);
+  - approved the driver plan and the docs.
+- **Claude Code (Claude Opus 5.5)** drafted CLAUDE.md (reviewed and corrected) and wrote:
+  - the status-bar split, the driver and `test_night_skip.gd`;
+  - the texture downloads and import settings, the materials and floor wiring, the hint strip script, scene and
+    materials;
+  - `normal_map_check.gd` (around the course's `curl_ratio`) and the capture tool;
+  - the audit review and corrections, the TEST-REPORT, README and FRICTIONAL drafts, and the film (beat sheet, script,
+    Kokoro "Liam" narration, render).
+
+  It reviewed Shriram's shaders in prose only, and never edited a `.gdshader`.
+- **Audit agent** (a scoped `claude -p` run of the course prompt, `prompts/a5/session-3.jsonl`): wrote `godot/MATERIALS.md`
+  and `godot/tests/test_materials.gd`. Committed unedited, then reviewed by Claude: one invented number removed, one
+  finding corrected, one test gap closed.

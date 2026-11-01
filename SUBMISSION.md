@@ -1,31 +1,51 @@
 # Submission
 
-- **Assignment:** Assignment 3 - Your First 3D Game Assets with Claude, the Blender MCP, and Blender
+*(The A3 submission note is in git at tag `a3`.)*
+
+- **Assignment:** Assignment 5 - Shaders, Materials, and the Godot Shading Language
 - **Student:** Shriram Alagarasan (azhagarasan.s@northeastern.edu)
 - **Project name:** walker-vidiyum-mun-shriram-a, *Vidiyum Mun* (விடியும் முன், "Before Dawn")
 - **GitHub repository URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
-- **Git tag and submitted commit SHA:** tag `a3`. The submitted commit's SHA is given in the Canvas submission note, because a commit can't contain its own SHA.
-- **Game-source revision shown in the film:** `81c1666`. Later commits change only docs and film records; `git diff 81c1666 a3 -- godot tools/blender blender` is empty.
-- **Godot version, Blender version, and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · Blender 5.2.2 LTS · macOS 26.6.2 (Apple M1 Pro)
-- **The three assets and what each is for:**
-  - **SUV** (`suv`, 4.60 × 1.90 × 1.70 m, 456 triangles): the car whose keys decide whether dawn ends in a crash. It replaces A2's flat SUV card.
-  - **Rock shrine** (`rock_shrine`, 1.20 × 1.00 × 0.90 m, 266 triangles): the sea goddess Manimekala's rock, which the rich family fenced off. The goddess is in relief on its face, with a brass lamp at its foot.
-  - **Fence segment** (`fence_segment`, 2.40 × 0.12 × 2.10 m, 108 triangles): one panel of the illegal fence across the public beach, with wooden posts and ropes as in the A2 beach art.
-- **MCP project and version, or "script route":** MCP route for all three assets: MCP for Blender (`mcp-for-blender` 2.1.9 via `uvx`, add-on panel "Addon 1.8"), with telemetry, asset libraries and generators all off. Every `execute_blender_code` body is in `tools/blender/build_suv.py`, `build_rock_shrine.py`, `build_fence_segment.py` and `export_glb.py`.
-- **My hand edit in Blender:** on the fence, I moved the red sign to the centre and in front of the ropes, and typed exact values in the Item tab (X 0, Y −0.03) so it sits flush on the rope. I had duplicated it twice and deleted the copies because of the 6-shape limit. It taught me the three axes and that typed values beat dragging. Details in BLENDER-NOTES.md.
-- **Checks run (command and result):**
-  - `timeout 120 godot --headless --path godot --script res://tests/check_a3_assets.gd --fixed-fps 60` → **31 checks, 0 failed → PASS** (size ±5 %, upright, node scale 1, lowest vertex y = 0, origin, triangles, ≤ 6 shapes, colours, SUV front)
-  - `timeout 120 godot --headless --path godot --script res://tests/check_a3_selftest.gd --fixed-fps 60` → **17 checks, 0 failed → PASS** (the check catches floating, ×0.1 scale, lying on its side, a lost colour, over budget, facing backwards)
-  - `godot --headless --path godot --import`: all three `.glb` files imported with no errors; `scenes/a3_showcase.tscn` opens with no errors.
-  - Human look check (mine): I orbited each asset in the running scene, including behind and below, beside Hari. My words are in TEST-REPORT.md.
-- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQA4dYF_0V_BSpYUUXYgVdkjAaIpfKV-HliF7n9IKG8jTEc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xe2yTl · `claude-liam-vidiyum-mun-a3-gamedev.mp4` (3840×2160, 30 fps, 4:21)
-- **Final film SHA-256:** `40e99c7d4e55ecb2b7e004f608e3c55bd43010fd8776b86c66e2f8ed66b3a91e`
-- **Summary of my changes:** I chose the three assets for my game and approved the brief before anything was built. I approved every build plan and judged every build in Blender. I rejected three SUV builds (too basic; then missing doors, windows, lights, tailgate and exhaust; then unequal doors) until it read as a modern SUV. I kept the shrine true to my story's lore, as a rock with the goddess on it and a lamp someone can reach, and I matched the fence to my beach art. I made the hand edit and did the look check. Claude wrote the brief's numbers, all the Blender code, the export, the Godot scene, check and self-test, and the film. Full split in SOURCES.md and FRICTIONAL.md; every revision is in CHANGE-BRIEF.md (revisions 2–3) and TEST-REPORT.md.
+- **Git tag and submitted commit SHA:** tag `a5`. The submitted commit's SHA is given in the Canvas submission note,
+  because a commit can't contain its own SHA.
+- **Game-source revision shown in the film:** `FILL-AFTER-RENDER`. Later commits change only docs and film records;
+  `git diff <that revision> a5 -- godot scripts` is empty.
+- **Godot version, renderer, and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · Forward+ · macOS 26.6.2
+  (Apple M1 Pro)
+- **Game state the shader from code communicates:** the night is being skipped. While the player holds **T** at night
+  (`LoopState.fast_forward and LoopState.phase == Phase.NIGHT`), the clock runs ×8 and anything said meanwhile goes
+  unheard. Hari's phone status bar glows sodium orange (`skip_amount` 0→1 in 0.25 s, 1→0 in 0.5 s, game time), so the
+  player sees they are trading knowledge for time.
+- **3D object and scene given the textured shader:** the four deck floor planes in the night slice
+  (`godot/scenes/slice.tscn`).
+  - `marble_dry.tres` is on `Deck/FloorWest`, `FloorEast` and `FloorFront`.
+  - `marble_wet.tres` (glossier: `roughness_scale 0.3`, `specular_amount 0.8`) is on `Deck/FloorBack`, the strip at the
+    pool's back edge.
+  - Both use `godot/shaders/deck_marble.gdshader`.
+- **Texture sources and licences:** Poly Haven **Marble 01** and **Floor Tiles 06** (calibration only) by Rob Tuytel, CC0
+  1.0, <https://polyhaven.com/a/marble_01>, <https://polyhaven.com/a/floor_tiles_06>. The hint strip is written by
+  `godot/tools/write_hint_strip.gd`. Credits: `godot/assets/textures/marble_01/ATTRIBUTION.md`, SOURCES.md.
+- **Final film URL and filename:** `FILL-AFTER-UPLOAD`
+- **Final film SHA-256:** `FILL-AFTER-RENDER`
+- **Summary of my work:**
+  - I chose the state, the object, the sodium-orange colour, both fade times, and the re-press, pause and time-scale
+    rules. I also chose the marble, where it goes, and that the pool edge is wet (glossier).
+  - I committed those choices, my colour line, my pixel and hint-experiment predictions and my short answers in
+    CHANGE-BRIEF.md before any shader existed.
+  - I hand-wrote `night_skip.gdshader`. I wrote `deck_marble.gdshader` and `hint_experiment.gdshader` with ChatGPT's help,
+    since I'm learning shaders for the first time (disclosed in SOURCES.md).
+  - I converted a StandardMaterial3D in the editor and wrote LANGUAGE-NOTES.md.
+  - I ran all three mutations by hand and did the human checks: the shader edit changed all four floors, the material
+    edit changed only the wet strip, and I playtested the glow and the seams.
+  - Claude wrote the driver, the tests, the capture tool, the material wiring, the audit review and the film. A scoped
+    agent wrote the audit. Every capture matched my predictions: the hint quads exactly, the glow within 1 per channel.
+  - Full split in SOURCES.md and FRICTIONAL.md.
 - **Known limitations:**
-  - Each asset is a silhouette of at most 6 basic shapes (no wheel arches, mirrors or handles; the goddess is a figure, not a portrait).
-  - The sign has no lettering (that would need a painted texture).
-  - The flame doesn't animate in the model; the flicker is a Godot light.
-  - The assets are in the A3 showcase, not yet in the A2 night slice, so they haven't been judged under the game's night lighting.
-  - The film's Godot orbit is a set of engine screenshots, not a motion capture.
-  - My screen recording (`blendersession.mov`, 2.8 GB) stays out of Git; the film uses labelled clips from it.
+  - Marble 01's normal map is very flat: `normal_depth` barely shows, and the curl ratio (0.637) is direction-only.
+  - The glow's real on-screen contrast at full strength is 3.46:1. It passes 3:1, but it depends on the scene behind the
+    60 % bar.
+  - The three A2 wall-clock tests still fail under `--fixed-fps`; this is unchanged and out of scope.
+  - Opening the Godot editor rewrites `project.godot` and re-saves the scenes; these files were restored after every
+    session (TEST-REPORT A5.8).
+  - The captures are scripted: values set from code, tree paused.
 - **Changed games since Assignment 2:** no.
