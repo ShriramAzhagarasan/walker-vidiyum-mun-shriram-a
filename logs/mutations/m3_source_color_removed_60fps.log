@@ -1,0 +1,166 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27430749644> Story:<Node#28118615502> SoundBank:<Node#28470937040>
+[PASS] shader source readable: deck_marble.gdshader   res://shaders/deck_marble.gdshader
+[PASS] source deck_marble.gdshader: sampler2D albedo_tex declared   ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[FAIL] source deck_marble.gdshader: albedo_tex hints contain 'source_color, filter_linear_mipmap, repeat_enable'   ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: albedo_tex default =    ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: vec4 albedo_tint declared   ["vec4", "source_color", "vec4(1.0)"]
+[PASS] source deck_marble.gdshader: albedo_tint hints contain 'source_color'   ["vec4", "source_color", "vec4(1.0)"]
+[PASS] source deck_marble.gdshader: albedo_tint default = vec4(1.0)   ["vec4", "source_color", "vec4(1.0)"]
+[PASS] source deck_marble.gdshader: float tile_size_m declared   ["float", "hint_range(0.25, 4.0)", "1.0"]
+[PASS] source deck_marble.gdshader: tile_size_m hints contain 'hint_range(0.25, 4.0)'   ["float", "hint_range(0.25, 4.0)", "1.0"]
+[PASS] source deck_marble.gdshader: tile_size_m default = 1.0   ["float", "hint_range(0.25, 4.0)", "1.0"]
+[PASS] source deck_marble.gdshader: sampler2D roughness_tex declared   ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: roughness_tex hints contain 'filter_linear_mipmap, repeat_enable'   ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: roughness_tex default =    ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: data sampler roughness_tex has no source_color   ["sampler2D", "filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: sampler2D normal_tex declared   ["sampler2D", "hint_normal, filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: normal_tex hints contain 'hint_normal, filter_linear_mipmap, repeat_enable'   ["sampler2D", "hint_normal, filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: normal_tex default =    ["sampler2D", "hint_normal, filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: data sampler normal_tex has no source_color   ["sampler2D", "hint_normal, filter_linear_mipmap, repeat_enable", ""]
+[PASS] source deck_marble.gdshader: float roughness_scale declared   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] source deck_marble.gdshader: roughness_scale hints contain 'hint_range(0.0, 2.0)'   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] source deck_marble.gdshader: roughness_scale default = 1.0   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] source deck_marble.gdshader: float specular_amount declared   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] source deck_marble.gdshader: specular_amount hints contain 'hint_range(0.0, 1.0)'   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] source deck_marble.gdshader: specular_amount default = 0.5   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] source deck_marble.gdshader: float normal_depth declared   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] source deck_marble.gdshader: normal_depth hints contain 'hint_range(0.0, 2.0)'   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] source deck_marble.gdshader: normal_depth default = 1.0   ["float", "hint_range(0.0, 2.0)", "1.0"]
+[PASS] shader source readable: hint_experiment.gdshader   res://shaders/hint_experiment.gdshader
+[PASS] source hint_experiment.gdshader: sampler2D strip_as_colour declared   ["sampler2D", "source_color, filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: strip_as_colour hints contain 'source_color, filter_nearest'   ["sampler2D", "source_color, filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: strip_as_colour default =    ["sampler2D", "source_color, filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: sampler2D strip_as_data declared   ["sampler2D", "filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: strip_as_data hints contain 'filter_nearest'   ["sampler2D", "filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: strip_as_data default =    ["sampler2D", "filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: data sampler strip_as_data has no source_color   ["sampler2D", "filter_nearest", ""]
+[PASS] source hint_experiment.gdshader: bool use_source_color declared   ["bool", "", "false"]
+[PASS] source hint_experiment.gdshader: use_source_color hints contain ''   ["bool", "", "false"]
+[PASS] source hint_experiment.gdshader: use_source_color default = false   ["bool", "", "false"]
+[PASS] shader source readable: night_skip.gdshader   res://shaders/night_skip.gdshader
+[PASS] source night_skip.gdshader: float skip_amount declared   ["float", "hint_range(0.0, 1.0)", "0.0"]
+[PASS] source night_skip.gdshader: skip_amount hints contain 'hint_range(0.0, 1.0)'   ["float", "hint_range(0.0, 1.0)", "0.0"]
+[PASS] source night_skip.gdshader: skip_amount default = 0.0   ["float", "hint_range(0.0, 1.0)", "0.0"]
+[PASS] source night_skip.gdshader: vec4 skip_tint declared   ["vec4", "source_color", "vec4(1.0, 0.6, 0.2, 1.0)"]
+[PASS] source night_skip.gdshader: skip_tint hints contain 'source_color'   ["vec4", "source_color", "vec4(1.0, 0.6, 0.2, 1.0)"]
+[PASS] source night_skip.gdshader: skip_tint default = vec4(1.0, 0.6, 0.2, 1.0)   ["vec4", "source_color", "vec4(1.0, 0.6, 0.2, 1.0)"]
+[PASS] source night_skip.gdshader: float tint_strength declared   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] source night_skip.gdshader: tint_strength hints contain 'hint_range(0.0, 1.0)'   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] source night_skip.gdshader: tint_strength default = 0.5   ["float", "hint_range(0.0, 1.0)", "0.5"]
+[PASS] shader loads: deck_marble.gdshader   (res://shaders/deck_marble.gdshader):<Shader#-9223372005061949934>
+[PASS] deck_marble.gdshader uniform list is non-empty (parses)   { "albedo_tex": 24, "albedo_tint": 20, "tile_size_m": 3, "roughness_tex": 24, "normal_tex": 24, "roughness_scale": 3, "specular_amount": 3, "normal_depth": 3 }
+[PASS] deck_marble.gdshader uniform list: albedo_tex is Object   Object
+[PASS] deck_marble.gdshader uniform list: albedo_tint is Color   Color
+[PASS] deck_marble.gdshader uniform list: tile_size_m is float   float
+[PASS] deck_marble.gdshader uniform list: roughness_tex is Object   Object
+[PASS] deck_marble.gdshader uniform list: normal_tex is Object   Object
+[PASS] deck_marble.gdshader uniform list: roughness_scale is float   float
+[PASS] deck_marble.gdshader uniform list: specular_amount is float   float
+[PASS] deck_marble.gdshader uniform list: normal_depth is float   float
+[PASS] shader loads: hint_experiment.gdshader   (res://shaders/hint_experiment.gdshader):<Shader#-9223372004961286646>
+[PASS] hint_experiment.gdshader uniform list is non-empty (parses)   { "strip_as_colour": 24, "strip_as_data": 24, "use_source_color": 1 }
+[PASS] hint_experiment.gdshader uniform list: strip_as_colour is Object   Object
+[PASS] hint_experiment.gdshader uniform list: strip_as_data is Object   Object
+[PASS] hint_experiment.gdshader uniform list: use_source_color is bool   bool
+[PASS] shader loads: night_skip.gdshader   (res://shaders/night_skip.gdshader):<Shader#-9223372004860623342>
+[PASS] night_skip.gdshader uniform list is non-empty (parses)   { "skip_amount": 3, "skip_tint": 20, "tint_strength": 3 }
+[PASS] night_skip.gdshader uniform list: skip_amount is float   float
+[PASS] night_skip.gdshader uniform list: skip_tint is Color   Color
+[PASS] night_skip.gdshader uniform list: tint_strength is float   float
+[PASS] material loads: marble_dry.tres   (res://materials/marble_dry.tres):<ShaderMaterial#-9223372004038539752>
+[PASS] marble_dry.tres uses deck_marble.gdshader   (res://shaders/deck_marble.gdshader):<Shader#-9223372004692851184>
+[PASS] marble_dry.tres binds albedo_tex to marble_01_diff_2k.png   res://assets/textures/marble_01/marble_01_diff_2k.png
+[PASS] marble_dry.tres binds roughness_tex to marble_01_rough_2k.png   res://assets/textures/marble_01/marble_01_rough_2k.png
+[PASS] marble_dry.tres binds normal_tex to marble_01_nor_gl_2k.png   res://assets/textures/marble_01/marble_01_nor_gl_2k.png
+[PASS] marble_dry.tres does not override roughness_scale (shader default 1.0 applies)   <null>
+[PASS] marble_dry.tres does not override specular_amount (shader default 0.5 applies)   <null>
+[PASS] marble_dry.tres does not override normal_depth (shader default 1.0 applies)   <null>
+[PASS] marble_dry.tres does not override tile_size_m (shader default 1.0 applies)   <null>
+[PASS] marble_dry.tres albedo_tex is not the DX normal   res://assets/textures/marble_01/marble_01_diff_2k.png
+[PASS] marble_dry.tres roughness_tex is not the DX normal   res://assets/textures/marble_01/marble_01_rough_2k.png
+[PASS] marble_dry.tres normal_tex is not the DX normal   res://assets/textures/marble_01/marble_01_nor_gl_2k.png
+[PASS] material loads: marble_wet.tres   (res://materials/marble_wet.tres):<ShaderMaterial#-9223372003216456170>
+[PASS] marble_wet.tres uses deck_marble.gdshader   (res://shaders/deck_marble.gdshader):<Shader#-9223372003870767604>
+[PASS] marble_wet.tres binds albedo_tex to marble_01_diff_2k.png   res://assets/textures/marble_01/marble_01_diff_2k.png
+[PASS] marble_wet.tres binds roughness_tex to marble_01_rough_2k.png   res://assets/textures/marble_01/marble_01_rough_2k.png
+[PASS] marble_wet.tres binds normal_tex to marble_01_nor_gl_2k.png   res://assets/textures/marble_01/marble_01_nor_gl_2k.png
+[PASS] marble_wet.tres overrides roughness_scale = 0.3   0.3
+[PASS] marble_wet.tres overrides specular_amount = 0.8   0.8
+[PASS] marble_wet.tres does not override normal_depth (shader default 1.0 applies)   <null>
+[PASS] marble_wet.tres does not override tile_size_m (shader default 1.0 applies)   <null>
+[PASS] marble_wet.tres albedo_tex is not the DX normal   res://assets/textures/marble_01/marble_01_diff_2k.png
+[PASS] marble_wet.tres roughness_tex is not the DX normal   res://assets/textures/marble_01/marble_01_rough_2k.png
+[PASS] marble_wet.tres normal_tex is not the DX normal   res://assets/textures/marble_01/marble_01_nor_gl_2k.png
+[PASS] material loads: hint_a_source_color.tres   (res://materials/hint_a_source_color.tres):<ShaderMaterial#-9223372002780248552>
+[PASS] hint_a_source_color.tres uses hint_experiment.gdshader   (res://shaders/hint_experiment.gdshader):<Shader#-9223372003048684009>
+[PASS] hint_a_source_color.tres binds strip_as_colour to hint_strip_3x1.png   res://assets/textures/hint_strip_3x1.png
+[PASS] hint_a_source_color.tres binds strip_as_data to hint_strip_3x1.png   res://assets/textures/hint_strip_3x1.png
+[PASS] hint_a_source_color.tres use_source_color = true   true
+[PASS] material loads: hint_b_no_hint.tres   (res://materials/hint_b_no_hint.tres):<ShaderMaterial#-9223372002344040950>
+[PASS] hint_b_no_hint.tres uses hint_experiment.gdshader   (res://shaders/hint_experiment.gdshader):<Shader#-9223372002612476395>
+[PASS] hint_b_no_hint.tres binds strip_as_colour to hint_strip_3x1.png   res://assets/textures/hint_strip_3x1.png
+[PASS] hint_b_no_hint.tres binds strip_as_data to hint_strip_3x1.png   res://assets/textures/hint_strip_3x1.png
+[PASS] hint_b_no_hint.tres use_source_color = false   false
+[PASS] material loads: night_skip.tres   (res://materials/night_skip.tres):<ShaderMaterial#-9223372002125937128>
+[PASS] night_skip.tres uses night_skip.gdshader   (res://shaders/night_skip.gdshader):<Shader#-9223372002176268781>
+[PASS] night_skip.tres does not override skip_amount (driver/material defaults apply)   <null>
+[PASS] night_skip.tres does not override skip_tint (driver/material defaults apply)   <null>
+[PASS] night_skip.tres does not override tint_strength (driver/material defaults apply)   <null>
+[PASS] import readable: marble_01_diff_2k.png.import   0
+[PASS] marble_01_diff_2k.png params/compress/mode = 2   2
+[PASS] marble_01_diff_2k.png params/compress/normal_map = 2   2
+[PASS] marble_01_diff_2k.png params/mipmaps/generate = true   true
+[PASS] marble_01_diff_2k.png params/detect_3d/compress_to = 0   0
+[PASS] import readable: marble_01_rough_2k.png.import   0
+[PASS] marble_01_rough_2k.png params/compress/mode = 2   2
+[PASS] marble_01_rough_2k.png params/compress/normal_map = 2   2
+[PASS] marble_01_rough_2k.png params/mipmaps/generate = true   true
+[PASS] marble_01_rough_2k.png params/detect_3d/compress_to = 0   0
+[PASS] import readable: marble_01_nor_gl_2k.png.import   0
+[PASS] marble_01_nor_gl_2k.png params/compress/mode = 2   2
+[PASS] marble_01_nor_gl_2k.png params/compress/normal_map = 1   1
+[PASS] marble_01_nor_gl_2k.png params/mipmaps/generate = true   true
+[PASS] marble_01_nor_gl_2k.png params/detect_3d/compress_to = 0   0
+[PASS] import readable: marble_01_nor_dx_2k.png.import   0
+[PASS] marble_01_nor_dx_2k.png params/compress/mode = 0   0
+[PASS] marble_01_nor_dx_2k.png params/compress/normal_map = 2   2
+[PASS] marble_01_nor_dx_2k.png params/mipmaps/generate = false   false
+[PASS] marble_01_nor_dx_2k.png params/detect_3d/compress_to = 0   0
+[PASS] import readable: hint_strip_3x1.png.import   0
+[PASS] hint_strip_3x1.png params/compress/mode = 0   0
+[PASS] hint_strip_3x1.png params/compress/normal_map = 2   2
+[PASS] hint_strip_3x1.png params/mipmaps/generate = false   false
+[PASS] hint_strip_3x1.png params/detect_3d/compress_to = 0   0
+[PASS] marble_01_diff_2k.png imported format is 17   17
+[PASS] marble_01_rough_2k.png imported format is 17   17
+[PASS] marble_01_nor_gl_2k.png imported format is 21   21
+[PASS] marble_01_nor_dx_2k.png imported format is 4   4
+[PASS] hint_strip_3x1.png imported format is 4   4
+[PASS] Deck/FloorWest material_override is marble_dry.tres   res://materials/marble_dry.tres
+[PASS] Deck/FloorEast material_override is marble_dry.tres   res://materials/marble_dry.tres
+[PASS] Deck/FloorFront material_override is marble_dry.tres   res://materials/marble_dry.tres
+[PASS] Deck/FloorBack material_override is marble_wet.tres   res://materials/marble_wet.tres
+[PASS] HUD/StatusBar material is night_skip.tres   res://materials/night_skip.tres
+[PASS] slice env tonemap_mode = 2 (Filmic)   2
+[PASS] slice env glow_enabled = true   true
+[PASS] slice env fog_enabled = true (not in brief §2.1)   true
+[PASS] QuadA material_override is hint_a_source_color.tres   res://materials/hint_a_source_color.tres
+[PASS] QuadB material_override is hint_b_no_hint.tres   res://materials/hint_b_no_hint.tres
+[PASS] hint env tonemap_mode = 0 (Linear)   0
+[PASS] hint env tonemap_exposure = 1.0   1.0
+[PASS] hint env glow_enabled = false   false
+[PASS] hint env fog_enabled = false   false
+[PASS] hint env adjustment_enabled = false   false
+[PASS] decoded marble_01_nor_gl   ():<Image#-9223371979275368936>
+marble_01_nor_gl   as OpenGL 0.637   as DirectX 1.363
+[PASS] decoded marble_01_nor_dx   ():<Image#-9223371979208260072>
+marble_01_nor_dx   as OpenGL 1.363   as DirectX 0.637
+[PASS] test script ran to completion   true
+
+test_materials.gd: 156 checks, 1 failed -> FAIL
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 6 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

@@ -1,0 +1,11 @@
+--- a/godot/shaders/deck_marble.gdshader
++++ b/godot/shaders/deck_marble.gdshader
+@@ -2,7 +2,7 @@
+ shader_type spatial;
+ 
+ group_uniforms surface;
+-uniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;
++uniform sampler2D albedo_tex : filter_linear_mipmap, repeat_enable;
+ uniform vec4 albedo_tint : source_color = vec4(1.0);
+ uniform float tile_size_m : hint_range(0.25, 4.0) = 1.0;
+ 
