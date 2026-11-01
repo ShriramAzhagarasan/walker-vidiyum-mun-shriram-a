@@ -77,6 +77,17 @@ const IMPORT_EXPECTED := {
 	HINT_STRIP: {"compress/mode": 0, "compress/normal_map": 2, "mipmaps/generate": false, "detect_3d/compress_to": 0},
 }
 
+## Review fix: the imported format, measured with get_image().get_format() on this machine (macOS, desktop import).
+## It confirms the enums above: compress/mode 2 gives a VRAM format, normal_map 1 gives the two-channel normal format,
+## and compress/mode 0 stays uncompressed RGB8.
+const FORMAT_EXPECTED := {
+	DIFF:       Image.FORMAT_DXT1,
+	ROUGH:      Image.FORMAT_DXT1,
+	NOR_GL:     Image.FORMAT_RGTC_RG,
+	NOR_DX:     Image.FORMAT_RGB8,
+	HINT_STRIP: Image.FORMAT_RGB8,
+}
+
 func run() -> bool:
 	check_shader_source(DECK_SHADER, DECK_UNIFORMS)
 	check_shader_source(HINT_SHADER, HINT_UNIFORMS)
@@ -94,6 +105,8 @@ func run() -> bool:
 
 	for path in IMPORT_EXPECTED:
 		check_import(path, IMPORT_EXPECTED[path])
+	for path in FORMAT_EXPECTED:
+		check_format(path, FORMAT_EXPECTED[path])
 
 	await check_scene_wiring()
 
@@ -127,6 +140,11 @@ func check_shader_source(path: String, expected: Dictionary) -> void:
 		check("source %s: %s %s declared" % [path.get_file(), want[0], name], ok_type, got)
 		check("source %s: %s hints contain '%s'" % [path.get_file(), name, want[1]], ok_hint, got)
 		check("source %s: %s default = %s" % [path.get_file(), name, want[2]], ok_def, got)
+		# Review fix: "hints contain" is a substring match, so a data sampler that gained source_color (F6) still
+		# passed it. A sampler whose expected hints lack source_color must not have it.
+		if want[0] == "sampler2D" and not (want[1] as String).contains("source_color"):
+			check("source %s: data sampler %s has no source_color" % [path.get_file(), name],
+				got.size() == 3 and not (got[1] as String).contains("source_color"), got)
 
 func check_uniform_list(path: String, names: Array) -> void:
 	var sh: Shader = load(path)
@@ -218,6 +236,12 @@ func check_import(path: String, want: Dictionary) -> void:
 		check("%s params/%s = %s" % [path.get_file(), key, want[key]],
 			got == want[key], got)
 
+func check_format(path: String, want: int) -> void:
+	var tex: Texture2D = load(path)
+	var img := tex.get_image() if tex else null
+	check("%s imported format is %d" % [path.get_file(), want], img != null and img.get_format() == want,
+		img.get_format() if img else "null")
+
 # ---- scene wiring (headless instantiation) --------------------------------------------------------
 
 func check_scene_wiring() -> void:
@@ -240,6 +264,11 @@ func check_scene_wiring() -> void:
 	check("HUD/StatusBar material is night_skip.tres",
 		bar != null and bar.material != null and bar.material.resource_path == NIGHT_MAT,
 		bar.material.resource_path if (bar and bar.material) else "null")
+	# Review fix: MATERIALS.md §4 states the slice lighting the marble is judged under; pin it.
+	var slice_env := (slice.get_node("WorldEnvironment") as WorldEnvironment).environment
+	check("slice env tonemap_mode = 2 (Filmic)", slice_env.tonemap_mode == Environment.TONE_MAPPER_FILMIC, slice_env.tonemap_mode)
+	check("slice env glow_enabled = true", slice_env.glow_enabled, slice_env.glow_enabled)
+	check("slice env fog_enabled = true (not in brief §2.1)", slice_env.fog_enabled, slice_env.fog_enabled)
 	slice.queue_free()
 	await steps(2)
 

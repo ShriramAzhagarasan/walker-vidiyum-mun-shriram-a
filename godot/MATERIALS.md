@@ -146,6 +146,23 @@ All five also have `detect_3d/compress_to=0` so the editor cannot rewrite the co
 
 ---
 
+### Formats measured after import *(added in review)*
+
+`get_image().get_format()` on this machine (macOS, desktop import), pinned by `test_materials.gd`:
+
+| File | Format | What it confirms |
+|---|---|---|
+| `marble_01_diff_2k.png` | `FORMAT_DXT1` (17), mipmaps | `compress/mode = 2` is VRAM Compressed |
+| `marble_01_rough_2k.png` | `FORMAT_DXT1` (17), mipmaps | as above |
+| `marble_01_nor_gl_2k.png` | `FORMAT_RGTC_RG` (21), mipmaps | `compress/normal_map = 1` is Enable: two-channel normal compression |
+| `marble_01_nor_dx_2k.png` | `FORMAT_RGB8` (4), no mipmaps, uncompressed | `compress/mode = 0` is Lossless |
+| `hint_strip_3x1.png` | `FORMAT_RGB8` (4), no mipmaps, uncompressed | as above |
+
+Engine constants checked the same way: `Environment.TONE_MAPPER_FILMIC = 2`, `TONE_MAPPER_LINEAR = 0`, `BG_COLOR = 1`,
+`BG_SKY = 2`, `AMBIENT_SOURCE_COLOR = 2`, `Camera3D.PROJECTION_ORTHOGONAL = 1`.
+
+---
+
 ## 4. Lights and environment that change the look
 
 ### Slice (`godot/scenes/slice.tscn`) — the lighting the dry/wet marble is judged under (§2.1)
@@ -157,7 +174,7 @@ All five also have `detect_3d/compress_to=0` so the editor cannot rewrite the co
 | `Deck/PoolGlow` | `OmniLight3D` | `position (12.5, 0.4, -2)`; `light_color (0.3, 0.85, 1)`; `light_energy 1.2`; `omni_range 5.0` | `:127-131` |
 | `Backdrops/FireLight` | `OmniLight3D` | `light_energy 0.0` (off at 10:00 PM) | `:187-191` |
 | `SUV/Headlights` | `SpotLight3D` | `light_energy 0.0` (off at 10:00 PM) | `:200-206` |
-| String lights (×3) | `OmniLight3D`, added in code by `deck_dressing.gd:42-47` | `light_color = STRING_LIGHT_COLOR (1.0, 0.66, 0.36)` (~2700 K, `deck_dressing.gd:13`); `light_energy 2.8`; `omni_range 7.0`; one per gap between `LIGHT_XS = [6, 10, 14, 18]`, at `y = 2.7`, `z = -3.6 + 1.2` | `deck_dressing.gd:11-13, 42-47` |
+| String lights (×3) | `OmniLight3D`, added in code by `deck_dressing.gd:42-47` | `light_color = STRING_LIGHT_COLOR (1.0, 0.66, 0.36)` (`deck_dressing.gd:13`); `light_energy 2.8`; `omni_range 7.0`; one per gap between `LIGHT_XS = [6, 10, 14, 18]`, at `y = 2.7`, `z = -3.6 + 1.2` | `deck_dressing.gd:11-13, 42-47` |
 
 The brief's **10:00 PM** judgement light (§2.1) is the SkyLight + the string lights + the pool glow, under Filmic tone
 mapping with glow on. No SSAO is set.
@@ -184,8 +201,8 @@ Nothing on disk contradicts CHANGE-BRIEF.md; this section lists the small things
 | # | Finding | Evidence |
 |---|---|---|
 | A | Both marble materials point at the same shader resource, and at the OpenGL normal map (not DX). | `marble_dry.tres:3,6`, `marble_wet.tres:3,6` |
-| B | Both marble materials are shared across the three dry floors (`FloorWest`, `FloorEast`, `FloorFront`). CHANGE-BRIEF.md R8 is about the night-skip material only; sharing is intended here. | `slice.tscn:102,107,117` |
-| C | `marble_dry.tres` sets no `shader_parameter/*` beyond the three textures. CHANGE-BRIEF.md §2.4 reads *"defaults"*, so this is correct, but it means the dry defaults live only in `deck_marble.gdshader:7,12,13,14` — moving them there would be a shader edit (forbidden by ownership). | `marble_dry.tres:8-12` |
+| B | `marble_dry.tres` is shared by the three dry floors (`FloorWest`, `FloorEast`, `FloorFront`); `marble_wet.tres` is used by `FloorBack` only. CHANGE-BRIEF.md R8 is about the night-skip material only; sharing is intended here. | `slice.tscn:102,107,117` |
+| C | `marble_dry.tres` sets no `shader_parameter/*` beyond the three textures. CHANGE-BRIEF.md §2.4 reads *"defaults"*, so this is correct: the dry values are the shader defaults at `deck_marble.gdshader:7,12,13,14`, and a change to a default there changes the dry floors but not the wet one's two overrides. | `marble_dry.tres:8-12` |
 | D | Both hint materials bind `hint_strip_3x1.png` to **both** samplers even though `use_source_color` picks one branch. Harmless (the unused sampler just holds a reference), but worth noting: a per-material binding would only ever read one path. | `hint_a_source_color.tres:8-10`, `hint_b_no_hint.tres:8-10` |
 | E | `strip_as_data` has no `source_color` **and** no other hint; `strip_as_colour` has `source_color` with the same filter. This is what §2.5 requires. | `hint_experiment.gdshader:5-6` |
 | F | `marble_01_rough_2k.png` is sampled without `source_color` on `roughness_tex` (so values are read linearly, as the brief wants, F6). | `deck_marble.gdshader:10` |
@@ -193,6 +210,7 @@ Nothing on disk contradicts CHANGE-BRIEF.md; this section lists the small things
 | H | `hint_strip_3x1.png` is imported Lossless with no mipmaps (§2.5), using `filter_nearest` in the shader, so the three texels will not be averaged across the band boundaries. | `hint_strip_3x1.png.import:18,26`, `hint_experiment.gdshader:5-6` |
 | I | The slice environment is Filmic with glow on; the hint-experiment environment is Linear with glow and adjustments off. The hint-experiment predictions in §2.5 assume Linear + exposure 1.0; the file matches. | `slice.tscn:36-37`, `hint_experiment.tscn:9-13` |
 | J | No material under `godot/materials/` references the DX normal (`marble_01_nor_dx_2k.png`). Pinned by the test so a future hand-edit cannot swap conventions silently. | grep over `godot/materials/*.tres` |
+| K | *(Added in review.)* The slice has **fog on** (`fog_enabled = true`, `fog_density 0.011`), but CHANGE-BRIEF.md §2.1's lighting statement names only Filmic tone mapping and glow. Fog tints the far floor toward `fog_light_color`, so it is part of the light the marble is judged under. Recorded, not changed. | `slice.tscn:38-40` |
 
 ---
 
@@ -208,3 +226,17 @@ From CHANGE-BRIEF.md §2.2 (checked by Shriram, not rewritten here):
   only for the normal-map curl check (§2.2, F8); a `.gdignore` keeps Godot from importing them.
 
 CC0 needs no attribution; it is given anyway. Files are unmodified.
+
+---
+
+## Review (Claude, 2026-11-01)
+
+The sections above are the agent's audit (commit `a1acfaa`); the review changed only the lines marked here.
+- Every integer enum was looked up by measurement (formats and engine constants above). All the audit's enum names were correct.
+- Deleted "~2700 K" for the string lights: nobody measured a colour temperature.
+- Finding B said *both* marble materials are shared by the three dry floors; only `marble_dry` is.
+- Finding C's last clause was confused; rewritten.
+- Added finding K (fog on in the slice, not in brief §2.1).
+- `test_materials.gd`: its hint checks were substring matches, so `source_color` added to `roughness_tex`,
+  `normal_tex` or `strip_as_data` (F6) still passed. Added a no-`source_color` check per data sampler, the format
+  checks above, and the slice environment (Filmic, glow, fog). 145 → 156 checks, all PASS.
