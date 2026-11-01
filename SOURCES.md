@@ -92,6 +92,8 @@ See [ASSET-LOG.md](ASSET-LOG.md): one row per kept or seriously considered gener
   Claude Code checked every line reference in both versions (four were wrong in the first draft and Shriram corrected
   them). In the final version it pointed out two accuracy slips without supplying wording. It did not write or change
   any answer.
+- **FRICTIONAL.md A5 reflection (2026-11-01):** written by Shriram, with ChatGPT paraphrasing the wording (Shriram: "i
+  used chatgpt for paraphrasing from everything that i wrote"). Claude placed it unchanged and labelled it so.
 
 ### Textures (A5)
 | Asset | Author | Licence | Source | Used for |

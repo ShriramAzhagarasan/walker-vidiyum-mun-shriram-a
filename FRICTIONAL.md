@@ -313,3 +313,26 @@ i learned how x, y and z work in blender, that front and back depend on which si
 - **Mutation 3** (Shriram, by hand): `source_color` removed from `albedo_tex`, 1 fail, exit 1; restored.
 - **Step 4** (Shriram, in the editor): converted a StandardMaterial3D (diff, rough, nor_gl) to
   `standard_generated.gdshader`. Claude gave click-by-click steps from screenshots.
+
+## 2026-11-01: A5 reflection (Shriram's content; wording paraphrased by ChatGPT)
+*Written by Shriram, with ChatGPT paraphrasing the wording of what Shriram wrote (Shriram, 2026-11-01: "i used chatgpt
+for paraphrasing from everything that i wrote"). Claude placed it here unchanged and did not edit it. The audit-test gap
+mentioned below was found in Claude's review of the audit (entry above, commit `b8179c3`).*
+
+Assignment 5 helped me understand how shaders actually work in Godot. Before this assignment, I didn't fully understand the difference between a shader, a material, and a texture. I was mostly thinking about the final appearance, but now I understand that the shader controls the calculations while the material provides the values and textures used by those calculations.
+
+One thing that surprised me was the `source_color` experiment. I expected the two quads to look similar because they were using the same image, but the results were different. The quad using `source_color` showed the original values of 64, 128, and 192, while the other showed 137, 188, and 225. This helped me understand why colour textures and data textures need to be handled differently.
+
+Another interesting result was the contrast of the phone status bar. My original calculation gave a contrast ratio of 4.47:1, but the actual screen measurement was 3.46:1. It still passed the required 3:1 ratio, but it showed me that transparency and the background behind an object can affect the final appearance.
+
+For testing, I worked through the shader mutations and checked that the tests detected the changes. I also compared what happened when I changed the shared marble shader versus changing only one material. Editing the shader affected all four floor sections, while changing the wet material affected only the pool-side strip. I also checked the marble seams and tested the orange glow by holding T during gameplay.
+
+For the marble parameter sweep, I found the difference between roughness and specular settings useful. The wet material uses lower roughness and higher specular values, which gives it a glossier appearance than the dry floors. The normal-map depth was much less noticeable, which makes sense because the Marble 01 normal map is quite flat.
+
+I used ChatGPT while learning the shader syntax, understanding the colour calculations, and working through the language explanations. Claude helped with the driver, material setup, tests, and audit. I reviewed the results rather than relying only on the tools saying they were correct.
+
+One useful part of the audit was finding that some checks were missing. For example, the material test originally didn't check for incorrect `source_color` hints on data textures. The checks were improved to catch those cases, and the corrected material audit passed 156 checks.
+
+I'm still not completely confident about how normal-map strength interacts with different lighting conditions. I understand what the uniform controls, but I want to understand better why some normal-map changes are hardly visible while others make a big difference.
+
+Overall, I learned that getting a shader to compile is only one part of the work. I also need to check its inputs, understand the calculations, test the values, and compare the actual rendered output with what I predicted.
