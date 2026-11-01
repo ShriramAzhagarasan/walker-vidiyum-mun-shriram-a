@@ -305,7 +305,7 @@ brighter when the data is encoded for the screen without being decoded first.
 `tools/capture_a5.gd -- sweep`. Each float uniform is set to both ends of its `hint_range`, then back to the default.
 The tree is paused, so every frame has the same framing. Sheet: `evidence/a5/sweep_sheet.png`.
 
-"Observed" is Claude's reading of the captures; Shriram's own look check is in A5.8.
+"Observed" was written by Claude from the captures and checked by Shriram against `evidence/a5/sweep_sheet.png`.
 
 | Uniform | Low end | High end | Observed |
 |---|---|---|---|
@@ -322,9 +322,9 @@ The tree is paused, so every frame has the same framing. Sheet: `evidence/a5/swe
 | Glow colour at 0 / 0.5 / 1 against predictions | Done by capture (A5.4) |
 | `hint_range` with 2.0 from code | Done by capture (A5.4) |
 | Hint experiment | Done by capture (A5.6) |
-| One shader edit changes both floor materials; one material edit changes only its floor | **TO DO (Shriram, in the editor)** |
-| Glow reads as "skipping" in play (hold T several times) | **TO DO (Shriram)** |
-| Marble at the plane seams (F10) | **TO DO (Shriram)** |
+| **One shader, two materials: shader edit** (Shriram, editor, 2026-11-01) | Shriram changed `deck_marble.gdshader:27` to multiply `ALBEDO` by 0.3 and saved. All four floors went dark, the three dry floors and the wet strip behind the pool, because both materials use the one shader. Shriram: "yes it does, and once it is removed it is lighter." Restored; `git diff -- godot/shaders/` empty. `evidence/a5/human/checkA_*.png` |
+| **One shader, two materials: material edit** (Shriram, editor) | Shriram set `albedo_tint` on `marble_wet.tres` to red in the Inspector: only the strip behind the pool turned red; the three dry floors did not change. Shriram: "it is changed, now back." Undone without saving; `git diff -- godot/materials/` empty. `evidence/a5/human/checkB_*.png` |
+| **Playtest: glow and seams** (Shriram, F5, real input) | Shriram held T several times in a real run (`>> x8` and the orange bar in `checkC_playtest_T_held_x8.png`) and walked the deck to check where the floor planes meet (`checkC_floor_seam.png`: the tile pattern continues across the seam, as world-XZ UVs intend, F10). Shriram: "i did everythig that you tolod me to do, everything is perfect now." |
 | Editor rewrites on first open (F9) | Observed: opening the editor rewrote `project.godot` (dropped default-valued keys, including the explicit `forward_plus` line) and added a uid to `default_bus_layout.tres`. Saved as `logs/editor_rewrite_f9.diff` and restored. No `.import` file changed. |
 
 ## A5.9 What no headless run here can show
