@@ -122,3 +122,18 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
 - **Audit agent** (a scoped `claude -p` run of the course prompt, `prompts/a5/session-3.jsonl`): wrote `godot/MATERIALS.md`
   and `godot/tests/test_materials.gd`. Committed unedited, then reviewed by Claude: one invented number removed, one
   finding corrected, one test gap closed.
+
+### Starting point, tools and further AI contributions (A5)
+- **Starting point:** this repository at tag `a3` (Assignment 3). A5 is the commits after it (`git log a3..a5`).
+- **Narration model:** Kokoro-82M v1.0 (ONNX, via `kokoro-onnx`), Apache-2.0, run locally by the course-provided
+  Brutalist pipeline; voice `am_onyx` ("Liam"). No paid or cloud voice service.
+- **Film tooling:** the course-provided Brutalist `godot-gamedev` skill with the walker modifier (`../brutalist.art`),
+  Remotion for the scene renders. Details are in the film's own records under `youtube/claude-liam-vidiyum-mun-a5-gamedev/`.
+- **Claude's part in the brief and in Shriram's learning** (in addition to the list above):
+  - Claude offered the options for each decision in the chat. Shriram chose from them, then accepted Claude's six
+    recommendations for the rest (FRICTIONAL.md, 2026-10-28).
+  - Claude organized Shriram's decisions into CHANGE-BRIEF.md and filled in the project facts (brief header).
+  - Claude explained `mix()` with worked examples before Shriram wrote the colour line.
+  - Claude gave the slot outline for the two Part 2 shaders.
+  - Claude reviewed CLAUDE.md (`1ccf2ff`) and the audit (`b8179c3`). Shriram approved the CLAUDE.md review. His own
+    checks are the human checks in TEST-REPORT A5.8.
