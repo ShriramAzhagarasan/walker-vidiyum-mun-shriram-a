@@ -27,3 +27,16 @@ Frames (_qc/frames/final/): one mid-beat frame per beat B00-B22 + B19_start + B1
   bb2c156 visible on B02 B03 B05 B07 B09 B11 B13 B15 B16 B18 B19 B20. B14 sphere crop fills the frame.
   Minor, pre-existing, not fixed: B15 left panel's boilerplate footer ("Exact excerpt; interpretation at right.") is cut at the
   frame bottom (verbatim lines all visible); B09 code view shows line 13 half-clipped at the viewport edge (mid-scroll).
+[remotion] B15 (fix2: wording/B15 layout) rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B00 (fix2: wording/B15 layout) rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B01 (fix2: wording/B15 layout) rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+
+== FINAL v2 (2026-11-01 ~20:35): authorship wording fix ==
+B00 narration "three hand-written shaders" -> "three shaders"; B01 narration + on-screen "Three hand-written shaders." -> "Three shaders.".
+B15 section "verbatim lines" -> "Shader lines, verbatim"; file:line headers merged onto their quoted lines (all 4 lines kept) -> footer fits.
+build_evidence/COMPONENTS/FACTCHECK: night_skip "hand-written by Shriram" -> "typed by Shriram".
+Kokoro B00 (12.37 s), B01 (12.99 s); Remotion B00 B01 B15; check PASS; GATE T: same B04/B06/B12 only (override reused); Gate V clean.
+Export: 448.7 s · 3840x2160 · 30 fps · h264 + aac 48 kHz stereo · 47,392,627 bytes · sha256 fb0d6a3800f34e313c3bd62bb0ad86bc43f766a50552657474c1d986ab196e46
+Audio: mean -27.3 dB, max -3.0 dB, no silence > 2.5 s at -45 dB; every beat -27.1..-28.0 dB. Frames: _qc/frames/final2/.
+beat_sheet.json: only "hand-written" left is B15's "no hand-written entry points". Superseded v1: exports/landscape/superseded/.
+B09 half-cut line 13 at the code viewport edge: not changed (would need dropping a quoted line or a font too small for GATE T).

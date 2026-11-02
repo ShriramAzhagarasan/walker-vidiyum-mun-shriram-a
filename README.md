@@ -50,7 +50,9 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
 "$GODOT" --headless --path godot -s res://tests/test_slice_smoke.gd      # the 3D scene builds with all nodes
 python3 tools/check/loop_seam_check.py                                   # music loop seams (needs numpy + soundfile)
 ```
-Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
+These are the A2 suites, run without `--fixed-fps` on purpose: three of them measure wall-clock time (`Story._now()`)
+and fail only when the frame rate is pinned (a known A2 limitation, kept out of A5's scope). The A5 tests run through
+`scripts/run-test.sh` (section "Assignment 5" below). Results and the human playtest are in [TEST-REPORT.md](TEST-REPORT.md).
 
 ## Assignment 3: three Blender assets (tag `a3`)
 Three game assets built from Blender's basic shapes by directing Claude through the **Blender MCP**, then exported as `.glb` and shown together in `godot/scenes/a3_showcase.tscn` beside Hari's 1.75 m billboard:
@@ -110,10 +112,10 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
 - **Next step:** let the battery icon drain from orange to red as dawn approaches (Shriram's idea from the planning
   session), so the phone also warns how little night is left.
 - **A5 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
-  3840×2160, 30 fps, **7:30**.
-  - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a5-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD90q52VjdmRJBluIZAo9vUAU37pY9d2Zg27ZZYxSRy7Yc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Utb4QS)
+  3840×2160, 30 fps, **7:29**.
+  - **Link (Northeastern OneDrive):** LINK-PENDING
   - **File:** `claude-liam-vidiyum-mun-a5-gamedev.mp4` · **SHA-256:**
-    `613d4ed598fb18efb1074dde4ffe593358e489a47da1f861b2feb47f4f377af8`
+    `fb0d6a3800f34e313c3bd62bb0ad86bc43f766a50552657474c1d986ab196e46`
   - **Game-source revision shown:** `bb2c156`. Later commits change only docs and film records:
     `git diff bb2c156 a5 -- godot scripts` is empty.
   - **Film records:** [youtube/claude-liam-vidiyum-mun-a5-gamedev/](youtube/claude-liam-vidiyum-mun-a5-gamedev/): beat
@@ -123,14 +125,18 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
     orange bar in the `skip_amount = 2.0` capture, chairs in the playtest screenshot, and the light gizmo in the editor
     screenshot. Changing those pixels would alter the evidence, so the film was compiled directly. Approved by Shriram;
     reasons and boxed frames in `_qc/GATE-T-OVERRIDE.md`.
-  - **Known flaws:** in B15 the panel's footer line is cut off at the bottom; in B09 one code line is half cut off at the
-    bottom of the code panel. Neither hides a quoted shader line.
+  - **Known flaws:** in B09 one code line is half cut off at the bottom of the code panel; B15's panel keeps the
+    toolkit's fixed "GDD · DOCUMENT EXCERPT" label over shader lines (its subtitle says "Shader lines, verbatim").
+  - **Revision 2 of the film (2026-11-01, ~20:20):** an independent grading pass found that B00 and B01 called all three
+    shaders "hand-written", which overstated authorship (two were written with ChatGPT's help; see SOURCES.md). They
+    now say "three shaders", and the B15 footer was un-clipped. The superseded export (SHA-256 `613d4ed5…af8`) is
+    not the submitted film.
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A5; the A2/A3 briefs are in [design/briefs/](design/briefs/CHANGE-BRIEF-A2-A3.md)) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)
 
 ## Known limitations
-- **2.5D:** characters, the SUV and the backdrops are flat generated images in a 3D deck, so they read as cards when the camera turns. Natural character motion would need rigged 3D models. **Next step (A3):** build the SUV, the rock shrine and the fence as Blender models.
+- **2.5D:** characters, the SUV and the backdrops are flat generated images in a 3D deck, so they read as cards when the camera turns. Natural character motion would need rigged 3D models. **Next step, written for A2:** build the SUV, the rock shrine and the fence as Blender models (done in A3).
 - OVERHEAR's silhouette is close to IDLE. The walk cycle is a 4-frame swap (IDLE serves as the passing frame).
 - The in-game camera doesn't reproduce the storyboard's special angles (see TEST-REPORT, section 4).
 - Music (MusicGen) is CC-BY-NC: fine for coursework, not for a commercial release.

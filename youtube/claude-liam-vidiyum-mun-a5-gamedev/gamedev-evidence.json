@@ -186,7 +186,7 @@
   {
    "path": "shaders/night_skip.gdshader",
    "sha256": "8e709acd1ca5cfb2837e4de42d1587aff99ff38fabc2157f0356b3d728d9160a",
-   "role": "hand-written canvas_item shader (Shriram)",
+   "role": "canvas_item shader typed by Shriram",
    "component_ids": [
     "night-skip"
    ]
@@ -291,7 +291,7 @@
  "components": [
   {
    "id": "night-skip",
-   "explanation": "The 'night is slipping' glow: night_skip.gdshader (canvas_item, hand-written by Shriram; colour line at line 8) on the status bar's own node (status_bar.gd, split out of hud.gd so only the bar glows), driven every frame by night_skip_driver.gd from LoopState.fast_forward during Phase.NIGHT with move_toward by delta (0.25 s in, 0.5 s out), checked by test_night_skip.gd at 30/60/144 fps through real key input, including the uniform-list assertion that catches a parse failure or a rename.",
+   "explanation": "The 'night is slipping' glow: night_skip.gdshader (canvas_item, typed by Shriram; colour line at line 8) on the status bar's own node (status_bar.gd, split out of hud.gd so only the bar glows), driven every frame by night_skip_driver.gd from LoopState.fast_forward during Phase.NIGHT with move_toward by delta (0.25 s in, 0.5 s out), checked by test_night_skip.gd at 30/60/144 fps through real key input, including the uniform-list assertion that catches a parse failure or a rename.",
    "beat_ids": [
     "B02",
     "B03",

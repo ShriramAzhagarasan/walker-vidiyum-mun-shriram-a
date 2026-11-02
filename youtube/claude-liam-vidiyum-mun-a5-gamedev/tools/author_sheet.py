@@ -97,7 +97,7 @@ BAR = [0, 0, 480, 270]          # top-left of a 1280x720 capture: the status bar
 beats = [
  {"beat_id": "B00", "act": "ASK",
   "role_note": "Walker B00. Illustrative reconstruction of the ask (labelled), never a transcript.",
-  "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment five for Vidiyum Mun: three hand-written shaders, the materials that use them, and the tests and captures that check them.",
+  "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment five for Vidiyum Mun: three shaders, the materials that use them, and the tests and captures that check them.",
   "shot": remotion("ClaudeComposerAsk", {
       "greeting": "Vanakkam, Liam", "topic": "ILLUSTRATIVE RECONSTRUCTION · NOT A TRANSCRIPT", "segment": "Vidiyum Mun · A5",
       "command": "Please use Walker to convert my game design document about Vidiyum Mun, a time-loop mystery at a party on a fenced private beach on ECR, Chennai, into shaders: a glow on Hari's phone status bar while the night is being skipped, a textured marble shader for the pool deck with a dry and a wet material, and a hint experiment. Add headless tests.",
@@ -108,10 +108,10 @@ beats = [
        {"at": "0.25", "event": "the Walker ask types"}, {"at": "0.7", "event": "three result lines"}])},
  {"beat_id": "B01", "act": "BLUF", "lead_silence_s": 0.6,
   "role_note": "Hesitant writer; single-word correction 'day' -> 'night'. No authorship claim here (credits beat B19).",
-  "narration_text": "Three hand-written shaders. One makes Hari's phone glow while the night slips away. One reads a marble texture as colour and as data. One proves the difference with three grey pixels. Then tests, mutations and captures check every claim they can.",
+  "narration_text": "Three shaders. One makes Hari's phone glow while the night slips away. One reads a marble texture as colour and as data. One proves the difference with three grey pixels. Then tests, mutations and captures check every claim they can.",
   "shot": remotion("BrutalistHesitantWriter", {
       "contextTitle": "What this film shows",
-      "text": "Three hand-written shaders.\nOne glows while the day slips.\nOne reads marble as colour and as data.",
+      "text": "Three shaders.\nOne glows while the day slips.\nOne reads marble as colour and as data.",
       "triggerWords": "day", "replacementWords": "night",
       "fontSize": 84, "lineSpacing": 2.6, "align": "center", "seed": "vidiyum-a5",
       "mistakeRate": 2, "hesitateWithin": 0, "hesitateBetween": 1, "charMs": 8,
@@ -256,8 +256,8 @@ beats = [
   "role_note": "Two generated lines beside their equivalents in Shriram's shader (verbatim), annotated.",
   "narration_text": "Line seven of the generated shader, beside line five of the marble shader: both put source colour on the albedo sampler. Line nineteen beside line eleven: Godot's normal map uses hint roughness normal, Shriram's uses hint normal, and neither decodes it as colour. That's what Godot's language adds over plain G L S L: shader types with their built-ins, and hints that wire each uniform to the Inspector and to colour decoding.",
   "shot": board("Generated vs deck_marble, line by line",
-      f"verbatim lines · git {REV}",
-      f"standard_generated.gdshader:{GEN7_L}\n{GEN7}\ndeck_marble.gdshader:{OWN5_L}\n{OWN5}\nstandard_generated.gdshader:{GEN19_L}\n{GEN19}\ndeck_marble.gdshader:{OWN11_L}\n{OWN11}",
+      f"Shader lines, verbatim · git {REV}",
+      f"standard_generated.gdshader:{GEN7_L} {GEN7}\ndeck_marble.gdshader:{OWN5_L} {OWN5}\nstandard_generated.gdshader:{GEN19_L} {GEN19}\ndeck_marble.gdshader:{OWN11_L} {OWN11}",
       "LANGUAGE-NOTES.md Q6 · both read albedo as colour, the normal map as data", "What the hints say",
       [{"label": f"gen :{GEN7_L} ≈ own :{OWN5_L}", "text": "source_color: decode sRGB, it's colour"},
        {"label": f"gen :{GEN19_L} ≈ own :{OWN11_L}", "text": "hint_roughness_normal / hint_normal: data"},

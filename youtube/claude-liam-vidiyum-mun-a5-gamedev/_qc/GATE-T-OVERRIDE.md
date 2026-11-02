@@ -25,3 +25,8 @@ That override had the coordinator's GO and Shriram's approval; so does this one 
 
 Command run (from $B):
 `python3 runtime/scripts/compile.py $REEL --height 2160 --fps 30 --out $REEL/exports/landscape`
+
+## Re-render 2026-11-01 ~20:30 (authorship wording fix: B00/B01 "hand-written" removed; B15 excerpt layout)
+`type_check.py` was run again before compiling: FAILs only on the same three evidence beats (B04, B06, B12). Nothing new
+was flagged, so this re-render reused the override approved above (Shriram + coordinator) and compiled with `compile.py`
+directly. The previous export is kept in `exports/landscape/superseded/` (sha256 613d4ed5…).

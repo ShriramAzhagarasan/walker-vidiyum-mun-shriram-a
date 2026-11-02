@@ -1,6 +1,6 @@
 # Components (from gamedev-evidence.json)
 
-- **night-skip:** `shaders/night_skip.gdshader` (Shriram, by hand), `materials/night_skip.tres`, `ui/status_bar.gd`,
+- **night-skip:** `shaders/night_skip.gdshader` (typed by Shriram), `materials/night_skip.tres`, `ui/status_bar.gd`,
   `ui/hud.gd`, `ui/night_skip_driver.gd`, `tests/test_night_skip.gd`. Beats B02–B06, B16–B17.
 - **marble:** `shaders/deck_marble.gdshader`, `materials/marble_dry.tres`, `marble_wet.tres`, `scenes/slice.tscn`
   (floor wiring), `assets/textures/marble_01/*`, `tests/data/curl/*`, `tests/normal_map_check.gd`,

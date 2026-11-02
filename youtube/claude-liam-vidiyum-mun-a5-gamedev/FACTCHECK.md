@@ -2,7 +2,7 @@
 
 | Beat | Claim | Source |
 |---|---|---|
-| B00/B01 | three hand-written shaders (no authorship claim in these beats) | `godot/shaders/night_skip.gdshader`, `deck_marble.gdshader`, `hint_experiment.gdshader` |
+| B00/B01 | three shaders (no authorship claim in these beats; "hand-written" removed 2026-11-01 because deck_marble and hint_experiment were written with ChatGPT's help) | `godot/shaders/night_skip.gdshader`, `deck_marble.gdshader`, `hint_experiment.gdshader` |
 | B02 | T at night runs the clock ×8; events go unheard | CHANGE-BRIEF.md §1.1; GAME-BIBLE §7 |
 | B02 | the state and the colour line | CHANGE-BRIEF.md lines 24 and 53 (verbatim on screen) |
 | B02 | four deck floors: three dry, one wet | CHANGE-BRIEF.md §2.1, §2.4; `slice.tscn` material_override |

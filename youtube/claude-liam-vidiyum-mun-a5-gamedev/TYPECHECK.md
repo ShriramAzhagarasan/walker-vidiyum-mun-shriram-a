@@ -1,6 +1,6 @@
 # TYPECHECK.md — GATE T
 
-Reel: `claude-liam-vidiyum-mun-a5-gamedev`  |  Checked: 2026-11-01T17:57  |  Overall: **FAIL**  |  Beats checked: 23  |  FAILs: 3
+Reel: `claude-liam-vidiyum-mun-a5-gamedev`  |  Checked: 2026-11-01T20:17  |  Overall: **FAIL**  |  Beats checked: 23  |  FAILs: 3
 
 Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-height.  Contrast: 4.5:1 WCAG.  Kern threshold: 3.5× expected advance.  Wordy budget: 2 elements.
 
@@ -20,7 +20,7 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 | B11 | ? | light | no-wordy-card §8.5: pull-quote (6 words ≤ 12) | PASS | — |
 | B12 | ? | dark | contrast-local §8.3b: per-blob contrast 2.03:1 < 3.0:1 — text unreadable on actual local b… | **FAIL** | Use INK on cream; add backing plate under accent text |
 | B13 | ? | light | no-wordy-card §8.5: pull-quote (6 words ≤ 12) | PASS | — |
-| B14 | ? | dark | min-size §8.1: min text-run height 874px >= floor 41px (individual-char fallback at 2×) | PASS | — |
+| B14 | ? | dark | min-size §8.1: min text-run height 1436px >= floor 41px (individual-char fallback at 2×) | PASS | — |
 | B15 | ? | light | no-wordy-card §8.5: no prose payload found | PASS | — |
 | B16 | ? | light | no-wordy-card §8.5: pull-quote (6 words ≤ 12) | PASS | — |
 | B17 | ? | dark | min-size §8.1: min text-run height 41px >= floor 41px (individual-char fallback at 2×) | PASS | — |

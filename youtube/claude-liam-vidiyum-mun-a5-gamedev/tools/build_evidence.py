@@ -16,7 +16,7 @@ GODOT = REEL.parents[1] / 'godot'
 REV = (REEL / 'evidence/source-revision.txt').read_text().split()[0]
 
 COMPONENTS = {
-    'night-skip': ("The 'night is slipping' glow: night_skip.gdshader (canvas_item, hand-written by Shriram; colour line "
+    'night-skip': ("The 'night is slipping' glow: night_skip.gdshader (canvas_item, typed by Shriram; colour line "
                    "at line 8) on the status bar's own node (status_bar.gd, split out of hud.gd so only the bar glows), "
                    "driven every frame by night_skip_driver.gd from LoopState.fast_forward during Phase.NIGHT with "
                    "move_toward by delta (0.25 s in, 0.5 s out), checked by test_night_skip.gd at 30/60/144 fps "
@@ -42,7 +42,7 @@ COMPONENTS = {
 }
 
 RULES = [
-    ('shaders/night_skip.gdshader', 'night-skip', 'hand-written canvas_item shader (Shriram)'),
+    ('shaders/night_skip.gdshader', 'night-skip', 'canvas_item shader typed by Shriram'),
     ('materials/night_skip.tres', 'night-skip', 'ShaderMaterial on HUD/StatusBar'),
     ('ui/night_skip_driver.gd', 'night-skip', 'driver: state -> skip_amount by delta'),
     ('ui/status_bar.gd', 'night-skip', 'the status bar as its own Control (A5 split)'),

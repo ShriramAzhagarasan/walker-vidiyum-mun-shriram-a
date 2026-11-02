@@ -267,3 +267,18 @@ Claude's check are marked.*
 - **§1.8:** the header of the prediction table appears twice (an editing slip). The table under it is the one used.
 - **§1.8 on-screen check:** the background behind P2 was measured from a capture with the bar hidden (TEST-REPORT A5.4).
   The predictions out of `fragment()` are unchanged.
+
+## Revision 3, 2026-11-01 (Claude, recording line references that moved; the text above is unchanged)
+The status bar moved out of `hud.gd` into its own node during the build (§1.2), so some references above point at
+the code as it was at commit `18cdc12`. Where that code is now:
+
+| Above | At `18cdc12` | Now |
+|---|---|---|
+| §1.1, §1.6 ">> x8" condition `hud.gd:26` | `hud.gd:26` | `godot/ui/hud.gd:17` |
+| §1.2 status bar `hud.gd:41-48` | `hud.gd:42-49` (the brief's range was one line off) | `godot/ui/status_bar.gd:32-39` |
+| §1.8 P1 battery `Color(1, 1, 1, 0.95)` `hud.gd:47` | `hud.gd:47` (battery fill; colour defined at `:40`) | `status_bar.gd:37` (battery fill; colour at `:31`) |
+| §1.8 P2 bar `Color(0.04, 0.04, 0.08, 0.6)` `hud.gd:42` | `hud.gd:42` | `status_bar.gd:32` |
+| §2.1 tonemap and glow `slice.tscn:31-32` | `slice.tscn:31-32` | `godot/scenes/slice.tscn:36-37` |
+| §2.1 floor `uv_tiles` `slice.tscn:100-124` | `slice.tscn:100/108/116/124` (the old `textured_surface.gd` floors) | removed: the floors use `material_override` (`slice.tscn:99/104/109/114`) |
+
+The drawn colours and rectangles are unchanged, so the predictions in §1.8 still apply.

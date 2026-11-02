@@ -34,7 +34,7 @@
     },
     "fps": 30,
     "build": {
-      "at": "2026-11-01T18:55:05",
+      "at": "2026-11-01T20:21:41",
       "cut": "master",
       "filled": 23,
       "of": 23,
@@ -47,7 +47,7 @@
       "beat_id": "B00",
       "act": "ASK",
       "role_note": "Walker B00. Illustrative reconstruction of the ask (labelled), never a transcript.",
-      "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment five for Vidiyum Mun: three hand-written shaders, the materials that use them, and the tests and captures that check them.",
+      "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment five for Vidiyum Mun: three shaders, the materials that use them, and the tests and captures that check them.",
       "shot": {
         "type": "GRAPHIC",
         "class": "SHOW",
@@ -89,21 +89,21 @@
           },
           "rendered": {
             "out": "media/B00.mp4",
-            "at": "2026-11-01T22:39:21.229265+00:00"
+            "at": "2026-11-02T01:13:22.408630+00:00"
           }
         }
       },
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B00.wav",
-      "actual_duration_s": 13.233333333333333,
-      "speech_duration_s": 12.928,
-      "render_duration_s": 13.233333333333333,
+      "actual_duration_s": 12.7,
+      "speech_duration_s": 12.373,
+      "render_duration_s": 12.7,
       "build": {
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -111,7 +111,7 @@
       "act": "BLUF",
       "lead_silence_s": 0.6,
       "role_note": "Hesitant writer; single-word correction 'day' -> 'night'. No authorship claim here (credits beat B19).",
-      "narration_text": "Three hand-written shaders. One makes Hari's phone glow while the night slips away. One reads a marble texture as colour and as data. One proves the difference with three grey pixels. Then tests, mutations and captures check every claim they can.",
+      "narration_text": "Three shaders. One makes Hari's phone glow while the night slips away. One reads a marble texture as colour and as data. One proves the difference with three grey pixels. Then tests, mutations and captures check every claim they can.",
       "shot": {
         "type": "GRAPHIC",
         "class": "SHOW",
@@ -134,7 +134,7 @@
           "pattern": "BrutalistHesitantWriter",
           "props": {
             "contextTitle": "What this film shows",
-            "text": "Three hand-written shaders.\nOne glows while the day slips.\nOne reads marble as colour and as data.",
+            "text": "Three shaders.\nOne glows while the day slips.\nOne reads marble as colour and as data.",
             "triggerWords": "day",
             "replacementWords": "night",
             "fontSize": 84,
@@ -147,11 +147,12 @@
             "charMs": 8,
             "ink": "#3D3929",
             "accent": "#D97757",
-            "bg": "#FAF9F5"
+            "bg": "#FAF9F5",
+            "durationSeconds": 13.9
           },
           "rendered": {
             "out": "media/B01.mp4",
-            "at": "2026-11-01T22:39:59.660698+00:00"
+            "at": "2026-11-02T01:14:00.074960+00:00"
           }
         }
       },
@@ -162,14 +163,14 @@
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B01.wav",
-      "actual_duration_s": 14.466666666666667,
-      "speech_duration_s": 13.547,
-      "render_duration_s": 14.466666666666667,
+      "actual_duration_s": 13.9,
+      "speech_duration_s": 12.992,
+      "render_duration_s": 13.9,
       "build": {
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -237,7 +238,25 @@
                 "card": 3
               }
             ],
-            "cues": []
+            "cues": [
+              {
+                "card": 0,
+                "at": 1.67
+              },
+              {
+                "card": 1,
+                "at": 4.59
+              },
+              {
+                "card": 2,
+                "at": 11.48
+              },
+              {
+                "card": 3,
+                "at": 17.74
+              }
+            ],
+            "durationSeconds": 20.866666666666667
           },
           "rendered": {
             "out": "media/B02.mp4",
@@ -255,7 +274,7 @@
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -324,10 +343,27 @@
                 "label": "the colour line"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 1,
+                "label": "shader type",
+                "at": 3.61
+              },
+              {
+                "line": 3,
+                "label": "set from outside",
+                "at": 7.01
+              },
+              {
+                "line": 8,
+                "label": "the colour line",
+                "at": 12.02
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 20.033333333333335
           },
           "rendered": {
             "out": "media/B03.mp4",
@@ -345,7 +381,7 @@
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -460,11 +496,12 @@
       "actual_duration_s": 21.166666666666668,
       "speech_duration_s": 20.651,
       "render_duration_s": 21.166666666666668,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -533,10 +570,27 @@
                 "label": "to the material"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 22,
+                "label": "reads the state",
+                "at": 2.92
+              },
+              {
+                "line": 27,
+                "label": "steps by delta",
+                "at": 8.75
+              },
+              {
+                "line": 28,
+                "label": "to the material",
+                "at": 14.57
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 19.433333333333334
           },
           "rendered": {
             "out": "media/B05.mp4",
@@ -554,7 +608,7 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -651,11 +705,12 @@
       "actual_duration_s": 21.366666666666667,
       "speech_duration_s": 20.864,
       "render_duration_s": 21.366666666666667,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -724,10 +779,27 @@
                 "label": "the bool picks"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 5,
+                "label": "read as colour",
+                "at": 4.3
+              },
+              {
+                "line": 6,
+                "label": "read as data",
+                "at": 8.6
+              },
+              {
+                "line": 11,
+                "label": "the bool picks",
+                "at": 13.76
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 17.2
           },
           "rendered": {
             "out": "media/B07.mp4",
@@ -745,7 +817,7 @@
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -806,11 +878,12 @@
       "actual_duration_s": 18.7,
       "speech_duration_s": 18.176,
       "render_duration_s": 18.7,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -897,10 +970,37 @@
                 "label": "Inspector groups"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 5,
+                "label": "colour: source_color",
+                "at": 2.37
+              },
+              {
+                "line": 10,
+                "label": "data, no hint",
+                "at": 5.93
+              },
+              {
+                "line": 11,
+                "label": "data: hint_normal",
+                "at": 7.91
+              },
+              {
+                "line": 7,
+                "label": "range + default",
+                "at": 12.26
+              },
+              {
+                "line": 9,
+                "label": "Inspector groups",
+                "at": 15.42
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 19.766666666666666
           },
           "rendered": {
             "out": "media/B09.mp4",
@@ -918,7 +1018,7 @@
         "status": "VIDEO",
         "src": "media/B09.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -979,11 +1079,12 @@
       "actual_duration_s": 17.6,
       "speech_duration_s": 17.067,
       "render_duration_s": 17.6,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B10.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1052,10 +1153,27 @@
                 "label": "wet: glossier"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 9,
+                "label": "one shader",
+                "at": 4.17
+              },
+              {
+                "line": 10,
+                "label": "same textures",
+                "at": 7.51
+              },
+              {
+                "line": 13,
+                "label": "wet: glossier",
+                "at": 11.69
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 16.7
           },
           "rendered": {
             "out": "media/B11.mp4",
@@ -1073,7 +1191,7 @@
         "status": "VIDEO",
         "src": "media/B11.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1134,11 +1252,12 @@
       "actual_duration_s": 15.766666666666667,
       "speech_duration_s": 15.253,
       "render_duration_s": 15.766666666666667,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B12.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1216,10 +1335,32 @@
                 "label": "source_color"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 3,
+                "label": "shader type",
+                "at": 3.89
+              },
+              {
+                "line": 4,
+                "label": "render mode",
+                "at": 6.23
+              },
+              {
+                "line": 6,
+                "label": "Inspector albedo colour",
+                "at": 10.71
+              },
+              {
+                "line": 7,
+                "label": "source_color",
+                "at": 14.02
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 19.466666666666665
           },
           "rendered": {
             "out": "media/B13.mp4",
@@ -1237,7 +1378,7 @@
         "status": "VIDEO",
         "src": "media/B13.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1299,7 +1440,7 @@
         "status": "VIDEO",
         "src": "media/B14.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1325,8 +1466,8 @@
           "pattern": "GodotDesignBoard",
           "props": {
             "title": "Generated vs deck_marble, line by line",
-            "section": "verbatim lines · git bb2c156",
-            "excerpt": "standard_generated.gdshader:7\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:5\nuniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;\nstandard_generated.gdshader:19\nuniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:11\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;",
+            "section": "Shader lines, verbatim · git bb2c156",
+            "excerpt": "standard_generated.gdshader:7 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:5 uniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;\nstandard_generated.gdshader:19 uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:11 uniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;",
             "source": "",
             "status": "LANGUAGE-NOTES.md Q6 · both read albedo as colour, the normal map as data",
             "visualLabel": "What the hints say",
@@ -1367,11 +1508,29 @@
                 "card": 3
               }
             ],
-            "cues": []
+            "cues": [
+              {
+                "card": 0,
+                "at": 1.81
+              },
+              {
+                "card": 1,
+                "at": 7.92
+              },
+              {
+                "card": 2,
+                "at": 15.39
+              },
+              {
+                "card": 3,
+                "at": 19.01
+              }
+            ],
+            "durationSeconds": 22.633333333333333
           },
           "rendered": {
             "out": "media/B15.mp4",
-            "at": "2026-11-01T22:47:36.718268+00:00"
+            "at": "2026-11-02T01:12:06.511453+00:00"
           }
         }
       },
@@ -1385,7 +1544,7 @@
         "status": "VIDEO",
         "src": "media/B15.mp4",
         "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1454,10 +1613,27 @@
                 "label": "name contract"
               }
             ],
-            "cues": [],
+            "cues": [
+              {
+                "line": 85,
+                "label": "the compiled list",
+                "at": 4.29
+              },
+              {
+                "line": 87,
+                "label": "parse check",
+                "at": 8.58
+              },
+              {
+                "line": 90,
+                "label": "name contract",
+                "at": 12.16
+              }
+            ],
             "output": [
               "Godot editor reconstruction · git bb2c156"
-            ]
+            ],
+            "durationSeconds": 14.3
           },
           "rendered": {
             "out": "media/B16.mp4",
@@ -1475,7 +1651,7 @@
         "status": "VIDEO",
         "src": "media/B16.mp4",
         "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1533,11 +1709,12 @@
       "actual_duration_s": 20.666666666666668,
       "speech_duration_s": 20.16,
       "render_duration_s": 20.666666666666668,
+      "hold_s": 0.0,
       "build": {
         "status": "VIDEO",
         "src": "media/B17.mp4",
         "filled_by": "media",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1605,7 +1782,25 @@
                 "card": 3
               }
             ],
-            "cues": []
+            "cues": [
+              {
+                "card": 0,
+                "at": 26.35
+              },
+              {
+                "card": 1,
+                "at": 28.32
+              },
+              {
+                "card": 2,
+                "at": 29.97
+              },
+              {
+                "card": 3,
+                "at": 31.29
+              }
+            ],
+            "durationSeconds": 32.93333333333333
           },
           "rendered": {
             "out": "media/B18.mp4",
@@ -1623,7 +1818,7 @@
         "status": "VIDEO",
         "src": "media/B18.mp4",
         "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1687,7 +1882,21 @@
                 "card": 2
               }
             ],
-            "cues": []
+            "cues": [
+              {
+                "card": 0,
+                "at": 2.35
+              },
+              {
+                "card": 1,
+                "at": 27.2
+              },
+              {
+                "card": 2,
+                "at": 37.52
+              }
+            ],
+            "durationSeconds": 46.9
           },
           "rendered": {
             "out": "media/B19.mp4",
@@ -1705,7 +1914,7 @@
         "status": "VIDEO",
         "src": "media/B19.mp4",
         "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1769,7 +1978,7 @@
         "status": "VIDEO",
         "src": "media/B20.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1829,7 +2038,7 @@
         "status": "VIDEO",
         "src": "media/B21.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     },
     {
@@ -1875,7 +2084,7 @@
         "status": "VIDEO",
         "src": "media/B22.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-11-01T18:55:05"
+        "at": "2026-11-01T20:21:41"
       }
     }
   ]

@@ -195,7 +195,8 @@ Blender is Z-up and Godot is Y-up: the glTF exporter's +Y Up swaps the axes, so 
 # Assignment 5: shaders and materials
 
 Godot 4.7.2.stable.official.ed1daf0bf, renderer Forward+, macOS 26.6.2 (Apple M1 Pro). Source revision: the commit
-tagged `a5`; a fresh clone (A5.11) repeats every A5 count below. Commands run through `scripts/run-test.sh`. A headless run proves that the shaders
+tagged `a5`. The captures and the film were made from builds at `6286cc3` and `bb2c156`, whose game source
+is identical to `a5`'s (`git diff bb2c156 a5 -- godot scripts` is empty). A fresh clone (A5.11) repeats every A5 count below. Commands run through `scripts/run-test.sh`. A headless run proves that the shaders
 parse, that their uniforms are declared and driven as specified, and that the materials are wired as audited. It proves
 nothing about the look: every visual rule below ends in a capture with the real renderer or a human check.
 

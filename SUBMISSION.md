@@ -25,8 +25,8 @@
 - **Texture sources and licences:** Poly Haven **Marble 01** and **Floor Tiles 06** (calibration only) by Rob Tuytel, CC0
   1.0, <https://polyhaven.com/a/marble_01>, <https://polyhaven.com/a/floor_tiles_06>. The hint strip is written by
   `godot/tools/write_hint_strip.gd`. Credits: `godot/assets/textures/marble_01/ATTRIBUTION.md`, SOURCES.md.
-- **Final film URL and filename:** <https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD90q52VjdmRJBluIZAo9vUAU37pY9d2Zg27ZZYxSRy7Yc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Utb4QS> · `claude-liam-vidiyum-mun-a5-gamedev.mp4` (3840×2160, 30 fps, 7:30)
-- **Final film SHA-256:** `613d4ed598fb18efb1074dde4ffe593358e489a47da1f861b2feb47f4f377af8`
+- **Final film URL and filename:** LINK-PENDING · `claude-liam-vidiyum-mun-a5-gamedev.mp4` (3840×2160, 30 fps, 7:29)
+- **Final film SHA-256:** `fb0d6a3800f34e313c3bd62bb0ad86bc43f766a50552657474c1d986ab196e46`
 - **Summary of my work:**
   - I chose the state, the object, the sodium-orange colour, both fade times, and the re-press, pause and time-scale
     rules. I also chose the marble, where it goes, and that the pool edge is wet (glossier).
@@ -40,7 +40,10 @@
   - I ran all three mutations by hand and did the human checks: the shader edit changed all four floors, the material
     edit changed only the wet strip, and I playtested the glow and the seams.
   - Claude wrote the driver, the tests, the capture tool, the material wiring, the audit review and the film. A scoped
-    agent wrote the audit. Every capture matched my predictions: the hint quads exactly, the glow within 1 per channel.
+    agent wrote the audit. The hint quads matched my predictions exactly. My glow predictions are for the colour out of `fragment()`; the
+    on-screen values also depend on the bar's transparency and the scene behind it, so the capture tool blended my
+    predictions over the measured background, and the captures came within 1 per channel of that (TEST-REPORT A5.4;
+    one on-screen value was corrected from 68 to 69 after measurement, commit `97647b8`).
   - Full split in SOURCES.md and FRICTIONAL.md.
 - **Known limitations:**
   - Marble 01's normal map is very flat: `normal_depth` barely shows, and the curl ratio (0.637) is direction-only.
