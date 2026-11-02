@@ -8,7 +8,7 @@
 - **GitHub repository URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
 - **Git tag and submitted commit SHA:** tag `a5`. The submitted commit's SHA is given in the Canvas submission note,
   because a commit can't contain its own SHA.
-- **Game-source revision shown in the film:** `FILL-AFTER-RENDER`. Later commits change only docs and film records;
+- **Game-source revision shown in the film:** `bb2c156`. Later commits change only docs and film records;
   `git diff <that revision> a5 -- godot scripts` is empty.
 - **Godot version, renderer, and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · Forward+ · macOS 26.6.2
   (Apple M1 Pro)
@@ -25,8 +25,8 @@
 - **Texture sources and licences:** Poly Haven **Marble 01** and **Floor Tiles 06** (calibration only) by Rob Tuytel, CC0
   1.0, <https://polyhaven.com/a/marble_01>, <https://polyhaven.com/a/floor_tiles_06>. The hint strip is written by
   `godot/tools/write_hint_strip.gd`. Credits: `godot/assets/textures/marble_01/ATTRIBUTION.md`, SOURCES.md.
-- **Final film URL and filename:** `FILL-AFTER-UPLOAD`
-- **Final film SHA-256:** `FILL-AFTER-RENDER`
+- **Final film URL and filename:** <https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD90q52VjdmRJBluIZAo9vUAU37pY9d2Zg27ZZYxSRy7Yc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Utb4QS> · `claude-liam-vidiyum-mun-a5-gamedev.mp4` (3840×2160, 30 fps, 7:30)
+- **Final film SHA-256:** `613d4ed598fb18efb1074dde4ffe593358e489a47da1f861b2feb47f4f377af8`
 - **Summary of my work:**
   - I chose the state, the object, the sodium-orange colour, both fade times, and the re-press, pause and time-scale
     rules. I also chose the marble, where it goes, and that the pool edge is wet (glossier).

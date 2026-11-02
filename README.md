@@ -109,7 +109,22 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
   - Opening the editor rewrites `project.godot`; this is restored after every session (TEST-REPORT A5.8).
 - **Next step:** let the battery icon drain from orange to red as dawn approaches (Shriram's idea from the planning
   session), so the phone also warns how little night is left.
-- **A5 film:** *link, filename and SHA-256 to be added after rendering.*
+- **A5 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
+  3840×2160, 30 fps, **7:30**.
+  - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a5-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD90q52VjdmRJBluIZAo9vUAU37pY9d2Zg27ZZYxSRy7Yc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Utb4QS)
+  - **File:** `claude-liam-vidiyum-mun-a5-gamedev.mp4` · **SHA-256:**
+    `613d4ed598fb18efb1074dde4ffe593358e489a47da1f861b2feb47f4f377af8`
+  - **Game-source revision shown:** `bb2c156`. Later commits change only docs and film records:
+    `git diff bb2c156 a5 -- godot scripts` is empty.
+  - **Film records:** [youtube/claude-liam-vidiyum-mun-a5-gamedev/](youtube/claude-liam-vidiyum-mun-a5-gamedev/): beat
+    sheet, prompts, fact check, evidence and QC. `./art godot-gamedev --check` **PASS** (35 files, 7 exact excerpts, 7
+    code→result pairs). Gate V on the final candidate: 0 BLOCKER, 0 MAJOR.
+  - **Text-legibility gate (GATE T):** it flagged three beats where the "text" is inside real captures: petals and the
+    orange bar in the `skip_amount = 2.0` capture, chairs in the playtest screenshot, and the light gizmo in the editor
+    screenshot. Changing those pixels would alter the evidence, so the film was compiled directly. Approved by Shriram;
+    reasons and boxed frames in `_qc/GATE-T-OVERRIDE.md`.
+  - **Known flaws:** in B15 the panel's footer line is cut off at the bottom; in B09 one code line is half cut off at the
+    bottom of the code panel. Neither hides a quoted shader line.
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A5; the A2/A3 briefs are in [design/briefs/](design/briefs/CHANGE-BRIEF-A2-A3.md)) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)
