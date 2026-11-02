@@ -1,0 +1,1736 @@
+{
+  "metadata": {
+    "title": "Vidiyum Mun, the Night Is Slipping",
+    "slug": "claude-liam-vidiyum-mun-a5-gamedev",
+    "topic": "WALKER · GODOT GAMEDEV · A5 SHADERS",
+    "kind": "godot-gamedev",
+    "mode": "walker",
+    "brand": "claude-liam",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "crop",
+    "captions": false,
+    "channel": "@NikBearBrown",
+    "channel_title": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "greeting": "Vanakkam, Liam",
+    "greeting_note": "hello lexicon: Vanakkam (Tamil), fits the Chennai setting.",
+    "persona": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "audience": "CSYE 7270 reviewers and makers writing their first Godot shaders",
+    "source_revision": "bb2c156",
+    "game": {
+      "name": "walker-vidiyum-mun-shriram-a",
+      "build_id": "c0b3756e89254a287735a30859962ec14fd1c1ff1ee8a8b3da0f4411c04465bf",
+      "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+      "renderer": "Forward+ (Metal)",
+      "git": "bb2c156"
+    },
+    "fps": 30
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "Walker B00. Illustrative reconstruction of the ask (labelled), never a transcript.",
+      "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment five for Vidiyum Mun: three hand-written shaders, the materials that use them, and the tests and captures that check them.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "composer; greeting"
+          },
+          {
+            "at": "0.15",
+            "event": "topic: ILLUSTRATIVE RECONSTRUCTION"
+          },
+          {
+            "at": "0.25",
+            "event": "the Walker ask types"
+          },
+          {
+            "at": "0.7",
+            "event": "three result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Vanakkam, Liam",
+            "topic": "ILLUSTRATIVE RECONSTRUCTION · NOT A TRANSCRIPT",
+            "segment": "Vidiyum Mun · A5",
+            "command": "Please use Walker to convert my game design document about Vidiyum Mun, a time-loop mystery at a party on a fenced private beach on ECR, Chennai, into shaders: a glow on Hari's phone status bar while the night is being skipped, a textured marble shader for the pool deck with a dry and a wet material, and a hint experiment. Add headless tests.",
+            "runningText": "reading CHANGE-BRIEF.md and godot/…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "night_skip.gdshader · 33/33 at 30, 60, 144 fps.",
+              "deck_marble.gdshader · dry + wet · 156/156.",
+              "Hint quads: 64/128/192 and 137/188/225, as predicted."
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-11-01T22:39:21.229265+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B00.wav",
+      "actual_duration_s": 13.233333333333333,
+      "speech_duration_s": 12.928,
+      "render_duration_s": 13.233333333333333
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "lead_silence_s": 0.6,
+      "role_note": "Hesitant writer; single-word correction 'day' -> 'night'. No authorship claim here (credits beat B19).",
+      "narration_text": "Three hand-written shaders. One makes Hari's phone glow while the night slips away. One reads a marble texture as colour and as data. One proves the difference with three grey pixels. Then tests, mutations and captures check every claim they can.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.08",
+            "event": "line one types"
+          },
+          {
+            "at": "0.3",
+            "event": "'day' struck; 'night' typed"
+          },
+          {
+            "at": "0.55",
+            "event": "lines two and three"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "contextTitle": "What this film shows",
+            "text": "Three hand-written shaders.\nOne glows while the day slips.\nOne reads marble as colour and as data.",
+            "triggerWords": "day",
+            "replacementWords": "night",
+            "fontSize": 84,
+            "lineSpacing": 2.6,
+            "align": "center",
+            "seed": "vidiyum-a5",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "charMs": 8,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-11-01T22:39:59.660698+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B01.wav",
+      "actual_duration_s": 14.466666666666667,
+      "speech_duration_s": 13.547,
+      "render_duration_s": 14.466666666666667
+    },
+    {
+      "beat_id": "B02",
+      "act": "SETUP",
+      "role_note": "Game, the state the effect communicates, the objects (incl. the textured one); the colour line in the spec (CHANGE-BRIEF.md §1.1, §1.4).",
+      "narration_text": "The game is Vidiyum Mun, a time loop at a beach party in Chennai. Holding T at night runs the clock eight times faster, and whatever happens meanwhile goes unheard. The spec names that state exactly, and the colour line from the brief: mix the bar's colour toward sodium orange, by skip amount times tint strength. The textured shader goes on the four pool-deck floors: three dry, one wet.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "spec excerpt"
+          },
+          {
+            "at": "0.55",
+            "event": "colour line + objects"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "The game, the state, the object",
+            "section": "CHANGE-BRIEF.md lines 24 and 53 (verbatim) · git bb2c156",
+            "excerpt": "- **The state, exactly:** `LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT`. This is the same\n\nThe colour line, §1.4:\nCOLOR.rgb = mix(COLOR.rgb, skip_tint.rgb, skip_amount * tint_strength);",
+            "source": "",
+            "status": "SPEC · written before either shader existed",
+            "visualLabel": "What it's for",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Game",
+                "text": "Vidiyum Mun: a time loop at an ECR beach party"
+              },
+              {
+                "label": "State",
+                "text": "T held at night: clock ×8, events go unheard"
+              },
+              {
+                "label": "Shader 1",
+                "text": "Hari's phone status bar (canvas_item)"
+              },
+              {
+                "label": "Shader 2",
+                "text": "4 deck floors: 3 dry marble, 1 wet (spatial)"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.08,
+                "card": 0
+              },
+              {
+                "frac": 0.22,
+                "card": 1
+              },
+              {
+                "frac": 0.55,
+                "card": 2
+              },
+              {
+                "frac": 0.85,
+                "card": 3
+              }
+            ],
+            "cues": []
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-11-01T22:41:00.070346+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B02.wav",
+      "actual_duration_s": 20.866666666666667,
+      "speech_duration_s": 20.565,
+      "render_duration_s": 20.866666666666667
+    },
+    {
+      "beat_id": "B03",
+      "act": "CODE",
+      "role_note": "Q1 what a shader does: night_skip.gdshader, typed by Shriram. Paired result B04.",
+      "narration_text": "Here's the shader Shriram typed in. Shader type canvas item: it runs on 2D drawing. Three uniforms, values the game can set from outside. And line eight, the colour line from the spec, word for word. A shader is a small program the graphics card runs for every pixel the bar draws. This one takes the colour the bar arrived with, and mixes it toward orange.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.18",
+            "event": "line highlight: shader type"
+          },
+          {
+            "at": "0.35",
+            "event": "line highlight: set from outside"
+          },
+          {
+            "at": "0.6",
+            "event": "line highlight: the colour line"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "What a shader does: the colour line",
+            "project": "Vidiyum Mun",
+            "path": "godot/shaders/night_skip.gdshader",
+            "source": "Godot editor reconstruction · godot/shaders/night_skip.gdshader lines 1–9 · git bb2c156",
+            "code": "shader_type canvas_item;\n\nuniform float skip_amount : hint_range(0.0, 1.0) = 0.0;\nuniform vec4 skip_tint : source_color = vec4(1.0, 0.6, 0.2, 1.0);\nuniform float tint_strength : hint_range(0.0, 1.0) = 0.5;\n\nvoid fragment() {\n    COLOR.rgb = mix(COLOR.rgb, skip_tint.rgb, skip_amount * tint_strength);\n}",
+            "startLine": 1,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "shader_type",
+                "value": "canvas_item: 2D drawing"
+              },
+              {
+                "label": "uniforms",
+                "value": "set from outside"
+              },
+              {
+                "label": "line 8",
+                "value": "COLOR → toward orange"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.18,
+                "line": 1,
+                "label": "shader type"
+              },
+              {
+                "frac": 0.35,
+                "line": 3,
+                "label": "set from outside"
+              },
+              {
+                "frac": 0.6,
+                "line": 8,
+                "label": "the colour line"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": "2026-11-01T22:41:58.676641+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B03.wav",
+      "actual_duration_s": 20.033333333333335,
+      "speech_duration_s": 19.712,
+      "render_duration_s": 20.033333333333335
+    },
+    {
+      "beat_id": "B04",
+      "act": "RESULT",
+      "role_note": "Result of B03: controlled-value captures (real renderer) at 0 / 0.5 / 1 / 2, then the P1/P2 rows of TEST-REPORT A5.4.",
+      "narration_text": "Its result, with the real renderer. Skip amount set from code to zero, a half, one, then two. Shriram predicted the battery pixel at one: two forty-nine, one ninety-seven, one forty-seven, once blended over the scene. Captured: exactly that, and every prediction held within one step per channel. At two, the bar went past the slider's end, to pure orange. Hint range does not clamp a value set from code.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · status bar zoomed",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a5/glow_skip_0_0.png",
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · skip_amount = 0.0"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/glow_skip_0_5.png",
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · skip_amount = 0.5"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/glow_skip_1_0.png",
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · skip_amount = 1.0"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/glow_skip_2_0.png",
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · skip_amount = 2.0, set from code"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/table_glow.png",
+            "w": 2.2,
+            "label": "TEST-REPORT.md A5.4 · captured vs predicted on screen (verbatim rows)"
+          }
+        ],
+        "evidence_media": "media/B04.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "skip_amount 0"
+          },
+          {
+            "at": "0.16",
+            "event": "0.5"
+          },
+          {
+            "at": "0.32",
+            "event": "1.0"
+          },
+          {
+            "at": "0.48",
+            "event": "2.0 (beyond the range)"
+          },
+          {
+            "at": "0.64",
+            "event": "TEST-REPORT A5.4 rows"
+          }
+        ],
+        "note": "Engine captures at fixed values; then the recorded table."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B04.wav",
+      "actual_duration_s": 21.166666666666668,
+      "speech_duration_s": 20.651,
+      "render_duration_s": 21.166666666666668
+    },
+    {
+      "beat_id": "B05",
+      "act": "CODE",
+      "role_note": "How game state reaches the shader: the driver (night_skip_driver.gd). Paired result B06 (motion + playtest + test timings).",
+      "narration_text": "So who sets skip amount during play? This driver. Each frame it reads the game state, and never writes it: fast forward, during the night phase. Move toward steps the value by delta, over a quarter second in, and half a second out. Then it hands the number to the material. Delta, not a frame count, so the fade takes the same time at thirty or a hundred forty-four frames a second.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.15",
+            "event": "line highlight: reads the state"
+          },
+          {
+            "at": "0.45",
+            "event": "line highlight: steps by delta"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: to the material"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "How game state reaches the shader",
+            "project": "Vidiyum Mun",
+            "path": "godot/ui/night_skip_driver.gd",
+            "source": "Godot editor reconstruction · godot/ui/night_skip_driver.gd lines 20–28 · git bb2c156",
+            "code": "## The state the glow shows: the player is skipping the night (the HUD's own \">> x8\" condition).\nstatic func state_holds() -> bool:\n\treturn LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT\n\nfunc _process(delta: float) -> void:\n\tvar target := 1.0 if state_holds() else 0.0\n\tvar duration := FADE_IN if target > skip_amount else FADE_OUT\n\tskip_amount = move_toward(skip_amount, target, delta / duration)\n\t_apply()",
+            "startLine": 20,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "state_holds()",
+                "value": "reads, never writes"
+              },
+              {
+                "label": "FADE_IN / OUT",
+                "value": "0.25 s / 0.5 s"
+              },
+              {
+                "label": "_apply()",
+                "value": "set_shader_parameter"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.15,
+                "line": 22,
+                "label": "reads the state"
+              },
+              {
+                "frac": 0.45,
+                "line": 27,
+                "label": "steps by delta"
+              },
+              {
+                "frac": 0.75,
+                "line": 28,
+                "label": "to the material"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B05.mp4",
+            "at": "2026-11-01T22:42:55.671302+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B05.wav",
+      "actual_duration_s": 19.433333333333334,
+      "speech_duration_s": 19.115,
+      "render_duration_s": 19.433333333333334
+    },
+    {
+      "beat_id": "B06",
+      "act": "RESULT",
+      "role_note": "Result of B05: scripted movie-maker capture (real input events), Shriram's playtest screenshot, recorded test timings.",
+      "narration_text": "In motion: a scripted capture, with T held and released through real input events, recorded frame by frame by Godot's movie maker. Eight frames to full glow, fifteen to fade, at thirty frames a second. Then Shriram's own screenshot from playing it, T held, times eight. And the recorded test at thirty, sixty, and a hundred forty-four: fade in a quarter second, within one frame; fade out half a second.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · Godot movie maker · T held via Input.parse_input_event · real driver + shader",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "capture/glow_motion.avi",
+            "start_frame": 29,
+            "end_frame": 196,
+            "speed": 1.0,
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "label": "SCRIPTED CAPTURE · movie maker, 30 fps · real time · zoomed on the status bar"
+          },
+          {
+            "kind": "clip",
+            "src": "capture/glow_motion.avi",
+            "start_frame": 48,
+            "end_frame": 115,
+            "speed": 0.5,
+            "crop": [
+              0,
+              0,
+              480,
+              270
+            ],
+            "label": "SCRIPTED CAPTURE · the same frames at HALF SPEED"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/human/checkC_playtest_T_held_x8.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · F5 playtest, T held (>> x8)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/terminal_timings.png",
+            "w": 1.2,
+            "label": "HEADLESS · test_night_skip.gd at 30 / 60 / 144 fps · lines verbatim from logs/"
+          }
+        ],
+        "evidence_media": "media/B06.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "glow fades in and out (real time)"
+          },
+          {
+            "at": "0.3",
+            "event": "same at half speed"
+          },
+          {
+            "at": "0.6",
+            "event": "Shriram's playtest screenshot"
+          },
+          {
+            "at": "0.8",
+            "event": "test timings at 30/60/144"
+          }
+        ],
+        "note": "Motion capture, then Shriram's screenshot, then recorded test output."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B06.wav",
+      "actual_duration_s": 21.366666666666667,
+      "speech_duration_s": 20.864,
+      "render_duration_s": 21.366666666666667
+    },
+    {
+      "beat_id": "B07",
+      "act": "CODE",
+      "role_note": "Q3 why a texture is information: hint_experiment.gdshader. Paired result B08.",
+      "narration_text": "Why is a texture information? This experiment binds one file, three grey texels, sixty-four, one twenty-eight and one ninety-two, to two samplers. One says source colour: these bytes are s R G B colour, so decode them. The other says nothing: these bytes are data. A bool picks which one writes albedo.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.25",
+            "event": "line highlight: read as colour"
+          },
+          {
+            "at": "0.5",
+            "event": "line highlight: read as data"
+          },
+          {
+            "at": "0.8",
+            "event": "line highlight: the bool picks"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Same bytes, two meanings",
+            "project": "Vidiyum Mun",
+            "path": "godot/shaders/hint_experiment.gdshader",
+            "source": "Godot editor reconstruction · godot/shaders/hint_experiment.gdshader lines 5–15 · git bb2c156",
+            "code": "uniform sampler2D strip_as_colour : source_color, filter_nearest;\nuniform sampler2D strip_as_data : filter_nearest;\n\nuniform bool use_source_color = false;\n\nvoid fragment() {\n    if (use_source_color) {\n        ALBEDO = texture(strip_as_colour, UV).rgb;\n    } else {\n        ALBEDO = texture(strip_as_data, UV).rgb;\n    }",
+            "startLine": 5,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "texture",
+                "value": "greys 64 · 128 · 192"
+              },
+              {
+                "label": "strip_as_colour",
+                "value": "decode as sRGB"
+              },
+              {
+                "label": "strip_as_data",
+                "value": "raw numbers"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.25,
+                "line": 5,
+                "label": "read as colour"
+              },
+              {
+                "frac": 0.5,
+                "line": 6,
+                "label": "read as data"
+              },
+              {
+                "frac": 0.8,
+                "line": 11,
+                "label": "the bool picks"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": "2026-11-01T22:43:46.421206+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B07.wav",
+      "actual_duration_s": 17.2,
+      "speech_duration_s": 16.875,
+      "render_duration_s": 17.2
+    },
+    {
+      "beat_id": "B08",
+      "act": "RESULT",
+      "role_note": "Result of B07: hint quads captured, with Shriram's prediction (CHANGE-BRIEF §2.5) and the measurement (TEST-REPORT A5.6).",
+      "narration_text": "Shriram predicted both quads before the shader existed. With the hint: sixty-four, one twenty-eight, one ninety-two, because the decode and the screen's encode cancel out. Without it: one thirty-seven, one eighty-eight, two twenty-five, encoded for the screen without ever being decoded. Captured: exactly those six numbers. Same bytes, different meaning.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · hint_experiment.tscn, Linear tonemap, exposure 1.0",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a5/hint_quads.png",
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · top: source_color · bottom: no hint"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/table_hint.png",
+            "w": 1.3,
+            "label": "CHANGE-BRIEF.md §2.5 (predicted) · TEST-REPORT.md A5.6 (captured) · verbatim rows"
+          }
+        ],
+        "evidence_media": "media/B08.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the two quads"
+          },
+          {
+            "at": "0.5",
+            "event": "predicted vs measured"
+          }
+        ],
+        "note": "Engine capture, then the two recorded tables."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B08.wav",
+      "actual_duration_s": 18.7,
+      "speech_duration_s": 18.176,
+      "render_duration_s": 18.7
+    },
+    {
+      "beat_id": "B09",
+      "act": "CODE",
+      "role_note": "deck_marble.gdshader uniforms: colour vs data samplers, ranges, groups. Paired result B10.",
+      "narration_text": "The marble shader uses that difference. Albedo, the colour of the stone, gets source colour. Roughness and the normal map are data: no source colour, and the normal map says hint normal. Then five number uniforms, each with a range and a default, in two Inspector groups, surface and finish. Its UVs come from world X Z, so all four floors tile at the same scale.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.12",
+            "event": "line highlight: colour: source_color"
+          },
+          {
+            "at": "0.3",
+            "event": "line highlight: data, no hint"
+          },
+          {
+            "at": "0.4",
+            "event": "line highlight: data: hint_normal"
+          },
+          {
+            "at": "0.62",
+            "event": "line highlight: range + default"
+          },
+          {
+            "at": "0.78",
+            "event": "line highlight: Inspector groups"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Colour and data in one material",
+            "project": "Vidiyum Mun",
+            "path": "godot/shaders/deck_marble.gdshader",
+            "source": "Godot editor reconstruction · godot/shaders/deck_marble.gdshader lines 4–16 · git bb2c156",
+            "code": "group_uniforms surface;\nuniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;\nuniform vec4 albedo_tint : source_color = vec4(1.0);\nuniform float tile_size_m : hint_range(0.25, 4.0) = 1.0;\n\ngroup_uniforms finish;\nuniform sampler2D roughness_tex : filter_linear_mipmap, repeat_enable;\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;\nuniform float roughness_scale : hint_range(0.0, 2.0) = 1.0;\nuniform float specular_amount : hint_range(0.0, 1.0) = 0.5;\nuniform float normal_depth : hint_range(0.0, 2.0) = 1.0;\n\ngroup_uniforms;",
+            "startLine": 4,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "albedo_tex",
+                "value": "colour"
+              },
+              {
+                "label": "rough / normal",
+                "value": "data"
+              },
+              {
+                "label": "groups",
+                "value": "surface · finish"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.12,
+                "line": 5,
+                "label": "colour: source_color"
+              },
+              {
+                "frac": 0.3,
+                "line": 10,
+                "label": "data, no hint"
+              },
+              {
+                "frac": 0.4,
+                "line": 11,
+                "label": "data: hint_normal"
+              },
+              {
+                "frac": 0.62,
+                "line": 7,
+                "label": "range + default"
+              },
+              {
+                "frac": 0.78,
+                "line": 9,
+                "label": "Inspector groups"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": "2026-11-01T22:44:44.348039+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B09.wav",
+      "actual_duration_s": 19.766666666666666,
+      "speech_duration_s": 19.435,
+      "render_duration_s": 19.766666666666666
+    },
+    {
+      "beat_id": "B10",
+      "act": "RESULT",
+      "role_note": "Result of B09: marble at a held 10 PM (real renderer) and the interface sweep sheet.",
+      "narration_text": "Here it is under the string lights, at a held ten P M. Then the interface sweep, each slider at both ends of its range. Tile size takes the slabs from busy to broad. Specular grows the pool of light. Roughness changes it less. And normal depth barely shows, because this polished marble's normal map is very flat.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · slice.tscn, clock held at 10:00 PM",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a5/marble_10pm_glow_on.png",
+            "w": 1,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · deck at 10:00 PM, glow on"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/sweep_sheet.png",
+            "w": 1.6,
+            "label": "SCRIPTED CAPTURE · real renderer · values set from code, not played by hand · interface sweep: each marble_dry uniform at both range ends (glow off)"
+          }
+        ],
+        "evidence_media": "media/B10.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "marble at 10 PM"
+          },
+          {
+            "at": "0.4",
+            "event": "sweep sheet"
+          }
+        ],
+        "note": "Engine captures, labelled."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B10.wav",
+      "actual_duration_s": 17.6,
+      "speech_duration_s": 17.067,
+      "render_duration_s": 17.6
+    },
+    {
+      "beat_id": "B11",
+      "act": "CODE",
+      "role_note": "Q2 material vs shader: marble_wet.tres. Paired result B12 (Shriram's editor checks A and B).",
+      "narration_text": "A shader is the program. A material is one set of values for it. Here's the wet material: the same shader file, the same three textures, and just two values changed, roughness zero point three, and specular zero point eight. The dry material sets none of them, so the shader's defaults apply.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.25",
+            "event": "line highlight: one shader"
+          },
+          {
+            "at": "0.45",
+            "event": "line highlight: same textures"
+          },
+          {
+            "at": "0.7",
+            "event": "line highlight: wet: glossier"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A material is values for a shader",
+            "project": "Vidiyum Mun",
+            "path": "godot/materials/marble_wet.tres",
+            "source": "Godot editor reconstruction · godot/materials/marble_wet.tres lines 8–14 · git bb2c156",
+            "code": "[resource]\nshader = ExtResource(\"1_marble\")\nshader_parameter/albedo_tex = ExtResource(\"2_diff\")\nshader_parameter/roughness_tex = ExtResource(\"3_rough\")\nshader_parameter/normal_tex = ExtResource(\"4_nor\")\nshader_parameter/roughness_scale = 0.3\nshader_parameter/specular_amount = 0.8",
+            "startLine": 8,
+            "codeFontSize": 32,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "shader",
+                "value": "one, shared"
+              },
+              {
+                "label": "wet overrides",
+                "value": "0.3 · 0.8"
+              },
+              {
+                "label": "marble_dry",
+                "value": "shader defaults"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.25,
+                "line": 9,
+                "label": "one shader"
+              },
+              {
+                "frac": 0.45,
+                "line": 10,
+                "label": "same textures"
+              },
+              {
+                "frac": 0.7,
+                "line": 13,
+                "label": "wet: glossier"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-11-01T22:45:34.370812+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B11.wav",
+      "actual_duration_s": 16.7,
+      "speech_duration_s": 16.384,
+      "render_duration_s": 16.7
+    },
+    {
+      "beat_id": "B12",
+      "act": "RESULT",
+      "role_note": "Result of B11: Shriram's own editor screenshots (TEST-REPORT A5.8 checks A and B).",
+      "narration_text": "Shriram checked it in the editor. One edit to the shader, albedo times zero point three, and all four floors went dark, dry and wet together. One edit to the wet material, a red tint, and only the strip behind the pool changed. Both edits were undone, and git confirmed it.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SHRIRAM'S OWN SCREENSHOT · Godot editor, slice.tscn",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a5/human/checkA_shader_edit_x0.3_all_floors_dark.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · shader line 27 × 0.3: all four floors darken"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a5/human/checkB_wet_tint_red_only_back_strip.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · marble_wet albedo_tint red: only the back strip"
+          }
+        ],
+        "evidence_media": "media/B12.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "shader edit: all floors dark"
+          },
+          {
+            "at": "0.5",
+            "event": "material edit: only the back strip red"
+          }
+        ],
+        "note": "Shriram's screenshots, labelled."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B12.wav",
+      "actual_duration_s": 15.766666666666667,
+      "speech_duration_s": 15.253,
+      "render_duration_s": 15.766666666666667
+    },
+    {
+      "beat_id": "B13",
+      "act": "CODE",
+      "role_note": "Q4 the Godot shading language: standard_generated.gdshader (editor conversion). Paired result B14.",
+      "narration_text": "What is the Godot shading language? Shriram converted a standard material to code in the editor, and this is what Godot wrote. A shader type and a render mode up top. Then uniforms with hints, which build the Inspector: a colour for the albedo, and source colour on the albedo texture. It reads like G L S L, but Godot decides the stages and the built-ins.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: shader type"
+          },
+          {
+            "at": "0.32",
+            "event": "line highlight: render mode"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: Inspector albedo colour"
+          },
+          {
+            "at": "0.72",
+            "event": "line highlight: source_color"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "What Godot wrote for a StandardMaterial3D",
+            "project": "Vidiyum Mun",
+            "path": "godot/shaders/standard_generated.gdshader",
+            "source": "Godot editor reconstruction · godot/shaders/standard_generated.gdshader lines 3–7 · git bb2c156",
+            "code": "shader_type spatial;\nrender_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;\n\nuniform vec4 albedo : source_color;\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;",
+            "startLine": 3,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "lines 3–4",
+                "value": "type · render mode"
+              },
+              {
+                "label": "line 6",
+                "value": "albedo colour"
+              },
+              {
+                "label": "line 7",
+                "value": "albedo: source_color"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 3,
+                "label": "shader type"
+              },
+              {
+                "frac": 0.32,
+                "line": 4,
+                "label": "render mode"
+              },
+              {
+                "frac": 0.55,
+                "line": 6,
+                "label": "Inspector albedo colour"
+              },
+              {
+                "frac": 0.72,
+                "line": 7,
+                "label": "source_color"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-11-01T22:46:31.040037+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B13.wav",
+      "actual_duration_s": 19.466666666666665,
+      "speech_duration_s": 19.157,
+      "render_duration_s": 19.466666666666665
+    },
+    {
+      "beat_id": "B14",
+      "act": "RESULT",
+      "role_note": "Result of B13: the generated shader rendering Shriram's scratch sphere (scripted capture, camera/light added at runtime).",
+      "narration_text": "And that generated code, rendering Shriram's scratch sphere with the same three marble textures. The capture script added the camera and the light. The material is exactly what the editor generated.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · scenes/scratch_standard.tscn · camera + light added at runtime, nothing saved",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/standard_generated_sphere.png",
+            "w": 1,
+            "crop": [
+              253,
+              218,
+              1035,
+              658
+            ],
+            "label": "SCRIPTED CAPTURE · scenes/scratch_standard.tscn · camera + light added at runtime, nothing saved · cropped to the sphere"
+          }
+        ],
+        "evidence_media": "media/B14.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "the sphere"
+          }
+        ],
+        "note": "Engine capture, labelled."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B14.wav",
+      "actual_duration_s": 11.766666666666667,
+      "speech_duration_s": 11.264,
+      "render_duration_s": 11.766666666666667,
+      "hold_s": 0.0
+    },
+    {
+      "beat_id": "B15",
+      "act": "COMPARE",
+      "role_note": "Two generated lines beside their equivalents in Shriram's shader (verbatim), annotated.",
+      "narration_text": "Line seven of the generated shader, beside line five of the marble shader: both put source colour on the albedo sampler. Line nineteen beside line eleven: Godot's normal map uses hint roughness normal, Shriram's uses hint normal, and neither decodes it as colour. That's what Godot's language adds over plain G L S L: shader types with their built-ins, and hints that wire each uniform to the Inspector and to colour decoding.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "two line pairs"
+          },
+          {
+            "at": "0.68",
+            "event": "what Godot adds"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Generated vs deck_marble, line by line",
+            "section": "verbatim lines · git bb2c156",
+            "excerpt": "standard_generated.gdshader:7\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:5\nuniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;\nstandard_generated.gdshader:19\nuniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;\ndeck_marble.gdshader:11\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;",
+            "source": "",
+            "status": "LANGUAGE-NOTES.md Q6 · both read albedo as colour, the normal map as data",
+            "visualLabel": "What the hints say",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "gen :7 ≈ own :5",
+                "text": "source_color: decode sRGB, it's colour"
+              },
+              {
+                "label": "gen :19 ≈ own :11",
+                "text": "hint_roughness_normal / hint_normal: data"
+              },
+              {
+                "label": "Godot adds",
+                "text": "shader_type + built-ins (no hand-written entry points)"
+              },
+              {
+                "label": "Godot adds",
+                "text": "hints → Inspector sliders, groups, colour decoding"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.08,
+                "card": 0
+              },
+              {
+                "frac": 0.35,
+                "card": 1
+              },
+              {
+                "frac": 0.68,
+                "card": 2
+              },
+              {
+                "frac": 0.84,
+                "card": 3
+              }
+            ],
+            "cues": []
+          },
+          "rendered": {
+            "out": "media/B15.mp4",
+            "at": "2026-11-01T22:47:36.718268+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B15.wav",
+      "actual_duration_s": 22.633333333333333,
+      "speech_duration_s": 22.315,
+      "render_duration_s": 22.633333333333333
+    },
+    {
+      "beat_id": "B16",
+      "act": "CODE",
+      "role_note": "The uniform-list assertion (test_night_skip.gd). Paired result B17 (mutations).",
+      "narration_text": "Now the tests. Setting a uniform and reading it back proves nothing, because Godot accepts any name without an error. So this test asks the compiled shader for its uniform list. An empty list means it failed to parse. A missing name means somebody renamed it.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.3",
+            "event": "line highlight: the compiled list"
+          },
+          {
+            "at": "0.6",
+            "event": "line highlight: parse check"
+          },
+          {
+            "at": "0.85",
+            "event": "line highlight: name contract"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Ask the shader, not a round trip",
+            "project": "Vidiyum Mun",
+            "path": "godot/tests/test_night_skip.gd",
+            "source": "Godot editor reconstruction · godot/tests/test_night_skip.gd lines 83–90 · git bb2c156",
+            "code": "\tvar shader: Shader = load(SHADER_PATH)\n\tvar listed := {}\n\tfor u in shader.get_shader_uniform_list():\n\t\tlisted[u.name] = u.type\n\tcheck(\"uniform list has exactly 3 uniforms (empty means the shader failed to parse)\", listed.size() == 3, listed)\n\tfor uname in UNIFORMS:\n\t\tcheck(\"uniform list: %s is %s\" % [uname, type_string(UNIFORMS[uname][0])],\n\t\t\tlisted.get(uname, -1) == UNIFORMS[uname][0], type_string(listed.get(uname, TYPE_NIL)))",
+            "startLine": 83,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "uniform list",
+                "value": "what it declares"
+              },
+              {
+                "label": "size == 3",
+                "value": "empty = no parse"
+              },
+              {
+                "label": "name + type",
+                "value": "catches a rename"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.3,
+                "line": 85,
+                "label": "the compiled list"
+              },
+              {
+                "frac": 0.6,
+                "line": 87,
+                "label": "parse check"
+              },
+              {
+                "frac": 0.85,
+                "line": 90,
+                "label": "name contract"
+              }
+            ],
+            "cues": [],
+            "output": [
+              "Godot editor reconstruction · git bb2c156"
+            ]
+          },
+          "rendered": {
+            "out": "media/B16.mp4",
+            "at": "2026-11-01T22:48:19.832586+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B16.wav",
+      "actual_duration_s": 14.3,
+      "speech_duration_s": 13.995,
+      "render_duration_s": 14.3
+    },
+    {
+      "beat_id": "B17",
+      "act": "RESULT",
+      "role_note": "Result of B16: the three mutations' recorded output (logs/mutations/*.log), verbatim.",
+      "narration_text": "Shriram broke the shaders on purpose, three times. Delete one semicolon: a shader error, and four checks fail. Rename skip amount: two fail, while all twenty-two timing checks still passed, because the driver kept writing a name that no longer existed, silently. Remove source colour from the marble: the material test fails. Each run exited with one, and each file was restored.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · logs/mutations/*.log · recorded output, verbatim lines",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/terminal_mutations.png",
+            "w": 1
+          }
+        ],
+        "evidence_media": "media/B17.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "m1 semicolon"
+          },
+          {
+            "at": "0.35",
+            "event": "m2 rename"
+          },
+          {
+            "at": "0.7",
+            "event": "m3 source_color"
+          }
+        ],
+        "note": "Recorded output, not reconstructed."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine captures, Shriram's screenshots and recorded logs reframed at 85 % inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B17.wav",
+      "actual_duration_s": 20.666666666666668,
+      "speech_duration_s": 20.16,
+      "render_duration_s": 20.666666666666668
+    },
+    {
+      "beat_id": "B18",
+      "act": "LIMITS",
+      "role_note": "Agent mistakes caught; what no headless run can show; what remains uncertain.",
+      "narration_text": "What Claude and its agents got wrong, and how each was caught. The CLAUDE dot M D draft cited the wrong floor lines and missed two tests. The audit invented a colour temperature, misstated which floors share a material, and its hint check matched substrings, so source colour on a data sampler would have passed. An explicit assertion fixed that. The audit agent tried to reset project dot godot three times, and its scope denied it. And Claude first wrote its own curl formula, then replaced it with the course's. No headless run shows how anything looks. That's what the captures and Shriram's eyes are for.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "mistakes list"
+          },
+          {
+            "at": "0.8",
+            "event": "headless limits"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What the agents got wrong",
+            "section": "FRICTIONAL.md · MATERIALS.md review · git bb2c156",
+            "excerpt": "CLAUDE.md draft: wrong floor lines; 2 tests missing.\nAudit: invented '~2700 K'; wrong on which floors share a material.\nAudit test: substring hint check passed source_color on data → assertion added.\nAudit agent: git checkout ×2 + git restore ×1 on project.godot → denied.\nClaude: own curl formula → the course's.",
+            "source": "",
+            "status": "REVIEW · every fix came from a reading, a measurement or a mutation",
+            "visualLabel": "What headless can't show",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "The look",
+                "text": "dummy renderer draws nothing"
+              },
+              {
+                "label": "Glow reads as skipping?",
+                "text": "Shriram's playtest"
+              },
+              {
+                "label": "Marble reads as stone?",
+                "text": "captures + Shriram's eyes"
+              },
+              {
+                "label": "Seams line up?",
+                "text": "Shriram, walking the deck"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.8,
+                "card": 0
+              },
+              {
+                "frac": 0.86,
+                "card": 1
+              },
+              {
+                "frac": 0.91,
+                "card": 2
+              },
+              {
+                "frac": 0.95,
+                "card": 3
+              }
+            ],
+            "cues": []
+          },
+          "rendered": {
+            "out": "media/B18.mp4",
+            "at": "2026-11-01T22:49:53.747216+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B18.wav",
+      "actual_duration_s": 32.93333333333333,
+      "speech_duration_s": 32.613,
+      "render_duration_s": 32.93333333333333
+    },
+    {
+      "beat_id": "B19",
+      "act": "CREDITS",
+      "role_note": "Who did what (SOURCES.md 'Who did what in A5'); texture sources; game-source revision on screen.",
+      "narration_text": "Who did what. Shriram chose the state, the object, the colour, the fades and the marble, and made every prediction, with ChatGPT's help on the maths. Shriram typed in the night-skip shader; its colour line comes from the brief. Shriram wrote the marble and hint shaders with ChatGPT's help, learning shaders for the first time, from Claude's slot outline. Shriram ran the mutations and the human checks, and wrote the language notes in their own words; ChatGPT had paraphrased an earlier draft. Claude proposed options, organised the brief's prose, gave a slot outline for the Part 2 shaders, and wrote the driver, the tests, the wiring, the capture tools, the audit review, the docs and this film. Textures: Poly Haven's Marble zero one and Floor Tiles zero six, by Rob Tuytel, C C zero. Source revision, B B two C one five six.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "authorship + Shriram"
+          },
+          {
+            "at": "0.58",
+            "event": "Claude + audit agent"
+          },
+          {
+            "at": "0.8",
+            "event": "textures + revision"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Who did what",
+            "section": "SOURCES.md · game source git bb2c156",
+            "excerpt": "night_skip.gdshader: typed by Shriram (its colour line comes from the brief, worked out with ChatGPT's help).\ndeck_marble.gdshader and hint_experiment.gdshader: written by Shriram with ChatGPT's help (learning shaders for the first time), from Claude's slot outline.\nLANGUAGE-NOTES (Shriram's own words; an earlier draft was paraphrased by ChatGPT).",
+            "source": "",
+            "status": "CREDITS · source revision bb2c156",
+            "visualLabel": "Who did what in A5",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Shriram",
+                "text": "state, object, colour, fades, marble; predictions (maths with ChatGPT); mutations; human checks"
+              },
+              {
+                "label": "Claude · audit agent",
+                "text": "Claude: proposed options, organised the brief's prose, slot outline for the Part 2 shaders; driver, tests, wiring, capture tools, audit review, docs, this film. Audit agent: MATERIALS.md, test_materials.gd (reviewed)."
+              },
+              {
+                "label": "Textures · narration · revision",
+                "text": "Marble 01, Floor Tiles 06 (curl calibration): Rob Tuytel, Poly Haven, CC0 · Kokoro am_onyx (\"Liam\"), local · git bb2c156"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.05,
+                "card": 0
+              },
+              {
+                "frac": 0.58,
+                "card": 1
+              },
+              {
+                "frac": 0.8,
+                "card": 2
+              }
+            ],
+            "cues": []
+          },
+          "rendered": {
+            "out": "media/B19.mp4",
+            "at": "2026-11-01T22:53:47.257367+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B19.wav",
+      "actual_duration_s": 46.9,
+      "speech_duration_s": 46.58,
+      "render_duration_s": 46.9
+    },
+    {
+      "beat_id": "B20",
+      "act": "VERDICT",
+      "lead_silence_s": 0.4,
+      "role_note": "Verdict: checked / uncertain / limits / next.",
+      "narration_text": "Let's recap with Claude. Checked: both shaders parse, the glow follows its rules at three frame rates, every predicted pixel held, and three mutations each failed their test. Uncertain: the marble's normal map is too flat for a decisive curl verdict, zero point six three seven. And the glow's on-screen contrast, three point four six to one, depends on the scene behind the bar. Next: Shriram's idea, a battery that drains from orange to red as dawn approaches.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "verdict card"
+          },
+          {
+            "at": "0.25",
+            "event": "checked"
+          },
+          {
+            "at": "0.45",
+            "event": "uncertain"
+          },
+          {
+            "at": "0.65",
+            "event": "limits"
+          },
+          {
+            "at": "0.85",
+            "event": "next"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Vidiyum Mun A5 shaders, git bb2c156.",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Checked: parse, rules at 30/60/144 fps, every predicted pixel, 3 mutations fail.",
+              "Uncertain: Marble 01 too flat for a curl verdict (0.637).",
+              "Limits: on-screen contrast 3.46:1 depends on the scene behind the bar.",
+              "Next: the battery drains from orange to red as dawn nears."
+            ]
+          },
+          "rendered": {
+            "out": "media/B20.mp4",
+            "at": "2026-11-01T22:51:21.949892+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B20.wav",
+      "actual_duration_s": 24.533333333333335,
+      "speech_duration_s": 23.808,
+      "render_duration_s": 24.533333333333335
+    },
+    {
+      "beat_id": "B21",
+      "act": "HANDOFF",
+      "role_note": "Your Turn: prompt read aloud; one bounded change + prediction; signs off.",
+      "narration_text": "Your turn. Pick one state in your game, and one object that should show it. Write the colour line yourself, and predict one pixel at three values. Then ask Claude for the driver, and a test that checks the uniform list, not a round trip. Delete a semicolon, and watch it fail. Liam, in for Bear.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "prompt types"
+          },
+          {
+            "at": "0.75",
+            "event": "result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT GAMEDEV · A5 SHADERS",
+            "segment": "Your One Shader",
+            "command": "I wrote a canvas_item shader with one uniform for a state in my game. Write a driver that sets it from that state by delta, and a headless test that asserts the shader's uniform list, not a set-then-get round trip. I've predicted one pixel at 0, 0.5 and 1.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "You write the colour line.",
+              "Claude writes the driver + test.",
+              "Delete a semicolon: it must fail."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B21.mp4",
+            "at": "2026-11-01T20:54:08.971516+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B21.wav",
+      "actual_duration_s": 15.366666666666667,
+      "speech_duration_s": 15.04,
+      "render_duration_s": 15.366666666666667
+    },
+    {
+      "beat_id": "B22",
+      "act": "OUTRO",
+      "kind": "outro_voice",
+      "tail_hold_s": 1.0,
+      "role_note": "OUTRO-LOCK: ClaudeTitleOutro, exact title, @NikBearBrown, slug-seeded mascot; spoken, no jingle.",
+      "narration_text": "Vidiyum Mun, the Night Is Slipping. At Nik Bear Brown.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title card"
+          },
+          {
+            "at": "0.3",
+            "event": "@NikBearBrown + mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Vidiyum Mun, the Night Is Slipping",
+            "slug": "claude-liam-vidiyum-mun-a5-gamedev"
+          },
+          "rendered": {
+            "out": "media/B22.mp4",
+            "at": "2026-11-01T20:54:28.125320+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B22.wav",
+      "actual_duration_s": 4.933333333333334,
+      "speech_duration_s": 3.605,
+      "render_duration_s": 4.933333333333334
+    }
+  ]
+}

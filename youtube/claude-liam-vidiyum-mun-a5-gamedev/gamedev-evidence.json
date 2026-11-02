@@ -1,0 +1,995 @@
+{
+ "schema_version": 1,
+ "teaching_contract": "code-then-result-v1",
+ "game": {
+  "project": "godot/",
+  "build_id": "c0b3756e89254a287735a30859962ec14fd1c1ff1ee8a8b3da0f4411c04465bf",
+  "git": "bb2c156"
+ },
+ "files": [
+  {
+   "path": "MATERIALS.md",
+   "sha256": "0e2d5874d019d34d7a008bb608d43e17f84f72ef267dd472c5267eedea54126c",
+   "role": "material audit (audit agent, reviewed)",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/hint_strip_3x1.png",
+   "sha256": "deb9df2a9689dd2297f2d37a3fa2759104f49dbb2eb3e33c00e1fa6292060ca6",
+   "role": "the 3x1 grey strip and its lossless import",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "assets/textures/hint_strip_3x1.png.import",
+   "sha256": "f11e42ee280afaf2102d01eb7b1743488e367f24bf5e23022b1b235af963014a",
+   "role": "the 3x1 grey strip and its lossless import",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/ATTRIBUTION.md",
+   "sha256": "00bb770e460261de25ebce0d53cce9dc24f110001fcba9c16cbe875c824db7f5",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_diff_2k.png",
+   "sha256": "78f127ad643e6e3a7a72663d3985466b3d709c80472ba5efc670dba15a44d71b",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_diff_2k.png.import",
+   "sha256": "0511193c92042c3e3e112078b0a70d1bf5a5929fd5488b8ee0fffe90b67e9a73",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_nor_dx_2k.png",
+   "sha256": "2a599949260d9a5a5e69021d20733facb6fd0b9f246ed23d7dc87a8ffcdfb80c",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_nor_dx_2k.png.import",
+   "sha256": "2ab36c8f7be53dbda1173deed3c47cc957185e101dd03ba8c9f489aa3f64657e",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_nor_gl_2k.png",
+   "sha256": "85cd2342c9afb9a49360dfdfd7c9193a35061111e5e1a3a0d83890684f2e54b3",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_nor_gl_2k.png.import",
+   "sha256": "88639c960ca5b8bc57b4290863e55c76ffca856b79f9d8262decd2e08d589375",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_rough_2k.png",
+   "sha256": "c7a83a393227ba62104e51c0ea2cd38413538e7d71e1e543360a53946a8047d4",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "assets/textures/marble_01/marble_01_rough_2k.png.import",
+   "sha256": "3f57c0d0ee466f190614eb66220759a13a832eba941964eec00161cb7183b510",
+   "role": "Poly Haven Marble 01 (CC0), import settings, attribution",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "materials/hint_a_source_color.tres",
+   "sha256": "925f0a896dbd833045ab75b7a9e9d19207d2304f9c8fb6508b8d64df6c84703d",
+   "role": "quad materials, one per bool value",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "materials/hint_b_no_hint.tres",
+   "sha256": "6e51b46d29c99c9d2040c62b9c0a78d7189f49b65740d85f6712857083450601",
+   "role": "quad materials, one per bool value",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "materials/marble_dry.tres",
+   "sha256": "3d0e8f59172a93dfd909630e830b0a7bb9bb4d6bb3db315fc25cc1a9bca40f98",
+   "role": "dry / wet ShaderMaterial",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "materials/marble_wet.tres",
+   "sha256": "8b29bd112b11ce7d626ade1e68878ca0f3addbb4a6588834d5f79c805448a70f",
+   "role": "dry / wet ShaderMaterial",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "materials/night_skip.tres",
+   "sha256": "4f0eacace3f78ec0b97e57f25a78d56aea4613dfef9acf3d3d43c127a5cd6369",
+   "role": "ShaderMaterial on HUD/StatusBar",
+   "component_ids": [
+    "night-skip"
+   ]
+  },
+  {
+   "path": "scenes/hint_experiment.tscn",
+   "sha256": "71af4d7f6b8a02b282080b86de922176b5c8133fc3c47d5fb76b41592ede1d5d",
+   "role": "two quads, Linear tonemap",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "scenes/scratch_standard.tscn",
+   "sha256": "1d01e29e6d6f2773d5a38e1acb5a2ed5747a966c20d8f0e5207d8621af50b799",
+   "role": "scratch sphere using the generated shader",
+   "component_ids": [
+    "language"
+   ]
+  },
+  {
+   "path": "scenes/slice.tscn",
+   "sha256": "fe99a3719d0350adaab685c50b4efd543a57ac3cd9aa5cbe607881fd49b3b2e4",
+   "role": "the night slice: floor material_override and the StatusBar node",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "shaders/deck_marble.gdshader",
+   "sha256": "fa176a34ea5dbbc28efc2ae4eb2483f14f2fd95ebd4dd49d3e88f7b90b5eb442",
+   "role": "spatial marble shader (Shriram, with ChatGPT help)",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "shaders/hint_experiment.gdshader",
+   "sha256": "99c63f5f821e2cf9fea3d0a32f2ffc648bb61a9ec34056386c6eb987d6a8d8ab",
+   "role": "two samplers, one file (Shriram, with ChatGPT help)",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "shaders/night_skip.gdshader",
+   "sha256": "8e709acd1ca5cfb2837e4de42d1587aff99ff38fabc2157f0356b3d728d9160a",
+   "role": "hand-written canvas_item shader (Shriram)",
+   "component_ids": [
+    "night-skip"
+   ]
+  },
+  {
+   "path": "shaders/standard_generated.gdshader",
+   "sha256": "ca1c191c44fb614ae64a258fce3efbc13b77fdc82f480e98ac4582e30805650d",
+   "role": "editor-generated from a StandardMaterial3D",
+   "component_ids": [
+    "language"
+   ]
+  },
+  {
+   "path": "tests/data/curl/.gdignore",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "role": "Floor Tiles 06 normal maps (CC0), curl calibration only",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "tests/data/curl/floor_tiles_06_nor_dx_2k.png",
+   "sha256": "fd275bf6a99697e939d22c135a481a6a553320836b861cffe3b6ea28d1f6a44a",
+   "role": "Floor Tiles 06 normal maps (CC0), curl calibration only",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "tests/data/curl/floor_tiles_06_nor_gl_2k.png",
+   "sha256": "41635cd3ea9dd9b5b8a36d0221de933ae51aeb4e7ee570d388427c99d199774d",
+   "role": "Floor Tiles 06 normal maps (CC0), curl calibration only",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "tests/normal_map_check.gd",
+   "sha256": "e1cea74f6a291c9f452857707e88d0272135ae38cdf02a11358d5e23bb0b8485",
+   "role": "normal-map convention check (the course's curl_ratio)",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "tests/test_materials.gd",
+   "sha256": "1c90f10d7d4dc49b3cebc95045eb78d78bcbdcf6a865cdde5b1c49f1a157123d",
+   "role": "material audit test (audit agent, reviewed)",
+   "component_ids": [
+    "marble"
+   ]
+  },
+  {
+   "path": "tests/test_night_skip.gd",
+   "sha256": "89bcc27207f4f4c2c440ce663188ea4ba2764f2ecf75afee0df39495d8558699",
+   "role": "headless rule test at 30/60/144 fps, real key input",
+   "component_ids": [
+    "night-skip"
+   ]
+  },
+  {
+   "path": "tools/capture_a5.gd",
+   "sha256": "f58d7dab2cedefc4f1c0a26f1c8b84e456731ce46ff3160f0fe8761bc80576ce",
+   "role": "scripted real-renderer captures",
+   "component_ids": [
+    "captures"
+   ]
+  },
+  {
+   "path": "tools/write_hint_strip.gd",
+   "sha256": "3032b88fc5ff8b9bf43ee30bfb99fecb0da1c47ceb2969305b44a47af2d9771c",
+   "role": "writes the strip",
+   "component_ids": [
+    "hint-experiment"
+   ]
+  },
+  {
+   "path": "ui/hud.gd",
+   "sha256": "595a0bc7302ed928a5b2ce0ed144c5302cdcfcb60273a1ead79fe54bf85dfcea",
+   "role": "the rest of the HUD after the status bar moved out",
+   "component_ids": [
+    "night-skip"
+   ]
+  },
+  {
+   "path": "ui/night_skip_driver.gd",
+   "sha256": "09c7b906a12ca1ba6b23229f9d465229d5e8de36d1bdaa98f70698a6710b3eab",
+   "role": "driver: state -> skip_amount by delta",
+   "component_ids": [
+    "night-skip"
+   ]
+  },
+  {
+   "path": "ui/status_bar.gd",
+   "sha256": "b2eade4f929217135a7bd1927f4ff3bcdfe3ebb317ce27b984cd4561e60d64fd",
+   "role": "the status bar as its own Control (A5 split)",
+   "component_ids": [
+    "night-skip"
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": "night-skip",
+   "explanation": "The 'night is slipping' glow: night_skip.gdshader (canvas_item, hand-written by Shriram; colour line at line 8) on the status bar's own node (status_bar.gd, split out of hud.gd so only the bar glows), driven every frame by night_skip_driver.gd from LoopState.fast_forward during Phase.NIGHT with move_toward by delta (0.25 s in, 0.5 s out), checked by test_night_skip.gd at 30/60/144 fps through real key input, including the uniform-list assertion that catches a parse failure or a rename.",
+   "beat_ids": [
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B16",
+    "B17"
+   ],
+   "files": [
+    "materials/night_skip.tres",
+    "shaders/night_skip.gdshader",
+    "tests/test_night_skip.gd",
+    "ui/hud.gd",
+    "ui/night_skip_driver.gd",
+    "ui/status_bar.gd"
+   ]
+  },
+  {
+   "id": "marble",
+   "explanation": "The marble deck: deck_marble.gdshader (spatial; albedo sampled as colour with source_color, roughness and an OpenGL normal map as data; world-XZ UVs; five ranged uniforms in two groups), two ShaderMaterials (marble_dry.tres with the defaults on three floors; marble_wet.tres, roughness 0.3 / specular 0.8, on FloorBack), wired in slice.tscn; Poly Haven Marble 01 textures with explicit import settings; the normal-map curl check calibrated on Floor Tiles 06; the material audit and its test.",
+   "beat_ids": [
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "B17",
+    "B18"
+   ],
+   "files": [
+    "MATERIALS.md",
+    "assets/textures/marble_01/ATTRIBUTION.md",
+    "assets/textures/marble_01/marble_01_diff_2k.png",
+    "assets/textures/marble_01/marble_01_diff_2k.png.import",
+    "assets/textures/marble_01/marble_01_nor_dx_2k.png",
+    "assets/textures/marble_01/marble_01_nor_dx_2k.png.import",
+    "assets/textures/marble_01/marble_01_nor_gl_2k.png",
+    "assets/textures/marble_01/marble_01_nor_gl_2k.png.import",
+    "assets/textures/marble_01/marble_01_rough_2k.png",
+    "assets/textures/marble_01/marble_01_rough_2k.png.import",
+    "materials/marble_dry.tres",
+    "materials/marble_wet.tres",
+    "scenes/slice.tscn",
+    "shaders/deck_marble.gdshader",
+    "tests/data/curl/.gdignore",
+    "tests/data/curl/floor_tiles_06_nor_dx_2k.png",
+    "tests/data/curl/floor_tiles_06_nor_gl_2k.png",
+    "tests/normal_map_check.gd",
+    "tests/test_materials.gd"
+   ]
+  },
+  {
+   "id": "hint-experiment",
+   "explanation": "The hint experiment: write_hint_strip.gd writes a 3x1 PNG (greys 64, 128, 192) imported lossless without mipmaps; hint_experiment.gdshader binds it to a source_color sampler and a plain one; two materials pick one each on two quads in hint_experiment.tscn (Linear tonemap, exposure 1.0).",
+   "beat_ids": [
+    "B07",
+    "B08"
+   ],
+   "files": [
+    "assets/textures/hint_strip_3x1.png",
+    "assets/textures/hint_strip_3x1.png.import",
+    "materials/hint_a_source_color.tres",
+    "materials/hint_b_no_hint.tres",
+    "scenes/hint_experiment.tscn",
+    "shaders/hint_experiment.gdshader",
+    "tools/write_hint_strip.gd"
+   ]
+  },
+  {
+   "id": "language",
+   "explanation": "Step 4: a StandardMaterial3D with albedo, roughness and normal map, converted in the editor to standard_generated.gdshader (unused by the game) on the sphere in scratch_standard.tscn; compared line by line with deck_marble.gdshader.",
+   "beat_ids": [
+    "B13",
+    "B14",
+    "B15"
+   ],
+   "files": [
+    "scenes/scratch_standard.tscn",
+    "shaders/standard_generated.gdshader"
+   ]
+  },
+  {
+   "id": "captures",
+   "explanation": "tools/capture_a5.gd: scripted real-renderer captures (glow at fixed values, hint quads, marble at a held 10 PM, the uniform sweep) that print measured pixels next to the predictions.",
+   "beat_ids": [
+    "B04",
+    "B08",
+    "B10"
+   ],
+   "files": [
+    "tools/capture_a5.gd"
+   ]
+  }
+ ],
+ "excerpts": [
+  {
+   "beat_id": "B03",
+   "path": "shaders/night_skip.gdshader",
+   "start_line": 1,
+   "end_line": 9,
+   "text": "shader_type canvas_item;\n\nuniform float skip_amount : hint_range(0.0, 1.0) = 0.0;\nuniform vec4 skip_tint : source_color = vec4(1.0, 0.6, 0.2, 1.0);\nuniform float tint_strength : hint_range(0.0, 1.0) = 0.5;\n\nvoid fragment() {\n    COLOR.rgb = mix(COLOR.rgb, skip_tint.rgb, skip_amount * tint_strength);\n}"
+  },
+  {
+   "beat_id": "B05",
+   "path": "ui/night_skip_driver.gd",
+   "start_line": 20,
+   "end_line": 28,
+   "text": "## The state the glow shows: the player is skipping the night (the HUD's own \">> x8\" condition).\nstatic func state_holds() -> bool:\n\treturn LoopState.fast_forward and LoopState.phase == LoopState.Phase.NIGHT\n\nfunc _process(delta: float) -> void:\n\tvar target := 1.0 if state_holds() else 0.0\n\tvar duration := FADE_IN if target > skip_amount else FADE_OUT\n\tskip_amount = move_toward(skip_amount, target, delta / duration)\n\t_apply()"
+  },
+  {
+   "beat_id": "B07",
+   "path": "shaders/hint_experiment.gdshader",
+   "start_line": 5,
+   "end_line": 15,
+   "text": "uniform sampler2D strip_as_colour : source_color, filter_nearest;\nuniform sampler2D strip_as_data : filter_nearest;\n\nuniform bool use_source_color = false;\n\nvoid fragment() {\n    if (use_source_color) {\n        ALBEDO = texture(strip_as_colour, UV).rgb;\n    } else {\n        ALBEDO = texture(strip_as_data, UV).rgb;\n    }"
+  },
+  {
+   "beat_id": "B09",
+   "path": "shaders/deck_marble.gdshader",
+   "start_line": 4,
+   "end_line": 16,
+   "text": "group_uniforms surface;\nuniform sampler2D albedo_tex : source_color, filter_linear_mipmap, repeat_enable;\nuniform vec4 albedo_tint : source_color = vec4(1.0);\nuniform float tile_size_m : hint_range(0.25, 4.0) = 1.0;\n\ngroup_uniforms finish;\nuniform sampler2D roughness_tex : filter_linear_mipmap, repeat_enable;\nuniform sampler2D normal_tex : hint_normal, filter_linear_mipmap, repeat_enable;\nuniform float roughness_scale : hint_range(0.0, 2.0) = 1.0;\nuniform float specular_amount : hint_range(0.0, 1.0) = 0.5;\nuniform float normal_depth : hint_range(0.0, 2.0) = 1.0;\n\ngroup_uniforms;"
+  },
+  {
+   "beat_id": "B11",
+   "path": "materials/marble_wet.tres",
+   "start_line": 8,
+   "end_line": 14,
+   "text": "[resource]\nshader = ExtResource(\"1_marble\")\nshader_parameter/albedo_tex = ExtResource(\"2_diff\")\nshader_parameter/roughness_tex = ExtResource(\"3_rough\")\nshader_parameter/normal_tex = ExtResource(\"4_nor\")\nshader_parameter/roughness_scale = 0.3\nshader_parameter/specular_amount = 0.8"
+  },
+  {
+   "beat_id": "B13",
+   "path": "shaders/standard_generated.gdshader",
+   "start_line": 3,
+   "end_line": 7,
+   "text": "shader_type spatial;\nrender_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;\n\nuniform vec4 albedo : source_color;\nuniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;"
+  },
+  {
+   "beat_id": "B16",
+   "path": "tests/test_night_skip.gd",
+   "start_line": 83,
+   "end_line": 90,
+   "text": "\tvar shader: Shader = load(SHADER_PATH)\n\tvar listed := {}\n\tfor u in shader.get_shader_uniform_list():\n\t\tlisted[u.name] = u.type\n\tcheck(\"uniform list has exactly 3 uniforms (empty means the shader failed to parse)\", listed.size() == 3, listed)\n\tfor uname in UNIFORMS:\n\t\tcheck(\"uniform list: %s is %s\" % [uname, type_string(UNIFORMS[uname][0])],\n\t\t\tlisted.get(uname, -1) == UNIFORMS[uname][0], type_string(listed.get(uname, TYPE_NIL)))"
+  }
+ ],
+ "exclusions": [
+  {
+   "path": ".DS_Store",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/beach_backdrop.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/fire_glow.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/fire_glow.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/marble.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/marble.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/suv.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/suv.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/villa.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/env/villa.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/idle.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/idle.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/keys.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/keys.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/notes.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/notes.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/overhear.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/overhear.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/phone.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/phone.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/relief.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/relief.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/startled.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/startled.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/talk.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/talk.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_1.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_1.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_2.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_2.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_3.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_3.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_4.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/walk_4.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/whiteout.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/hari/whiteout.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_1.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_1.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_2.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_2.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_3.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_3.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_4.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/intro/intro_4.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/advay.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/advay.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/krishna.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/krishna.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/manikandan.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/manikandan.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/npc/manikandan_phone.png.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/art/ui/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/music/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/music/gaana_loop.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/music/party_loop.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/.gitkeep",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/clue_saved.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/dawn_crash.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/keys_exchanged.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/phone_buzz.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/audio/sfx/safe_dawn.ogg.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/fence_segment.glb",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/fence_segment.glb.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/rock_shrine.glb",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/rock_shrine.glb.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/suv.glb",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "assets/models/suv.glb.import",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "autoload/controls.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "autoload/loop_state.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "autoload/sound_bank.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "autoload/story.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "data/dialogue.json",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "default_bus_layout.tres",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "logic/hari_spec.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "logic/input_setup.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "logic/story_data.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "project.godot",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/a3_showcase.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/a3_showcase.tscn",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/art3d.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/billboard_art.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/blob_shadow.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/camera_rig.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/deck_dressing.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/environment_fill.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/fallback_prop.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/hari.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/intro.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/intro.tscn",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/slice.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "scenes/textured_surface.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/a3_measure.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/capture_a3.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/check_a3_assets.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/check_a3_selftest.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/data/a3_brief.json",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/harness.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/test_assets_present.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/test_audio_mix.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/test_loop_logic.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/test_slice_smoke.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tests/test_sound_triggers.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tools/capture_intro.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "tools/capture_shots.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "ui/dialogue_panel.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "ui/notes_toast.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "ui/screen_cards.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  },
+  {
+   "path": "ui/whiteout.gd",
+   "reason": "A2/A3 file (runtime, art, audio, UI, models or earlier tests), unchanged in A5 except where noted in the components; explained in the A2 and A3 films."
+  }
+ ],
+ "code_result_pairs": [
+  {
+   "code_beat": "B03",
+   "result_beat": "B04",
+   "observation": "Real-renderer captures at skip_amount 0, 0.5, 1 and 2: the bar moves toward orange; P1/P2 match the predicted on-screen blend within 1 per channel; 2.0 is not clamped.",
+   "media": {
+    "path": "media/B04.mp4",
+    "sha256": "7a8f6ea5243b1068c6bb4e531324e2c1aae34a1aaa7576c0b85ab3f9850367fa"
+   }
+  },
+  {
+   "code_beat": "B05",
+   "result_beat": "B06",
+   "observation": "Movie-maker capture with T held via input events: skip_amount rises over 8 frames and falls over 15 at 30 fps; Shriram's playtest screenshot; recorded fade timings at 30/60/144 fps.",
+   "media": {
+    "path": "media/B06.mp4",
+    "sha256": "7f028279b37ada0ef5449f6cb5943941b32a53ef54d30c0c23f38f34c2dbc6f9"
+   }
+  },
+  {
+   "code_beat": "B07",
+   "result_beat": "B08",
+   "observation": "Captured hint quads: 64/128/192 with source_color, 137/188/225 without, equal to the predictions in CHANGE-BRIEF.md 2.5.",
+   "media": {
+    "path": "media/B08.mp4",
+    "sha256": "7ea78c3dce78f012a1fdcb70d2b82eb4ac6be83360ca747b64ca5620bd044459"
+   }
+  },
+  {
+   "code_beat": "B09",
+   "result_beat": "B10",
+   "observation": "The marble under the slice lights at a held 10 PM, and each float uniform swept to both ends of its hint_range.",
+   "media": {
+    "path": "media/B10.mp4",
+    "sha256": "8d1e7065c2fb992b5f1224439b325911f48a34b04c316e4f108069413e090f7b"
+   }
+  },
+  {
+   "code_beat": "B11",
+   "result_beat": "B12",
+   "observation": "Shriram's editor screenshots: a shader edit darkens all four floors; a wet-material tint changes only FloorBack.",
+   "media": {
+    "path": "media/B12.mp4",
+    "sha256": "f97a2dc33b845754c6d4d494b913ebb7051d3c029f1a39ded75fe86b697adce2"
+   }
+  },
+  {
+   "code_beat": "B13",
+   "result_beat": "B14",
+   "observation": "The generated shader rendering the scratch sphere with the three marble textures (camera and light added by the capture script).",
+   "media": {
+    "path": "media/B14.mp4",
+    "sha256": "eef06afd1b19a762295a796cad8ee3a59065cdce70ad385265ea1d25530aee09"
+   }
+  },
+  {
+   "code_beat": "B16",
+   "result_beat": "B17",
+   "observation": "Recorded logs: deleting a semicolon fails 4 checks (empty uniform list), renaming skip_amount fails 2 while the rule checks pass, removing source_color fails the material test.",
+   "media": {
+    "path": "media/B17.mp4",
+    "sha256": "cdf082d07cd1cd8fd793b930eb3743cf78fae4fd038c1b52d4f761af03844f16"
+   }
+  }
+ ]
+}

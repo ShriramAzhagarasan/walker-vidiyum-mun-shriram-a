@@ -1,0 +1,12 @@
+# Large/regenerable media stays out of git (root .gitignore already drops *.mp4 / *.mp3)
+*.avi
+*.mp4
+*.mov
+*.wav
+mp3/
+media/
+exports/
+capture/
+_qc/labels/
+_qc/frames/
+build-state.json

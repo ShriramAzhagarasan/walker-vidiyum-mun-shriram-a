@@ -1,0 +1,29 @@
+[remotion] B19 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B00 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B01 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B02 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B03 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B05 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B07 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B09 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B11 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B13 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B15 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B16 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B18 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[remotion] B20 rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+done
+[remotion] B19 (re-render, layout fix) rc=0 [remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+
+== FINAL (2026-11-01 ~18:55) ==
+GATE T override applied (see _qc/GATE-T-OVERRIDE.md); first compile refused by Gate V: 2 MAJOR underfill on B14 (sphere still).
+Fix: labelled crop of standard_generated_sphere.png to the sphere ([253,218,1035,658], label "... · cropped to the sphere");
+make_media --only B14; build_evidence + ./art godot-gamedev --check PASS; compile.py -> Gate V clean (46 frames, 0 BLOCKER, 0 MAJOR).
+Export: exports/landscape/claude-liam-vidiyum-mun-a5-gamedev.mp4 · 449.8 s · 3840x2160 · 30 fps · h264 + aac 48 kHz stereo (449.8 s)
+  47,348,081 bytes · sha256 613d4ed598fb18efb1074dde4ffe593358e489a47da1f861b2feb47f4f377af8
+Audio: whole file mean -27.3 dB, max -3.1 dB; no silence > 2.5 s at -45 dB; every beat mean -27.1..-28.0 dB (_qc/final-audio-per-beat.txt).
+Frames (_qc/frames/final/): one mid-beat frame per beat B00-B22 + B19_start + B19_end + last, all viewed.
+  B19 start/end: decided authorship + LANGUAGE-NOTES wording verbatim, bb2c156 on screen 3x, nothing clipped.
+  bb2c156 visible on B02 B03 B05 B07 B09 B11 B13 B15 B16 B18 B19 B20. B14 sphere crop fills the frame.
+  Minor, pre-existing, not fixed: B15 left panel's boilerplate footer ("Exact excerpt; interpretation at right.") is cut at the
+  frame bottom (verbatim lines all visible); B09 code view shows line 13 half-clipped at the viewport edge (mid-scroll).
