@@ -60,16 +60,16 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] MothsWest pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372005145836013>
 [PASS] MothsWest color_ramp has 4 stops   4
 [PASS] MothsWest color_ramp[0] offset = 0.00   0.0
-[PASS] MothsWest color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsWest color_ramp[0] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsWest color_ramp[0] alpha = 0.00   0.0
 [PASS] MothsWest color_ramp[1] offset = 0.15   0.15000000596046
-[PASS] MothsWest color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsWest color_ramp[1] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.8)
 [PASS] MothsWest color_ramp[1] alpha = 0.80   0.80000001192093
 [PASS] MothsWest color_ramp[2] offset = 0.70   0.69999998807907
-[PASS] MothsWest color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsWest color_ramp[2] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.7)
 [PASS] MothsWest color_ramp[2] alpha = 0.70   0.69999998807907
 [PASS] MothsWest color_ramp[3] offset = 1.00   1.0
-[PASS] MothsWest color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsWest color_ramp[3] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsWest color_ramp[3] alpha = 0.00   0.0
 [PASS] MothsWest draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005229722098>
 [PASS] MothsWest quad size = (0.21, 0.135) m (brief revision 3, tuning B r1; was 0.07 x 0.045)   (0.21, 0.135)
@@ -135,16 +135,16 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] MothsMiddle pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372005145836013>
 [PASS] MothsMiddle color_ramp has 4 stops   4
 [PASS] MothsMiddle color_ramp[0] offset = 0.00   0.0
-[PASS] MothsMiddle color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsMiddle color_ramp[0] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsMiddle color_ramp[0] alpha = 0.00   0.0
 [PASS] MothsMiddle color_ramp[1] offset = 0.15   0.15000000596046
-[PASS] MothsMiddle color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsMiddle color_ramp[1] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.8)
 [PASS] MothsMiddle color_ramp[1] alpha = 0.80   0.80000001192093
 [PASS] MothsMiddle color_ramp[2] offset = 0.70   0.69999998807907
-[PASS] MothsMiddle color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsMiddle color_ramp[2] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.7)
 [PASS] MothsMiddle color_ramp[2] alpha = 0.70   0.69999998807907
 [PASS] MothsMiddle color_ramp[3] offset = 1.00   1.0
-[PASS] MothsMiddle color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsMiddle color_ramp[3] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsMiddle color_ramp[3] alpha = 0.00   0.0
 [PASS] MothsMiddle draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005229722098>
 [PASS] MothsMiddle quad size = (0.21, 0.135) m (brief revision 3, tuning B r1; was 0.07 x 0.045)   (0.21, 0.135)
@@ -210,16 +210,16 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] MothsEast pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372005145836013>
 [PASS] MothsEast color_ramp has 4 stops   4
 [PASS] MothsEast color_ramp[0] offset = 0.00   0.0
-[PASS] MothsEast color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsEast color_ramp[0] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsEast color_ramp[0] alpha = 0.00   0.0
 [PASS] MothsEast color_ramp[1] offset = 0.15   0.15000000596046
-[PASS] MothsEast color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsEast color_ramp[1] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.8)
 [PASS] MothsEast color_ramp[1] alpha = 0.80   0.80000001192093
 [PASS] MothsEast color_ramp[2] offset = 0.70   0.69999998807907
-[PASS] MothsEast color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsEast color_ramp[2] rgb within 1/255 of #4A3B2E   (0.29, 0.231, 0.18, 0.7)
 [PASS] MothsEast color_ramp[2] alpha = 0.70   0.69999998807907
 [PASS] MothsEast color_ramp[3] offset = 1.00   1.0
-[PASS] MothsEast color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsEast color_ramp[3] rgb within 1/255 of #3B2F25   (0.231, 0.184, 0.145, 0.0)
 [PASS] MothsEast color_ramp[3] alpha = 0.00   0.0
 [PASS] MothsEast draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005229722098>
 [PASS] MothsEast quad size = (0.21, 0.135) m (brief revision 3, tuning B r1; was 0.07 x 0.045)   (0.21, 0.135)

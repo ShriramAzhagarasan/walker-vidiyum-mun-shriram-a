@@ -201,10 +201,11 @@ func _check_color_ramp(pm: ParticleProcessMaterial, name: String) -> void:
 		return
 	# §B.3: stops at 0%/15%/70%/100%; colours and alpha from the brief.
 	var want := [
-		[0.00, Color8(0xD8, 0xCA, 0xB0), 0.0],
-		[0.15, Color8(0xE9, 0xDF, 0xC9), 0.8],
-		[0.70, Color8(0xEF, 0xE6, 0xD2), 0.7],
-		[1.00, Color8(0xD8, 0xCA, 0xB0), 0.0],
+		# Colours from brief revision 4 (tuning B r2, dark umber); alphas from §B.3.
+		[0.00, Color8(0x3B, 0x2F, 0x25), 0.0],
+		[0.15, Color8(0x4A, 0x3B, 0x2E), 0.8],
+		[0.70, Color8(0x4A, 0x3B, 0x2E), 0.7],
+		[1.00, Color8(0x3B, 0x2F, 0x25), 0.0],
 	]
 	check("%s color_ramp has %d stops" % [name, want.size()],
 		g.get_point_count() == want.size(), g.get_point_count())
