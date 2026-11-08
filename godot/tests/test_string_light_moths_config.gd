@@ -227,8 +227,8 @@ func _check_draw_pass(cp: GPUParticles3D, name: String) -> void:
 	check("%s draw_pass_1 is QuadMesh" % name, mesh != null, cp.draw_pass_1)
 	if mesh == null:
 		return
-	check("%s quad size = (0.07, 0.045) m" % name,
-		mesh.size.is_equal_approx(Vector2(0.07, 0.045)), mesh.size)
+	check("%s quad size = (0.21, 0.135) m (brief revision 3, tuning B r1; was 0.07 x 0.045)" % name,
+		mesh.size.is_equal_approx(Vector2(0.21, 0.135)), mesh.size)
 	var mat := mesh.material as StandardMaterial3D
 	check("%s mesh.material is StandardMaterial3D" % name, mat != null, mesh.material)
 	if mat == null:
