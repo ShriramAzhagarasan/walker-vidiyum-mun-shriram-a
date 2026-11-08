@@ -68,6 +68,10 @@ func run() -> bool:
 	var walk_start_x := hari.global_position.x
 	var fires: Array = []
 	var seen := walk_start
+	# Exact count (Claude's review): every scuff that enters the container, against the contacts in Hari's walked distance.
+	var entered := [0]
+	trigger.child_entered_tree.connect(func(_n: Node) -> void: entered[0] += 1)
+	var travel_start := float(hari.get("_travel"))
 	key(KEY_D, true)
 	for i in 180:
 		await steps(1)
@@ -80,6 +84,10 @@ func run() -> bool:
 			seen += 1
 		if fires.size() >= 3:
 			break
+	var contacts := _contacts(float(hari.get("_travel"))) - _contacts(travel_start)
+	check("exactly one scuff per footfall (rule 8, never otherwise)",
+		entered[0] == contacts and contacts >= 3,
+		"%d scuffs for %d contacts in %.2f m walked" % [entered[0], contacts, float(hari.get("_travel")) - travel_start])
 	key(KEY_D, false)
 	await steps(2)
 	check("walking fired >= 3 scuffs (rule 8: once per footfall)",
@@ -127,3 +135,7 @@ func run() -> bool:
 	check("slice (and FootstepScuffs with it) freed cleanly",
 		not is_instance_valid(trigger), trigger)
 	return true
+
+## Footfalls up to `travel` metres: contact at _travel / STRIDE_M = 2k + 0.5 (hari.gd:74-75).
+func _contacts(travel: float) -> int:
+	return int(floor((travel - 0.21) / 0.84))
