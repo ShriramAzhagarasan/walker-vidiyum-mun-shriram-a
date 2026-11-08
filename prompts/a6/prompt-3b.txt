@@ -1,0 +1,4 @@
+Approved: Step 1 (trigger code) and Step 2 (state test), with two corrections:
+1. Run the new state test at 60 (./scripts/run-test.sh test_footstep_scuff_trigger.gd 60), not realtime. Your trigger's timer and the particles run on game time; the realtime mode is only for tests that wait on audio.
+2. Close Amma's opening call with a real E key press through the harness (as test_night_skip.gd does), not by calling a Story function directly.
+Implement both steps, show the diff, run the existing tests as CLAUDE.md says plus the new one at 60, and show the real output. Do not commit.

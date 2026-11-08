@@ -17,6 +17,7 @@
 [ext_resource type="Material" path="res://materials/night_skip.tres" id="15_skipmat"]
 [ext_resource type="Material" path="res://materials/marble_dry.tres" id="16_marbledry"]
 [ext_resource type="Material" path="res://materials/marble_wet.tres" id="17_marblewet"]
+[ext_resource type="Script" path="res://effects/footstep_scuff_trigger.gd" id="18_scuff"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 sky_top_color = Color(0.11, 0.1, 0.31, 1)
@@ -254,6 +255,10 @@ pixel_size = 0.004
 font_size = 40
 outline_size = 8
 text = "IDLE"
+
+[node name="FootstepScuffs" type="Node3D" parent="."]
+script = ExtResource("18_scuff")
+hari_path = NodePath("../Hari")
 
 [node name="KeysIcon" type="Sprite3D" parent="."]
 script = ExtResource("5_billboard")
