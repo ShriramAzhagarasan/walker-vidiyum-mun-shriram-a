@@ -24,6 +24,10 @@ var _frame := 0
 func _ready() -> void:
 	slice = SLICE.instantiate()
 	add_child(slice)
+	var game_moths := slice.get_node_or_null("StringLightMoths")   # once wired, the slice has its own moths:
+	if game_moths:                                                  # remove them so only the seeded fixture draws
+		slice.remove_child(game_moths)
+		game_moths.free()
 	LoopState.test_hold_clock = true
 	LoopState.test_advance_to(HELD_CLOCK)
 	slice.get_node("HUD").visible = false
