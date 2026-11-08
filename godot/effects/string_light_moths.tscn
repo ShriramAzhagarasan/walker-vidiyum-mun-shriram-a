@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://effects/moth.tres" id="MothTex"]
+
+[sub_resource type="StandardMaterial3D" id="MothMat"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("MothTex")
+billboard_mode = 3
+
+[sub_resource type="QuadMesh" id="MothQuad"]
+size = Vector2(0.07, 0.045)
+material = SubResource("MothMat")
+
+[sub_resource type="Curve" id="MothScaleRaw"]
+_limits = [0.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(0.15, 1), 0.0, 0.0, 0, 0, Vector2(0.75, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="MothScaleCurve"]
+curve = SubResource("MothScaleRaw")
+
+[sub_resource type="Gradient" id="MothGrad"]
+offsets = PackedFloat32Array(0, 0.15, 0.7, 1)
+colors = PackedColorArray(0.847, 0.792, 0.69, 0, 0.914, 0.875, 0.788, 0.8, 0.937, 0.902, 0.824, 0.7, 0.847, 0.792, 0.69, 0)
+
+[sub_resource type="GradientTexture1D" id="MothColorRamp"]
+gradient = SubResource("MothGrad")
+
+[sub_resource type="ParticleProcessMaterial" id="MothPM"]
+emission_shape = 3
+emission_box_extents = Vector3(0.65, 0.3, 0.4)
+direction = Vector3(0, 1, 0)
+spread = 85.0
+initial_velocity_min = 0.06
+initial_velocity_max = 0.28
+angle_min = -35.0
+angle_max = 35.0
+angular_velocity_min = -110.0
+angular_velocity_max = 110.0
+gravity = Vector3(0, 0, 0)
+damping_min = 0.12
+damping_max = 0.35
+attractor_interaction_enabled = true
+scale_min = 0.7
+scale_max = 1.2
+scale_curve = SubResource("MothScaleCurve")
+color_ramp = SubResource("MothColorRamp")
+hue_variation_min = -0.03
+hue_variation_max = 0.03
+turbulence_enabled = true
+turbulence_noise_strength = 0.45
+turbulence_noise_scale = 5.0
+turbulence_noise_speed = Vector3(0.15, 0.08, 0.12)
+turbulence_noise_speed_random = 0.2
+turbulence_influence_min = 0.12
+turbulence_influence_max = 0.3
+turbulence_initial_displacement_min = 0.0
+turbulence_initial_displacement_max = 0.06
+
+[node name="StringLightMoths" type="Node3D"]
+process_mode = 1
+
+[node name="MothsWest" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.85, -3.4)
+process_mode = 1
+amount = 12
+amount_ratio = 1.0
+lifetime = 2.4
+one_shot = false
+preprocess = 2.4
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.4
+fixed_fps = 30
+local_coords = false
+trail_enabled = false
+visibility_aabb = AABB(-1.5, -1.1, -1.5, 3, 2.2, 3)
+process_material = SubResource("MothPM")
+draw_pass_1 = SubResource("MothQuad")
+
+[node name="AttractorWest" type="GPUParticlesAttractorSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2.85, -3.4)
+radius = 1.0
+strength = 0.3
+attenuation = 1.0
+directionality = 0.0
+cull_mask = 4294967295
+
+[node name="MothsMiddle" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.85, -3.4)
+process_mode = 1
+amount = 12
+amount_ratio = 1.0
+lifetime = 2.4
+one_shot = false
+preprocess = 2.4
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.4
+fixed_fps = 30
+local_coords = false
+trail_enabled = false
+visibility_aabb = AABB(-1.5, -1.1, -1.5, 3, 2.2, 3)
+process_material = SubResource("MothPM")
+draw_pass_1 = SubResource("MothQuad")
+
+[node name="AttractorMiddle" type="GPUParticlesAttractorSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.85, -3.4)
+radius = 1.0
+strength = 0.3
+attenuation = 1.0
+directionality = 0.0
+cull_mask = 4294967295
+
+[node name="MothsEast" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2.85, -3.4)
+process_mode = 1
+amount = 12
+amount_ratio = 1.0
+lifetime = 2.4
+one_shot = false
+preprocess = 2.4
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.4
+fixed_fps = 30
+local_coords = false
+trail_enabled = false
+visibility_aabb = AABB(-1.5, -1.1, -1.5, 3, 2.2, 3)
+process_material = SubResource("MothPM")
+draw_pass_1 = SubResource("MothQuad")
+
+[node name="AttractorEast" type="GPUParticlesAttractorSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2.85, -3.4)
+radius = 1.0
+strength = 0.3
+attenuation = 1.0
+directionality = 0.0
+cull_mask = 4294967295

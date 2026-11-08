@@ -1,0 +1,258 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27430749644> Story:<Node#28118615502> SoundBank:<Node#28470937040>
+[PASS] bootstrapped res://effects/moth.png and res://effects/moth.tres via tools/moth_texture.gd   0
+[PASS] scene loads: res://effects/string_light_moths.tscn   (res://effects/string_light_moths.tscn):<PackedScene#-9223372004910954985>
+[PASS] root is Node3D named StringLightMoths   Node3D / StringLightMoths
+[PASS] root process_mode = PAUSABLE (1)   1
+[PASS] root has 6 children (3 emitters + 3 attractors)   6
+[PASS] MothsWest exists and is GPUParticles3D   MothsWest:<GPUParticles3D#32027706892>
+[PASS] MothsWest position = (8.0, 2.85, -3.4)   (8.0, 2.85, -3.4)
+[PASS] MothsWest amount = 12   12
+[PASS] MothsWest amount_ratio = 1.0   1.0
+[PASS] MothsWest one_shot = false   false
+[PASS] MothsWest explosiveness = 0.0   0.0
+[PASS] MothsWest randomness = 0.4   0.40000000596046
+[PASS] MothsWest lifetime = 2.4 s   2.4
+[PASS] MothsWest preprocess = 2.4 s   2.4
+[PASS] MothsWest fixed_fps = 30   30
+[PASS] MothsWest speed_scale = 1.0   1.0
+[PASS] MothsWest use_fixed_seed = false (effect scene; preview flips it)   false
+[PASS] MothsWest local_coords = false (moths fly in world space)   false
+[PASS] MothsWest trail_enabled = false   false
+[PASS] MothsWest process_mode = PAUSABLE (1)   1
+[PASS] MothsWest visibility_aabb = AABB((-1.5,-1.1,-1.5),(3,2.2,3))   [P: (-1.5, -1.1, -1.5), S: (3.0, 2.2, 3.0)]
+[PASS] MothsWest process_material is ParticleProcessMaterial   (res://effects/string_light_moths.tscn::MothPM):<ParticleProcessMaterial#-9223372004927732202>
+[PASS] MothsWest pm.emission_shape = EMISSION_SHAPE_BOX (3)   3
+[PASS] MothsWest pm.emission_box_extents = (0.65, 0.30, 0.40)   (0.65, 0.3, 0.4)
+[PASS] MothsWest pm.direction = (0, 1, 0)   (0.0, 1.0, 0.0)
+[PASS] MothsWest pm.spread = 85 deg   85.0
+[PASS] MothsWest pm.initial_velocity_min = 0.06   0.0599999986589
+[PASS] MothsWest pm.initial_velocity_max = 0.28   0.28000000119209
+[PASS] MothsWest pm.gravity = (0, 0, 0)   (0.0, 0.0, 0.0)
+[PASS] MothsWest pm.damping_min = 0.12   0.11999999731779
+[PASS] MothsWest pm.damping_max = 0.35   0.34999999403954
+[PASS] MothsWest pm.scale_min = 0.7   0.69999998807907
+[PASS] MothsWest pm.scale_max = 1.2   1.20000004768372
+[PASS] MothsWest pm.angle_min = -35 deg   -35.0
+[PASS] MothsWest pm.angle_max = +35 deg   35.0
+[PASS] MothsWest pm.angular_velocity_min = -110 deg/s   -110.0
+[PASS] MothsWest pm.angular_velocity_max = +110 deg/s   110.0
+[PASS] MothsWest pm.hue_variation_min = -0.03   -0.02999999932945
+[PASS] MothsWest pm.hue_variation_max = +0.03   0.02999999932945
+[PASS] MothsWest pm.attractor_interaction_enabled = true   true
+[PASS] MothsWest pm.turbulence_enabled = true   true
+[PASS] MothsWest pm.turbulence_noise_strength = 0.45   0.44999998807907
+[PASS] MothsWest pm.turbulence_noise_scale = 5.0   5.0
+[PASS] MothsWest pm.turbulence_noise_speed = (0.15, 0.08, 0.12)   (0.15, 0.08, 0.12)
+[PASS] MothsWest pm.turbulence_noise_speed_random = 0.2   0.20000000298023
+[PASS] MothsWest pm.turbulence_influence_min = 0.12   0.11999999731779
+[PASS] MothsWest pm.turbulence_influence_max = 0.30   0.30000001192093
+[PASS] MothsWest pm.turbulence_initial_displacement_min = 0.0   0.0
+[PASS] MothsWest pm.turbulence_initial_displacement_max = 0.06   0.0599999986589
+[PASS] MothsWest pm.scale_curve is CurveTexture   (res://effects/string_light_moths.tscn::MothScaleCurve):<CurveTexture#-9223372005011618286>
+[PASS] MothsWest pm.scale_curve.curve is Curve   (res://effects/string_light_moths.tscn::MothScaleRaw):<Curve#-9223372005028395503>
+[PASS] MothsWest scale_curve has 4 points   4
+[PASS] MothsWest scale_curve[0] = (life 0.00, scale 0.70)   (0.0, 0.7)
+[PASS] MothsWest scale_curve[1] = (life 0.15, scale 1.00)   (0.15, 1.0)
+[PASS] MothsWest scale_curve[2] = (life 0.75, scale 1.00)   (0.75, 1.0)
+[PASS] MothsWest scale_curve[3] = (life 1.00, scale 0.60)   (1.0, 0.6)
+[PASS] MothsWest pm.color_ramp is GradientTexture1D   (res://effects/string_light_moths.tscn::MothColorRamp):<GradientTexture1D#-9223372004944509419>
+[PASS] MothsWest pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372004961286637>
+[PASS] MothsWest color_ramp has 4 stops   4
+[PASS] MothsWest color_ramp[0] offset = 0.00   0.0
+[PASS] MothsWest color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsWest color_ramp[0] alpha = 0.00   0.0
+[PASS] MothsWest color_ramp[1] offset = 0.15   0.15000000596046
+[PASS] MothsWest color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsWest color_ramp[1] alpha = 0.80   0.80000001192093
+[PASS] MothsWest color_ramp[2] offset = 0.70   0.69999998807907
+[PASS] MothsWest color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsWest color_ramp[2] alpha = 0.70   0.69999998807907
+[PASS] MothsWest color_ramp[3] offset = 1.00   1.0
+[PASS] MothsWest color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsWest color_ramp[3] alpha = 0.00   0.0
+[PASS] MothsWest draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005045172722>
+[PASS] MothsWest quad size = (0.07, 0.045) m   (0.07, 0.045)
+[PASS] MothsWest mesh.material is StandardMaterial3D   (res://effects/string_light_moths.tscn::MothMat):<StandardMaterial3D#-9223372005061949939>
+[PASS] MothsWest material.transparency = ALPHA (1)   1
+[PASS] MothsWest material.blend_mode = MIX (0)   0
+[PASS] MothsWest material.shading_mode = UNSHADED (0)   0
+[PASS] MothsWest material.billboard_mode = BILLBOARD_PARTICLES (3)   3
+[PASS] MothsWest material.vertex_color_use_as_albedo = true   true
+[PASS] MothsWest material.albedo_texture = res://effects/moth.tres   (res://effects/moth.tres):<ImageTexture#-9223372005129058801>
+[PASS] MothsMiddle exists and is GPUParticles3D   MothsMiddle:<GPUParticles3D#32061261337>
+[PASS] MothsMiddle position = (12.0, 2.85, -3.4)   (12.0, 2.85, -3.4)
+[PASS] MothsMiddle amount = 12   12
+[PASS] MothsMiddle amount_ratio = 1.0   1.0
+[PASS] MothsMiddle one_shot = false   false
+[PASS] MothsMiddle explosiveness = 0.0   0.0
+[PASS] MothsMiddle randomness = 0.4   0.40000000596046
+[PASS] MothsMiddle lifetime = 2.4 s   2.4
+[PASS] MothsMiddle preprocess = 2.4 s   2.4
+[PASS] MothsMiddle fixed_fps = 30   30
+[PASS] MothsMiddle speed_scale = 1.0   1.0
+[PASS] MothsMiddle use_fixed_seed = false (effect scene; preview flips it)   false
+[PASS] MothsMiddle local_coords = false (moths fly in world space)   false
+[PASS] MothsMiddle trail_enabled = false   false
+[PASS] MothsMiddle process_mode = PAUSABLE (1)   1
+[PASS] MothsMiddle visibility_aabb = AABB((-1.5,-1.1,-1.5),(3,2.2,3))   [P: (-1.5, -1.1, -1.5), S: (3.0, 2.2, 3.0)]
+[PASS] MothsMiddle process_material is ParticleProcessMaterial   (res://effects/string_light_moths.tscn::MothPM):<ParticleProcessMaterial#-9223372004927732202>
+[PASS] MothsMiddle pm.emission_shape = EMISSION_SHAPE_BOX (3)   3
+[PASS] MothsMiddle pm.emission_box_extents = (0.65, 0.30, 0.40)   (0.65, 0.3, 0.4)
+[PASS] MothsMiddle pm.direction = (0, 1, 0)   (0.0, 1.0, 0.0)
+[PASS] MothsMiddle pm.spread = 85 deg   85.0
+[PASS] MothsMiddle pm.initial_velocity_min = 0.06   0.0599999986589
+[PASS] MothsMiddle pm.initial_velocity_max = 0.28   0.28000000119209
+[PASS] MothsMiddle pm.gravity = (0, 0, 0)   (0.0, 0.0, 0.0)
+[PASS] MothsMiddle pm.damping_min = 0.12   0.11999999731779
+[PASS] MothsMiddle pm.damping_max = 0.35   0.34999999403954
+[PASS] MothsMiddle pm.scale_min = 0.7   0.69999998807907
+[PASS] MothsMiddle pm.scale_max = 1.2   1.20000004768372
+[PASS] MothsMiddle pm.angle_min = -35 deg   -35.0
+[PASS] MothsMiddle pm.angle_max = +35 deg   35.0
+[PASS] MothsMiddle pm.angular_velocity_min = -110 deg/s   -110.0
+[PASS] MothsMiddle pm.angular_velocity_max = +110 deg/s   110.0
+[PASS] MothsMiddle pm.hue_variation_min = -0.03   -0.02999999932945
+[PASS] MothsMiddle pm.hue_variation_max = +0.03   0.02999999932945
+[PASS] MothsMiddle pm.attractor_interaction_enabled = true   true
+[PASS] MothsMiddle pm.turbulence_enabled = true   true
+[PASS] MothsMiddle pm.turbulence_noise_strength = 0.45   0.44999998807907
+[PASS] MothsMiddle pm.turbulence_noise_scale = 5.0   5.0
+[PASS] MothsMiddle pm.turbulence_noise_speed = (0.15, 0.08, 0.12)   (0.15, 0.08, 0.12)
+[PASS] MothsMiddle pm.turbulence_noise_speed_random = 0.2   0.20000000298023
+[PASS] MothsMiddle pm.turbulence_influence_min = 0.12   0.11999999731779
+[PASS] MothsMiddle pm.turbulence_influence_max = 0.30   0.30000001192093
+[PASS] MothsMiddle pm.turbulence_initial_displacement_min = 0.0   0.0
+[PASS] MothsMiddle pm.turbulence_initial_displacement_max = 0.06   0.0599999986589
+[PASS] MothsMiddle pm.scale_curve is CurveTexture   (res://effects/string_light_moths.tscn::MothScaleCurve):<CurveTexture#-9223372005011618286>
+[PASS] MothsMiddle pm.scale_curve.curve is Curve   (res://effects/string_light_moths.tscn::MothScaleRaw):<Curve#-9223372005028395503>
+[PASS] MothsMiddle scale_curve has 4 points   4
+[PASS] MothsMiddle scale_curve[0] = (life 0.00, scale 0.70)   (0.0, 0.7)
+[PASS] MothsMiddle scale_curve[1] = (life 0.15, scale 1.00)   (0.15, 1.0)
+[PASS] MothsMiddle scale_curve[2] = (life 0.75, scale 1.00)   (0.75, 1.0)
+[PASS] MothsMiddle scale_curve[3] = (life 1.00, scale 0.60)   (1.0, 0.6)
+[PASS] MothsMiddle pm.color_ramp is GradientTexture1D   (res://effects/string_light_moths.tscn::MothColorRamp):<GradientTexture1D#-9223372004944509419>
+[PASS] MothsMiddle pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372004961286637>
+[PASS] MothsMiddle color_ramp has 4 stops   4
+[PASS] MothsMiddle color_ramp[0] offset = 0.00   0.0
+[PASS] MothsMiddle color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsMiddle color_ramp[0] alpha = 0.00   0.0
+[PASS] MothsMiddle color_ramp[1] offset = 0.15   0.15000000596046
+[PASS] MothsMiddle color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsMiddle color_ramp[1] alpha = 0.80   0.80000001192093
+[PASS] MothsMiddle color_ramp[2] offset = 0.70   0.69999998807907
+[PASS] MothsMiddle color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsMiddle color_ramp[2] alpha = 0.70   0.69999998807907
+[PASS] MothsMiddle color_ramp[3] offset = 1.00   1.0
+[PASS] MothsMiddle color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsMiddle color_ramp[3] alpha = 0.00   0.0
+[PASS] MothsMiddle draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005045172722>
+[PASS] MothsMiddle quad size = (0.07, 0.045) m   (0.07, 0.045)
+[PASS] MothsMiddle mesh.material is StandardMaterial3D   (res://effects/string_light_moths.tscn::MothMat):<StandardMaterial3D#-9223372005061949939>
+[PASS] MothsMiddle material.transparency = ALPHA (1)   1
+[PASS] MothsMiddle material.blend_mode = MIX (0)   0
+[PASS] MothsMiddle material.shading_mode = UNSHADED (0)   0
+[PASS] MothsMiddle material.billboard_mode = BILLBOARD_PARTICLES (3)   3
+[PASS] MothsMiddle material.vertex_color_use_as_albedo = true   true
+[PASS] MothsMiddle material.albedo_texture = res://effects/moth.tres   (res://effects/moth.tres):<ImageTexture#-9223372005129058801>
+[PASS] MothsEast exists and is GPUParticles3D   MothsEast:<GPUParticles3D#32094815771>
+[PASS] MothsEast position = (16.0, 2.85, -3.4)   (16.0, 2.85, -3.4)
+[PASS] MothsEast amount = 12   12
+[PASS] MothsEast amount_ratio = 1.0   1.0
+[PASS] MothsEast one_shot = false   false
+[PASS] MothsEast explosiveness = 0.0   0.0
+[PASS] MothsEast randomness = 0.4   0.40000000596046
+[PASS] MothsEast lifetime = 2.4 s   2.4
+[PASS] MothsEast preprocess = 2.4 s   2.4
+[PASS] MothsEast fixed_fps = 30   30
+[PASS] MothsEast speed_scale = 1.0   1.0
+[PASS] MothsEast use_fixed_seed = false (effect scene; preview flips it)   false
+[PASS] MothsEast local_coords = false (moths fly in world space)   false
+[PASS] MothsEast trail_enabled = false   false
+[PASS] MothsEast process_mode = PAUSABLE (1)   1
+[PASS] MothsEast visibility_aabb = AABB((-1.5,-1.1,-1.5),(3,2.2,3))   [P: (-1.5, -1.1, -1.5), S: (3.0, 2.2, 3.0)]
+[PASS] MothsEast process_material is ParticleProcessMaterial   (res://effects/string_light_moths.tscn::MothPM):<ParticleProcessMaterial#-9223372004927732202>
+[PASS] MothsEast pm.emission_shape = EMISSION_SHAPE_BOX (3)   3
+[PASS] MothsEast pm.emission_box_extents = (0.65, 0.30, 0.40)   (0.65, 0.3, 0.4)
+[PASS] MothsEast pm.direction = (0, 1, 0)   (0.0, 1.0, 0.0)
+[PASS] MothsEast pm.spread = 85 deg   85.0
+[PASS] MothsEast pm.initial_velocity_min = 0.06   0.0599999986589
+[PASS] MothsEast pm.initial_velocity_max = 0.28   0.28000000119209
+[PASS] MothsEast pm.gravity = (0, 0, 0)   (0.0, 0.0, 0.0)
+[PASS] MothsEast pm.damping_min = 0.12   0.11999999731779
+[PASS] MothsEast pm.damping_max = 0.35   0.34999999403954
+[PASS] MothsEast pm.scale_min = 0.7   0.69999998807907
+[PASS] MothsEast pm.scale_max = 1.2   1.20000004768372
+[PASS] MothsEast pm.angle_min = -35 deg   -35.0
+[PASS] MothsEast pm.angle_max = +35 deg   35.0
+[PASS] MothsEast pm.angular_velocity_min = -110 deg/s   -110.0
+[PASS] MothsEast pm.angular_velocity_max = +110 deg/s   110.0
+[PASS] MothsEast pm.hue_variation_min = -0.03   -0.02999999932945
+[PASS] MothsEast pm.hue_variation_max = +0.03   0.02999999932945
+[PASS] MothsEast pm.attractor_interaction_enabled = true   true
+[PASS] MothsEast pm.turbulence_enabled = true   true
+[PASS] MothsEast pm.turbulence_noise_strength = 0.45   0.44999998807907
+[PASS] MothsEast pm.turbulence_noise_scale = 5.0   5.0
+[PASS] MothsEast pm.turbulence_noise_speed = (0.15, 0.08, 0.12)   (0.15, 0.08, 0.12)
+[PASS] MothsEast pm.turbulence_noise_speed_random = 0.2   0.20000000298023
+[PASS] MothsEast pm.turbulence_influence_min = 0.12   0.11999999731779
+[PASS] MothsEast pm.turbulence_influence_max = 0.30   0.30000001192093
+[PASS] MothsEast pm.turbulence_initial_displacement_min = 0.0   0.0
+[PASS] MothsEast pm.turbulence_initial_displacement_max = 0.06   0.0599999986589
+[PASS] MothsEast pm.scale_curve is CurveTexture   (res://effects/string_light_moths.tscn::MothScaleCurve):<CurveTexture#-9223372005011618286>
+[PASS] MothsEast pm.scale_curve.curve is Curve   (res://effects/string_light_moths.tscn::MothScaleRaw):<Curve#-9223372005028395503>
+[PASS] MothsEast scale_curve has 4 points   4
+[PASS] MothsEast scale_curve[0] = (life 0.00, scale 0.70)   (0.0, 0.7)
+[PASS] MothsEast scale_curve[1] = (life 0.15, scale 1.00)   (0.15, 1.0)
+[PASS] MothsEast scale_curve[2] = (life 0.75, scale 1.00)   (0.75, 1.0)
+[PASS] MothsEast scale_curve[3] = (life 1.00, scale 0.60)   (1.0, 0.6)
+[PASS] MothsEast pm.color_ramp is GradientTexture1D   (res://effects/string_light_moths.tscn::MothColorRamp):<GradientTexture1D#-9223372004944509419>
+[PASS] MothsEast pm.color_ramp.gradient is Gradient   (res://effects/string_light_moths.tscn::MothGrad):<Gradient#-9223372004961286637>
+[PASS] MothsEast color_ramp has 4 stops   4
+[PASS] MothsEast color_ramp[0] offset = 0.00   0.0
+[PASS] MothsEast color_ramp[0] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsEast color_ramp[0] alpha = 0.00   0.0
+[PASS] MothsEast color_ramp[1] offset = 0.15   0.15000000596046
+[PASS] MothsEast color_ramp[1] rgb within 1/255 of #E9DFC9   (0.914, 0.875, 0.788, 0.8)
+[PASS] MothsEast color_ramp[1] alpha = 0.80   0.80000001192093
+[PASS] MothsEast color_ramp[2] offset = 0.70   0.69999998807907
+[PASS] MothsEast color_ramp[2] rgb within 1/255 of #EFE6D2   (0.937, 0.902, 0.824, 0.7)
+[PASS] MothsEast color_ramp[2] alpha = 0.70   0.69999998807907
+[PASS] MothsEast color_ramp[3] offset = 1.00   1.0
+[PASS] MothsEast color_ramp[3] rgb within 1/255 of #D8CAB0   (0.847, 0.792, 0.69, 0.0)
+[PASS] MothsEast color_ramp[3] alpha = 0.00   0.0
+[PASS] MothsEast draw_pass_1 is QuadMesh   (res://effects/string_light_moths.tscn::MothQuad):<QuadMesh#-9223372005045172722>
+[PASS] MothsEast quad size = (0.07, 0.045) m   (0.07, 0.045)
+[PASS] MothsEast mesh.material is StandardMaterial3D   (res://effects/string_light_moths.tscn::MothMat):<StandardMaterial3D#-9223372005061949939>
+[PASS] MothsEast material.transparency = ALPHA (1)   1
+[PASS] MothsEast material.blend_mode = MIX (0)   0
+[PASS] MothsEast material.shading_mode = UNSHADED (0)   0
+[PASS] MothsEast material.billboard_mode = BILLBOARD_PARTICLES (3)   3
+[PASS] MothsEast material.vertex_color_use_as_albedo = true   true
+[PASS] MothsEast material.albedo_texture = res://effects/moth.tres   (res://effects/moth.tres):<ImageTexture#-9223372005129058801>
+[PASS] AttractorWest exists and is GPUParticlesAttractorSphere3D   AttractorWest:<GPUParticlesAttractorSphere3D#32044484106>
+[PASS] AttractorWest position = (8.0, 2.85, -3.4)   (8.0, 2.85, -3.4)
+[PASS] AttractorWest radius = 1.0   1.0
+[PASS] AttractorWest strength = 0.30   0.30000001192093
+[PASS] AttractorWest attenuation = 1.0   1.0
+[PASS] AttractorWest directionality = 0.0   0.0
+[PASS] AttractorWest cull_mask = 4294967295 (all layers; won't affect Effect A CPU particles)   4294967295
+[PASS] AttractorMiddle exists and is GPUParticlesAttractorSphere3D   AttractorMiddle:<GPUParticlesAttractorSphere3D#32078038554>
+[PASS] AttractorMiddle position = (12.0, 2.85, -3.4)   (12.0, 2.85, -3.4)
+[PASS] AttractorMiddle radius = 1.0   1.0
+[PASS] AttractorMiddle strength = 0.30   0.30000001192093
+[PASS] AttractorMiddle attenuation = 1.0   1.0
+[PASS] AttractorMiddle directionality = 0.0   0.0
+[PASS] AttractorMiddle cull_mask = 4294967295 (all layers; won't affect Effect A CPU particles)   4294967295
+[PASS] AttractorEast exists and is GPUParticlesAttractorSphere3D   AttractorEast:<GPUParticlesAttractorSphere3D#32111592988>
+[PASS] AttractorEast position = (16.0, 2.85, -3.4)   (16.0, 2.85, -3.4)
+[PASS] AttractorEast radius = 1.0   1.0
+[PASS] AttractorEast strength = 0.30   0.30000001192093
+[PASS] AttractorEast attenuation = 1.0   1.0
+[PASS] AttractorEast directionality = 0.0   0.0
+[PASS] AttractorEast cull_mask = 4294967295 (all layers; won't affect Effect A CPU particles)   4294967295
+[PASS] test script ran to completion   true
+
+test_string_light_moths_config.gd: 253 checks, 0 failed -> PASS
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.
