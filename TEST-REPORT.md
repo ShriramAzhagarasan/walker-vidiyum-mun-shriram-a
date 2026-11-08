@@ -402,3 +402,39 @@ so the `a5` tag has the same game source. Logs: `logs/fresh-clone/`.
 
 Not rerun here: the three A2 suites that fail only under `--fixed-fps` (`Story._now()` wall clock, A5.1). Their counts
 are unchanged and out of scope.
+
+---
+
+# Assignment 6: particle effects
+
+Source: commits after `3ca0909` (see each section). Godot 4.7.2.stable.official.ed1daf0bf · Forward+ · macOS 26.6.2 ·
+Apple M1 Pro. Tests run by Shriram and by Claude through `scripts/run-test.sh`, mode stated per line.
+
+## A6.1 Baseline (before any A6 code, commit `ef3c58d`, `logs/a6-baseline/SUMMARY.txt`)
+
+| Test | Mode | Result |
+|---|---|---|
+| test_assets_present | 60 | 70/70 PASS |
+| test_audio_mix | 60 | 10/10 PASS |
+| test_sound_triggers | realtime | 86/86 PASS (60: 53/86 fail, the known A2 `Story._now()` wall-clock limitation) |
+| test_loop_logic | realtime | 36/36 PASS (60: 4/36 fail, same cause) |
+| test_slice_smoke | realtime | 13/13 PASS (60: 4/13 fail, same cause) |
+| check_a3_assets | 60 | 31/31 PASS |
+| check_a3_selftest | 60 | 17/17 PASS |
+| test_night_skip | 30 / 60 / 144 | 33/33 PASS each |
+| test_materials | 60 | 156/156 PASS |
+| normal_map_check | 60 | 11/11 PASS |
+
+The new wrapper's realtime mode is the pinned mode for the three A2 suites from A6 on.
+
+## A6.2 Effect A configuration test and mutations
+
+`./scripts/run-test.sh test_footstep_scuff_config.gd 60` → **126/126 PASS** (after tuning r1, commit `e537855`).
+
+Mutations, made by Shriram in `godot/effects/footstep_scuff.tscn` and restored with `git checkout` (logs in
+`logs/a6-mutations/`):
+
+| # | Mutation | Config test | What it showed |
+|---|---|---|---|
+| M1 | Godot 3 name: SoftDust `initial_velocity_min = 0.25` → `initial_velocity = 0.25` | **exit 1** (125/126; `[FAIL] SoftDust initial_velocity_min = 0.25 m/s   0.0`) | The scene loaded with no error and the value silently fell back to the default 0. In 4.7.2 `initial_velocity` exists only as an editor-only `Vector2` alias, and a float written to it is dropped (CHANGE-BRIEF §0). |
+| M2 | Value drift: SoftDust `spread` 80 → 30, brief unchanged | **exit 1** (125/126; `[FAIL] SoftDust spread = 80 deg   30.0`) | The test catches drift between the scene and the brief. |
