@@ -1,51 +1,6 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://previews/footstep_scuff_preview.gd" id="1_prev"]
-[ext_resource type="Material" path="res://materials/marble_dry.tres" id="2_marble"]
-
-[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
-sky_top_color = Color(0.043, 0.039, 0.165, 1)
-sky_horizon_color = Color(0.113, 0.098, 0.329, 1)
-ground_bottom_color = Color(0.016, 0.016, 0.047, 1)
-ground_horizon_color = Color(0.113, 0.098, 0.329, 1)
-
-[sub_resource type="Sky" id="Sky"]
-sky_material = SubResource("SkyMat")
-
-[sub_resource type="Environment" id="Env"]
-background_mode = 2
-sky = SubResource("Sky")
-ambient_light_source = 2
-ambient_light_color = Color(0.16, 0.16, 0.3, 1)
-ambient_light_energy = 0.6
-tonemap_mode = 2
-
-[sub_resource type="PlaneMesh" id="DeckPlane"]
-size = Vector2(16, 16)
 
 [node name="ScuffPreview" type="Node3D"]
 script = ExtResource("1_prev")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Env")
-
-[node name="MoonLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707, -0.5, 0.5, 0, 0.707, 0.707, -0.707, -0.5, 0.5, 0, 6, 0)
-light_color = Color(0.6, 0.65, 0.95, 1)
-light_energy = 0.35
-shadow_enabled = false
-
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("DeckPlane")
-material_override = ExtResource("2_marble")
-
-[node name="WarmBulb" type="OmniLight3D" parent="."]
-light_color = Color(1.0, 0.66, 0.36, 1)
-light_energy = 1.5
-omni_range = 6.0
-omni_attenuation = 1.5
-
-[node name="SpawnMarker" type="Marker3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-fov = 45.0
