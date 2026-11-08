@@ -148,8 +148,8 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
 
 - **ChatGPT (same app model as A5; the exact version wasn't noted):** Shriram wrote CHANGE-BRIEF.md Parts A–H with
   ChatGPT's help on **the wording and structure** and on **the price predictions** in Part G (Shriram, 2026-11-08:
-  "chatgpt helped me with the wordings and structuring of thing and also helped with price predictions"). The choice of
-  effects, the intent, the settings values, the rules and the strip predictions were Shriram's decisions. Claude
+  "chatgpt helped me with the wordings and structuring of thing and also helped with price predictions"). Shriram named
+  only those two areas; Shriram chose the effects and the retrigger rule from options Claude laid out. Claude
   placed the text unchanged apart from edits Shriram dictated (see the brief's header).
 - **Claude Code (Claude Opus 5.5, Northeastern access):** wrote §0 of the brief (project facts), ran the scoped
   `claude -p` build sessions (`prompts/a6/`), and wrote the CLAUDE.md revision, effect scenes, previews, trigger code,
