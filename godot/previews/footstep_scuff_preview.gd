@@ -21,6 +21,9 @@ var slice: Node3D
 var _frame := 0
 
 func _ready() -> void:
+	var args := OS.get_cmdline_user_args()          # capture variants: godot ... -- lit retrigger
+	lit = lit or "lit" in args
+	retrigger = retrigger or "retrigger" in args
 	slice = SLICE.instantiate()
 	add_child(slice)                              # slice._ready() starts loop 1 at 8:00 PM
 	LoopState.test_hold_clock = true
