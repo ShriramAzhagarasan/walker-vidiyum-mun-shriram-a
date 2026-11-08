@@ -59,7 +59,10 @@ scuff patch against the frame before the trigger, 0–255):
   against it from trig+0 to about +30; gone by +40. In both strips the darker FineGrit grains are not distinguishable
   from the puff (Claude's claim; Shriram to judge in play).
 
-**My verdict** (Shriram, running game, 1280×720): **kept** — "keep it".
+**My verdict** (Shriram, running preview, 1280×720): **kept** — "keep it", because "the puff now lingers about a second,
+long enough to notice each step, and doesn't build up." *(This wording is the example Claude offered when asking for
+a reason; Shriram adopted it as their verdict. "Doesn't build up" can only be judged with repeated steps, so it is
+re-checked in normal play once the trigger is wired: TEST-REPORT A6 human checks.)*
 
 **Strips:** `captures/footstep_scuff/r0-dark/`, `r0-retrigger/` (before); `r1-dark/`, `r1-lit/` (after). All fixture
 captures.

@@ -436,5 +436,5 @@ Mutations, made by Shriram in `godot/effects/footstep_scuff.tscn` and restored w
 
 | # | Mutation | Config test | What it showed |
 |---|---|---|---|
-| M1 | Godot 3 name: SoftDust `initial_velocity_min = 0.25` → `initial_velocity = 0.25` | **exit 1** (125/126; `[FAIL] SoftDust initial_velocity_min = 0.25 m/s   0.0`) | The scene loaded with no error and the value silently fell back to the default 0. In 4.7.2 `initial_velocity` exists only as an editor-only `Vector2` alias, and a float written to it is dropped (CHANGE-BRIEF §0). |
+| M1 | Godot 3 name: SoftDust `initial_velocity_min = 0.25` → `initial_velocity = 0.25` | **exit 1** (125/126; `[FAIL] SoftDust initial_velocity_min = 0.25 m/s   0.0`) | The scene loaded with no error and the value silently fell back to the default 0. **The effect still fired** in the preview (Shriram: "yes it fired"). In 4.7.2 `initial_velocity` exists only as an editor-only `Vector2` alias, and a float written to it is dropped (CHANGE-BRIEF §0). |
 | M2 | Value drift: SoftDust `spread` 80 → 30, brief unchanged | **exit 1** (125/126; `[FAIL] SoftDust spread = 80 deg   30.0`) | The test catches drift between the scene and the brief. |
