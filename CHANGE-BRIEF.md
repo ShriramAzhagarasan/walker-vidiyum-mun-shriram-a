@@ -736,3 +736,11 @@ Separating these helped me understand that a particle effect can trigger correct
   offsets unchanged; 100 % stays 0). So the "visible puff should mostly disappear by about 0.75 seconds" in §A.2 now
   reads "by about 1.0 s". Reason: Shriram's verdict in play, "the timing was way too fast". Record: TUNING.md, Effect A
   r1. The lifetime (1.15 s), the overlap rule (at most 4 alive) and the 60-particle peak are unchanged.
+
+## Revision 3, 2026-11-08 (tuning, approved by Shriram; the text above is unchanged)
+- **§A.3 Draw, SoftDust texture** (Effect A r2, kept): the procedural soft circular gradient is alpha 0.85 at the centre,
+  0.30 at 45 % of the radius and 0 at the edge (was 1.0 out to 60 %, 0.4, 0). Reason: Shriram saw "cotton balls" in play.
+- **§B.3 Draw, base quad size** (Effect B r1): 0.07 × 0.045 m → **0.21 × 0.135 m**. Reason: at the real camera distance
+  the moths were 1–3 px specks Shriram could not see. Verdict pending at the time of this revision (TUNING.md, Effect B).
+- **§A.4 #8 position:** the scuff lands at Hari's centre, which reads as behind the front foot while walking; Shriram
+  kept this and records it as a known limitation.

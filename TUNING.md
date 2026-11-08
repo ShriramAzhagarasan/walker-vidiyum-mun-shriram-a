@@ -67,6 +67,46 @@ re-checked in normal play once the trigger is wired: TEST-REPORT A6 human checks
 **Strips:** `captures/footstep_scuff/r0-dark/`, `r0-retrigger/` (before); `r1-dark/`, `r1-lit/` (after). All fixture
 captures.
 
+
+---
+
+## 2026-11-08 — Effect A, revision r2 (observation-driven, from normal play)
+
+**What I saw** (Shriram, the real game, 1280×720, after r1; screenshot `evidence/a6/effect-a-play/r1-walking-by-pool.png`):
+"the scuff is kinda unnatural ... it doesn't look natural, and the scuff only appears in the backward leg - left leg.
+other than that walking through darkest stretches and lightest stretches i see it clearly and yes it is ankle size at
+normal window size and yes everything feels the same as before"
+
+**Claude's reading of the play screenshot and r1:** each scuff reads as a solid white "cotton ball" with a clean, lumpy
+outline. Cause proposed: SoftDust's texture is fully opaque out to 60 % of its radius, so ten stacked quads make a solid
+shape. The back-leg position follows from A.4 (scuffs at Hari's centre; no per-foot positions exist): Shriram chose to
+**keep** it and record it as a known limitation. Shriram's "floating" refers to Hari's sprite against the floor (A3 art),
+out of scope.
+
+**Change:** SoftDust `albedo_texture` gradient: offsets 0 / 0.6 / 1, alpha 1.0 / 0.4 / 0 → **0 / 0.45 / 1, alpha
+0.85 / 0.3 / 0**. Proposed by Claude, **approved by Shriram** ("approve r2"). Config test now reads the gradient (128/128).
+
+**Claude's prediction for r2:** every frame dimmer and softer; the solid lumpy outline at trig+2 to +5 becomes a hazy
+patch with the floor showing through the edges; peak brightness down "by roughly a third to a half"; the tail fainter
+than r1 but still there; risk: harder to see under the bulbs.
+
+**Claude's comparison** (`r2-dark/` vs `r1-dark/`, same brightness measure as r1):
+
+| | trig+0 | +2 | +5 | +10 | +15 | +20 | +25 | +30 | +40 |
+|---|---|---|---|---|---|---|---|---|---|
+| r1 | 70.9 | 73.5 | 76.7 | 75.8 | 71.4 | 64.8 | 52.5 | 36.9 | 1.0 |
+| r2 | 61.4 | 64.4 | 67.3 | 65.6 | 60.4 | 53.7 | 42.0 | 28.3 | 1.0 |
+
+- **Matches:** dimmer and softer at every frame; at trig+5 and +10 the puff separates into soft round blobs instead of
+  one solid lump; the tail is still there at +30 and gone at +40.
+- **Doesn't match:** brightness fell by **about 13–14 %**, not a third to a half. Explanation: the dense centre of the
+  stacked quads still saturates; the softer falloff mainly changed the edges, which is what changed the look.
+
+**My verdict** (Shriram, running preview, 1280×720): **kept** — "they look like dust now and not like cotton balls and
+i can see them on dark and lit floors, let's keep this".
+
+**Strips:** `captures/footstep_scuff/r1-dark/`, `r1-lit/` (before); `r2-dark/`, `r2-lit/` (after). Fixture captures.
+
 ---
 
 ## 2026-11-08 — Effect B, revision r1
