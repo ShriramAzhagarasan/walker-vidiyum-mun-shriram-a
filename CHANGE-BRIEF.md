@@ -728,3 +728,11 @@ When the game is paused, the moths should freeze. When the area is hidden, emiss
 **Draw** determines what the particles look like. It includes the quad mesh, texture, transparency, blend mode, and billboard material.
 
 Separating these helped me understand that a particle effect can trigger correctly while still looking wrong because of its process or draw configuration.
+
+---
+
+## Revision 2, 2026-11-08 (Effect A tuning r1, kept by Shriram; the text above is unchanged)
+- **§A.3 SoftDust colour and alpha curve:** alpha at 50 % life 0.18 → **0.30**, at 70 % life 0 → **0.15** (colours and
+  offsets unchanged; 100 % stays 0). So the "visible puff should mostly disappear by about 0.75 seconds" in §A.2 now
+  reads "by about 1.0 s". Reason: Shriram's verdict in play, "the timing was way too fast". Record: TUNING.md, Effect A
+  r1. The lifetime (1.15 s), the overlap rule (at most 4 alive) and the 60-particle peak are unchanged.
