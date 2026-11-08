@@ -67,6 +67,15 @@ func run() -> bool:
 		[0.7,  Color8(0xE5, 0xD8, 0xC5), 0.15],
 		[1.0,  Color8(0xE5, 0xD8, 0xC5), 0.00],
 	])
+	# SoftDust texture falloff (brief revision 3, tuning r2): alpha 0.85 at the centre, 0.30 at 45 % radius, 0 at the edge.
+	var soft_tex := (soft.mesh.material as StandardMaterial3D).albedo_texture as GradientTexture2D
+	var stops := soft_tex.gradient
+	check("SoftDust texture gradient offsets = (0, 0.45, 1)",
+		stops.get_point_count() == 3 and is_equal_approx(stops.get_offset(1), 0.45) and is_equal_approx(stops.get_offset(2), 1.0),
+		[stops.get_offset(0), stops.get_offset(1), stops.get_offset(2)])
+	check("SoftDust texture gradient alpha = (0.85, 0.30, 0)",
+		is_equal_approx(stops.get_color(0).a, 0.85) and is_equal_approx(stops.get_color(1).a, 0.3) and is_zero_approx(stops.get_color(2).a),
+		[stops.get_color(0).a, stops.get_color(1).a, stops.get_color(2).a])
 	_check_color_ramp(grit, "FineGrit", [
 		[0.0,  Color8(0x80, 0x64, 0x48), 0.85],
 		[0.3,  Color8(0xA1, 0x83, 0x5B), 0.65],

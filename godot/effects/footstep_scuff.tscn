@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3]
 
 [sub_resource type="Gradient" id="SoftTexGrad"]
-offsets = PackedFloat32Array(0, 0.6, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.4, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(1, 1, 1, 0.85, 1, 1, 1, 0.3, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="SoftTex"]
 gradient = SubResource("SoftTexGrad")
