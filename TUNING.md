@@ -66,3 +66,22 @@ re-checked in normal play once the trigger is wired: TEST-REPORT A6 human checks
 
 **Strips:** `captures/footstep_scuff/r0-dark/`, `r0-retrigger/` (before); `r1-dark/`, `r1-lit/` (after). All fixture
 captures.
+
+---
+
+## 2026-11-08 — Effect B, revision r1
+
+**Frame numbering** as for Effect A: the preview's "frame 10" (moths switched on) is file 9; "frame 70" (condition ends)
+is file 69. The strip keeps files 8 (before), 9, 29, 69, 84 and 144 (the brief's 10, 30, 70, 85, 145).
+
+**What I saw** (Shriram, running preview, 1280×720, before reading any frame; screenshots in
+`evidence/a6/effect-b-r0-first-look/`): "this is what i see ... do you see dots there" — Shriram could not see the moths.
+
+**Claude's reading of r0** (`captures/string_light_moths/r0/`, fixture, Hari under the middle span, seeds 101/202/303):
+- A difference against file 8 finds three small clusters on the bulb line, one per span, from file 9 on: the effect is
+  there and placed as the brief says.
+- Zoomed (`evidence/a6/effect-b-r0-first-look/claude-zoom-frame8-vs-30-middle-span.png`), each moth is a **1–3 px
+  speck**. The brief's real-world wingspan (0.05–0.08 m) is about 3 px at the camera's ~8 m from the bulbs.
+- **Background:** from the deck camera the bulbs hang in front of the pale villa wall and the lit amber windows, not the
+  near-black sky that B.2 planned for. Pale cream on pale is the weakest contrast.
+- Against the intent: placement and timing as briefed; size and contrast don't read.
