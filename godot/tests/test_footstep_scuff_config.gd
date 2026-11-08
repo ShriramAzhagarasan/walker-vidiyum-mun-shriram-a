@@ -59,12 +59,12 @@ func run() -> bool:
 		Vector2(0.0, 1.0), Vector2(0.5, 0.9), Vector2(1.0, 0.2),
 	], 1.0)
 
-	# SoftDust colour ramp (colour, alpha) from §A.3.
+	# SoftDust colour ramp (colour, alpha) from §A.3, alpha at 50 %/70 % from brief revision 2 (tuning r1).
 	_check_color_ramp(soft, "SoftDust", [
 		[0.0,  Color8(0xD9, 0xC5, 0xA4), 0.55],
 		[0.2,  Color8(0xE2, 0xD1, 0xB5), 0.45],
-		[0.5,  Color8(0xE5, 0xD8, 0xC5), 0.18],
-		[0.7,  Color8(0xE5, 0xD8, 0xC5), 0.00],
+		[0.5,  Color8(0xE5, 0xD8, 0xC5), 0.30],
+		[0.7,  Color8(0xE5, 0xD8, 0xC5), 0.15],
 		[1.0,  Color8(0xE5, 0xD8, 0xC5), 0.00],
 	])
 	_check_color_ramp(grit, "FineGrit", [

@@ -30,7 +30,7 @@ point_count = 4
 
 [sub_resource type="Gradient" id="SoftColorRamp"]
 offsets = PackedFloat32Array(0, 0.2, 0.5, 0.7, 1)
-colors = PackedColorArray(0.851, 0.773, 0.643, 0.55, 0.886, 0.82, 0.71, 0.45, 0.898, 0.847, 0.773, 0.18, 0.898, 0.847, 0.773, 0, 0.898, 0.847, 0.773, 0)
+colors = PackedColorArray(0.851, 0.773, 0.643, 0.55, 0.886, 0.82, 0.71, 0.45, 0.898, 0.847, 0.773, 0.3, 0.898, 0.847, 0.773, 0.15, 0.898, 0.847, 0.773, 0)
 
 [sub_resource type="Gradient" id="GritTexGrad"]
 offsets = PackedFloat32Array(0, 0.7, 1)

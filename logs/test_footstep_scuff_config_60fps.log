@@ -103,11 +103,11 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] SoftDust color_ramp[1] rgb within 1/255 of #E2D1B5   (0.886, 0.82, 0.71, 0.45)
 [PASS] SoftDust color_ramp[1] alpha = 0.45   0.44999998807907
 [PASS] SoftDust color_ramp[2] offset = 0.50   0.5
-[PASS] SoftDust color_ramp[2] rgb within 1/255 of #E5D8C5   (0.898, 0.847, 0.773, 0.18)
-[PASS] SoftDust color_ramp[2] alpha = 0.18   0.18000000715256
+[PASS] SoftDust color_ramp[2] rgb within 1/255 of #E5D8C5   (0.898, 0.847, 0.773, 0.3)
+[PASS] SoftDust color_ramp[2] alpha = 0.30   0.30000001192093
 [PASS] SoftDust color_ramp[3] offset = 0.70   0.69999998807907
-[PASS] SoftDust color_ramp[3] rgb within 1/255 of #E5D8C5   (0.898, 0.847, 0.773, 0.0)
-[PASS] SoftDust color_ramp[3] alpha = 0.00   0.0
+[PASS] SoftDust color_ramp[3] rgb within 1/255 of #E5D8C5   (0.898, 0.847, 0.773, 0.15)
+[PASS] SoftDust color_ramp[3] alpha = 0.15   0.15000000596046
 [PASS] SoftDust color_ramp[4] offset = 1.00   1.0
 [PASS] SoftDust color_ramp[4] rgb within 1/255 of #E5D8C5   (0.898, 0.847, 0.773, 0.0)
 [PASS] SoftDust color_ramp[4] alpha = 0.00   0.0
