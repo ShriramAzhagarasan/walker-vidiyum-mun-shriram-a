@@ -153,9 +153,9 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] hint env glow_enabled = false   false
 [PASS] hint env fog_enabled = false   false
 [PASS] hint env adjustment_enabled = false   false
-[PASS] decoded marble_01_nor_gl   ():<Image#-9223371978285513192>
+[PASS] decoded marble_01_nor_gl   ():<Image#-9223371977043999208>
 marble_01_nor_gl   as OpenGL 0.637   as DirectX 1.363
-[PASS] decoded marble_01_nor_dx   ():<Image#-9223371978218404328>
+[PASS] decoded marble_01_nor_dx   ():<Image#-9223371976976890344>
 marble_01_nor_dx   as OpenGL 1.363   as DirectX 0.637
 [PASS] test script ran to completion   true
 
@@ -164,3 +164,4 @@ WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for det
    at: cleanup (core/object/object.cpp:2536)
 ERROR: 6 resources still in use at exit (run with --verbose for details).
    at: clear (core/io/resource.cpp:822)
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.

@@ -1,0 +1,72 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+[PASS] StringLightMoths container present in slice.tscn   StringLightMoths:<Node3D#46036682359>
+[PASS] 3 GPUParticles3D under the controller   3
+[PASS] rule 1: phase == NIGHT at load   0
+[PASS] rule 1: clock_minutes < 1740 at load   1200.0
+[PASS] rule 1 + 5: controller visible at load   true
+[PASS] rule 1 + 5: MothsWest.emitting == true at load   true
+[PASS] rule 1 + 5: MothsWest.amount == 12 (scene value, not touched)   12
+[PASS] rule 1 + 5: MothsWest.amount_ratio == 1.0 (scene value, not touched)   1.0
+[PASS] rule 1 + 5: MothsMiddle.emitting == true at load   true
+[PASS] rule 1 + 5: MothsMiddle.amount == 12 (scene value, not touched)   12
+[PASS] rule 1 + 5: MothsMiddle.amount_ratio == 1.0 (scene value, not touched)   1.0
+[PASS] rule 1 + 5: MothsEast.emitting == true at load   true
+[PASS] rule 1 + 5: MothsEast.amount == 12 (scene value, not touched)   12
+[PASS] rule 1 + 5: MothsEast.amount_ratio == 1.0 (scene value, not touched)   1.0
+[PASS] rule 3: real P paused the tree   true
+[PASS] rule 3: MothsWest.can_process() == false while paused   false
+[PASS] rule 3: MothsMiddle.can_process() == false while paused   false
+[PASS] rule 3: MothsEast.can_process() == false while paused   false
+[PASS] rule 3: emitter state byte-equal across 30 paused frames   pre=[[true, 12, 1.0, true], [true, 12, 1.0, true], [true, 12, 1.0, true]] during=[[true, 12, 1.0, true], [true, 12, 1.0, true], [true, 12, 1.0, true]]
+[PASS] rule 3: real P unpaused the tree   false
+[PASS] rule 3: MothsWest.emitting still true after unpause   true
+[PASS] rule 3: MothsMiddle.emitting still true after unpause   true
+[PASS] rule 3: MothsEast.emitting still true after unpause   true
+[PASS] rule 4 (hide): MothsWest.emitting == false while hidden   false
+[PASS] rule 4 (hide): MothsWest.amount == 12 unchanged   12
+[PASS] rule 4 (hide): MothsWest.amount_ratio == 1.0 unchanged   1.0
+[PASS] rule 4 (hide): MothsMiddle.emitting == false while hidden   false
+[PASS] rule 4 (hide): MothsMiddle.amount == 12 unchanged   12
+[PASS] rule 4 (hide): MothsMiddle.amount_ratio == 1.0 unchanged   1.0
+[PASS] rule 4 (hide): MothsEast.emitting == false while hidden   false
+[PASS] rule 4 (hide): MothsEast.amount == 12 unchanged   12
+[PASS] rule 4 (hide): MothsEast.amount_ratio == 1.0 unchanged   1.0
+[PASS] rule 4 (show, active): MothsWest.emitting == true again   true
+[PASS] rule 4 (show, active): MothsMiddle.emitting == true again   true
+[PASS] rule 4 (show, active): MothsEast.emitting == true again   true
+[PASS] Amma's call closed through real E presses   amma_call_first
+[PASS] rule 2: clock_minutes reached 1740 under real T (fast-forward)   clock=1740.13, phase=0
+[PASS] rule 2: phase still NIGHT at the 1740 cutoff (dawn phase is 1790)   0
+[PASS] rule 2: MothsWest.emitting == false after clock >= 1740   false
+[PASS] rule 2: MothsWest.amount == 12 still (no mutation)   12
+[PASS] rule 2: MothsWest.amount_ratio == 1.0 still (no mutation)   1.0
+[PASS] rule 2: MothsMiddle.emitting == false after clock >= 1740   false
+[PASS] rule 2: MothsMiddle.amount == 12 still (no mutation)   12
+[PASS] rule 2: MothsMiddle.amount_ratio == 1.0 still (no mutation)   1.0
+[PASS] rule 2: MothsEast.emitting == false after clock >= 1740   false
+[PASS] rule 2: MothsEast.amount == 12 still (no mutation)   12
+[PASS] rule 2: MothsEast.amount_ratio == 1.0 still (no mutation)   1.0
+[PASS] rule 2: container still visible immediately after cutoff (2.4 s fade in flight)   true
+[PASS] rule 2: controller hid the group after the 2.4 s lifetime (game time, pausable)   visible=false, _fade_remaining=0.0
+[PASS] rule 2: MothsWest.emitting still false after the fade   false
+[PASS] rule 2: MothsWest.amount == 12 still (no mutation across the whole run)   12
+[PASS] rule 2: MothsWest.amount_ratio == 1.0 still (no mutation across the whole run)   1.0
+[PASS] rule 2: MothsMiddle.emitting still false after the fade   false
+[PASS] rule 2: MothsMiddle.amount == 12 still (no mutation across the whole run)   12
+[PASS] rule 2: MothsMiddle.amount_ratio == 1.0 still (no mutation across the whole run)   1.0
+[PASS] rule 2: MothsEast.emitting still false after the fade   false
+[PASS] rule 2: MothsEast.amount == 12 still (no mutation across the whole run)   12
+[PASS] rule 2: MothsEast.amount_ratio == 1.0 still (no mutation across the whole run)   1.0
+[PASS] rule 4 (show, inactive): MothsWest.emitting == false (clock still >= 1740)   false
+[PASS] rule 4 (show, inactive): MothsMiddle.emitting == false (clock still >= 1740)   false
+[PASS] rule 4 (show, inactive): MothsEast.emitting == false (clock still >= 1740)   false
+[PASS] test script ran to completion   true
+
+test_string_light_moths_controller.gd: 63 checks, 0 failed -> PASS
+WARNING: 20 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 10 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.

@@ -1,0 +1,6 @@
+Approved, all three steps, with three corrections:
+1. Drive `emitting` only. Effect B is ambience, not a feedback loop: leave `amount_ratio` at the scene's 1.0 and never change `amount`. The test asserts `amount` and `amount_ratio` stay unchanged.
+2. Brief B.4 #2: after `emitting` goes false because the condition ended, hide the group once the remaining 2.4 s lifetime has passed (game time, pausable). Test it.
+3. Reach 5:00 AM (clock 1740) by holding the real T key (fast-forward) through the harness, as test_night_skip.gd does, not with ls.test_advance_to(). Close Amma's call with real E first.
+Note: the effect scene's quad size was tuned to 0.21 x 0.135 since your plan; don't change any effect setting.
+Implement, show the diff, run the existing tests as CLAUDE.md says plus the new one at 60, and show the real output. Do not commit.
