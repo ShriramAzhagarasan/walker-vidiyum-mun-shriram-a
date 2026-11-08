@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
+[PASS] decoded floor_tiles_06_nor_gl_2k.png   ():<Image#-9223372005833701879>
+floor_tiles_06_nor_gl_2k.png   as OpenGL 0.162   as DirectX 1.838
+[PASS] decoded floor_tiles_06_nor_dx_2k.png   ():<Image#-9223372005766593014>
+floor_tiles_06_nor_dx_2k.png   as OpenGL 1.838   as DirectX 0.162
+[PASS] decoded marble_01_nor_gl_2k.png   ():<Image#-9223372005699484151>
+marble_01_nor_gl_2k.png   as OpenGL 0.637   as DirectX 1.363
+[PASS] decoded marble_01_nor_dx_2k.png   ():<Image#-9223372005632375286>
+marble_01_nor_dx_2k.png   as OpenGL 1.363   as DirectX 0.637
+[PASS] calibration: GL file is low read as OpenGL   0.162
+[PASS] calibration: GL file is high read as DirectX   1.838
+[PASS] calibration: DX file is high read as OpenGL   1.838
+[PASS] calibration: DX file is low read as DirectX   0.162
+[PASS] marble_01 nor_gl reads lower as OpenGL than as DirectX   0.637 < 1.363
+[PASS] test script ran to completion   true
+
+normal_map_check.gd: 11 checks, 0 failed -> PASS

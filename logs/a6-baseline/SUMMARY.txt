@@ -1,0 +1,17 @@
+test_assets_present.gd 60 exit=0 :: test_assets_present.gd: 70 checks, 0 failed -> PASS
+test_audio_mix.gd 60 exit=0 :: test_audio_mix.gd: 10 checks, 0 failed -> PASS
+test_sound_triggers.gd 60 exit=1 :: test_sound_triggers.gd: 86 checks, 53 failed -> FAIL
+test_sound_triggers.gd realtime exit=0 :: test_sound_triggers.gd: 86 checks, 0 failed -> PASS
+test_loop_logic.gd 60 exit=1 :: test_loop_logic.gd: 36 checks, 4 failed -> FAIL
+test_loop_logic.gd realtime exit=0 :: test_loop_logic.gd: 36 checks, 0 failed -> PASS
+test_slice_smoke.gd 60 exit=1 :: test_slice_smoke.gd: 13 checks, 4 failed -> FAIL
+test_slice_smoke.gd realtime exit=0 :: test_slice_smoke.gd: 13 checks, 0 failed -> PASS
+check_a3_assets.gd 60 exit=0 :: check_a3_assets.gd: 31 checks, 0 failed -> PASS
+check_a3_selftest.gd 60 exit=0 :: check_a3_selftest.gd: 17 checks, 0 failed -> PASS
+test_night_skip.gd 30 exit=0 :: test_night_skip.gd: 33 checks, 0 failed -> PASS
+test_night_skip.gd 60 exit=0 :: test_night_skip.gd: 33 checks, 0 failed -> PASS
+test_night_skip.gd 144 exit=0 :: test_night_skip.gd: 33 checks, 0 failed -> PASS
+test_materials.gd 60 exit=0 :: test_materials.gd: 156 checks, 0 failed -> PASS
+normal_map_check.gd 60 exit=0 :: normal_map_check.gd: 11 checks, 0 failed -> PASS
+
+[exited with code 0]
