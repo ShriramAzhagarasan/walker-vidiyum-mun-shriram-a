@@ -8,9 +8,7 @@
 gameplay scene `res://scenes/slice.tscn` (root `Slice`, `Node3D` at `slice.tscn:78`).
 
 **Effect A — Sand scuff on footsteps.** Two `CPUParticles3D` emitters (SoftDust, FineGrit)
-under a `FootstepScuff` root, instanced per footfall. CPU, because the scuff only needs
-gravity, damping, colour, and scale, and `CPUParticles3D` here has no `amount_ratio`,
-turbulence, or attractor (CHANGE-BRIEF §0). Trigger owner: Hari, a `CharacterBody3D`
+under a `FootstepScuff` root, one instance per footfall (overlap, CHANGE-BRIEF §A.3-A.4). Trigger owner: Hari, a `CharacterBody3D`
 (`slice.tscn:236`, `godot/scenes/hari.gd`). Walked distance in `hari.gd:11,69,72`
 (`STRIDE_M = 0.42`, `_travel += speed * delta`); foot contact at `_travel / STRIDE_M` = 2k + 0.5
 (`hari.gd:74-75`), ~0.38 s at `WALK_SPEED = 2.2` (`godot/logic/hari_spec.gd:4,7`).
@@ -51,17 +49,19 @@ scripts/run-test.sh test_materials.gd 60             # A5  156/156
 scripts/run-test.sh normal_map_check.gd 60           # A5  11/11
 ```
 
-`harness.gd` is the shared base class; `a3_measure.gd`/`capture_a3.gd` are helpers, not
-tests. New A6 tests (CHANGE-BRIEF §D) run through the same wrapper and must use frame
-`delta`, never `Time.get_ticks_msec()`.
+`harness.gd` is the base class; `a3_measure.gd`/`capture_a3.gd` are helpers. New A6 tests
+(CHANGE-BRIEF §D) use the same wrapper and frame `delta`, never `Time.get_ticks_msec()`.
 
 ### Headless facts
 `godot` on PATH: `/opt/homebrew/bin/godot` → `~/Downloads/Godot.app/Contents/MacOS/Godot`
 (README's `/Applications` path is wrong here). `timeout` is GNU coreutils at
-`/opt/homebrew/bin/timeout` (exit 124 = hung). Headless uses a dummy renderer:
-`GPUParticles3D` isn't GPU-simulated. It can read `can_process()`, `emitting`, `visible`,
-`amount`, `lifetime`, curves, materials — never the rendered picture; every visual rule
-ends in a human check. Never add `--rendering-driver`.
+`/opt/homebrew/bin/timeout` (exit 124 = hung). Never add `--rendering-driver`.
+- A headless run uses a dummy renderer: it draws no particles and runs no GPU particle
+  process. Node state (emitting, one_shot, amount_ratio, visibility, instance counts) is
+  observable; the look is not. *(Confirmed 2026-11-08: empty video adapter name;
+  `GPUParticles3D.capture_aabb()` stays zero-size after 30 emitting frames.)*
+- A GPU effect's headless CPU price is near zero by construction.
+- Frame strips come from a windowed Movie Maker run, which I start.
 
 ## Current change
 
@@ -72,8 +72,9 @@ ends in a human check. Never add `--rendering-driver`.
 Files in `godot/shaders/` are hand-written by Shriram. An agent must never create, edit, or
 rewrite any `.gdshader` file (both A5 shaders and the hint-experiment shader) or the one
 `COLOR` line in `fragment()`. Agent sessions leave `git diff --stat godot/shaders/` empty.
-The A5 pixel predictions, hint-experiment predictions, colour line, and Part 3 short
-answers in `CHANGE-BRIEF.md` are also Shriram's and aren't rewritten.
+Shriram's A6 brief text (Parts A–H), every prediction, every verdict and the process-shader
+notes are Shriram's and aren't rewritten. `godot/shaders/particles_generated.gdshader` (Step 6)
+is saved by Shriram from the editor; no agent creates or edits it.
 
 **A6 particle effects** — every per-emitter setting (emission, process, draw, turbulence,
 attractor) lives in scene files under `godot/effects/` (`.tscn` + the `.tres` they
@@ -97,28 +98,22 @@ here, I say so instead of guessing.
   (`radius`, `strength`, `attenuation`, `directionality`).
 - **`StandardMaterial3D`**: `vertex_color_use_as_albedo`, `transparency`, `blend_mode`,
   `billboard_mode = BaseMaterial3D.BILLBOARD_PARTICLES` (= 3).
+- **`Curve`** clamps points to `min_value..max_value` (default 0..1): a 1.3 point needs
+  `max_value >= 1.3` (checked 2026-11-08).
 
 ## Out of scope
 
-The A6 change must not touch: Hari's movement, the 0.38 s footstep interval, collision, or
-input (`godot/scenes/hari.gd`, `godot/autoload/controls.gd`, `godot/logic/input_setup.gd`,
-`godot/logic/hari_spec.gd`); `LoopState` (`godot/autoload/loop_state.gd`) or `Story`
-(`godot/autoload/story.gd`) logic, phases, or the night clock rate — read-only; any A5
-shader (`godot/shaders/`) or A5 material (`godot/materials/marble_{dry,wet}.tres`,
-`night_skip.tres`); `godot/scenes/deck_dressing.gd`, string-light positions, bulbs, or the
-warm `OmniLight3D` — read-only for the moths; any existing test in `godot/tests/` or its
-expectations; `scripts/run-test.sh` (diff in every review); the known A2 wall-clock
-limitation in `Story._now()` (`story.gd:203`); any HUD element, dialogue, toast, white-out,
-or 3D object other than the new effect scenes and the small trigger script that
-instantiates Effect A; `godot/project.godot` renderer, display, physics, and autoload settings.
+The A6 change must not touch: Hari's movement, the 0.38 s footstep interval, collision or input
+(`hari.gd`, `controls.gd`, `input_setup.gd`, `hari_spec.gd`); `LoopState`/`Story` logic, phases or
+clock rate (read-only); A5 shaders and materials; the string lights in `deck_dressing.gd` (read-only);
+existing tests and their expectations; `scripts/run-test.sh` (diff it in every review);
+`Story._now()` (`story.gd:203`); any HUD element or 3D object other than the new effect scenes
+and their trigger/controller scripts; `project.godot` renderer, display, physics and autoloads.
 
 ## Unconfirmed
 
-- No `AGENTS.md` at the repository root. `godot/effects/` does not exist yet; it will be
-  created when Effect A or B is first built.
-- The A5 editor-rewrite caveat (`project.godot`, `default_bus_layout.tres`, scenes) is
-  assumed to still apply to A6 editor sessions; restore with git after each session
-  (TEST-REPORT A5.8).
-- CHANGE-BRIEF §B.3 plans moth emitters at x = 8, 12, 16, between the pole x-values
-  (6, 10, 14, 18) from `deck_dressing.gd:11`, not on the bulbs; the brief flags this for a
-  re-check before building.
+- No `AGENTS.md` at the repository root. `godot/effects/` doesn't exist until the first build.
+- Editor sessions rewrite `project.godot`, `default_bus_layout.tres` and scenes; restore
+  with git after each (TEST-REPORT A5.8). Assumed to still hold for A6.
+- Whether a hidden `GPUParticles3D` keeps simulating in 4.7.2 is unconfirmed; B.4 stops
+  emission explicitly when hidden, so tests assert `emitting`/`visible`, not GPU state.
