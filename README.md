@@ -141,7 +141,8 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
 - **Effect A, sand scuff on footsteps** (`effects/footstep_scuff.tscn`): two `CPUParticles3D`, SoftDust (10) and
   FineGrit (5), one-shot, 1.15 s.
   - **Event:** each foot contact while Hari walks. `effects/footstep_scuff_trigger.gd` reads Hari's walked distance
-    (contact when `_travel / 0.42` = 2k + 0.5, about every 0.38 s) and never writes it. It never fires on load, while
+    (contact when `_travel / 0.42` crosses 2k + 0.5: one footfall per 0.84 m, about every 0.38 s at his 2.2 m/s walk) and
+    never writes it. It never fires on load, while
     standing, in dialogue or while paused.
   - **Retrigger, overlap:** each footfall gets a new instance at Hari's floor position, freed after 1.15 s. At most 4
     are alive at once (60 particles).
@@ -182,7 +183,8 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
     as expected for a GPU effect, because the headless renderer runs no particle process.
   - **GPU:** the Visual Profiler's GPU column read 0.0 ms on Metal / Apple M1 Pro, so GPU time could not be measured.
   - **FPS with vsync off:** about 280 with both effects off and 260–270 with both on, which is about 0.13–0.28 ms of
-    frame time for the two effects together. Whether each effect is within its 0.20 ms budget is not confirmed.
+    whole-frame time (CPU and GPU together, not GPU time) for the two effects together. Whether each effect is within its
+    0.20 ms budget is not confirmed.
 - **A6 known limitations:**
   - GPU time per effect was not measured (see above).
   - The scuff lands at Hari's centre, which reads as behind his front foot. Shriram kept this (brief revision 3).
@@ -195,7 +197,7 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
 - **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160.
   - **Link (Northeastern OneDrive):** LINK-PENDING
   - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:** SHA-PENDING
-  - **Game-source revision shown:** REV-PENDING
+  - **Game-source revision shown:** `52fa183`; `git diff 52fa183 a6 -- godot scripts` is empty
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A6; the earlier briefs are in [design/briefs/](design/briefs/)) · [TUNING](TUNING.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)

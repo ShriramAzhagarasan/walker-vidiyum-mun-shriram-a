@@ -344,8 +344,8 @@ Overall, I learned that getting a shader to compile is only one part of the work
 ## 2026-11-08 ~16:45–20:50: build, tuning and checks (AI-recorded; Shriram's words quoted)
 
 **Who did what.**
-- Shriram wrote the brief's Parts A–H, with ChatGPT's help on wording, structure and the price predictions
-  (SOURCES.md). Shriram dictated seven edits after Claude's engine check, chose both effects and the retrigger rule,
+- Shriram wrote the brief's Parts A–H, with ChatGPT's help on wording, structure, planning the effect settings and the
+  price predictions (SOURCES.md). Shriram dictated seven edits after Claude's engine check, chose both effects and the retrigger rule,
   ran every capture and play check, and gave every verdict.
 - Claude wrote §0 of the brief, the CLAUDE.md review, the agent prompts (`prompts/a6/`) and the reviews of the agents'
   work, and proposed each tuning change.

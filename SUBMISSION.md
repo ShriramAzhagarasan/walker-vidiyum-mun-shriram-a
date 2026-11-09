@@ -8,14 +8,15 @@
 - **GitHub repository URL:** https://github.com/ShriramAzhagarasan/walker-vidiyum-mun-shriram-a
 - **Git tag and submitted commit SHA:** tag `a6`. The Canvas submission note gives the submitted commit's SHA, because a
   commit can't contain its own SHA.
-- **Game-source revision shown in the film:** REV-PENDING. Later commits change only docs and film records:
-  `git diff <that revision> a6 -- godot scripts` is empty.
+- **Game-source revision shown in the film:** `52fa183`. Later commits change only docs and film records:
+  `git diff 52fa183 a6 -- godot scripts` is empty.
 - **Godot version, renderer, and operating system:** Godot 4.7.2.stable.official.ed1daf0bf · Forward+ (Metal) ·
   macOS 26.6.2
 - **GPU used for the GPU price:** Apple M1 Pro (Apple7), integrated, in an editor Play run at 1278×719.
 - **Effect A: event, node type, retrigger rule:**
-  - **Event:** a sand scuff on each of Hari's footfalls while he walks. The trigger reads his walked distance and fires
-    when `_travel / 0.42` = 2k + 0.5, about every 0.38 s. It never fires on load, while he stands, during dialogue, or
+  - **Event:** a sand scuff on each of Hari's footfalls while he walks. The trigger follows walked distance, not time.
+    It fires when Hari's `_travel / 0.42` crosses 2k + 0.5, which is one footfall per 0.84 m. At his walk speed of
+    2.2 m/s (`hari_spec.gd`) that is about every 0.38 s. It never fires on load, while he stands, during dialogue, or
     while the game is paused.
   - **Node type:** two `CPUParticles3D` (SoftDust 10, FineGrit 5) under one `FootstepScuff` root.
   - **Retrigger rule:** overlap. Each footfall gets a new instance, freed after 1.15 s, with at most 4 alive
@@ -31,8 +32,10 @@
     control), so within budget. Its GPU budget is ≤ 0.20 ms.
   - **Effect B:** budget ≤ 0.20 ms of GPU time. Its headless CPU price is about 0 by construction.
   - **GPU time:** not measurable here. The Visual Profiler's GPU column read 0.0 ms on every row under Metal.
-  - **FPS with vsync off (F10):** about 280 with both effects off and 260–270 with both on, so about 0.13–0.28 ms of
-    frame time for the two together. The per-effect GPU budgets are therefore **not confirmed** (TEST-REPORT A6.5–A6.6).
+  - **FPS with vsync off (F10):** about 280 with both effects off and 260–270 with both on. That is a change of about
+    0.13–0.28 ms in whole-frame time (CPU and GPU together) for the two effects combined. It is an estimate of total
+    frame-time change, **not GPU time**, and it can't be split per effect. The per-effect GPU budgets are therefore
+    **not confirmed** (TEST-REPORT A6.5–A6.6).
 - **Texture sources and licences:** procedural only, no external images.
   - The scuff uses `GradientTexture2D` resources inside `godot/effects/footstep_scuff.tscn`.
   - The moth silhouette `godot/effects/moth.png` is written by `godot/tools/moth_texture.gd` (an agent wrote it; Claude
@@ -44,13 +47,14 @@
 - **Summary of my work:**
   - **The brief:** I chose both effects and the overlap rule. I wrote CHANGE-BRIEF.md Parts A–H (intent, every value,
     the rules, the frame and failure predictions, the prices and budgets, and the six answers) before the first build
-    step, with ChatGPT's help on the wording, the structure and the price predictions (SOURCES.md). After Claude's
+    step, with ChatGPT's help on the wording, the structure, planning the effect settings and the price predictions
+    (SOURCES.md). After Claude's
     engine check I dictated seven corrections.
   - **Agent plans:** I approved the agents' plans with corrections, two for the trigger and three for the moth
     controller.
   - **Hands-on work:** I ran both mutations, captured every frame strip, and converted the process shader in the editor.
-  - **Tuning:** I gave every tuning verdict from play: A r1 "way too fast", A r2 "not like cotton balls", B r1–r3
-    "it reads as moths". I overruled Claude's timing reading of the first scuff strip.
+  - **Tuning:** I gave every tuning verdict from play. A r0, "way too fast", drove r1, and I overruled Claude's timing
+    reading of that strip. My verdict on A r2 was "not like cotton balls", and on B r3 "it reads as moths".
   - **Play checks and the GPU price:** I did the play checks (pause, hide/show, dawn, darkest and lightest floor) and
     read the GPU price.
   - **My own writing:** the process-shader notes (after ChatGPT explained the shader to me) and my FRICTIONAL.md
@@ -59,7 +63,8 @@
     sessions (`prompts/a6/`), the previews, the debug keys and the tuning proposals, and is making the film. The agents
     built the effect scenes, trigger, controller, tests and cost script. Full split in SOURCES.md and FRICTIONAL.md.
 - **Known limitations:**
-  - GPU time per effect wasn't measured (see Budgets).
+  - GPU time wasn't measured. The FPS comparison gives only the whole-frame change for both effects together (see
+    Budgets).
   - The scuff lands at Hari's centre, so it reads as behind his front foot. I kept this.
   - Hari looks slightly above the floor. That's the A3 sprite and shadow, out of scope.
   - The r3 moths read pale grey, not the predicted dark umber.
