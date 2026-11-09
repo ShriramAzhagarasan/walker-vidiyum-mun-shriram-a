@@ -518,3 +518,61 @@ Editor run (Play), Godot 4.7.2, Forward+ on **Metal**, **Apple M1 Pro (Apple7)**
 - **B r0–r2:** Claude's readings blamed size (r0) and then contrast (r1) and predicted r2's dark colour would make the
   moths stand out; Shriram still could not see them. The real cause, an almost transparent agent-made texture, was
   found only after Shriram's third "can't see" (TUNING.md, Effect B r2–r3).
+
+## A6 — Generated Particle Shader Notes
+
+**1. Shader type — line 3**
+
+Line 3 says `shader_type particles;`. This tells Godot the shader is responsible for particle behavior rather than drawing the actual moth image.
+
+**2. Start and process functions — lines 313 and 366**
+
+`start()` begins at line 313 and runs when a particle is spawned. It sets up the particle's initial values.
+
+`process()` begins at line 366 and updates the particle as it moves through its lifetime.
+
+**3. Initial velocity — lines 232 and 355**
+
+Line 232 chooses a random initial speed between `initial_linear_velocity_min` and `initial_linear_velocity_max`.
+
+Line 355 combines that speed with a random direction based on the spread. This is why the moths don't all start moving in exactly the same direction.
+
+**4. Gravity — lines 399 and 412**
+
+Line 399 adds gravity to the force calculation. Line 412 uses that force and the frame's `DELTA` to update the particle's velocity.
+
+For my moth effect, I set gravity to `(0, 0, 0)` because I want them to move around the lights rather than fall toward the ground.
+
+**5. Colour over life — line 255**
+
+Line 255 samples `color_ramp` using the particle's lifetime progress. This lets the moths fade in, remain visible for most of their life, and fade out before disappearing.
+
+**6. Scale over life — lines 254 and 458–465**
+
+Line 254 samples `scale_curve` to calculate how the particle's size changes over its lifetime.
+
+Lines 458–465 apply the calculated scale to the particle transform. In my brief, the moth starts smaller, reaches its normal size, and becomes smaller again toward the end.
+
+**7. A setting from my brief — lines 47 and 131–135**
+
+Line 47 declares `turbulence_noise_strength`. Lines 131–135 use it when calculating the noise direction.
+
+My brief sets `turbulence_noise_strength` to **0.45**. I included turbulence because I wanted the moths to wander around the string lights rather than travel in straight lines.
+
+The value comes from the particle material; it is not hard-coded into the generated shader.
+
+### Which settings belong to the process shader, and which belong to drawing?
+
+The process shader controls how the particles behave. It handles their starting positions, direction, speed, gravity, damping, turbulence, colour changes, and size changes. For example, `color_ramp` and `scale_curve` determine how a moth changes as it gets older.
+
+Some settings, like `amount`, `lifetime`, `preprocess`, and `one_shot`, belong to the `GPUParticles3D` node instead.
+
+The draw step decides what each particle actually looks like. My `QuadMesh` determines the shape and dimensions, while the moth texture provides the wings and body. The `StandardMaterial3D` controls transparency, blending, and billboard behavior.
+
+So the process shader makes the moths move and change over time, while the draw material makes them look like moths instead of plain squares.
+
+*Provenance (Claude):* the notes above are Shriram's, pasted on 2026-11-08 and placed unchanged. The shader is
+`godot/shaders/particles_generated.gdshader` (473 lines, commit `9e7edec`). Shriram converted it in the editor from
+MothsWest's `ParticleProcessMaterial` and saved it there. Claude checked only that each cited line (3, 47, 131–135,
+232, 254, 255, 313, 355, 366, 399, 412, 458–465) holds the code it is cited for, using `sed -n` against that file.
+All of them match.
