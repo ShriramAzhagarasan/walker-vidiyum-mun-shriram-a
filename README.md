@@ -1,8 +1,8 @@
 # walker-vidiyum-mun-shriram-a: Vidiyum Mun (விடியும் முன், "Before Dawn")
 
-**CSYE 7270 Fall 2026 · current submission: Assignment 5, Shaders, Materials, and the Godot Shading Language (tag `a5`; see
-["Assignment 5"](#assignment-5-shaders-and-materials-tag-a5)). The game began in Assignment 2 (art, sound and music);
-Assignment 3 added Blender models.**
+**CSYE 7270 Fall 2026 · current submission: Assignment 6, Creating Particle Effects with Godot and Claude (tag `a6`; see
+["Assignment 6"](#assignment-6-particle-effects-tag-a6)). The game began in Assignment 2 (art, sound and music);
+Assignment 3 added Blender models, Assignment 5 shaders and materials.**
 **Student:** Shriram Alagarasan · **Engine:** Godot 4.7.2.stable.official (macOS) · **Renderer:** Forward+
 
 A time-loop mystery at the last party on a rich family's illegally fenced beach on ECR, Chennai. You play Hari, a middle-class engineering student. Every dawn ends in tragedy and he wakes at 8 PM again, keeping only what he learned. This repo holds the **asset slice**: one playable 2.5D scene (Telltale-style 3D deck, generated cel-shaded characters) that proves the generated art, sound effects and music work together in the engine.
@@ -30,6 +30,8 @@ An **empty Godot 4.7.2 project**. GDScript conventions and the headless test pat
 | **N** | Mute or unmute **sound effects** |
 | **R** | Restart from loop 1 (after the end card) |
 | **Enter / Esc** | Title: start the intro / skip the intro |
+| **F10** (debug builds) | Vsync on/off, for the A6 FPS comparison only (no project-setting change). On a Mac: **fn+F10** |
+| **F11** (debug builds) | Both A6 particle effects off/on, for the A6 price comparison. On a Mac: **fn+F11** |
 
 ## What the slice demonstrates
 - **Hari in 10 states**, one static generated image per state (idle, walk, talk, phone, notes, overhear, startled, keys, white-out, relief). He faces the way he walks (the image flips at runtime). Collision is a 0.28 × 1.70 m capsule.
@@ -132,8 +134,71 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
     now say "three shaders", and the B15 footer was un-clipped. The superseded export (SHA-256 `613d4ed5…af8`) is
     not the submitted film.
 
+## Assignment 6: particle effects (tag `a6`)
+Two particle effects added to the night slice (`scenes/slice.tscn`). Shriram's intent, values, predictions and budgets
+are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), committed before the first build step. Every tuning revision, with its strips,
+Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
+- **Effect A, sand scuff on footsteps** (`effects/footstep_scuff.tscn`): two `CPUParticles3D`, SoftDust (10) and
+  FineGrit (5), one-shot, 1.15 s.
+  - **Event:** each foot contact while Hari walks. `effects/footstep_scuff_trigger.gd` reads Hari's walked distance
+    (contact when `_travel / 0.42` = 2k + 0.5, about every 0.38 s) and never writes it. It never fires on load, while
+    standing, in dialogue or while paused.
+  - **Retrigger, overlap:** each footfall gets a new instance at Hari's floor position, freed after 1.15 s. At most 4
+    are alive at once (60 particles).
+- **Effect B, moths around the string lights** (`effects/string_light_moths.tscn`): three `GPUParticles3D` (12 each),
+  each with a `GPUParticlesAttractorSphere3D`.
+  - **Job:** ambience.
+  - **Condition:** `LoopState.phase == NIGHT` and `clock_minutes < 1740` (before 5:00 AM).
+    `effects/string_light_moths_controller.gd` polls it each frame and only reads game state.
+  - **Features Effect A doesn't use:** turbulence, attractors, and a 2.4 s preprocess, so the group is already
+    populated on its first frame.
+  - **When the condition ends:** emission stops and the group is hidden 2.4 s later.
+  - **Pause and hide:** pause freezes the moths. Hiding the group stops emission; showing it again restarts emission.
+- **Textures:** procedural only.
+  - The scuff uses `GradientTexture2D` resources inside the scene.
+  - The moth is `effects/moth.png`, written by `tools/moth_texture.gd`. Regenerate it with
+    `godot --headless --path godot -s res://tools/write_moth_texture.gd`.
+- **Process shader:** `shaders/particles_generated.gdshader`, converted by Shriram in the editor from MothsWest's
+  `ParticleProcessMaterial`; the game doesn't use it. Shriram's line references are in TEST-REPORT.md.
+- **Tests** (`scripts/run-test.sh <file> <fps|realtime> [timeout]`, Godot on PATH; results in TEST-REPORT.md,
+  "Assignment 6"):
+  ```bash
+  ./scripts/run-test.sh test_footstep_scuff_config.gd 60          # A: every emission/process/draw value read back
+  ./scripts/run-test.sh test_footstep_scuff_trigger.gd 60         # A: real D/E/P keys; one scuff per footfall, overlap, never otherwise
+  ./scripts/run-test.sh test_string_light_moths_config.gd 60      # B: turbulence, attractors, preprocess, draw, texture
+  ./scripts/run-test.sh test_string_light_moths_controller.gd 60  # B: night/cutoff, pause, hide/show, real E/P/T keys
+  ./scripts/run-test.sh cost_effects.gd 60 300                    # headless CPU price with an empty-scene control
+  ./scripts/run-test.sh test_sound_triggers.gd realtime           # the three A2 wall-clock suites run in realtime mode
+  ```
+  Mutations: a Godot 3 name (`initial_velocity`) and a spread drift each make the configuration test exit 1.
+- **Frame strips** (fixtures: the real slice, seeded, HUD hidden; a window opens):
+  ```bash
+  godot --path godot res://previews/footstep_scuff_preview.tscn --write-movie "$PWD/captures/x/frame.png" --fixed-fps 30 --quit-after 60 -- lit retrigger
+  godot --path godot res://previews/string_light_moths_preview.tscn --write-movie "$PWD/captures/y/frame.png" --fixed-fps 30 --quit-after 150
+  ```
+  The kept strips are in `captures/footstep_scuff/` and `captures/string_light_moths/`.
+- **Price** (TEST-REPORT A6.5–A6.6):
+  - **Headless CPU:** Effect A at 4 bursts costs +13.2 µs per frame against the 0.15 ms budget. Effect B costs about 0,
+    as expected for a GPU effect, because the headless renderer runs no particle process.
+  - **GPU:** the Visual Profiler's GPU column read 0.0 ms on Metal / Apple M1 Pro, so GPU time could not be measured.
+  - **FPS with vsync off:** about 280 with both effects off and 260–270 with both on, which is about 0.13–0.28 ms of
+    frame time for the two effects together. Whether each effect is within its 0.20 ms budget is not confirmed.
+- **A6 known limitations:**
+  - GPU time per effect was not measured (see above).
+  - The scuff lands at Hari's centre, which reads as behind his front foot. Shriram kept this (brief revision 3).
+  - Hari looks slightly above the floor: this is the A3 sprite and its shadow, out of scope for A6.
+  - At r3 the moths read as pale grey, not the dark umber the r2 colour predicted (TUNING.md, Effect B).
+  - The "Hari freed while the level persists" rule is not tested headless, because the slice itself needs Hari every
+    frame.
+  - Some Movie Maker strips stopped early when the window was closed; the kept frames are named in TUNING.md.
+  - Opening the editor rewrites `project.godot` and `default_bus_layout.tres`; they were restored after every session.
+- **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160.
+  - **Link (Northeastern OneDrive):** LINK-PENDING
+  - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:** SHA-PENDING
+  - **Game-source revision shown:** REV-PENDING
+
 ## Docs
-[CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A5; the A2/A3 briefs are in [design/briefs/](design/briefs/CHANGE-BRIEF-A2-A3.md)) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)
+[CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A6; the earlier briefs are in [design/briefs/](design/briefs/)) · [TUNING](TUNING.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)
 
 ## Known limitations
 - **2.5D:** characters, the SUV and the backdrops are flat generated images in a 3D deck, so they read as cards when the camera turns. Natural character motion would need rigged 3D models. **Next step, written for A2:** build the SUV, the rock shrine and the fence as Blender models (done in A3).

@@ -577,3 +577,20 @@ MothsWest's `ParticleProcessMaterial` and saved it there. Claude checked only th
 232, 254, 255, 313, 355, 366, 399, 412, 458–465) holds the code it is cited for, using `sed -n` against that file.
 All of them match. ChatGPT helped Shriram understand the generated shader (Shriram, 2026-11-08;
 SOURCES.md, Assignment 6).
+
+## A6.9 Final run (Claude, 2026-11-08 ~20:51, `logs/a6-final/SUMMARY.txt`)
+
+Every suite run through `scripts/run-test.sh` in its stated mode. All exit 0, and no log contains SCRIPT ERROR or
+SHADER ERROR.
+
+| Test | Mode | Result |
+|---|---|---|
+| test_assets_present · test_audio_mix | 60 | 70/70 · 10/10 |
+| test_sound_triggers · test_loop_logic · test_slice_smoke | realtime | 86/86 · 36/36 · 13/13 |
+| check_a3_assets · check_a3_selftest | 60 | 31/31 · 17/17 |
+| test_night_skip | 30 / 60 / 144 | 33/33 each |
+| test_materials · normal_map_check | 60 | 156/156 · 11/11 |
+| test_footstep_scuff_config | 60 | **128/128**: 126 at r1 (A6.2), plus the r2 texture checks |
+| test_footstep_scuff_trigger | 60 | **19/19** |
+| test_string_light_moths_config | 60 | **255/255** |
+| test_string_light_moths_controller | 60 | **63/63** |

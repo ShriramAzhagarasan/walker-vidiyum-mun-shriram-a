@@ -1,0 +1,18 @@
+A6 final run, 2026-11-08 ~20:51, commit f54c120 + README draft (no godot/ or scripts/ changes). Claude ran each through scripts/run-test.sh in the mode shown.
+60       test_assets_present.gd: 70 checks, 0 failed -> PASS
+60       test_audio_mix.gd: 10 checks, 0 failed -> PASS
+realtime test_sound_triggers.gd: 86 checks, 0 failed -> PASS
+realtime test_loop_logic.gd: 36 checks, 0 failed -> PASS
+realtime test_slice_smoke.gd: 13 checks, 0 failed -> PASS
+60       check_a3_assets.gd: 31 checks, 0 failed -> PASS
+60       check_a3_selftest.gd: 17 checks, 0 failed -> PASS
+30       test_night_skip.gd: 33 checks, 0 failed -> PASS
+60       test_night_skip.gd: 33 checks, 0 failed -> PASS
+144      test_night_skip.gd: 33 checks, 0 failed -> PASS
+60       test_materials.gd: 156 checks, 0 failed -> PASS
+60       normal_map_check.gd: 11 checks, 0 failed -> PASS
+60       test_footstep_scuff_config.gd: 128 checks, 0 failed -> PASS
+60       test_footstep_scuff_trigger.gd: 19 checks, 0 failed -> PASS
+60       test_string_light_moths_config.gd: 255 checks, 0 failed -> PASS
+60       test_string_light_moths_controller.gd: 63 checks, 0 failed -> PASS
+No log contains SCRIPT ERROR or SHADER ERROR.

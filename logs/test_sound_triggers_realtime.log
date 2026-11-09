@@ -38,8 +38,8 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] unmuted clue_saved == number of new clues   ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"]
 [PASS] unmuted all 10 Hari states shown   []
 [PASS] unmuted state order matches the script   ["PHONE", "IDLE", "WALK", "IDLE", "TALK", "IDLE", "OVERHEAR", "NOTES", "IDLE", "TALK", "IDLE", "NOTES", "IDLE", "WHITEOUT", "STARTLED", "PHONE", "IDLE", "TALK", "KEYS", "NOTES", "IDLE", "TALK", "IDLE", "RELIEF"]
-[PASS] unmuted NOTES shown ~1.5 s each time   [1504, 1495, 1505]
-[PASS] unmuted KEYS shown ~1.5 s each time   [1503]
+[PASS] unmuted NOTES shown ~1.5 s each time   [1504, 1496, 1503]
+[PASS] unmuted KEYS shown ~1.5 s each time   [1505]
 [PASS] unmuted STARTLED >= ~1.2 s, then PHONE   [1925] -> PHONE
 --- scenario: muted ---
 [PASS] muted L1 phone_buzz on start   { "phone_buzz": 1, "clue_saved": 0, "keys_exchanged": 0, "dawn_crash": 0, "safe_dawn": 0 }
@@ -78,9 +78,9 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] muted clue_saved == number of new clues   ["KNOW_SELVAM", "KNOW_KEYS", "KEYS_WITH_MANI"]
 [PASS] muted all 10 Hari states shown   []
 [PASS] muted state order matches the script   ["IDLE", "PHONE", "IDLE", "WALK", "IDLE", "TALK", "IDLE", "OVERHEAR", "NOTES", "IDLE", "TALK", "IDLE", "NOTES", "IDLE", "WHITEOUT", "STARTLED", "PHONE", "IDLE", "TALK", "KEYS", "NOTES", "IDLE", "TALK", "IDLE", "RELIEF"]
-[PASS] muted NOTES shown ~1.5 s each time   [1497, 1498, 1505]
+[PASS] muted NOTES shown ~1.5 s each time   [1504, 1490, 1496]
 [PASS] muted KEYS shown ~1.5 s each time   [1504]
-[PASS] muted STARTLED >= ~1.2 s, then PHONE   [1910] -> PHONE
+[PASS] muted STARTLED >= ~1.2 s, then PHONE   [1925] -> PHONE
 [PASS] mute: same loop_index   2 vs 2
 [PASS] mute: same knowledge   { "KNOW_SELVAM": true, "KNOW_KEYS": true } vs { "KNOW_SELVAM": true, "KNOW_KEYS": true }
 [PASS] mute: same per-loop flags   { "KEYS_SAFE": true, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": true } vs { "KEYS_SAFE": true, "ADVAY_DONE": true, "FIRE_GLOW_DONE": true, "DAWN_DONE": true }
