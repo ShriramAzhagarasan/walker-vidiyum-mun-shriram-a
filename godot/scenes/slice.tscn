@@ -19,6 +19,7 @@
 [ext_resource type="Material" path="res://materials/marble_wet.tres" id="17_marblewet"]
 [ext_resource type="Script" path="res://effects/footstep_scuff_trigger.gd" id="18_scuff"]
 [ext_resource type="Script" path="res://effects/string_light_moths_controller.gd" id="19_moths"]
+[ext_resource type="Script" path="res://effects/effects_debug_keys.gd" id="20_debugkeys"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 sky_top_color = Color(0.11, 0.1, 0.31, 1)
@@ -263,6 +264,11 @@ hari_path = NodePath("../Hari")
 
 [node name="StringLightMoths" type="Node3D" parent="."]
 script = ExtResource("19_moths")
+
+[node name="EffectsDebugKeys" type="Node" parent="."]
+script = ExtResource("20_debugkeys")
+scuffs_path = NodePath("../FootstepScuffs")
+moths_path = NodePath("../StringLightMoths")
 
 [node name="KeysIcon" type="Sprite3D" parent="."]
 script = ExtResource("5_billboard")

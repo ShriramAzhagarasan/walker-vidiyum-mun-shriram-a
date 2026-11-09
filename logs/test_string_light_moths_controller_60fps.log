@@ -1,7 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
-[PASS] StringLightMoths container present in slice.tscn   StringLightMoths:<Node3D#46036682359>
+[PASS] StringLightMoths container present in slice.tscn   StringLightMoths:<Node3D#46338672248>
 [PASS] 3 GPUParticles3D under the controller   3
 [PASS] rule 1: phase == NIGHT at load   0
 [PASS] rule 1: clock_minutes < 1740 at load   1200.0
@@ -69,4 +69,3 @@ WARNING: 20 ObjectDB instances were leaked at exit (run with `--verbose` for det
    at: cleanup (core/object/object.cpp:2536)
 ERROR: 10 resources still in use at exit (run with --verbose for details).
    at: clear (core/io/resource.cpp:822)
-ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.

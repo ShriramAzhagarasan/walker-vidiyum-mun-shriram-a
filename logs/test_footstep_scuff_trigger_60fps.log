@@ -1,7 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
 [PASS] autoloads present   LoopState:<Node#27095205323> Story:<Node#27783071181> SoundBank:<Node#28135392719>
-[PASS] FootstepScuffs container present in slice.tscn   FootstepScuffs:<Node3D#46019905142>
+[PASS] FootstepScuffs container present in slice.tscn   FootstepScuffs:<Node3D#46321895031>
 [PASS] no scuff at scene load (frame 1, before any input)   0
 [PASS] Amma's call is active on load   amma_call_first
 [PASS] movement is locked on load   true
@@ -12,7 +12,7 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [PASS] walking fired >= 3 scuffs (rule 8: once per footfall)   3 fires in 2.01 m of walk
 [PASS] fire 0 Y = 0 (floor projection, rule 8)   0.0
 [PASS] fire 0 XZ within 0.08 m of Hari (rule 8: Hari's world position)   fire(7.728,1.000) vs hari(7.763,1.000)
-[PASS] fires 0 and 1 are distinct instances (new per footfall, not reset)   FootstepScuff:<Node3D#58804143966> vs @Node3D@85:<Node3D#60599306132>
+[PASS] fires 0 and 1 are distinct instances (new per footfall, not reset)   FootstepScuff:<Node3D#59122911072> vs @Node3D@85:<Node3D#60918073238>
 [PASS] fire 0 still alive when fire 1 arrives (overlap, not replaced)   inst0=true inst1=true
 [PASS] P paused the tree   true
 [PASS] no new scuffs while paused (30 frames with D held)   3 (was 3)
