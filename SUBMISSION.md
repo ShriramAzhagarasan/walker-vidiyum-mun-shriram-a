@@ -46,8 +46,8 @@
     revised it at B r3).
   - The A5 marble textures (Poly Haven, CC0) are unchanged; their credits are in
     `godot/assets/textures/marble_01/ATTRIBUTION.md`.
-- **Final film URL and filename:** LINK-PENDING · `claude-liam-vidiyum-mun-a6-gamedev.mp4` (3840×2160)
-- **Final film SHA-256:** SHA-PENDING
+- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux · `claude-liam-vidiyum-mun-a6-gamedev.mp4` (3840×2160, 30 fps, 7:11)
+- **Final film SHA-256:** `5a5e381bd69906e0cff87e26bf8307952287c4e26931d38d01446b4ba0a29f85`
 - **Summary of my work:**
   - **The brief:** I chose both effects and the overlap rule. I wrote CHANGE-BRIEF.md Parts A–H (intent, every value,
     the rules, the frame and failure predictions, the prices and budgets, and the six answers) before the first build
@@ -64,7 +64,8 @@
   - **My own writing:** the process-shader notes (after ChatGPT explained the shader to me) and my FRICTIONAL.md
     reflection (an earlier draft was ChatGPT-assisted).
   - **Claude's part:** Claude wrote §0 of the brief, the CLAUDE.md review, the prompts and reviews of the scoped agent
-    sessions (`prompts/a6/`), the previews, the debug keys and the tuning proposals, and is making the film. The agents
+    sessions (`prompts/a6/`), the previews, the debug keys and the tuning proposals, and made the film (Brutalist `godot-gamedev`, Kokoro "Liam" narration).
+    I watched the final export and approved the one text-gate override. The agents
     built the effect scenes, trigger, controller, tests and cost script. Full split in SOURCES.md and FRICTIONAL.md.
 - **Known limitations:**
   - GPU time per effect wasn't resolved. Metal reported 0.0 ms. Vulkan single-frame readings vary more than the

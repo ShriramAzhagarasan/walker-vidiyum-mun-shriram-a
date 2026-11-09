@@ -1,0 +1,4 @@
+847ffbec82c60bd4da65a53e41dddfdcc51f31da4be4117443adecc51757a0e7  -
+ godot/default_bus_layout.tres |  2 +-
+ godot/project.godot           | 14 ++++----------
+ 2 files changed, 5 insertions(+), 11 deletions(-)

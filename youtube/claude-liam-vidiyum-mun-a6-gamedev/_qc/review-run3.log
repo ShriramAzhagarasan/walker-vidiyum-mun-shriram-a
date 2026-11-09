@@ -1,0 +1,37 @@
+[run] no Manim beats in this reel's beat sheet — skipping Manim stage
+[run] nothing to render — recompiling only
+[run] GATE L — beat-mix lint
+[beat-lint] clean — beat mix OK (beat_sheet.json)
+[run] GATE SHAPE — finance chart-shape enforcement
+[gate-shape] skip — not a finance reel (beat_sheet.json)
+[remotion] B00: filled already (skip)
+[remotion] B01: filled already (skip)
+[remotion] B02: filled already (skip)
+[remotion] B03: filled already (skip)
+[remotion] B05: filled already (skip)
+[remotion] B07: filled already (skip)
+[remotion] B09: filled already (skip)
+[remotion] B11: filled already (skip)
+[remotion] B13: filled already (skip)
+[remotion] B15: filled already (skip)
+[remotion] B17: filled already (skip)
+[remotion] B19: filled already (skip)
+[remotion] B21: filled already (skip)
+[remotion] B22: filled already (skip)
+[remotion] B25: filled already (skip)
+[remotion] B26: filled already (skip)
+[remotion] B27: filled already (skip)
+[remotion] B28: filled already (skip)
+[remotion] B29: filled already (skip)
+[remotion] done — run `bash scripts/run.sh <REEL>` to compile the cut
+[art] compiled B26  VIDEO    20.7s  ← B26.mp4
+[art] motion histogram: graphic:19  gameplay:11
+[art] build stamp → beat_sheet.json (30/30 filled)
+[art] QC contact sheet → /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/virtualenvironments/walker-vidiyum-mun-shriram-a/youtube/claude-liam-vidiyum-mun-a6-gamedev/qc-sheet.png
+[art] wrote /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/virtualenvironments/walker-vidiyum-mun-shriram-a/youtube/claude-liam-vidiyum-mun-a6-gamedev/claude-liam-vidiyum-mun-a6-gamedev-slate.mp4  (430.1s, audio: per-beat timeline (source audio preserved), drawtext: no — PIL overlays)
+[art] slots: 30/30 filled — B00:VIDEO B01:VIDEO B02:VIDEO B03:VIDEO B04:VIDEO B05:VIDEO B06:VIDEO B07:VIDEO B08:VIDEO B09:VIDEO B10:VIDEO B11:VIDEO B12:VIDEO B13:VIDEO B14:VIDEO B15:VIDEO B16:VIDEO B17:VIDEO B18:VIDEO B19:VIDEO B20:VIDEO B21:VIDEO B22:VIDEO B23:VIDEO B24:VIDEO B25:VIDEO B26:VIDEO B27:VIDEO B28:VIDEO B29:VIDEO
+[run] GATE V — frame-level visual QC on the compiled reel
+[gate-v] frames=60 BLOCKER=0 MAJOR=0 → /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/virtualenvironments/walker-vidiyum-mun-shriram-a/youtube/claude-liam-vidiyum-mun-a6-gamedev/_qc/REPORT.md
+[run] done → /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/virtualenvironments/walker-vidiyum-mun-shriram-a/youtube/claude-liam-vidiyum-mun-a6-gamedev  (QC gates: on)
+[run] REVIEW built; no final exported. Use ./art final <reel> for a verified master.
+[run] any remaining slates are YOUR slots — see /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/virtualenvironments/walker-vidiyum-mun-shriram-a/youtube/claude-liam-vidiyum-mun-a6-gamedev/SHOTLIST.md

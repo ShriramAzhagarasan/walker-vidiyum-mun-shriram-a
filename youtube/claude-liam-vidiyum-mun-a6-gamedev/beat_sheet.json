@@ -1,0 +1,2688 @@
+{
+  "metadata": {
+    "title": "Vidiyum Mun, Dust and Moths",
+    "slug": "claude-liam-vidiyum-mun-a6-gamedev",
+    "topic": "WALKER · GODOT GAMEDEV · A6 PARTICLES",
+    "kind": "godot-gamedev",
+    "mode": "walker",
+    "brand": "claude-liam",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "crop",
+    "captions": false,
+    "channel": "@NikBearBrown",
+    "channel_title": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "greeting": "Vanakkam, Liam",
+    "greeting_note": "hello lexicon: Vanakkam (Tamil), fits the Chennai setting.",
+    "persona": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "audience": "CSYE 7270 reviewers and makers building their first Godot particle effects",
+    "source_revision": "52fa183",
+    "game": {
+      "name": "walker-vidiyum-mun-shriram-a",
+      "build_id": "f54c5c143640c2ba241e4ecda7e1653c45fb7acba6a0813854c81bde95bce0ac",
+      "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+      "renderer": "Forward+ (Metal)",
+      "git": "52fa183"
+    },
+    "fps": 30,
+    "build": {
+      "at": "2026-11-08T21:19:15",
+      "cut": "master",
+      "filled": 30,
+      "of": 30,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "Walker B00. Illustrative reconstruction of the ask (labelled), never a transcript.",
+      "narration_text": "Vanakkam, this is Liam, in for Bear. The prompt on screen is a reconstruction, not a transcript. Assignment six for Vidiyum Mun: two particle effects, and how they were tuned and tested.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "composer; greeting"
+          },
+          {
+            "at": "0.15",
+            "event": "topic: ILLUSTRATIVE RECONSTRUCTION"
+          },
+          {
+            "at": "0.25",
+            "event": "the Walker ask types"
+          },
+          {
+            "at": "0.7",
+            "event": "three result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Vanakkam, Liam",
+            "topic": "ILLUSTRATIVE RECONSTRUCTION · NOT A TRANSCRIPT",
+            "segment": "Vidiyum Mun · A6",
+            "command": "Please use Walker to convert my game design document about Vidiyum Mun, a time-loop mystery at a beach party on ECR, Chennai, into two particle effects: a sand scuff on each of Hari's footsteps, and moths around the string lights at night. Add fixture previews, headless tests and a price check.",
+            "runningText": "reading CHANGE-BRIEF.md and godot/…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "footstep_scuff.tscn · config 128/128 · state 19/19.",
+              "string_light_moths.tscn · config 255/255 · state 63/63.",
+              "GPU time: not measurable on this Mac."
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-11-09T01:07:20.623075+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B00.wav",
+      "actual_duration_s": 10.966666666666667,
+      "speech_duration_s": 10.645,
+      "render_duration_s": 10.966666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "lead_silence_s": 0.6,
+      "role_note": "Hesitant writer; single-word correction 'jump' -> 'step'.",
+      "narration_text": "Two effects. Dust under every step Hari takes, and moths at the string lights until five A M. Then the tuning, the tests, and the prices.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.08",
+            "event": "line one types"
+          },
+          {
+            "at": "0.3",
+            "event": "'jump' struck; 'step' typed"
+          },
+          {
+            "at": "0.55",
+            "event": "lines two and three"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "contextTitle": "What this film shows",
+            "text": "Two particle effects.\nDust under every jump.\nMoths at the lights until 5 AM.",
+            "triggerWords": "jump",
+            "replacementWords": "step",
+            "fontSize": 84,
+            "lineSpacing": 2.6,
+            "align": "center",
+            "seed": "vidiyum-a6",
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "charMs": 8,
+            "ink": "#3D3929",
+            "accent": "#D97757",
+            "bg": "#FAF9F5",
+            "durationSeconds": 8.733333333333333,
+            "cues": []
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-11-09T01:07:46.839506+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B01.wav",
+      "actual_duration_s": 8.733333333333333,
+      "speech_duration_s": 7.829,
+      "render_duration_s": 8.733333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "SETUP",
+      "role_note": "Game, both effects, their jobs, the event and the condition (CHANGE-BRIEF.md A.4 #8, B.1).",
+      "narration_text": "Vidiyum Mun is a time loop at a beach party in Chennai. Effect A, a sand scuff, fires each time Hari's foot lands, to tie him to the ground. Effect B, moths at the string lights, is ambience: only while it's night, before five A M, minute seventeen forty.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "spec excerpt"
+          },
+          {
+            "at": "0.3",
+            "event": "Effect A"
+          },
+          {
+            "at": "0.6",
+            "event": "Effect B + condition"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "The game, two effects, two triggers",
+            "section": "CHANGE-BRIEF.md lines 237, 287–288 (verbatim) · git 52fa183",
+            "excerpt": "The scuff should fire once for every actual footfall while Hari is walking.\n\nThe moths should only appear when:\n- The game phase is `NIGHT`.\n- The game clock is before 5:00 AM, represented as minute `1740` on the extended overnight clock.",
+            "source": "",
+            "status": "SPEC · Shriram's brief, written before the first build prompt",
+            "visualLabel": "Two effects",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Game",
+                "text": "Vidiyum Mun: a time loop at an ECR beach party"
+              },
+              {
+                "label": "A · sand scuff",
+                "text": "2 × CPUParticles3D, one-shot; a new instance per foot contact"
+              },
+              {
+                "label": "B · moths",
+                "text": "3 × GPUParticles3D + 3 attractors; turbulence; preprocess 2.4 s"
+              },
+              {
+                "label": "B condition",
+                "text": "phase == NIGHT and clock_minutes < 1740 (5:00 AM)"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.08,
+                "card": 0
+              },
+              {
+                "frac": 0.3,
+                "card": 1
+              },
+              {
+                "frac": 0.6,
+                "card": 2
+              },
+              {
+                "frac": 0.85,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 1.19
+              },
+              {
+                "card": 1,
+                "at": 4.48
+              },
+              {
+                "card": 2,
+                "at": 8.96
+              },
+              {
+                "card": 3,
+                "at": 12.69
+              }
+            ],
+            "durationSeconds": 14.933333333333334
+          },
+          "rendered": {
+            "out": "media/B02.mp4",
+            "at": "2026-11-09T01:08:32.462197+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B02.wav",
+      "actual_duration_s": 14.933333333333334,
+      "speech_duration_s": 14.613,
+      "render_duration_s": 14.933333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B02.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "CODE",
+      "role_note": "Emission / process / draw in the SoftDust node. Paired result B04 (r0 strip).",
+      "narration_text": "Every particle system has three parts. Emission: when and where. Ten particles at once, one shot, from a small box at the foot. Process: how each moves and changes. Speed, gravity, damping, a scale curve, a colour ramp. Draw: what each looks like. This quad mesh, twelve centimetres, facing the camera.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "line highlight: emission"
+          },
+          {
+            "at": "0.2",
+            "event": "line highlight: one shot"
+          },
+          {
+            "at": "0.3",
+            "event": "line highlight: from a small box"
+          },
+          {
+            "at": "0.45",
+            "event": "line highlight: process: speed"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: process: spread"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: draw"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Emission, process, draw",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/footstep_scuff.tscn",
+            "source": "Godot editor reconstruction · godot/effects/footstep_scuff.tscn lines 74–86 · git 52fa183",
+            "code": "amount = 10\nlifetime = 1.15\none_shot = true\nexplosiveness = 1.0\nlocal_coords = false\nvisibility_aabb = AABB(-0.6, -0.1, -0.6, 1.2, 0.6, 1.2)\nmesh = SubResource(\"SoftQuad\")\nemission_shape = 3\nemission_box_extents = Vector3(0.08, 0.01, 0.05)\ndirection = Vector3(0, 1, 0)\nspread = 80.0\ninitial_velocity_min = 0.25\ninitial_velocity_max = 0.65",
+            "startLine": 74,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "emission",
+                "value": "amount 10 · one_shot · box"
+              },
+              {
+                "label": "process",
+                "value": "velocity · gravity · ramps"
+              },
+              {
+                "label": "draw",
+                "value": "mesh = SoftQuad"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.1,
+                "line": 74,
+                "label": "emission"
+              },
+              {
+                "frac": 0.2,
+                "line": 76,
+                "label": "one shot"
+              },
+              {
+                "frac": 0.3,
+                "line": 82,
+                "label": "from a small box"
+              },
+              {
+                "frac": 0.45,
+                "line": 85,
+                "label": "process: speed"
+              },
+              {
+                "frac": 0.55,
+                "line": 84,
+                "label": "process: spread"
+              },
+              {
+                "frac": 0.75,
+                "line": 80,
+                "label": "draw"
+              }
+            ],
+            "cues": [
+              {
+                "line": 74,
+                "label": "emission",
+                "at": 1.64
+              },
+              {
+                "line": 76,
+                "label": "one shot",
+                "at": 3.27
+              },
+              {
+                "line": 82,
+                "label": "from a small box",
+                "at": 4.91
+              },
+              {
+                "line": 85,
+                "label": "process: speed",
+                "at": 7.37
+              },
+              {
+                "line": 84,
+                "label": "process: spread",
+                "at": 9.0
+              },
+              {
+                "line": 80,
+                "label": "draw",
+                "at": 12.28
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 16.366666666666667
+          },
+          "rendered": {
+            "out": "media/B03.mp4",
+            "at": "2026-11-09T00:59:31.646368+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B03.wav",
+      "actual_duration_s": 16.366666666666667,
+      "speech_duration_s": 16.064,
+      "render_duration_s": 16.366666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B03.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "RESULT",
+      "role_note": "Result of B03: the first strip r0 (fixture) and Shriram's first look.",
+      "narration_text": "The first strip, r zero: a fixture, a preview over the real level, firing one scuff. A cream puff, gone in under a second. Shriram watched it running: size decent, visible on the dark floor, but way too fast.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/strip_a_r0.png",
+            "w": 1.6,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram · r0, dark gate · cropped and enlarged"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-a-r0-first-look/1-dark-gate-window.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · running preview, r0, dark gate"
+          }
+        ],
+        "evidence_media": "media/B04.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r0 strip"
+          },
+          {
+            "at": "0.6",
+            "event": "Shriram's first look"
+          }
+        ],
+        "note": "Fixture strip (frames cropped and enlarged), then Shriram's screenshot."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B04.wav",
+      "actual_duration_s": 12.133333333333333,
+      "speech_duration_s": 11.605,
+      "render_duration_s": 12.133333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B04.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "CODE",
+      "role_note": "The trigger: foot contact from walked distance; one new instance per contact. Paired result B06.",
+      "narration_text": "The game has no footstep signal, so the trigger makes one. It reads how far Hari has walked, and counts a landing every point eight four metres. Each landing gets a new scuff instance, freed after one point one five seconds. New, not restarted, so bursts overlap: at most four.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.35",
+            "event": "line highlight: every 0.84 m"
+          },
+          {
+            "at": "0.78",
+            "event": "line highlight: new instance"
+          },
+          {
+            "at": "0.9",
+            "event": "line highlight: freed after 1.15 s"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "A footstep event from walked distance",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/footstep_scuff_trigger.gd",
+            "source": "Godot editor reconstruction · godot/effects/footstep_scuff_trigger.gd lines 37–46 · git 52fa183",
+            "code": "func _contact_index(travel: float) -> int:\n\treturn int(floor((travel - _HALF_STRIDE) / _DOUBLE_STRIDE))\n\nfunc _fire_at(pos: Vector3) -> void:\n\tvar scuff := SCUFF_SCENE.instantiate() as Node3D\n\tadd_child(scuff)\n\tscuff.global_position = Vector3(pos.x, 0.0, pos.z)\n\t(scuff.get_node(\"SoftDust\") as CPUParticles3D).emitting = true\n\t(scuff.get_node(\"FineGrit\") as CPUParticles3D).emitting = true\n\tget_tree().create_timer(LIFETIME_S, false).timeout.connect(scuff.queue_free)",
+            "startLine": 37,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "reads",
+                "value": "hari._travel; writes nothing"
+              },
+              {
+                "label": "contact",
+                "value": "every 0.84 m (2 strides)"
+              },
+              {
+                "label": "retrigger",
+                "value": "new instance, overlap"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.35,
+                "line": 38,
+                "label": "every 0.84 m"
+              },
+              {
+                "frac": 0.78,
+                "line": 41,
+                "label": "new instance"
+              },
+              {
+                "frac": 0.9,
+                "line": 46,
+                "label": "freed after 1.15 s"
+              }
+            ],
+            "cues": [
+              {
+                "line": 38,
+                "label": "every 0.84 m",
+                "at": 5.44
+              },
+              {
+                "line": 41,
+                "label": "new instance",
+                "at": 12.12
+              },
+              {
+                "line": 46,
+                "label": "freed after 1.15 s",
+                "at": 13.98
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 15.533333333333333
+          },
+          "rendered": {
+            "out": "media/B05.mp4",
+            "at": "2026-11-09T01:00:22.061567+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B05.wav",
+      "actual_duration_s": 15.533333333333333,
+      "speech_duration_s": 15.211,
+      "render_duration_s": 15.533333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B05.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "RESULT",
+      "role_note": "Result of B05: scripted walk in the real game (rapid repeats), the retrigger strip, the state test log.",
+      "narration_text": "In the real game, a scripted capture with D held through input events: each footfall leaves its own puff, up to three at once. Shriram, in play: it stays a while, then disappears; natural. The state test, with real keys: no scuff on load, in dialogue, idle or paused, exactly one per contact. Nineteen of nineteen.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "SCRIPTED CAPTURE · real game, keys sent as input events · Movie Maker 30 fps · current build",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "capture/walk_effects.avi",
+            "start_frame": 40,
+            "end_frame": 104,
+            "speed": 1.0,
+            "label": "SCRIPTED CAPTURE · real game, keys sent as input events · Movie Maker 30 fps · current build · D held · scuffs overlap"
+          },
+          {
+            "kind": "clip",
+            "src": "capture/walk_effects.avi",
+            "start_frame": 150,
+            "end_frame": 200,
+            "speed": 1.0,
+            "label": "SCRIPTED CAPTURE · real game, keys sent as input events · Movie Maker 30 fps · current build · D held, then released"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-a-play/r1-walking-by-pool.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · normal play (r1)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/terminal_trigger.png",
+            "w": 1.4,
+            "label": "HEADLESS · logs/test_footstep_scuff_trigger_60fps.log · lines verbatim"
+          }
+        ],
+        "evidence_media": "media/B06.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "walking: overlapping scuffs"
+          },
+          {
+            "at": "0.55",
+            "event": "Shriram's play screenshot"
+          },
+          {
+            "at": "0.75",
+            "event": "state test log"
+          }
+        ],
+        "note": "Scripted capture, Shriram's screenshot, recorded test output."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B06.wav",
+      "actual_duration_s": 17.8,
+      "speech_duration_s": 17.28,
+      "render_duration_s": 17.8,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B06.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "CODE",
+      "role_note": "Tuning A r1: the SoftDust colour ramp alphas. Paired result B08.",
+      "narration_text": "Revision one changed one line, the colour ramp. Alpha at half its life went from zero point one eight to zero point three; at seventy percent, from zero to zero point one five. Claude proposed it; Shriram approved. The lifetime stayed, so the overlap limit holds.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: life offsets"
+          },
+          {
+            "at": "0.5",
+            "event": "line highlight: RGBA per offset"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Revision A r1: a slower fade",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/footstep_scuff.tscn",
+            "source": "Godot editor reconstruction · godot/effects/footstep_scuff.tscn lines 31–33 · git 52fa183",
+            "code": "[sub_resource type=\"Gradient\" id=\"SoftColorRamp\"]\noffsets = PackedFloat32Array(0, 0.2, 0.5, 0.7, 1)\ncolors = PackedColorArray(0.851, 0.773, 0.643, 0.55, 0.886, 0.82, 0.71, 0.45, 0.898, 0.847, 0.773, 0.3, 0.898, 0.847, 0.773, 0.15, 0.898, 0.847, 0.773, 0)",
+            "startLine": 31,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "50 % life",
+                "value": "alpha 0.18 → 0.30"
+              },
+              {
+                "label": "70 % life",
+                "value": "alpha 0 → 0.15"
+              },
+              {
+                "label": "lifetime",
+                "value": "1.15 s, unchanged"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 32,
+                "label": "life offsets"
+              },
+              {
+                "frac": 0.5,
+                "line": 33,
+                "label": "RGBA per offset"
+              }
+            ],
+            "cues": [
+              {
+                "line": 32,
+                "label": "life offsets",
+                "at": 3.07
+              },
+              {
+                "line": 33,
+                "label": "RGBA per offset",
+                "at": 7.68
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 15.366666666666667
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": "2026-11-09T01:01:12.043782+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B07.wav",
+      "actual_duration_s": 15.366666666666667,
+      "speech_duration_s": 15.061,
+      "render_duration_s": 15.366666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B07.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "RESULT",
+      "role_note": "Result of B07: r0 vs r1 strips (fixture), Claude's prediction vs measurement (TUNING.md), verdict.",
+      "narration_text": "Claude predicted twice r zero's opacity, twenty frames in. Measured: one point three six times, and the puff now lasts about a second. Ten quads stack their alpha. Shriram: keep it.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/strip_a_r0_r1.png",
+            "w": 1.4,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram · before (r0) / after (r1), same seed · cropped and enlarged"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/table_a_r1.png",
+            "w": 1,
+            "label": "TUNING.md · Effect A r1 · rows verbatim"
+          }
+        ],
+        "evidence_media": "media/B08.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r0 vs r1 strip"
+          },
+          {
+            "at": "0.6",
+            "event": "TUNING.md table"
+          }
+        ],
+        "note": "Fixture strips before/after, then the recorded comparison rows."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B08.wav",
+      "actual_duration_s": 11.333333333333334,
+      "speech_duration_s": 10.816,
+      "render_duration_s": 11.333333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B08.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "CODE",
+      "role_note": "Tuning A r2: the SoftDust procedural texture gradient. Paired result B10.",
+      "narration_text": "Revision two came from play. The texture is a gradient in the scene, not an image file. Its alpha went from solid out to sixty percent of the radius, to zero point eight five at the centre, fading to zero.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: new offsets"
+          },
+          {
+            "at": "0.45",
+            "event": "line highlight: new alphas"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: radial fill"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Revision A r2: a softer texture",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/footstep_scuff.tscn",
+            "source": "Godot editor reconstruction · godot/effects/footstep_scuff.tscn lines 3–13 · git 52fa183",
+            "code": "[sub_resource type=\"Gradient\" id=\"SoftTexGrad\"]\noffsets = PackedFloat32Array(0, 0.45, 1)\ncolors = PackedColorArray(1, 1, 1, 0.85, 1, 1, 1, 0.3, 1, 1, 1, 0)\n\n[sub_resource type=\"GradientTexture2D\" id=\"SoftTex\"]\ngradient = SubResource(\"SoftTexGrad\")\nfill = 1\nfill_from = Vector2(0.5, 0.5)\nfill_to = Vector2(1, 0.5)\nwidth = 64\nheight = 64",
+            "startLine": 3,
+            "codeFontSize": 26,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "texture",
+                "value": "GradientTexture2D, radial"
+              },
+              {
+                "label": "was",
+                "value": "1.0 / 0.4 / 0 at 0 / 0.6 / 1"
+              },
+              {
+                "label": "now",
+                "value": "0.85 / 0.3 / 0 at 0 / 0.45 / 1"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 4,
+                "label": "new offsets"
+              },
+              {
+                "frac": 0.45,
+                "line": 5,
+                "label": "new alphas"
+              },
+              {
+                "frac": 0.75,
+                "line": 9,
+                "label": "radial fill"
+              }
+            ],
+            "cues": [
+              {
+                "line": 4,
+                "label": "new offsets",
+                "at": 2.45
+              },
+              {
+                "line": 5,
+                "label": "new alphas",
+                "at": 5.5
+              },
+              {
+                "line": 9,
+                "label": "radial fill",
+                "at": 9.17
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 12.233333333333333
+          },
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": "2026-11-09T01:01:53.663733+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B09.wav",
+      "actual_duration_s": 12.233333333333333,
+      "speech_duration_s": 11.925,
+      "render_duration_s": 12.233333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B09.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "RESULT",
+      "role_note": "Result of B09: Shriram's play screenshot (cotton balls), r1 vs r2 strips, comparison, verdict.",
+      "narration_text": "In the game Shriram saw cotton balls, and the scuff landing behind the front foot, a limitation they kept. Claude predicted a third to a half dimmer; measured, thirteen to fourteen percent. But the lump became soft blobs. Shriram: they look like dust now. Kept.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-a-play/r1-walking-by-pool.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · r1 in normal play: 'cotton balls'"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/strip_a_r1_r2.png",
+            "w": 1.3,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram · before (r1) / after (r2), same seed · cropped and enlarged"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/table_a_r2.png",
+            "w": 0.9,
+            "label": "TUNING.md · Effect A r2 · rows verbatim"
+          }
+        ],
+        "evidence_media": "media/B10.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Shriram's r1 play screenshot"
+          },
+          {
+            "at": "0.3",
+            "event": "r1 vs r2 strip"
+          },
+          {
+            "at": "0.7",
+            "event": "table"
+          }
+        ],
+        "note": "Shriram's screenshot, fixture strips before/after, recorded rows."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B10.wav",
+      "actual_duration_s": 14.433333333333334,
+      "speech_duration_s": 13.909,
+      "render_duration_s": 14.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B10.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "CODE",
+      "role_note": "Effect B emitter + attractor: emission, preprocess, draw, attractor. Paired result B12.",
+      "narration_text": "Effect B is GPU particles: twelve moths per emitter, three emitters. Preprocess two point four seconds, one full lifetime, simulated before the first frame, so the moths are already there. Beside each emitter, an attractor sphere: radius one metre, strength zero point three.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.25",
+            "event": "line highlight: lifetime 2.4 s"
+          },
+          {
+            "at": "0.38",
+            "event": "line highlight: preprocess: one lifetime"
+          },
+          {
+            "at": "0.6",
+            "event": "line highlight: process"
+          },
+          {
+            "at": "0.7",
+            "event": "line highlight: draw"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Moths: GPU emitter + attractor",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/string_light_moths.tscn",
+            "source": "Godot editor reconstruction · godot/effects/string_light_moths.tscn lines 69–81 · git 52fa183",
+            "code": "amount_ratio = 1.0\nlifetime = 2.4\none_shot = false\npreprocess = 2.4\nspeed_scale = 1.0\nexplosiveness = 0.0\nrandomness = 0.4\nfixed_fps = 30\nlocal_coords = false\ntrail_enabled = false\nvisibility_aabb = AABB(-1.5, -1.1, -1.5, 3, 2.2, 3)\nprocess_material = SubResource(\"MothPM\")\ndraw_pass_1 = SubResource(\"MothQuad\")",
+            "startLine": 69,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "emission",
+                "value": "12 × 3 emitters = 36"
+              },
+              {
+                "label": "preprocess",
+                "value": "2.4 s = one lifetime"
+              },
+              {
+                "label": "attractor",
+                "value": "r 1.0 m · strength 0.3"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.25,
+                "line": 70,
+                "label": "lifetime 2.4 s"
+              },
+              {
+                "frac": 0.38,
+                "line": 72,
+                "label": "preprocess: one lifetime"
+              },
+              {
+                "frac": 0.6,
+                "line": 80,
+                "label": "process"
+              },
+              {
+                "frac": 0.7,
+                "line": 81,
+                "label": "draw"
+              }
+            ],
+            "cues": [
+              {
+                "line": 70,
+                "label": "lifetime 2.4 s",
+                "at": 3.91
+              },
+              {
+                "line": 72,
+                "label": "preprocess: one lifetime",
+                "at": 5.94
+              },
+              {
+                "line": 80,
+                "label": "process",
+                "at": 9.38
+              },
+              {
+                "line": 81,
+                "label": "draw",
+                "at": 10.94
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 15.633333333333333
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-11-09T01:02:45.298582+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B11.wav",
+      "actual_duration_s": 15.633333333333333,
+      "speech_duration_s": 15.317,
+      "render_duration_s": 15.633333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B11.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "RESULT",
+      "role_note": "Result of B11: r0 moth strip (fixture), Shriram's first look, Claude's zoom.",
+      "narration_text": "The r zero strip. Claude's difference image found moths at all three spans from the first active frame. But Shriram couldn't see them: do you see dots there? Each moth was a one to three pixel speck, in front of the pale villa wall, not the dark sky the brief expected.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/strip_b_r0.png",
+            "w": 1.3,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram · r0 · bulb line cropped and enlarged"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-r0-first-look/1-preview-live.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · running preview, r0: 'do you see dots there'"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-r0-first-look/claude-zoom-frame8-vs-30-middle-span.png",
+            "w": 0.9,
+            "label": "CLAUDE'S ZOOM of fixture frames (made during tuning) · r0, before vs with moths"
+          }
+        ],
+        "evidence_media": "media/B12.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r0 strip"
+          },
+          {
+            "at": "0.45",
+            "event": "Shriram's first look"
+          },
+          {
+            "at": "0.75",
+            "event": "Claude's zoom"
+          }
+        ],
+        "note": "Fixture strip, Shriram's screenshot, Claude's zoom."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B12.wav",
+      "actual_duration_s": 15.266666666666667,
+      "hold_s": 0.0,
+      "speech_duration_s": 14.763,
+      "render_duration_s": 15.266666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B12.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "CODE",
+      "role_note": "Tuning B r1 (quad 3x) and r2 (dark umber ramp). Paired result B14.",
+      "narration_text": "Revision one tripled the quad. Revision two turned the colour ramp from cream to dark umber. Claude proposed both; Shriram approved both.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.2",
+            "event": "line highlight: r1: 3× quad"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Revisions B r1 and r2: bigger, then darker",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/string_light_moths.tscn",
+            "source": "Godot editor reconstruction · godot/effects/string_light_moths.tscn lines 12–14 · git 52fa183",
+            "code": "[sub_resource type=\"QuadMesh\" id=\"MothQuad\"]\nsize = Vector2(0.21, 0.135)\nmaterial = SubResource(\"MothMat\")",
+            "startLine": 12,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "r1 quad",
+                "value": "0.07×0.045 → 0.21×0.135 m"
+              },
+              {
+                "label": "r2 ramp",
+                "value": "cream → umber #3B2F25"
+              },
+              {
+                "label": "alphas",
+                "value": "unchanged"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.2,
+                "line": 13,
+                "label": "r1: 3× quad"
+              }
+            ],
+            "cues": [
+              {
+                "line": 13,
+                "label": "r1: 3× quad",
+                "at": 1.69
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 8.466666666666667
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-11-09T01:03:13.324656+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B13.wav",
+      "actual_duration_s": 8.466666666666667,
+      "speech_duration_s": 8.149,
+      "render_duration_s": 8.466666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B13.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "RESULT",
+      "role_note": "Result of B13: Claude's zooms r1/r2, Shriram's live screenshots; the r2 prediction failed.",
+      "narration_text": "Revision one, zoomed: wing dots, but live, still invisible. Revision two: Claude predicted dark shapes standing out clearly. They came out as faint grey smudges. That prediction failed.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "CLAUDE'S ZOOM of fixture frames (made during tuning)",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/table_b_r2.png",
+            "w": 0.8,
+            "label": "The r2 change, verbatim: string_light_moths.tscn and CHANGE-BRIEF.md revision 4"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-r0-first-look/claude-zoom-r1-frame29-middle-span.png",
+            "w": 0.8,
+            "label": "CLAUDE'S ZOOM of fixture frames (made during tuning) · r1, file 29, 4×"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-r0-first-look/3-r1-live-shriram.png",
+            "w": 0.9,
+            "label": "SHRIRAM'S OWN SCREENSHOT · r1 live: still not visible"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-tuning/claude-zoom-r0-r1-r2-file29.png",
+            "w": 0.9,
+            "label": "CLAUDE'S ZOOM of fixture frames (made during tuning) · r0 / r1 / r2 at file 29 · r2 PREDICTION FAILED"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-tuning/r2-live-shriram-1.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · r2 live: still no visible moths"
+          }
+        ],
+        "evidence_media": "media/B14.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "r1 zoom + live"
+          },
+          {
+            "at": "0.5",
+            "event": "r2 zoom + live: failed"
+          }
+        ],
+        "note": "Claude's zooms of fixture frames, Shriram's live screenshots."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B14.wav",
+      "actual_duration_s": 11.266666666666667,
+      "speech_duration_s": 10.752,
+      "render_duration_s": 11.266666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B14.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "CODE",
+      "role_note": "Root cause: the agent-made moth texture; r3 smoothstep lines. Paired result B16.",
+      "narration_text": "The real cause was the texture. A Step five agent wrote this generator with a squared falloff: sixteen of two thousand five hundred sixty texels above zero point eight alpha. Mostly haze. Revision three uses smoothstep: solid wings and body.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.25",
+            "event": "line highlight: solid wings"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: solid body"
+          },
+          {
+            "at": "0.8",
+            "event": "line highlight: alpha"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Revision B r3: the texture was haze",
+            "project": "Vidiyum Mun",
+            "path": "godot/tools/moth_texture.gd",
+            "source": "Godot editor reconstruction · godot/tools/moth_texture.gd lines 31–35 · git 52fa183",
+            "code": "\t\t\t# Tuning B r3: solid wings and body with a narrow soft edge (was a squared falloff, mostly haze).\n\t\t\tvar wing_mask := smoothstep(1.0, 0.85, minf(left_d, right_d))\n\t\t\tvar body_d := sqrt(nx * nx * 70.0 + ny * ny * 5.5)\n\t\t\tvar body_mask := smoothstep(1.0, 0.8, body_d)\n\t\t\tvar alpha := clampf(wing_mask + body_mask, 0.0, 1.0)",
+            "startLine": 31,
+            "codeFontSize": 28,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "before r3",
+                "value": "16 / 2560 texels > 0.8 α"
+              },
+              {
+                "label": "r3",
+                "value": "smoothstep: 794 texels"
+              },
+              {
+                "label": "written by",
+                "value": "Step 5 agent; r3 by Claude"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.25,
+                "line": 32,
+                "label": "solid wings"
+              },
+              {
+                "frac": 0.55,
+                "line": 34,
+                "label": "solid body"
+              },
+              {
+                "frac": 0.8,
+                "line": 35,
+                "label": "alpha"
+              }
+            ],
+            "cues": [
+              {
+                "line": 32,
+                "label": "solid wings",
+                "at": 3.62
+              },
+              {
+                "line": 34,
+                "label": "solid body",
+                "at": 7.98
+              },
+              {
+                "line": 35,
+                "label": "alpha",
+                "at": 11.6
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 14.5
+          },
+          "rendered": {
+            "out": "media/B15.mp4",
+            "at": "2026-11-09T01:03:59.822679+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B15.wav",
+      "actual_duration_s": 14.5,
+      "speech_duration_s": 14.187,
+      "render_duration_s": 14.5,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B15.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "RESULT",
+      "role_note": "Result of B15: texture before/after (Claude's 6x renders), r3 strip (fixture), Shriram's r3 live, verdict.",
+      "narration_text": "Seven hundred ninety-four solid texels. In the r three strip, two-winged shapes at every span; changed pixels at file twenty-nine up from thirteen seventy-nine to fifty-one oh eight. Pale grey, not dark as predicted. Shriram: it reads as moths.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/texture_before_after.png",
+            "w": 0.9,
+            "label": "CLAUDE'S 6× RENDERS of the moth texture · before r3 (16 texels > 0.8 α) / r3 (794)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/strip_b_r2_r3.png",
+            "w": 1.2,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured by Shriram · r2 / r3 · bulb line cropped and enlarged"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/effect-b-tuning/r3-live-shriram.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · r3 live: 'it reads as moths'"
+          }
+        ],
+        "evidence_media": "media/B16.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "texture before / after"
+          },
+          {
+            "at": "0.3",
+            "event": "r3 strip"
+          },
+          {
+            "at": "0.7",
+            "event": "Shriram's r3 live"
+          }
+        ],
+        "note": "Texture renders, fixture strip, Shriram's screenshot."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B16.wav",
+      "actual_duration_s": 14.566666666666666,
+      "speech_duration_s": 14.037,
+      "render_duration_s": 14.566666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B16.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "CODE",
+      "role_note": "The feature A doesn't use: attractor interaction + turbulence. Paired result B18.",
+      "narration_text": "Here's what Effect A doesn't use. Attractor interaction, and turbulence: a noise field, strength zero point four five, whose influence on each moth is drawn between zero point one two and zero point three.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.15",
+            "event": "line highlight: attractors"
+          },
+          {
+            "at": "0.4",
+            "event": "line highlight: turbulence"
+          },
+          {
+            "at": "0.55",
+            "event": "line highlight: strength"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: influence"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "What A doesn't have: turbulence + attractor",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/string_light_moths.tscn",
+            "source": "Godot editor reconstruction · godot/effects/string_light_moths.tscn lines 45–57 · git 52fa183",
+            "code": "attractor_interaction_enabled = true\nscale_min = 0.7\nscale_max = 1.2\nscale_curve = SubResource(\"MothScaleCurve\")\ncolor_ramp = SubResource(\"MothColorRamp\")\nhue_variation_min = -0.03\nhue_variation_max = 0.03\nturbulence_enabled = true\nturbulence_noise_strength = 0.45\nturbulence_noise_scale = 5.0\nturbulence_noise_speed = Vector3(0.15, 0.08, 0.12)\nturbulence_noise_speed_random = 0.2\nturbulence_influence_min = 0.12",
+            "startLine": 45,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "attractor",
+                "value": "interaction enabled"
+              },
+              {
+                "label": "noise",
+                "value": "strength 0.45 · scale 5"
+              },
+              {
+                "label": "influence",
+                "value": "0.12 – 0.30 per moth"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.15,
+                "line": 45,
+                "label": "attractors"
+              },
+              {
+                "frac": 0.4,
+                "line": 52,
+                "label": "turbulence"
+              },
+              {
+                "frac": 0.55,
+                "line": 53,
+                "label": "strength"
+              },
+              {
+                "frac": 0.75,
+                "line": 57,
+                "label": "influence"
+              }
+            ],
+            "cues": [
+              {
+                "line": 45,
+                "label": "attractors",
+                "at": 1.86
+              },
+              {
+                "line": 52,
+                "label": "turbulence",
+                "at": 4.97
+              },
+              {
+                "line": 53,
+                "label": "strength",
+                "at": 6.84
+              },
+              {
+                "line": 57,
+                "label": "influence",
+                "at": 9.32
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 12.433333333333334
+          },
+          "rendered": {
+            "out": "media/B17.mp4",
+            "at": "2026-11-09T01:04:40.109599+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B17.wav",
+      "actual_duration_s": 12.433333333333334,
+      "speech_duration_s": 12.117,
+      "render_duration_s": 12.433333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B17.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "RESULT",
+      "role_note": "Result of B17: fixture Movie Maker capture of the current preview, in motion (made for this film).",
+      "narration_text": "A fixture capture made for this film, current build, fixed seeds. The moths wander and turn, and stay near their bulbs. At frame seventy the condition ends: emission stops, and they fade out.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured for this film (current build)",
+        "segments": [
+          {
+            "kind": "clip",
+            "src": "capture/moths_r3_preview.avi",
+            "start_frame": 10,
+            "end_frame": 68,
+            "speed": 1.0,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured for this film (current build) · bulb line cropped and enlarged · real time",
+            "crop": [
+              320,
+              40,
+              960,
+              400
+            ]
+          },
+          {
+            "kind": "clip",
+            "src": "capture/moths_r3_preview.avi",
+            "start_frame": 10,
+            "end_frame": 68,
+            "speed": 0.5,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured for this film (current build) · the same frames at HALF SPEED",
+            "crop": [
+              320,
+              40,
+              960,
+              400
+            ]
+          },
+          {
+            "kind": "clip",
+            "src": "capture/moths_r3_preview.avi",
+            "start_frame": 68,
+            "end_frame": 150,
+            "speed": 0.5,
+            "label": "FIXTURE · preview scene over the real level · Movie Maker 30 fps · captured for this film (current build) · from frame 70 the condition is off · HALF SPEED",
+            "crop": [
+              320,
+              40,
+              960,
+              400
+            ]
+          }
+        ],
+        "evidence_media": "media/B18.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "moths wander (real time)"
+          },
+          {
+            "at": "0.5",
+            "event": "condition ends at frame 70: fade"
+          }
+        ],
+        "note": "Fixture motion capture, bulb line enlarged."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B18.wav",
+      "actual_duration_s": 11.266666666666667,
+      "speech_duration_s": 10.688,
+      "render_duration_s": 11.266666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B18.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "CODE",
+      "role_note": "The controller: reads state, drives emitting only, restart on edges, hide after 2.4 s. Paired result B20.",
+      "narration_text": "The controller reads the game state, never writes it. Night, before minute seventeen forty, and visible: emitting. Turned on or shown again: restart, so preprocess refills the group. When it ends, emitting stops, and two point four seconds later the group hides.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.12",
+            "event": "line highlight: restart: preprocess refills"
+          },
+          {
+            "at": "0.5",
+            "event": "line highlight: emitting only"
+          },
+          {
+            "at": "0.7",
+            "event": "line highlight: 2.4 s fade"
+          },
+          {
+            "at": "0.8",
+            "event": "line highlight: hidden"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Start, stop, hide: the moth controller",
+            "project": "Vidiyum Mun",
+            "path": "godot/effects/string_light_moths_controller.gd",
+            "source": "Godot editor reconstruction · godot/effects/string_light_moths_controller.gd lines 44–56 · git 52fa183",
+            "code": "\t\t\te.restart()\n\t\t_fade_remaining = 0.0\n\tfor e in _emitters:\n\t\te.emitting = active and vis\n\tif _was_active and not active:\n\t\t_fade_remaining = LIFETIME_S\n\telif not active and _fade_remaining > 0.0:\n\t\t_fade_remaining = maxf(_fade_remaining - delta, 0.0)\n\t\tif _fade_remaining == 0.0 and vis:\n\t\t\tvisible = false\n\t\t\tvis = false\n\t_was_active = active\n\t_was_visible = vis",
+            "startLine": 44,
+            "codeFontSize": 24,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "reads",
+                "value": "phase, clock_minutes"
+              },
+              {
+                "label": "drives",
+                "value": "emitting only"
+              },
+              {
+                "label": "ends",
+                "value": "hide after 2.4 s"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.12,
+                "line": 44,
+                "label": "restart: preprocess refills"
+              },
+              {
+                "frac": 0.5,
+                "line": 47,
+                "label": "emitting only"
+              },
+              {
+                "frac": 0.7,
+                "line": 49,
+                "label": "2.4 s fade"
+              },
+              {
+                "frac": 0.8,
+                "line": 53,
+                "label": "hidden"
+              }
+            ],
+            "cues": [
+              {
+                "line": 44,
+                "label": "restart: preprocess refills",
+                "at": 1.7
+              },
+              {
+                "line": 47,
+                "label": "emitting only",
+                "at": 7.07
+              },
+              {
+                "line": 49,
+                "label": "2.4 s fade",
+                "at": 9.89
+              },
+              {
+                "line": 53,
+                "label": "hidden",
+                "at": 11.31
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 14.133333333333333
+          },
+          "rendered": {
+            "out": "media/B19.mp4",
+            "at": "2026-11-09T01:05:25.704005+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B19.wav",
+      "actual_duration_s": 14.133333333333333,
+      "speech_duration_s": 13.824,
+      "render_duration_s": 14.133333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B19.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "RESULT",
+      "role_note": "Result of B19: controller test log, scripted capture paused mid-walk, Shriram's pause screenshot.",
+      "narration_text": "The state test, with real keys: sixty-three of sixty-three. Pause freezes the emitters; hiding stops them; holding T to five A M stops emission, then hides the group. In the scripted capture, pause holds everything still. Shriram, in play: they stay exactly where we paused.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · logs/test_string_light_moths_controller_60fps.log · lines verbatim",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/terminal_controller.png",
+            "w": 1.1,
+            "label": "HEADLESS · logs/test_string_light_moths_controller_60fps.log · lines verbatim"
+          },
+          {
+            "kind": "clip",
+            "src": "capture/walk_effects.avi",
+            "start_frame": 96,
+            "end_frame": 152,
+            "speed": 1.0,
+            "label": "SCRIPTED CAPTURE · real game, keys sent as input events · Movie Maker 30 fps · current build · P pressed: the tree is paused (frozen)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/use-it/paused-moths-and-scuffs-frozen.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · paused in play: moths and scuffs frozen"
+          }
+        ],
+        "evidence_media": "media/B20.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "state test log"
+          },
+          {
+            "at": "0.4",
+            "event": "scripted pause"
+          },
+          {
+            "at": "0.75",
+            "event": "Shriram's pause screenshot"
+          }
+        ],
+        "note": "Recorded output, scripted capture, Shriram's screenshot."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B20.wav",
+      "actual_duration_s": 15.133333333333333,
+      "speech_duration_s": 14.613,
+      "render_duration_s": 15.133333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B20.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "COMPARE",
+      "role_note": "Two annotated lines of particles_generated.gdshader beside the settings they implement. Annotation is the film's (Claude's).",
+      "narration_text": "Shriram converted the moth material to shader code in the editor. These notes are the film's, not Shriram's. Line two thirty-two picks each moth's starting speed, between the brief's minimum and maximum. Line four thirty-four bends its velocity toward the turbulence noise, by its influence. And line three ninety-nine starts from gravity, zero here.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "two line pairs"
+          },
+          {
+            "at": "0.75",
+            "event": "gravity line"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "The process shader Godot generated",
+            "section": "particles_generated.gdshader (generated by Godot, saved by Shriram) and string_light_moths.tscn, verbatim · git 52fa183",
+            "excerpt": "232: params.initial_velocity_multiplier = mix(initial_linear_velocity_min, initial_linear_velocity_max, rand_from_seed(alt_seed));\n  tscn:36 initial_velocity_min = 0.06  ·  tscn:37 initial_velocity_max = 0.28\n\n434: USERDATA1.xyz = mix(USERDATA1.xyz, normalize(noise_direction) * vel_mag * (1.0 + (1.0 - vel_infl) * 0.2), vel_infl);\n  tscn:57 turbulence_influence_min = 0.12  ·  tscn:58 turbulence_influence_max = 0.3",
+            "source": "",
+            "status": "ANNOTATION BY THIS FILM (CLAUDE) · not Shriram's notes",
+            "visualLabel": "What the lines do",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "line 232",
+                "text": "random start speed between min and max (0.06–0.28 m/s)"
+              },
+              {
+                "label": "line 434",
+                "text": "turbulence: bend velocity toward the noise, by 0.12–0.30"
+              },
+              {
+                "label": "line 399",
+                "text": "force starts from gravity: (0, 0, 0) for the moths"
+              },
+              {
+                "label": "names",
+                "text": "initial_velocity_min arrives as uniform initial_linear_velocity_min"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.12,
+                "card": 0
+              },
+              {
+                "frac": 0.45,
+                "card": 1
+              },
+              {
+                "frac": 0.75,
+                "card": 2
+              },
+              {
+                "frac": 0.88,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 2.34
+              },
+              {
+                "card": 1,
+                "at": 8.76
+              },
+              {
+                "card": 2,
+                "at": 14.6
+              },
+              {
+                "card": 3,
+                "at": 17.13
+              }
+            ],
+            "durationSeconds": 19.466666666666665
+          },
+          "rendered": {
+            "out": "media/B21.mp4",
+            "at": "2026-11-09T01:09:33.813798+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B21.wav",
+      "actual_duration_s": 19.466666666666665,
+      "speech_duration_s": 19.157,
+      "render_duration_s": 19.466666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B21.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "CODE",
+      "role_note": "Config read-back test: spread and initial_velocity_min checks. Paired result B23 (mutations).",
+      "narration_text": "The configuration tests load each scene and read every setting back against the brief. Effect A: one hundred twenty-eight checks. Effect B: two hundred fifty-five. Here are two: spread, and minimum speed.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.4",
+            "event": "line highlight: spread"
+          },
+          {
+            "at": "0.75",
+            "event": "line highlight: initial_velocity_min"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDevWorkbench",
+          "props": {
+            "mode": "code",
+            "title": "Read every setting back",
+            "project": "Vidiyum Mun",
+            "path": "godot/tests/test_footstep_scuff_config.gd",
+            "source": "Godot editor reconstruction · godot/tests/test_footstep_scuff_config.gd lines 105–108 · git 52fa183",
+            "code": "\tcheck(\"%s spread = %.0f deg\" % [name, want[\"spread\"]],\n\t\tis_equal_approx(cp.spread, want[\"spread\"]), cp.spread)\n\tcheck(\"%s initial_velocity_min = %.2f m/s\" % [name, want[\"vmin\"]],\n\t\tis_equal_approx(cp.initial_velocity_min, want[\"vmin\"]), cp.initial_velocity_min)",
+            "startLine": 105,
+            "codeFontSize": 30,
+            "inspectorLabel": "Source notes — not Inspector values",
+            "notes": [
+              {
+                "label": "A config",
+                "value": "128/128"
+              },
+              {
+                "label": "B config",
+                "value": "255/255"
+              },
+              {
+                "label": "shown",
+                "value": "spread · initial_velocity_min"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.4,
+                "line": 105,
+                "label": "spread"
+              },
+              {
+                "frac": 0.75,
+                "line": 107,
+                "label": "initial_velocity_min"
+              }
+            ],
+            "cues": [
+              {
+                "line": 105,
+                "label": "spread",
+                "at": 4.53
+              },
+              {
+                "line": 107,
+                "label": "initial_velocity_min",
+                "at": 8.5
+              }
+            ],
+            "output": [
+              "Godot editor reconstruction · git 52fa183"
+            ],
+            "durationSeconds": 11.333333333333334
+          },
+          "rendered": {
+            "out": "media/B22.mp4",
+            "at": "2026-11-09T01:06:01.414765+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B22.wav",
+      "actual_duration_s": 11.333333333333334,
+      "speech_duration_s": 11.008,
+      "render_duration_s": 11.333333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B22.mp4",
+        "filled_by": "remotion:GodotDevWorkbench",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "RESULT",
+      "role_note": "Result of B22: the two mutations' recorded logs (Shriram), config totals.",
+      "narration_text": "Shriram broke Effect A twice. The Godot three name, initial velocity: no load error, the effect still fired, and the speed silently read zero. Exit one. Then spread, eighty to thirty: caught as drift. Exit one.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · logs/a6-mutations/*.log · recorded output, verbatim lines",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/terminal_mutations.png",
+            "w": 1,
+            "label": "HEADLESS · logs/a6-mutations/*.log and the passing config logs · lines verbatim"
+          }
+        ],
+        "evidence_media": "media/B23.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "M1 Godot 3 name"
+          },
+          {
+            "at": "0.5",
+            "event": "M2 drift"
+          }
+        ],
+        "note": "Recorded output, not reconstructed."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B23.wav",
+      "actual_duration_s": 13.1,
+      "speech_duration_s": 12.587,
+      "render_duration_s": 13.1,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B23.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B24",
+      "act": "PRICE",
+      "role_note": "Headless CPU price (cost log) and the GPU price (Shriram's Visual Profiler screenshots, TEST-REPORT A6.6).",
+      "narration_text": "The prices. Headless CPU per frame, against an empty-scene control of five point eight microseconds. Effect A adds thirteen point two, inside its budget. Effect B adds three point three, within noise: the dummy renderer runs no GPU particle process. And the Visual Profiler read zero milliseconds of GPU on every row, so GPU time could not be measured here. With vsync off, both effects together cost about point one three to point two eight milliseconds. Per-effect budgets: not confirmed.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "own",
+        "treatment": "none",
+        "label": "HEADLESS · logs/cost_effects_60fps.log · lines verbatim",
+        "segments": [
+          {
+            "kind": "still",
+            "src": "evidence/terminal_cost.png",
+            "w": 1.3,
+            "label": "HEADLESS · logs/cost_effects_60fps.log · lines verbatim"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/a6/use-it/visual-profiler-B-heaviest.png",
+            "w": 1,
+            "label": "SHRIRAM'S OWN SCREENSHOT · Visual Profiler, B heaviest: GPU column 0.0 ms on every row"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/table_gpu.png",
+            "w": 1.2,
+            "label": "TEST-REPORT.md A6.6 · lines verbatim"
+          }
+        ],
+        "evidence_media": "media/B24.mp4",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cost log"
+          },
+          {
+            "at": "0.45",
+            "event": "Visual Profiler: GPU 0.0 ms"
+          },
+          {
+            "at": "0.8",
+            "event": "A6.6 rows"
+          }
+        ],
+        "note": "Recorded output, Shriram's profiler screenshots, the recorded report."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "caption band (film label)",
+            "box": [
+              0.074,
+              0.905,
+              0.62,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real captures, Shriram's screenshots and recorded logs reframed inside title-safe; the film's essential text is the caption band. Text inside the evidence is inspected by eye in _qc frame samples."
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B24.wav",
+      "actual_duration_s": 29.666666666666668,
+      "speech_duration_s": 29.157,
+      "render_duration_s": 29.666666666666668,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B24.mp4",
+        "filled_by": "media",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B25",
+      "act": "LIMITS",
+      "role_note": "Agent mistakes caught; Claude's readings Shriram overruled (A6.8); what headless can't show.",
+      "narration_text": "What the agents got wrong. Step one ran out of turns and left a draft over its line limit. Step two's preview drew a reconstructed background, not the real level. A test couldn't catch a double fire. The moth texture was haze. The wiring plan called ambience a feedback loop. And agents tried commands outside their allow list. Claude was overruled too: r zero too fast, the cotton balls, and three rounds of invisible moths.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "mistakes list"
+          },
+          {
+            "at": "0.72",
+            "event": "overruled readings"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "What the agents got wrong",
+            "section": "Quoted verbatim from commit messages, TUNING.md and prompts/a6/ · git 52fa183",
+            "excerpt": "41302d8: “error_max_turns at 41/40”; “draft is 124 lines, over the 120 limit”\na17cc65: “drew a reconstructed background” … “and had no fixed seed”\nc9a07cd: “'walking fired >= 3' could not catch a double fire”\nTUNING.md:161: “mostly haze”\nsession-6a.jsonl: “feedback loop drives `amount_ratio` only”\nd5d60fb: “16 permission denials”",
+            "source": "",
+            "status": "REVIEW · each fix came from a reading, a test or Shriram's eyes",
+            "visualLabel": "Claude, overruled (A6.8)",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "A r0",
+                "text": "Claude: matches the brief · Shriram: 'way too fast'"
+              },
+              {
+                "label": "A r1",
+                "text": "the cotton balls came from Shriram's play"
+              },
+              {
+                "label": "B r0–r2",
+                "text": "Claude blamed size, then contrast; the texture was haze"
+              },
+              {
+                "label": "Headless",
+                "text": "dummy renderer: never the look"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.72,
+                "card": 0
+              },
+              {
+                "frac": 0.8,
+                "card": 1
+              },
+              {
+                "frac": 0.88,
+                "card": 2
+              },
+              {
+                "frac": 0.95,
+                "card": 3
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 15.77
+              },
+              {
+                "card": 1,
+                "at": 17.52
+              },
+              {
+                "card": 2,
+                "at": 19.27
+              },
+              {
+                "card": 3,
+                "at": 20.8
+              }
+            ],
+            "durationSeconds": 21.9
+          },
+          "rendered": {
+            "out": "media/B25.mp4",
+            "at": "2026-11-09T01:36:22.224356+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B25.wav",
+      "actual_duration_s": 21.9,
+      "speech_duration_s": 21.589,
+      "render_duration_s": 21.9,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B25.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B26",
+      "act": "CREDITS",
+      "role_note": "Who did what (SOURCES.md 'Assignment 6', brief header); texture sources; game-source revision on screen.",
+      "narration_text": "Who did what. Shriram chose both effects, wrote the brief with ChatGPT's help on wording, effect settings and price predictions, approved every change, captured every strip, ran the mutations, and gave every verdict. Claude Code and its scoped agents built the scenes, code and tests, and read the strips. Every texture is procedural. Source revision five two F A one eight three.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "Shriram"
+          },
+          {
+            "at": "0.45",
+            "event": "Claude Code"
+          },
+          {
+            "at": "0.85",
+            "event": "revision"
+          }
+        ],
+        "remotion": {
+          "pattern": "GodotDesignBoard",
+          "props": {
+            "title": "Who did what",
+            "section": "Quoted verbatim from CHANGE-BRIEF.md and SOURCES.md · game source git 52fa183",
+            "excerpt": "CHANGE-BRIEF.md:8-9: “Shriram chose the two effects and the retrigger rule from options Claude laid out.”\nSOURCES.md:149-150: “ChatGPT's help on **the wording and structure** and on **the price predictions**”\nSOURCES.md:154-155: ChatGPT “helped me plan the effect settings and explain the generated process shader”\nCHANGE-BRIEF.md:213: “The texture should be created procedurally, so I don't need an external image.”",
+            "source": "",
+            "status": "CREDITS · source revision 52fa183",
+            "visualLabel": "Who did what in A6",
+            "layout": "cards",
+            "cards": [
+              {
+                "label": "Shriram (ChatGPT helped: wording, settings, price predictions)",
+                "text": "effects + retrigger rule; brief; approved every change; captured every strip; mutations; every verdict"
+              },
+              {
+                "label": "Claude Code",
+                "text": "scoped claude -p agents + interactive session: scenes, previews, trigger, controller, tests, cost script; strip readings; proposals; this film"
+              },
+              {
+                "label": "Narration · revision",
+                "text": "Kokoro am_onyx (\"Liam\"), local · git 52fa183"
+              }
+            ],
+            "cue_fracs": [
+              {
+                "frac": 0.05,
+                "card": 0
+              },
+              {
+                "frac": 0.45,
+                "card": 1
+              },
+              {
+                "frac": 0.85,
+                "card": 2
+              }
+            ],
+            "cues": [
+              {
+                "card": 0,
+                "at": 1.03
+              },
+              {
+                "card": 1,
+                "at": 9.29
+              },
+              {
+                "card": 2,
+                "at": 17.54
+              }
+            ],
+            "durationSeconds": 20.633333333333333
+          },
+          "rendered": {
+            "out": "media/B26.mp4",
+            "at": "2026-11-09T01:49:01.253471+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B26.wav",
+      "actual_duration_s": 20.633333333333333,
+      "speech_duration_s": 20.309,
+      "render_duration_s": 20.633333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B26.mp4",
+        "filled_by": "remotion:GodotDesignBoard",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B27",
+      "act": "VERDICT",
+      "lead_silence_s": 0.4,
+      "role_note": "Verdict: checked / uncertain / limits / next.",
+      "narration_text": "Let's recap with Claude. Checked: settings, start, stop and pause, and every tuning verdict. Uncertain: GPU time per effect. Limit: the scuff lands at Hari's centre. Next: measure GPU time on a machine whose profiler reports it.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.1",
+            "event": "verdict card"
+          },
+          {
+            "at": "0.25",
+            "event": "checked"
+          },
+          {
+            "at": "0.5",
+            "event": "uncertain"
+          },
+          {
+            "at": "0.7",
+            "event": "limits"
+          },
+          {
+            "at": "0.85",
+            "event": "next"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "Vidiyum Mun A6 particles, git 52fa183.",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Checked: settings 128 + 255, states 19 + 63, pause, tuning verdicts.",
+              "Uncertain: GPU time per effect; Stop + Play again (moths).",
+              "Limits: the scuff lands at Hari's centre, behind the front foot.",
+              "Next: GPU time on a machine whose profiler reports it."
+            ]
+          },
+          "rendered": {
+            "out": "media/B27.mp4",
+            "at": "2026-11-09T01:13:21.126360+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B27.wav",
+      "actual_duration_s": 14.3,
+      "speech_duration_s": 13.589,
+      "render_duration_s": 14.3,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B27.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B28",
+      "act": "HANDOFF",
+      "role_note": "Your Turn: prompt read aloud; one bounded change + prediction; signs off.",
+      "narration_text": "Your turn. Brief one particle effect for one event in your game, with timings, before any node exists. Ask Claude for the scene, and a test that reads every setting back. Then use a Godot three name, and watch it fail. Liam, in for Bear.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "'Your turn.'"
+          },
+          {
+            "at": "0.1",
+            "event": "prompt types"
+          },
+          {
+            "at": "0.75",
+            "event": "result lines"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "WALKER · GODOT GAMEDEV · A6 PARTICLES",
+            "segment": "Your One Effect",
+            "command": "I wrote a brief for one particle effect on one event in my game: amount, lifetime, ramps and when it fires. Build the scene, and a headless test that loads it and reads every setting back against my brief. I predict a Godot 3 property name will fail it.",
+            "runningText": "paste this into Claude…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "You write the brief and the timings.",
+              "Claude writes the scene + test.",
+              "Rename one property: it must fail."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B28.mp4",
+            "at": "2026-11-09T01:14:37.132832+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B28.wav",
+      "actual_duration_s": 13.1,
+      "speech_duration_s": 12.779,
+      "render_duration_s": 13.1,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B28.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-11-08T21:19:15"
+      }
+    },
+    {
+      "beat_id": "B29",
+      "act": "OUTRO",
+      "kind": "outro_voice",
+      "tail_hold_s": 1.0,
+      "role_note": "OUTRO-LOCK: ClaudeTitleOutro, exact title, @NikBearBrown, slug-seeded mascot; spoken, no jingle.",
+      "narration_text": "Vidiyum Mun, Dust and Moths. At Nik Bear Brown.",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title card"
+          },
+          {
+            "at": "0.3",
+            "event": "@NikBearBrown + mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Vidiyum Mun, Dust and Moths",
+            "slug": "claude-liam-vidiyum-mun-a6-gamedev"
+          },
+          "rendered": {
+            "out": "media/B29.mp4",
+            "at": "2026-11-09T01:14:56.171097+00:00"
+          }
+        }
+      },
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "audio_file": "mp3/conformed/B29.wav",
+      "actual_duration_s": 4.9,
+      "speech_duration_s": 3.584,
+      "render_duration_s": 4.9,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/B29.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-11-08T21:19:15"
+      }
+    }
+  ]
+}

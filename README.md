@@ -197,10 +197,29 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
     frame.
   - Some Movie Maker strips stopped early when the window was closed; the kept frames are named in TUNING.md.
   - Opening the editor rewrites `project.godot` and `default_bus_layout.tres`; they were restored after every session.
-- **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Liam narration), 3840×2160.
-  - **Link (Northeastern OneDrive):** LINK-PENDING
-  - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:** SHA-PENDING
-  - **Game-source revision shown:** `52fa183`; `git diff 52fa183 a6 -- godot scripts` is empty
+- **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
+  3840×2160, 30 fps, **7:11**. Shriram watched the final export ("all good").
+  - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a6-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux)
+  - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:**
+    `5a5e381bd69906e0cff87e26bf8307952287c4e26931d38d01446b4ba0a29f85`
+  - **Game-source revision shown:** `52fa183`. Later commits change only docs, evidence and film records:
+    `git diff 52fa183 a6 -- godot scripts` is empty.
+  - **Film records:** [youtube/claude-liam-vidiyum-mun-a6-gamedev/](youtube/claude-liam-vidiyum-mun-a6-gamedev/): beat
+    sheet, prompts, fact check, shot list, evidence ledger, capture tools and QC.
+    - `./art godot-gamedev --check` **PASS** (10 excerpts, 10 code→result pairs).
+    - Gate V on the final: 0 BLOCKER, 0 MAJOR.
+    - Loudness −24.4 LUFS.
+  - **Text-legibility gate (GATE T):** it flagged 7 beats (B06, B08, B10, B12, B14, B18, B24). In every one, the
+    flagged "text" is inside a real capture or one of Shriram's screenshots: the pool, the window chairs, the
+    flip-flops, and the game view in the profiler screenshot. Changing those pixels would alter the evidence. Shriram
+    approved compiling past this gate only; every other gate ran (`_qc/GATE-T-OVERRIDE.md`).
+  - **Known flaws:**
+    - B21's panel header reads "GDD · DOCUMENT EXCERPT" over shader and scene lines. The excerpt itself is verbatim with
+      line numbers.
+    - B03 and B11 narrate settings that sit just below the excerpt shown on screen.
+    - B06's "up to three at once" comes from the film's scripted capture log, not from play; the brief's maximum is
+      four.
+    - B24 reports the Metal result, where the GPU column read 0.0. The later Vulkan measurement is in TEST-REPORT A6.6b.
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A6; the earlier briefs are in [design/briefs/](design/briefs/)) · [TUNING](TUNING.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)

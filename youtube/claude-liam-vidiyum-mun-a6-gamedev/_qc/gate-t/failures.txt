@@ -1,0 +1,30 @@
+### B06 (?)
+- **min-size §8.1**: smallest text run 35px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+- **contrast-local §8.3b**: per-blob contrast 1.02:1 < 3.0:1 — text unreadable on actual local background (blob@(1742,1242)–(1835,1275) fg≈(155, 126, 115) bg≈(155, 124, 112)); move label off its backg
+- **bbox-overlap §8.6b**: text-run bbox overlap 100% >= 10% — two labels are printing on top of each other: blob@(1146,116)–(2135,477) ∩ blob@(2026,131)–(2095,167) (100% of smaller); separate label po
+### B08 (?)
+- **min-size §8.1**: smallest text run 39px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+### B10 (?)
+- **min-size §8.1**: smallest text run 36px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+### B12 (?)
+- **min-size §8.1**: smallest text run 36px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+- **contrast-local §8.3b**: per-blob contrast 1.88:1 < 3.0:1 — text unreadable on actual local background (blob@(1097,1156)–(1157,1192) fg≈(215, 149, 82) bg≈(173, 94, 54)); move label off its backgrou
+- **bbox-overlap §8.6b**: text-run bbox overlap 100% >= 10% — two labels are printing on top of each other: blob@(391,646)–(3460,1372) ∩ blob@(1425,1155)–(1509,1192) (100% of smaller); separate label 
+### B14 (?)
+- **min-size §8.1**: smallest text run 35px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+- **contrast-local §8.3b**: per-blob contrast 1.03:1 < 3.0:1 — text unreadable on actual local background (blob@(789,1500)–(895,1529) fg≈(187, 128, 78) bg≈(184, 126, 76)); move label off its backgroun
+- **bbox-overlap §8.6b**: text-run bbox overlap 100% >= 10% — two labels are printing on top of each other: blob@(1915,1050)–(3432,1675) ∩ blob@(3048,1500)–(3137,1535) (100% of smaller); separate labe
+### B18 (?)
+- **min-size §8.1**: smallest text run 39px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+- **contrast-local §8.3b**: per-blob contrast 1.64:1 < 3.0:1 — text unreadable on actual local background (blob@(1220,1098)–(1272,1127) fg≈(212, 119, 73) bg≈(166, 86, 43)); move label off its backgrou
+### B24 (?)
+- **contrast-local §8.3b**: per-blob contrast 2.90:1 < 3.0:1 — text unreadable on actual local background (blob@(2024,1138)–(2613,1456) fg≈(171, 176, 150) bg≈(114, 89, 73)); move label off its backgro
+| no-wordy-card §8.5 | 14 | 0 |
+| min-size §8.1 | 30 | 6 |
+| overflow §8.2 | 30 | 0 |
+| contrast §8.3 | 30 | 0 |
+| contrast-local §8.3b | 30 | 5 |
+| bbox-overlap §8.6b | 30 | 3 |
+| card-clip §8.13 | 30 | 0 |
+| kerning §8.4 | 0 | 0 |
+| redundancy §8.10 (advisory) | 1 | 0 (advisory — no exit effect) |
