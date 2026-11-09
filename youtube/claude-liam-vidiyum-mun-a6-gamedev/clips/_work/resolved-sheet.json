@@ -1135,7 +1135,6 @@
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B12.wav",
       "actual_duration_s": 15.266666666666667,
-      "hold_s": 0.0,
       "speech_duration_s": 14.763,
       "render_duration_s": 15.266666666666667
     },
@@ -2091,7 +2090,7 @@
       "beat_id": "B24",
       "act": "PRICE",
       "role_note": "Headless CPU price (cost log) and the GPU price (Shriram's Visual Profiler screenshots, TEST-REPORT A6.6).",
-      "narration_text": "The prices. Headless CPU per frame, against an empty-scene control of five point eight microseconds. Effect A adds thirteen point two, inside its budget. Effect B adds three point three, within noise: the dummy renderer runs no GPU particle process. And the Visual Profiler read zero milliseconds of GPU on every row, so GPU time could not be measured here. With vsync off, both effects together cost about point one three to point two eight milliseconds. Per-effect budgets: not confirmed.",
+      "narration_text": "The prices. Headless CPU per frame, against an empty-scene control of five point eight microseconds. Effect A adds thirteen point two, inside its budget. Effect B adds three point three, within noise: the dummy renderer runs no GPU particle process. On Metal, the Visual Profiler read zero milliseconds of GPU on every row. Rerun under Vulkan, it reads two to six milliseconds a frame. But with the effects on and off at the same view, single frames differed by plus point five seven and minus point zero four: more than the effects cost. With vsync off, both effects together cost about point one three to point two eight milliseconds. Per-effect budgets: not confirmed.",
       "shot": {
         "type": "GAMEPLAY",
         "class": "SHOW",
@@ -2109,7 +2108,19 @@
             "kind": "still",
             "src": "evidence/a6/use-it/visual-profiler-B-heaviest.png",
             "w": 1,
-            "label": "SHRIRAM'S OWN SCREENSHOT · Visual Profiler, B heaviest: GPU column 0.0 ms on every row"
+            "label": "SHRIRAM'S OWN SCREENSHOT · Visual Profiler, B heaviest: GPU column 0.0 ms on every row (Metal)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/vulkan/7-set2-on-standing.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · VULKAN · set 2, both effects ON, standing (GPU Render Viewport 3.22 ms)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/vulkan/8-set2-off-standing.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · VULKAN · set 2, both effects OFF, same view (GPU Render Viewport 3.26 ms)"
           },
           {
             "kind": "still",
@@ -2125,8 +2136,12 @@
             "event": "cost log"
           },
           {
-            "at": "0.45",
-            "event": "Visual Profiler: GPU 0.0 ms"
+            "at": "0.35",
+            "event": "Metal profiler: GPU 0.0 ms"
+          },
+          {
+            "at": "0.5",
+            "event": "Vulkan on/off pair"
           },
           {
             "at": "0.8",
@@ -2152,9 +2167,10 @@
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B24.wav",
-      "actual_duration_s": 29.666666666666668,
-      "speech_duration_s": 29.157,
-      "render_duration_s": 29.666666666666668
+      "actual_duration_s": 37.96666666666667,
+      "hold_s": 0.0,
+      "speech_duration_s": 37.455,
+      "render_duration_s": 37.96666666666667
     },
     {
       "beat_id": "B25",

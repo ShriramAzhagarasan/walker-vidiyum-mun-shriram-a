@@ -198,10 +198,10 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
   - Some Movie Maker strips stopped early when the window was closed; the kept frames are named in TUNING.md.
   - Opening the editor rewrites `project.godot` and `default_bus_layout.tres`; they were restored after every session.
 - **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
-  3840×2160, 30 fps, **7:11**. Shriram watched the final export ("all good").
+  3840×2160, 30 fps, **7:19** (revision 2, see below).
   - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a6-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux)
   - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:**
-    `5a5e381bd69906e0cff87e26bf8307952287c4e26931d38d01446b4ba0a29f85`
+    `e823205ef799c340a6f9b8289dd2fe038107ca0f95ad1e373af2b003ef99e547`
   - **Game-source revision shown:** `52fa183`. Later commits change only docs, evidence and film records:
     `git diff 52fa183 a6 -- godot scripts` is empty.
   - **Film records:** [youtube/claude-liam-vidiyum-mun-a6-gamedev/](youtube/claude-liam-vidiyum-mun-a6-gamedev/): beat
@@ -219,7 +219,11 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
     - B03 and B11 narrate settings that sit just below the excerpt shown on screen.
     - B06's "up to three at once" comes from the film's scripted capture log, not from play; the brief's maximum is
       four.
-    - B24 reports the Metal result, where the GPU column read 0.0. The later Vulkan measurement is in TEST-REPORT A6.6b.
+  - **Revision 2 of the film (2026-11-08, ~21:57):**
+    - Shriram watched revision 1 (7:11, SHA-256 `5a5e381b…0a29f85`) and called it "all good". It is superseded and is
+      not the submitted film.
+    - Revision 2 changes only B24. Its narration and stills add Shriram's Vulkan GPU measurement (TEST-REPORT A6.6b) to
+      the Metal result. Shriram approved this change.
 
 ## Docs
 [CONCEPT](CONCEPT.md) · [STORYBOARD](STORYBOARD.md) · [CHARACTER-SHEET](CHARACTER-SHEET.md) · [CHANGE-BRIEF](CHANGE-BRIEF.md) (A6; the earlier briefs are in [design/briefs/](design/briefs/)) · [TUNING](TUNING.md) · [DIALOGUE](DIALOGUE.md) · [ASSET-LOG](ASSET-LOG.md) · [SOURCES](SOURCES.md) · [FRICTIONAL](FRICTIONAL.md) · [TEST-REPORT](TEST-REPORT.md) · [MATERIALS](godot/MATERIALS.md) · [LANGUAGE-NOTES](LANGUAGE-NOTES.md) · my original story and decisions: [design/input/](design/input/)

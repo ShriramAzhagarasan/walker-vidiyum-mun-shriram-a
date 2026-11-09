@@ -26,3 +26,13 @@ All 23 other beats PASS. Precedent: A5 (`../claude-liam-vidiyum-mun-a5-gamedev/_
 
 **Command run** (from `$B`):
 `python3 runtime/scripts/compile.py $REEL --height 2160 --fps 30 --out $REEL/exports/landscape`
+
+## Re-check 2026-11-08 ~21:50 (B24 Vulkan update; Shriram approved the change ~21:47, relayed: "2. yes go ahead with beat 24")
+B24 was re-voiced and two of Shriram's Vulkan screenshots were added (`evidence/vulkan/7-set2-on-standing.png`,
+`8-set2-off-standing.png`). `type_check.py` was run again and flags the **same 7 beats** (B06, B08, B10, B12, B14, B18, B24).
+B24's flags have moved into the new screenshot, which is the frame type_check samples:
+- contrast-local 2.85:1 on the game view inside the editor's run window (`_qc/gate-t/gt_B24.png`);
+- min-size 35 px, almost certainly the Godot editor's own small UI text in that screenshot.
+
+Both are captured pixels. The film's caption on that frame is 50 px Lato Bold, the same as on beats that pass. No
+film-made text is flagged, so the existing approval covers this. The same compile.py command was run.

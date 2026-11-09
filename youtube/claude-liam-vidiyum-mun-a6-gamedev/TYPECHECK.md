@@ -1,6 +1,6 @@
 # TYPECHECK.md — GATE T
 
-Reel: `claude-liam-vidiyum-mun-a6-gamedev`  |  Checked: 2026-11-08T21:12  |  Overall: **FAIL**  |  Beats checked: 30  |  FAILs: 7
+Reel: `claude-liam-vidiyum-mun-a6-gamedev`  |  Checked: 2026-11-08T21:52  |  Overall: **FAIL**  |  Beats checked: 30  |  FAILs: 7
 
 Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-height.  Contrast: 4.5:1 WCAG.  Kern threshold: 3.5× expected advance.  Wordy budget: 2 elements.
 
@@ -30,7 +30,7 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 | B21 | ? | light | no-wordy-card §8.5: no prose payload found | PASS | — |
 | B22 | ? | light | no-wordy-card §8.5: pull-quote (6 words ≤ 12) | PASS | — |
 | B23 | ? | dark | min-size §8.1: min text-run height 41px >= floor 41px (individual-char fallback at 2×) | PASS | — |
-| B24 | ? | dark | contrast-local §8.3b: per-blob contrast 2.90:1 < 3.0:1 — text unreadable on actual local b… | **FAIL** | Use INK on cream; add backing plate under accent text |
+| B24 | ? | dark | min-size §8.1: smallest text run 35px < floor 41px (1.9% of 2160px logical); likely a capt… | **FAIL** | Increase font_size in scenes.py or Remotion component |
 | B25 | ? | light | no-wordy-card §8.5: no prose payload found | PASS | — |
 | B26 | ? | light | no-wordy-card §8.5: no prose payload found | PASS | — |
 | B27 | ? | light | min-size §8.1: hand-drawn pattern (ClaudeVerdictArtifact) — §8.1 hachure/crossbar fragment… | PASS | — |
@@ -73,8 +73,9 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 - **Fix:** Increase font_size in scenes.py or Remotion component
 
 ### B24 (?)
-- **contrast-local §8.3b**: per-blob contrast 2.90:1 < 3.0:1 — text unreadable on actual local background (blob@(2024,1138)–(2613,1456) fg≈(171, 176, 150) bg≈(114, 89, 73)); move label off its background or change text color
-- **Fix:** Use INK on cream; add backing plate under accent text
+- **min-size §8.1**: smallest text run 35px < floor 41px (1.9% of 2160px logical); likely a caption/label too small — increase font_size or check if this is a data label needing §7 treatment
+- **contrast-local §8.3b**: per-blob contrast 2.85:1 < 3.0:1 — text unreadable on actual local background (blob@(1960,977)–(2558,1206) fg≈(173, 173, 150) bg≈(112, 89, 79)); move label off its background or change text color
+- **Fix:** Increase font_size in scenes.py or Remotion component
 
 ---
 
@@ -83,7 +84,7 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 | Check | Beats checked | FAILs |
 |-------|---------------|-------|
 | no-wordy-card §8.5 | 14 | 0 |
-| min-size §8.1 | 30 | 6 |
+| min-size §8.1 | 30 | 7 |
 | overflow §8.2 | 30 | 0 |
 | contrast §8.3 | 30 | 0 |
 | contrast-local §8.3b | 30 | 5 |

@@ -15,7 +15,7 @@ All paths are relative to the repo root; game source at git `52fa183` (`evidence
 | B05 | reads `_travel`; a contact every 0.84 m (2 × 0.42); new instance per contact; freed after 1.15 s | `godot/effects/footstep_scuff_trigger.gd:9-12,34-46` (excerpt 37-46 on screen) |
 | B05 | at most four alive (ceil(1.15/0.38)), 60 particles | CHANGE-BRIEF.md:251-257 |
 | B06 | scripted capture: up to three alive at once | `evidence/walk_effects_frames.txt` (column scuffs_alive, max 3); `tools/capture_walk_effects.gd` |
-| B06 | Shriram: "it stays for a while and then disappears, that is natural" | TEST-REPORT.md:504 |
+| B06 | Shriram: "it stays for a while and then disappears, that is natural" | TEST-REPORT.md:545 |
 | B06 | no scuff on load / dialogue / idle / paused; exactly one per contact; 19/19 | `logs/test_footstep_scuff_trigger_60fps.log` (lines on screen); TEST-REPORT.md:444-451 |
 | B07 | alpha 0.18→0.30 at 50 %, 0→0.15 at 70 %; Claude proposed, Shriram approved; lifetime unchanged | TUNING.md:34-37; CHANGE-BRIEF.md:735-738; `footstep_scuff.tscn:31-33` |
 | B08 | predicted "about twice"; measured 1.36×; lasts ~1.0 s vs 0.67 s; stacked alpha; verdict keep | TUNING.md:39-65 |
@@ -32,7 +32,7 @@ All paths are relative to the repo root; game source at git `52fa183` (`evidence
 | B18 | fixture capture made for the film; condition ends at frame 70; fade | `tools/run_captures.sh`; `godot/previews/string_light_moths_preview.gd:2-10`; capture `capture/moths_r3_preview.avi` |
 | B19 | restart on edges; emitting only; hide after 2.4 s; reads LoopState | `string_light_moths_controller.gd:44-59` (excerpt 44-56 on screen) |
 | B20 | 63/63; P freezes; hidden stops, shown restarts; T to 1740 stops then hides after 2.4 s | `logs/test_string_light_moths_controller_60fps.log` (lines on screen); TEST-REPORT.md:458-462 |
-| B20 | Shriram: "they stay exactly where we paused" | TEST-REPORT.md:508 |
+| B20 | Shriram: "they stay exactly where we paused" | TEST-REPORT.md:549 |
 | B21 | Shriram converted and saved the shader in the editor | commit `9e7edec`; CLAUDE.md ownership note |
 | B21 | line 232 mixes initial_linear_velocity_min/max; brief 0.06 / 0.28 | `godot/shaders/particles_generated.gdshader:10-11,232`; `string_light_moths.tscn:36-37` |
 | B21 | line 434 turbulence mix by influence 0.12-0.30 | `particles_generated.gdshader:236,434`; `string_light_moths.tscn:57-58` |
@@ -41,15 +41,16 @@ All paths are relative to the repo root; game source at git `52fa183` (`evidence
 | B23 | M1: initial_velocity → initial_velocity_min reads 0.0, no load error, effect still fired, exit 1; M2 spread 30, exit 1 | `logs/a6-mutations/m1_godot3_name.log`, `m2_value_drift.log`; TEST-REPORT.md:434-440 |
 | B24 | control 5.8 µs; A +13.2 µs; B +3.3 µs within noise; n = 300; budget 0.15 ms | `logs/cost_effects_60fps.log`; TEST-REPORT.md:466-479; CHANGE-BRIEF.md:671 |
 | B24 | dummy renderer runs no GPU particle process | TEST-REPORT.md:478-479 |
-| B24 | profiler GPU 0.0 ms every row, Metal, M1 Pro; not measurable; vsync off ~280 vs 260-270 fps; 0.13-0.28 ms both; not confirmed | TEST-REPORT.md:481-496; `evidence/a6/use-it/visual-profiler-*.png` |
+| B24 | on Metal the profiler GPU column read 0.0 ms on every row; vsync off ~280 vs 260-270 fps; 0.13-0.28 ms both | TEST-REPORT.md:481-496 (A6.6, as of commit 636db3a); `evidence/a6/use-it/visual-profiler-*.png` |
+| B24 | under Vulkan (run argument only) the GPU column reads 2.1-6.0 ms per frame; same-view standing pairs on vs off: +0.57 ms (4.02 vs 3.45) and -0.04 ms (3.22 vs 3.26), single frames, more than the effects cost; per-effect budgets still not confirmed (narration revised at Shriram's request, ~21:47) | TEST-REPORT.md:498-537 (A6.6b, commits e688788 / 636db3a), table rows 511-512, 516-517, reading 523-537; stills `evidence/vulkan/7-set2-on-standing.png`, `8-set2-off-standing.png` (copied from `evidence/a6/gpu-vulkan/`) |
 | B25 | Step 1: error_max_turns 41/40; draft 124 lines > 120 | commit `41302d8`; `prompts/a6/session-1.jsonl` result event |
 | B25 | Step 2 preview: reconstructed background, no fixed seed | commit `a17cc65` |
 | B25 | ">= 3 scuffs" could not catch a double fire; exact check added | commit `c9a07cd`; TEST-REPORT.md:446-447 |
 | B25 | moth texture mostly haze | TUNING.md:160-164 |
 | B25 | plan called ambience a "feedback loop", drove amount_ratio; correction "emitting only" | `prompts/a6/session-6a.jsonl` line 32 ("feedback loop drives `amount_ratio` only"); `prompts/a6/prompt-6b.txt:2` |
 | B25 | permission denials 1 · 4 · 5 · 16 · 1 · 4 (sessions 1, 2, 3b, 5, 6a, 6b) | result events in `prompts/a6/session-*.jsonl` |
-| B25 | Claude overruled: r0 too fast; cotton balls from play; moths unseen three times | TEST-REPORT.md:513-520 |
+| B25 | Claude overruled: r0 too fast; cotton balls from play; moths unseen three times | TEST-REPORT.md:554-561 |
 | B26 | authorship (incl. ChatGPT helped plan the effect settings, SOURCES.md:154-155, added in commit 0d351c7 during this build) | CHANGE-BRIEF.md:3-11; SOURCES.md:147-160; commit messages ("approved by Shriram", "captured by Shriram") |
 | B26 | all textures procedural; no external art | `footstep_scuff.tscn:3-13,35-45` (GradientTexture2D); `godot/tools/moth_texture.gd`; CHANGE-BRIEF.md:213,487 |
-| B27 | Stop + Play again failed for the moths, not investigated | TEST-REPORT.md:507 |
+| B27 | Stop + Play again failed for the moths, not investigated | TEST-REPORT.md:548 |
 | B27 | scuff lands at Hari's centre | CHANGE-BRIEF.md:745-746 |

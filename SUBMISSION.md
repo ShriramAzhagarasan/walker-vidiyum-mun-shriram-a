@@ -46,8 +46,8 @@
     revised it at B r3).
   - The A5 marble textures (Poly Haven, CC0) are unchanged; their credits are in
     `godot/assets/textures/marble_01/ATTRIBUTION.md`.
-- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux · `claude-liam-vidiyum-mun-a6-gamedev.mp4` (3840×2160, 30 fps, 7:11)
-- **Final film SHA-256:** `5a5e381bd69906e0cff87e26bf8307952287c4e26931d38d01446b4ba0a29f85`
+- **Final film URL and filename:** https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux · `claude-liam-vidiyum-mun-a6-gamedev.mp4` (3840×2160, 30 fps, 7:19; revision 2: B24 adds the Vulkan GPU result)
+- **Final film SHA-256:** `e823205ef799c340a6f9b8289dd2fe038107ca0f95ad1e373af2b003ef99e547`
 - **Summary of my work:**
   - **The brief:** I chose both effects and the overlap rule. I wrote CHANGE-BRIEF.md Parts A–H (intent, every value,
     the rules, the frame and failure predictions, the prices and budgets, and the six answers) before the first build
