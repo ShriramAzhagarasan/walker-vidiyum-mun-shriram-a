@@ -115,7 +115,7 @@ predictions are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md), written before any shader
   session), so the phone also warns how little night is left.
 - **A5 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
   3840×2160, 30 fps, **7:29**.
-  - **Link (Northeastern OneDrive):** LINK-PENDING
+  - **Link (Northeastern OneDrive, added 2026-11-08 after tag `a5`):** [claude-liam-vidiyum-mun-a5-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD90q52VjdmRJBluIZAo9vUAU37pY9d2Zg27ZZYxSRy7Yc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Utb4QS)
   - **File:** `claude-liam-vidiyum-mun-a5-gamedev.mp4` · **SHA-256:**
     `fb0d6a3800f34e313c3bd62bb0ad86bc43f766a50552657474c1d986ab196e46`
   - **Game-source revision shown:** `bb2c156`. Later commits change only docs and film records:
