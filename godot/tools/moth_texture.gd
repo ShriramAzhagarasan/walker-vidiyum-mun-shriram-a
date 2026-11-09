@@ -28,10 +28,10 @@ static func generate() -> Image:
 			var wy := ny - 0.05                 ## wings sit a touch above the midline
 			var left_d := sqrt(left_dx * left_dx * 6.0 + wy * wy * 3.2)
 			var right_d := sqrt(right_dx * right_dx * 6.0 + wy * wy * 3.2)
-			var wing_mask := clampf(1.0 - minf(left_d, right_d), 0.0, 1.0)
-			wing_mask = wing_mask * wing_mask
+			# Tuning B r3: solid wings and body with a narrow soft edge (was a squared falloff, mostly haze).
+			var wing_mask := smoothstep(1.0, 0.85, minf(left_d, right_d))
 			var body_d := sqrt(nx * nx * 70.0 + ny * ny * 5.5)
-			var body_mask := clampf(1.0 - body_d, 0.0, 1.0)
+			var body_mask := smoothstep(1.0, 0.8, body_d)
 			var alpha := clampf(wing_mask + body_mask, 0.0, 1.0)
 			if alpha <= 0.02:
 				img.set_pixel(x, y, Color(0, 0, 0, 0))

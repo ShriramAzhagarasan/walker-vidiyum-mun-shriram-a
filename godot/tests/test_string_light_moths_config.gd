@@ -247,6 +247,15 @@ func _check_draw_pass(cp: GPUParticles3D, name: String) -> void:
 	check("%s material.albedo_texture = res://effects/moth.tres" % name,
 		mat.albedo_texture != null and mat.albedo_texture.resource_path == "res://effects/moth.tres",
 		mat.albedo_texture)
+	if mat.albedo_texture != null:
+		# Brief revision 4 (tuning B r3): solid wings, not haze. Count texels with alpha > 0.8.
+		var img := mat.albedo_texture.get_image()
+		var solid := 0
+		for y in img.get_height():
+			for x in img.get_width():
+				if img.get_pixel(x, y).a > 0.8:
+					solid += 1
+		check("%s moth texture has solid wings (>= 700 of 2560 texels with alpha > 0.8)" % name, solid >= 700, solid)
 
 func _check_attractor(at: GPUParticlesAttractorSphere3D, name: String, want_pos: Vector3) -> void:
 	check("%s position = %s" % [name, want_pos],
