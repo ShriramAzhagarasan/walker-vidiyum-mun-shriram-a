@@ -155,6 +155,8 @@ Downloaded 2026-10-29 through the Poly Haven API, unmodified. Credits also in `g
   effect settings and explain the generated process shader", and the A6 reflection "was drafted with ChatGPT
   assistance using the available screenshots and reported debugging observations". The process-shader notes in
   TEST-REPORT.md are Shriram's, written after ChatGPT's explanation of the shader. Claude checked only their line numbers.
+- **ChatGPT, FRICTIONAL.md A6 addendum (Vulkan GPU run):** written by Shriram with ChatGPT's help (Shriram, 2026-11-08).
+  One clause was changed at Shriram's request to credit Claude with spotting the stopped profiler.
 - **Claude Code (Claude Opus 5.5, Northeastern access):** wrote §0 of the brief (project facts), ran the scoped
   `claude -p` build sessions (`prompts/a6/`), and wrote the CLAUDE.md revision, effect scenes, previews, trigger code,
   tests and cost script, as recorded per step in TEST-REPORT.md and TUNING.md.

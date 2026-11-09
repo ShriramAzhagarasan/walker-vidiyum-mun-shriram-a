@@ -32,15 +32,7 @@
       "renderer": "Forward+ (Metal)",
       "git": "52fa183"
     },
-    "fps": 30,
-    "build": {
-      "at": "2026-11-08T21:19:15",
-      "cut": "master",
-      "filled": 30,
-      "of": 30,
-      "slates": [],
-      "skin_warnings": []
-    }
+    "fps": 30
   },
   "beats": [
     {
@@ -98,13 +90,7 @@
       "audio_file": "mp3/conformed/B00.wav",
       "actual_duration_s": 10.966666666666667,
       "speech_duration_s": 10.645,
-      "render_duration_s": 10.966666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B00.mp4",
-        "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 10.966666666666667
     },
     {
       "beat_id": "B01",
@@ -166,13 +152,7 @@
       "audio_file": "mp3/conformed/B01.wav",
       "actual_duration_s": 8.733333333333333,
       "speech_duration_s": 7.829,
-      "render_duration_s": 8.733333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B01.mp4",
-        "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 8.733333333333333
     },
     {
       "beat_id": "B02",
@@ -274,13 +254,7 @@
       "audio_file": "mp3/conformed/B02.wav",
       "actual_duration_s": 14.933333333333334,
       "speech_duration_s": 14.613,
-      "render_duration_s": 14.933333333333334,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B02.mp4",
-        "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.933333333333334
     },
     {
       "beat_id": "B03",
@@ -423,13 +397,7 @@
       "audio_file": "mp3/conformed/B03.wav",
       "actual_duration_s": 16.366666666666667,
       "speech_duration_s": 16.064,
-      "render_duration_s": 16.366666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B03.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 16.366666666666667
     },
     {
       "beat_id": "B04",
@@ -488,13 +456,7 @@
       "audio_file": "mp3/conformed/B04.wav",
       "actual_duration_s": 12.133333333333333,
       "speech_duration_s": 11.605,
-      "render_duration_s": 12.133333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B04.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 12.133333333333333
     },
     {
       "beat_id": "B05",
@@ -595,13 +557,7 @@
       "audio_file": "mp3/conformed/B05.wav",
       "actual_duration_s": 15.533333333333333,
       "speech_duration_s": 15.211,
-      "render_duration_s": 15.533333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B05.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 15.533333333333333
     },
     {
       "beat_id": "B06",
@@ -680,13 +636,7 @@
       "audio_file": "mp3/conformed/B06.wav",
       "actual_duration_s": 17.8,
       "speech_duration_s": 17.28,
-      "render_duration_s": 17.8,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B06.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 17.8
     },
     {
       "beat_id": "B07",
@@ -773,13 +723,7 @@
       "audio_file": "mp3/conformed/B07.wav",
       "actual_duration_s": 15.366666666666667,
       "speech_duration_s": 15.061,
-      "render_duration_s": 15.366666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B07.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 15.366666666666667
     },
     {
       "beat_id": "B08",
@@ -838,13 +782,7 @@
       "audio_file": "mp3/conformed/B08.wav",
       "actual_duration_s": 11.333333333333334,
       "speech_duration_s": 10.816,
-      "render_duration_s": 11.333333333333334,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B08.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 11.333333333333334
     },
     {
       "beat_id": "B09",
@@ -945,13 +883,7 @@
       "audio_file": "mp3/conformed/B09.wav",
       "actual_duration_s": 12.233333333333333,
       "speech_duration_s": 11.925,
-      "render_duration_s": 12.233333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B09.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 12.233333333333333
     },
     {
       "beat_id": "B10",
@@ -1020,13 +952,7 @@
       "audio_file": "mp3/conformed/B10.wav",
       "actual_duration_s": 14.433333333333334,
       "speech_duration_s": 13.909,
-      "render_duration_s": 14.433333333333334,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B10.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.433333333333334
     },
     {
       "beat_id": "B11",
@@ -1141,13 +1067,7 @@
       "audio_file": "mp3/conformed/B11.wav",
       "actual_duration_s": 15.633333333333333,
       "speech_duration_s": 15.317,
-      "render_duration_s": 15.633333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B11.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 15.633333333333333
     },
     {
       "beat_id": "B12",
@@ -1215,15 +1135,8 @@
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B12.wav",
       "actual_duration_s": 15.266666666666667,
-      "hold_s": 0.0,
       "speech_duration_s": 14.763,
-      "render_duration_s": 15.266666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B12.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 15.266666666666667
     },
     {
       "beat_id": "B13",
@@ -1296,13 +1209,7 @@
       "audio_file": "mp3/conformed/B13.wav",
       "actual_duration_s": 8.466666666666667,
       "speech_duration_s": 8.149,
-      "render_duration_s": 8.466666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B13.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 8.466666666666667
     },
     {
       "beat_id": "B14",
@@ -1379,13 +1286,7 @@
       "audio_file": "mp3/conformed/B14.wav",
       "actual_duration_s": 11.266666666666667,
       "speech_duration_s": 10.752,
-      "render_duration_s": 11.266666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B14.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 11.266666666666667
     },
     {
       "beat_id": "B15",
@@ -1486,13 +1387,7 @@
       "audio_file": "mp3/conformed/B15.wav",
       "actual_duration_s": 14.5,
       "speech_duration_s": 14.187,
-      "render_duration_s": 14.5,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B15.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.5
     },
     {
       "beat_id": "B16",
@@ -1561,13 +1456,7 @@
       "audio_file": "mp3/conformed/B16.wav",
       "actual_duration_s": 14.566666666666666,
       "speech_duration_s": 14.037,
-      "render_duration_s": 14.566666666666666,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B16.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.566666666666666
     },
     {
       "beat_id": "B17",
@@ -1682,13 +1571,7 @@
       "audio_file": "mp3/conformed/B17.wav",
       "actual_duration_s": 12.433333333333334,
       "speech_duration_s": 12.117,
-      "render_duration_s": 12.433333333333334,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B17.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 12.433333333333334
     },
     {
       "beat_id": "B18",
@@ -1777,13 +1660,7 @@
       "audio_file": "mp3/conformed/B18.wav",
       "actual_duration_s": 11.266666666666667,
       "speech_duration_s": 10.688,
-      "render_duration_s": 11.266666666666667,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B18.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 11.266666666666667
     },
     {
       "beat_id": "B19",
@@ -1898,13 +1775,7 @@
       "audio_file": "mp3/conformed/B19.wav",
       "actual_duration_s": 14.133333333333333,
       "speech_duration_s": 13.824,
-      "render_duration_s": 14.133333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B19.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.133333333333333
     },
     {
       "beat_id": "B20",
@@ -1975,13 +1846,7 @@
       "audio_file": "mp3/conformed/B20.wav",
       "actual_duration_s": 15.133333333333333,
       "speech_duration_s": 14.613,
-      "render_duration_s": 15.133333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B20.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 15.133333333333333
     },
     {
       "beat_id": "B21",
@@ -2079,13 +1944,7 @@
       "audio_file": "mp3/conformed/B21.wav",
       "actual_duration_s": 19.466666666666665,
       "speech_duration_s": 19.157,
-      "render_duration_s": 19.466666666666665,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B21.mp4",
-        "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 19.466666666666665
     },
     {
       "beat_id": "B22",
@@ -2172,13 +2031,7 @@
       "audio_file": "mp3/conformed/B22.wav",
       "actual_duration_s": 11.333333333333334,
       "speech_duration_s": 11.008,
-      "render_duration_s": 11.333333333333334,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B22.mp4",
-        "filled_by": "remotion:GodotDevWorkbench",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 11.333333333333334
     },
     {
       "beat_id": "B23",
@@ -2231,19 +2084,13 @@
       "audio_file": "mp3/conformed/B23.wav",
       "actual_duration_s": 13.1,
       "speech_duration_s": 12.587,
-      "render_duration_s": 13.1,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B23.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 13.1
     },
     {
       "beat_id": "B24",
       "act": "PRICE",
       "role_note": "Headless CPU price (cost log) and the GPU price (Shriram's Visual Profiler screenshots, TEST-REPORT A6.6).",
-      "narration_text": "The prices. Headless CPU per frame, against an empty-scene control of five point eight microseconds. Effect A adds thirteen point two, inside its budget. Effect B adds three point three, within noise: the dummy renderer runs no GPU particle process. And the Visual Profiler read zero milliseconds of GPU on every row, so GPU time could not be measured here. With vsync off, both effects together cost about point one three to point two eight milliseconds. Per-effect budgets: not confirmed.",
+      "narration_text": "The prices. Headless CPU per frame, against an empty-scene control of five point eight microseconds. Effect A adds thirteen point two, inside its budget. Effect B adds three point three, within noise: the dummy renderer runs no GPU particle process. On Metal, the Visual Profiler read zero milliseconds of GPU on every row. Rerun under Vulkan, it reads two to six milliseconds a frame. But with the effects on and off at the same view, single frames differed by plus point five seven and minus point zero four: more than the effects cost. With vsync off, both effects together cost about point one three to point two eight milliseconds. Per-effect budgets: not confirmed.",
       "shot": {
         "type": "GAMEPLAY",
         "class": "SHOW",
@@ -2261,7 +2108,19 @@
             "kind": "still",
             "src": "evidence/a6/use-it/visual-profiler-B-heaviest.png",
             "w": 1,
-            "label": "SHRIRAM'S OWN SCREENSHOT · Visual Profiler, B heaviest: GPU column 0.0 ms on every row"
+            "label": "SHRIRAM'S OWN SCREENSHOT · Visual Profiler, B heaviest: GPU column 0.0 ms on every row (Metal)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/vulkan/7-set2-on-standing.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · VULKAN · set 2, both effects ON, standing (GPU Render Viewport 3.22 ms)"
+          },
+          {
+            "kind": "still",
+            "src": "evidence/vulkan/8-set2-off-standing.png",
+            "w": 0.8,
+            "label": "SHRIRAM'S OWN SCREENSHOT · VULKAN · set 2, both effects OFF, same view (GPU Render Viewport 3.26 ms)"
           },
           {
             "kind": "still",
@@ -2277,8 +2136,12 @@
             "event": "cost log"
           },
           {
-            "at": "0.45",
-            "event": "Visual Profiler: GPU 0.0 ms"
+            "at": "0.35",
+            "event": "Metal profiler: GPU 0.0 ms"
+          },
+          {
+            "at": "0.5",
+            "event": "Vulkan on/off pair"
           },
           {
             "at": "0.8",
@@ -2303,16 +2166,8 @@
       },
       "voice": "am_onyx",
       "engine": "kokoro",
-      "audio_file": "mp3/conformed/B24.wav",
-      "actual_duration_s": 29.666666666666668,
-      "speech_duration_s": 29.157,
-      "render_duration_s": 29.666666666666668,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B24.mp4",
-        "filled_by": "media",
-        "at": "2026-11-08T21:19:15"
-      }
+      "audio_file": "mp3/beat-B24.mp3",
+      "actual_duration_s": 37.46
     },
     {
       "beat_id": "B25",
@@ -2410,13 +2265,7 @@
       "audio_file": "mp3/conformed/B25.wav",
       "actual_duration_s": 21.9,
       "speech_duration_s": 21.589,
-      "render_duration_s": 21.9,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B25.mp4",
-        "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 21.9
     },
     {
       "beat_id": "B26",
@@ -2506,13 +2355,7 @@
       "audio_file": "mp3/conformed/B26.wav",
       "actual_duration_s": 20.633333333333333,
       "speech_duration_s": 20.309,
-      "render_duration_s": 20.633333333333333,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B26.mp4",
-        "filled_by": "remotion:GodotDesignBoard",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 20.633333333333333
     },
     {
       "beat_id": "B27",
@@ -2570,13 +2413,7 @@
       "audio_file": "mp3/conformed/B27.wav",
       "actual_duration_s": 14.3,
       "speech_duration_s": 13.589,
-      "render_duration_s": 14.3,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B27.mp4",
-        "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 14.3
     },
     {
       "beat_id": "B28",
@@ -2630,13 +2467,7 @@
       "audio_file": "mp3/conformed/B28.wav",
       "actual_duration_s": 13.1,
       "speech_duration_s": 12.779,
-      "render_duration_s": 13.1,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B28.mp4",
-        "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 13.1
     },
     {
       "beat_id": "B29",
@@ -2676,13 +2507,7 @@
       "audio_file": "mp3/conformed/B29.wav",
       "actual_duration_s": 4.9,
       "speech_duration_s": 3.584,
-      "render_duration_s": 4.9,
-      "build": {
-        "status": "VIDEO",
-        "src": "media/B29.mp4",
-        "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-11-08T21:19:15"
-      }
+      "render_duration_s": 4.9
     }
   ]
 }

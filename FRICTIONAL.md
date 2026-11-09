@@ -413,3 +413,14 @@ The moth effect had a different problem. Initially, the texture was mostly trans
 Another challenge was checking GPU performance. The profiler displayed 0.0 for Render Viewport even though the frame took around 3.6 ms. Since I wasn't getting usable GPU timing data, I couldn't confidently claim that the effect met the GPU budget. I would need a proper GPU measurement to verify that.
 
 Overall, I accepted feedback when it matched what I observed, but I also rejected the initial interpretation of the scuff timing because my gameplay test showed something different. This helped me understand why testing effects in motion matters more than relying only on screenshots.
+
+## 2026-11-08 ~21:50: A6 addendum, the Vulkan GPU run (Shriram's, with ChatGPT's help)
+*Shriram's text, written with ChatGPT's help (Shriram, 2026-11-08; SOURCES.md). It is placed unchanged except for one
+clause, changed at Shriram's request to match the record: "I noticed every screenshot showed" became "Claude pointed out
+that every screenshot showed" (TEST-REPORT A6.6b). Evidence: `evidence/a6/gpu-vulkan/`.*
+
+### FRICTIONAL Addendum — November 8, 2026
+
+When I first checked GPU performance under Metal, the profiler showed 0.0 ms, so I tried running the test again using Vulkan. One attempt wasn't useful because the profiler had stopped recording, and Claude pointed out that every screenshot showed the same frame number, 6835. I learned that I need to check whether the profiler is actually updating before trusting the results.
+
+Even with Vulkan, individual frame times varied more than the small cost I was trying to measure. Because of this, I still can't confirm that the effects meet their GPU budgets. To properly verify them, I would need to collect more frames, compare repeated runs with each effect on and off, and use reliable GPU timing measurements instead of individual screenshots.
