@@ -575,4 +575,5 @@ So the process shader makes the moths move and change over time, while the draw 
 `godot/shaders/particles_generated.gdshader` (473 lines, commit `9e7edec`). Shriram converted it in the editor from
 MothsWest's `ParticleProcessMaterial` and saved it there. Claude checked only that each cited line (3, 47, 131–135,
 232, 254, 255, 313, 355, 366, 399, 412, 458–465) holds the code it is cited for, using `sed -n` against that file.
-All of them match.
+All of them match. ChatGPT helped Shriram understand the generated shader (Shriram, 2026-11-08;
+SOURCES.md, Assignment 6).
