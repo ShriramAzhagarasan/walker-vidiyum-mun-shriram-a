@@ -744,3 +744,11 @@ Separating these helped me understand that a particle effect can trigger correct
   the moths were 1–3 px specks Shriram could not see. Verdict pending at the time of this revision (TUNING.md, Effect B).
 - **§A.4 #8 position:** the scuff lands at Hari's centre, which reads as behind the front foot while walking; Shriram
   kept this and records it as a known limitation.
+
+## Revision 4, 2026-11-08 (Effect B tuning, approved by Shriram; the text above is unchanged)
+- **§B.3 colour and alpha ramp** (r2): colours dark umber #3B2F25 (0 %, 100 %) and #4A3B2E (15 %, 70 %); alphas
+  unchanged. §B.2's "pale cream shapes" no longer holds: the bulbs hang in front of the pale villa wall and lit windows,
+  not the dark sky.
+- **§B.3 draw, texture** (r3): the procedurally generated moth silhouette has solid wings and body with a narrow soft
+  edge (at least 700 of 2560 texels above 0.8 alpha). The r1 quad size (0.21 × 0.135 m, revision 3) stays.
+- Shriram's verdict on r3: "it reads as moths". Record: TUNING.md, Effect B r1–r3.
