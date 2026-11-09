@@ -181,12 +181,14 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
 - **Price** (TEST-REPORT A6.5–A6.6):
   - **Headless CPU:** Effect A at 4 bursts costs +13.2 µs per frame against the 0.15 ms budget. Effect B costs about 0,
     as expected for a GPU effect, because the headless renderer runs no particle process.
-  - **GPU:** the Visual Profiler's GPU column read 0.0 ms on Metal / Apple M1 Pro, so GPU time could not be measured.
+  - **GPU:** the Visual Profiler's GPU column read 0.0 ms on Metal / Apple M1 Pro. Under Vulkan (run argument
+    `--rendering-driver vulkan`) it reports 2.1–6.0 ms per frame. Effects on vs off at the same view differ by −0.04
+    and +0.57 ms in two single-frame pairs, which is less than the frame-to-frame variation (TEST-REPORT A6.6b).
   - **FPS with vsync off:** about 280 with both effects off and 260–270 with both on, which is about 0.13–0.28 ms of
     whole-frame time (CPU and GPU together, not GPU time) for the two effects together. Whether each effect is within its
     0.20 ms budget is not confirmed.
 - **A6 known limitations:**
-  - GPU time per effect was not measured (see above).
+  - GPU time per effect was not resolved: Metal reports 0.0, and Vulkan's single frames vary more than the effects cost.
   - The scuff lands at Hari's centre, which reads as behind his front foot. Shriram kept this (brief revision 3).
   - Stopping the game in the editor and pressing Play again "does not work" (Shriram's play check, TEST-REPORT A6.7). Not investigated.
   - Hari looks slightly above the floor: this is the A3 sprite and its shadow, out of scope for A6.

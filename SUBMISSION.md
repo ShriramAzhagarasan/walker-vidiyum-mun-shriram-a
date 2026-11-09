@@ -31,7 +31,11 @@
   - **Effect A:** budget ≤ 0.15 ms per frame of headless CPU, measured at +13.2 µs (4 bursts, against an empty-scene
     control), so within budget. Its GPU budget is ≤ 0.20 ms.
   - **Effect B:** budget ≤ 0.20 ms of GPU time. Its headless CPU price is about 0 by construction.
-  - **GPU time:** not measurable here. The Visual Profiler's GPU column read 0.0 ms on every row under Metal.
+  - **GPU time:** under Metal the Visual Profiler's GPU column read 0.0 ms on every row. Under Vulkan
+    (`--rendering-driver vulkan` as a run argument only) it reports times: whole-frame GPU 2.1–6.0 ms. In the one clean
+    same-view pair (standing, set 2) effects on vs off differ by −0.04 ms, and the other standing pair gives +0.57 ms.
+    Single frames vary more than the effects cost. The walking pairs changed camera view, so they give no figure for A
+    (TEST-REPORT A6.6b).
   - **FPS with vsync off (F10):** about 280 with both effects off and 260–270 with both on. That is a change of about
     0.13–0.28 ms in whole-frame time (CPU and GPU together) for the two effects combined. It is an estimate of total
     frame-time change, **not GPU time**, and it can't be split per effect. The per-effect GPU budgets are therefore
@@ -63,8 +67,8 @@
     sessions (`prompts/a6/`), the previews, the debug keys and the tuning proposals, and is making the film. The agents
     built the effect scenes, trigger, controller, tests and cost script. Full split in SOURCES.md and FRICTIONAL.md.
 - **Known limitations:**
-  - GPU time wasn't measured. The FPS comparison gives only the whole-frame change for both effects together (see
-    Budgets).
+  - GPU time per effect wasn't resolved. Metal reported 0.0 ms. Vulkan single-frame readings vary more than the
+    effects cost, and the FPS comparison gives only the whole-frame change (see Budgets).
   - The scuff lands at Hari's centre, so it reads as behind his front foot. I kept this.
   - Stopping the game in the editor and pressing Play again "does not work" (Shriram's play check, TEST-REPORT A6.7). Not investigated.
   - Hari looks slightly above the floor. That's the A3 sprite and shadow, out of scope.

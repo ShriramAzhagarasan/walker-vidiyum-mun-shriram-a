@@ -495,6 +495,47 @@ Editor run (Play), Godot 4.7.2, Forward+ on **Metal**, **Apple M1 Pro (Apple7)**
 - **Against the budgets** (brief Part G, ≤ 0.20 ms GPU each): the two effects *together* cost 0.13–0.28 ms of frame
   time, so each is plausibly within 0.20 ms, but GPU time per effect was not measured. **Not confirmed.**
 
+## A6.6b GPU time under Vulkan (HUMAN CHECK, Shriram, 2026-11-08 ~21:20–21:34)
+
+**Setup.**
+- Shriram re-ran the GPU price from the editor with **Main Run Args `--rendering-driver vulkan`**, a run-instance
+  setting only; no project setting was changed. The game's banner reads "Vulkan 1.2.334 - Forward+ - Using Device #0:
+  Apple - Apple M1 Pro" (`evidence/a6/gpu-vulkan/1-vulkan-banner.png`).
+- Under Vulkan (MoltenVK) the Visual Profiler's GPU column **does report times**; under Metal it read 0.0 (A6.6). The
+  game's own driver is Metal, so these are Vulkan figures on the same GPU.
+- Measure: Frame Time (ms). Effects toggled with F11, which turns both effects off or on together. Each row is **one
+  frame**.
+
+| Set | State | Clock · frame # | GPU Render Viewport | GPU Render 3D | Screenshot |
+|---|---|---|---|---|---|
+| 1 | Both on, standing under the lights | 10:00 PM · 12080 | 4.02 ms | 3.58 ms | `2-both-on-standing-under-lights.png` |
+| 1 | Both off, same spot | 12:00 AM · 16440 | 3.45 ms | 3.36 ms | `3-both-off-standing-under-lights.png` |
+| 1 | Both on, walking, scuffs visible | 2:40 AM · 22253 | 4.79 ms | 4.65 ms | `4-both-on-walking-scuffs.png` |
+| 1 | Both off, walking (near the SUV, a different view) | 4:40 AM · 26590 | 5.99 ms | 5.90 ms | `5-both-off-walking-near-suv.png` |
+| 2 | Both on, walking, scuffs visible | 8:35 PM (loop 2) · 29948 | 4.26 ms | 4.08 ms | `6-set2-on-walking.png` |
+| 2 | Both on, standing under the middle span | 10:03 PM · 33113 | 3.22 ms | 3.12 ms | `7-set2-on-standing.png` |
+| 2 | Both off, same spot and view | 11:23 PM · 36015 | 3.26 ms | 3.16 ms | `8-set2-off-standing.png` |
+| 2 | Both off, walking (view framed nearer Advay) | 1:22 AM · 40349 | 2.25 ms | 2.14 ms | `9-set2-off-walking.png` |
+
+A middle attempt is kept in `gpu-vulkan/discarded-profiler-stopped/` but not used. The profiler had been stopped, so
+all four of its screenshots show the same frame (# 6835).
+
+**Reading (Claude; Shriram took the readings):**
+- **Standing, same view (B is the only effect active):**
+  - Set 1: on − off = **+0.57 ms** (Render 3D +0.22 ms).
+  - Set 2: on − off = **−0.04 ms** (Render 3D −0.04 ms).
+  - The two same-view pairs disagree by more than the 0.20 ms budget. Single frames vary more than the moths cost, so
+    the moths' GPU time is **below what a one-frame comparison can resolve**.
+- **Walking (A and B on vs both off):**
+  - Set 1 gives −1.20 ms; set 2 gives +2.01 ms.
+  - In both pairs the camera framed a different part of the deck for "off", so the difference follows the view, not
+    the effect. The opposite signs show this. **No A figure can be drawn from them.**
+- **Budget (Part G, ≤ 0.20 ms GPU each): still not confirmed.**
+  - This is now for a measured reason, not a missing one: whole-frame GPU time is 2.1–6.0 ms, and in the one clean
+    pair (set 2, same view) the effects' share is indistinguishable from zero.
+  - Confirming the budget would need an average over many frames per state at a fixed camera, which the Visual
+    Profiler's per-frame table doesn't provide.
+
 ## A6.7 Human checks in play (Shriram, 2026-11-08, real game, 1280×720)
 
 | Check | What Shriram saw |
