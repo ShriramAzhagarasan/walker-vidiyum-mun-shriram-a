@@ -438,3 +438,83 @@ Mutations, made by Shriram in `godot/effects/footstep_scuff.tscn` and restored w
 |---|---|---|---|
 | M1 | Godot 3 name: SoftDust `initial_velocity_min = 0.25` → `initial_velocity = 0.25` | **exit 1** (125/126; `[FAIL] SoftDust initial_velocity_min = 0.25 m/s   0.0`) | The scene loaded with no error and the value silently fell back to the default 0. **The effect still fired** in the preview (Shriram: "yes it fired"). In 4.7.2 `initial_velocity` exists only as an editor-only `Vector2` alias, and a float written to it is dropped (CHANGE-BRIEF §0). |
 | M2 | Value drift: SoftDust `spread` 80 → 30, brief unchanged | **exit 1** (125/126; `[FAIL] SoftDust spread = 80 deg   30.0`) | The test catches drift between the scene and the brief. |
+
+## A6.3 Effect A state test (retrigger: overlap)
+
+`./scripts/run-test.sh test_footstep_scuff_trigger.gd 60` → **19/19 PASS** (mode: fixed 60 fps; real D, E and P key
+presses through the harness; the trigger function is never called directly). Proves: no scuff on load, while dialogue
+locks movement, standing still, or paused; **exactly one scuff per footfall** (3 scuffs for 3 contacts in 1.91 m,
+check added in Claude's review, commit `c9a07cd`); each at Hari's floor projection (Y = 0, XZ within 0.08 m); **two
+contacts inside one 1.15 s lifetime give two distinct, simultaneously alive instances** (overlap, not restart or
+ignore); the scuffs are freed with the level. Cannot prove: the look, size and fade (strips and play); "Hari freed while
+the level persists" (the slice itself dereferences Hari every frame; the trigger's `is_instance_valid` guard is in
+`footstep_scuff_trigger.gd`, untested).
+
+## A6.4 Effect B configuration and state tests
+
+- `./scripts/run-test.sh test_string_light_moths_config.gd 60` → **255/255 PASS**, including turbulence, the three
+  attractors (`radius 1.0`, `strength 0.3`, `cull_mask 4294967295`), preprocess 2.4 s, `use_fixed_seed` off in the effect
+  scene, and the tuned quad size, colour ramp and solid texture.
+- `./scripts/run-test.sh test_string_light_moths_controller.gd 60` → **63/63 PASS** (fixed 60; real E, P and T keys).
+  Proves: emitting at load at 8 PM; **P freezes** (`can_process()` false, state byte-equal over 30 paused frames);
+  **hidden stops emission, shown again restarts**; holding T to 5:00 AM stops emission and **hides the group 2.4 s
+  later**; shown after the cutoff stays off; `amount` (12) and `amount_ratio` (1.0) never change. Cannot prove: that the
+  group looks populated on the first frame or after a restart, or the fade's look (headless runs no GPU particle process).
+
+## A6.5 Headless CPU price (Step 7)
+
+`./scripts/run-test.sh cost_effects.gd 60 300` (`logs/cost_effects_60fps.log`), per-frame CPU time, n = 300 each:
+
+| Case | Mean | SD |
+|---|---|---|
+| Empty scene (control) | 5.8 µs | 0.7 |
+| Slice, both effects off | 27.8 µs | 2.2 |
+| Effect A, 4 bursts alive (60 particles) | 41.0 µs (**+13.2 µs**) | 8.8 |
+| Effect B, 3 emitters on (36 particles) | 31.1 µs (+3.3 µs, within one SD) | 8.3 |
+
+- The control and the slice differ by 22 µs, so the script is not measuring itself.
+- **A (CPU particles)** costs about 0.013 ms of CPU per frame, against the brief's prediction of 0.04 ms and budget of
+  **0.15 ms: within budget**.
+- **B (GPU particles)** is indistinguishable from off: its headless price is near zero by construction, because the
+  dummy renderer runs no particle process (CLAUDE.md headless facts). Its budget is compared on GPU time, A6.6.
+
+## A6.6 GPU price (HUMAN CHECK, Shriram, 2026-11-08)
+
+Editor run (Play), Godot 4.7.2, Forward+ on **Metal**, **Apple M1 Pro (Apple7)**, window 1278×719
+(`evidence/a6/use-it/visual-profiler-*.png`).
+
+- **Visual Profiler:** the GPU column reads **0.0 ms on every row** (Prepare Render, Update GPU, Render Viewport, Render
+  3D) with Effect A at its heaviest (walking under the lights) and Effect B at its heaviest (standing under the lights).
+  The CPU column reads 0.01–0.14 ms. A real scene cannot cost the GPU 0 ms, so the profiler is receiving **no GPU
+  timestamps** in this setup: **GPU time could not be measured on this machine.** Recorded as a limitation; the budget
+  comparison below uses frame time instead.
+- **FPS with vsync off** (debug key F10; Debugger → Monitors → FPS): about **280 fps** with both effects off (F11) and
+  **260–270 fps** with both on. Both are far above the display's refresh rate, so the comparison is **not capped**.
+  Frame time: 3.57 ms off vs 3.70–3.85 ms on, so **both effects together add about 0.13–0.28 ms** of whole-frame time
+  (CPU and GPU together, since FPS can't separate them).
+- **Against the budgets** (brief Part G, ≤ 0.20 ms GPU each): the two effects *together* cost 0.13–0.28 ms of frame
+  time, so each is plausibly within 0.20 ms, but GPU time per effect was not measured. **Not confirmed.**
+
+## A6.7 Human checks in play (Shriram, 2026-11-08, real game, 1280×720)
+
+| Check | What Shriram saw |
+|---|---|
+| A, normal play (r1) | "walking through darkest stretches and lightest stretches i see it clearly and yes it is ankle size at normal window size and yes everything feels the same as before" |
+| A, look (r1) | "the scuff is kinda unnatural ... and the scuff only appears in the backward leg" → tuning r2; position kept as a limitation |
+| A, rapid repeats (r2) | "yes it stays for a while and then disappears, that is natural" |
+| B, darkest stretch | "in the darkest wall, i don't see moths but only the steps dust as im walking" (moths exist only at the string lights, x 6–18, by design) |
+| B, screen edge | "moths stay, they don't pop but they move in the screen which is natural" |
+| B, scene load | "the moth are already there" (preprocess). Stop + Play again "does not work idk why" (not investigated) |
+| Pause (P) | "yes the moth and scuffs freeze, they stay exactly where we paused" (`evidence/a6/use-it/paused-moths-and-scuffs-frozen.png`) |
+| Hidden (F11 off/on) | "yes it comes back already filled in at the same place they disappeared" |
+| Dawn (hold T to 5:00 AM) | "yes they just fade away, there is nothing there when the dawn comes, but the lights are still there" |
+| Hari "floating" | Shriram: "the legs aren't actually on the floor": A3 sprite and shadow, out of scope, recorded as a limitation |
+
+## A6.8 Claude against Shriram (strip readings)
+
+- **A r0:** Claude read the timing as matching the brief (gone by 0.8 s, as set); Shriram judged it "way too fast". The
+  verdict went with Shriram, which made r1 an observation-driven revision of the intent itself.
+- **A r1 → r2:** the "cotton ball" problem came from Shriram's play, not from Claude's strip reading.
+- **B r0–r2:** Claude's readings blamed size (r0) and then contrast (r1) and predicted r2's dark colour would make the
+  moths stand out; Shriram still could not see them. The real cause, an almost transparent agent-made texture, was
+  found only after Shriram's third "can't see" (TUNING.md, Effect B r2–r3).
