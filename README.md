@@ -199,7 +199,7 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
   - Opening the editor rewrites `project.godot` and `default_bus_layout.tres`; they were restored after every session.
 - **A6 film:** Brutalist `godot-gamedev` explainer (walker mode, Kokoro `am_onyx` "Liam" narration, local),
   3840×2160, 30 fps, **7:19** (revision 2, see below).
-  - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a6-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQBrxjoQcIr2Q5C-1fTgM_91AUrknWszjWF3JATjHzR9XA4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5dr6ux)
+  - **Link (Northeastern OneDrive):** [claude-liam-vidiyum-mun-a6-gamedev.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQD-_tQc93iLSqzHbQAkjnUaAW4PEBWZnDnymrgELmo0oRQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ax9uid)
   - **File:** `claude-liam-vidiyum-mun-a6-gamedev.mp4` · **SHA-256:**
     `e823205ef799c340a6f9b8289dd2fe038107ca0f95ad1e373af2b003ef99e547`
   - **Game-source revision shown:** `52fa183`. Later commits change only docs, evidence and film records:
