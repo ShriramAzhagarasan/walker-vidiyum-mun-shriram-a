@@ -66,6 +66,7 @@
   - GPU time wasn't measured. The FPS comparison gives only the whole-frame change for both effects together (see
     Budgets).
   - The scuff lands at Hari's centre, so it reads as behind his front foot. I kept this.
+  - Stopping the game in the editor and pressing Play again "does not work" (Shriram's play check, TEST-REPORT A6.7). Not investigated.
   - Hari looks slightly above the floor. That's the A3 sprite and shadow, out of scope.
   - The r3 moths read pale grey, not the predicted dark umber.
   - The "Hari freed while the level persists" rule is not tested headless.

@@ -188,6 +188,7 @@ Claude's prediction and Shriram's verdict, is in [TUNING.md](TUNING.md).
 - **A6 known limitations:**
   - GPU time per effect was not measured (see above).
   - The scuff lands at Hari's centre, which reads as behind his front foot. Shriram kept this (brief revision 3).
+  - Stopping the game in the editor and pressing Play again "does not work" (Shriram's play check, TEST-REPORT A6.7). Not investigated.
   - Hari looks slightly above the floor: this is the A3 sprite and its shadow, out of scope for A6.
   - At r3 the moths read as pale grey, not the dark umber the r2 colour predicted (TUNING.md, Effect B).
   - The "Hari freed while the level persists" rule is not tested headless, because the slice itself needs Hari every
