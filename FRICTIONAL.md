@@ -336,3 +336,77 @@ One useful part of the audit was finding that some checks were missing. For exam
 I'm still not completely confident about how normal-map strength interacts with different lighting conditions. I understand what the uniform controls, but I want to understand better why some normal-map changes are hardly visible while others make a big difference.
 
 Overall, I learned that getting a shader to compile is only one part of the work. I also need to check its inputs, understand the calculations, test the values, and compare the actual rendered output with what I predicted.
+
+---
+
+# Assignment 6: particle effects
+
+## 2026-11-08 ~16:45–20:50: build, tuning and checks (AI-recorded; Shriram's words quoted)
+
+**Who did what.**
+- Shriram wrote the brief's Parts A–H, with ChatGPT's help on wording, structure and the price predictions
+  (SOURCES.md). Shriram dictated seven edits after Claude's engine check, chose both effects and the retrigger rule,
+  ran every capture and play check, and gave every verdict.
+- Claude wrote §0 of the brief, the CLAUDE.md review, the agent prompts (`prompts/a6/`) and the reviews of the agents'
+  work, and proposed each tuning change.
+
+**Agent work, committed unedited and then reviewed:**
+
+| Step | Agent commit | Claude's review |
+|---|---|---|
+| CLAUDE.md | `41302d8` | `b545d28`: 124 → 119 lines, three headless facts confirmed on this machine |
+| Effect A | `9ff7c65` | `a17cc65`: the preview drew an invented background, so it now loads the real slice |
+| A trigger | `35dff47` | `c9a07cd`: "fired >= 3" couldn't catch a double fire, so an exact count was added |
+| Effect B | `d5d60fb` | — |
+| B controller | `62f5549` | — |
+| Step 7 headless price | `86534ed` | — |
+
+Both plans were approved by Shriram with corrections: two for the trigger, three for the controller.
+
+**Revisions** (full records in TUNING.md):
+
+| Revision | Change | Kept |
+|---|---|---|
+| A r1 | `15e209e` | `e537855` |
+| A r2 | `f7781a1` | `d2963cd` |
+| B r1 | `e6f47db` | — |
+| B r2 | `6f09755` | — |
+| B r3 | `7bc4799` | `f2ba9b8` |
+
+Each revision was driven by a play observation from Shriram:
+- **A r1:** "the timing was way too fast".
+- **A r2:** the scuff looked "unnatural" in play; Claude read it as cotton-ball puffs.
+- **B r1–r3:** "do you see dots there"; the moths were still not visible after r1 and r2.
+
+**Accepted, modified, rejected.**
+- *Rejected:* Claude's reading of the A r0 strip (timing as briefed). Shriram's "way too fast" decided r1.
+- *Modified:* the agents' plans (corrections above) and the brief after the engine check (seven edits).
+- *Accepted:* each of Claude's tuning proposals, after approval, and Claude's example wording for the A r1 reason,
+  labelled as Claude's (`f6bcfb5`).
+- *Claude wrong:* on B, three times. Claude blamed size (r0), then contrast (r1), and predicted dark moths for r2. The
+  cause, the agent-made texture being almost all haze (16 of 2560 texels solid), was found only after Shriram's third
+  "can't see".
+
+**Unresolved.**
+- GPU time could not be measured: the Visual Profiler's GPU column read 0.0 ms under Metal (TEST-REPORT A6.6).
+- The scuff lands at Hari's centre, which reads as behind the front foot. Shriram kept this (brief revision 3).
+- Hari looks like he is floating: the A3 sprite and shadow, out of scope.
+- The "Hari freed while the level persists" rule is not tested headless (TEST-REPORT A6.3).
+
+## 2026-11-08: A6 reflection (Shriram's)
+*Shriram's text, placed unchanged. This is the version Shriram sent after Claude listed where an earlier draft
+conflicted with the record. That earlier draft was drafted with ChatGPT's help (Shriram's note, SOURCES.md).*
+
+## FRICTIONAL Reflection
+
+While working on the particle effects, I learned that screenshots alone don't always show how an effect actually feels during gameplay.
+
+For the scuff effect, my first version (r0) had a decent size and was visible on the dark floor, but the timing felt way too fast. The feedback suggested that the timing matched the brief, but I disagreed based on what I saw while playing. I changed the timing for r1 because of that.
+
+In r1, the scuff particles looked more like cotton balls than dust. After further tuning, I felt r2 was better because the particles finally looked like dust instead of cotton balls. I also checked the timing during gameplay and noticed that the puff now lingered for about a second.
+
+The moth effect had a different problem. Initially, the texture was mostly transparent haze, making the moths difficult to see. After adjusting the effect through multiple revisions, I reached r3, where I felt it finally read as moths. During the play test, I also noticed that the moths moved naturally on screen, so I accepted that result.
+
+Another challenge was checking GPU performance. The profiler displayed 0.0 for Render Viewport even though the frame took around 3.6 ms. Since I wasn't getting usable GPU timing data, I couldn't confidently claim that the effect met the GPU budget. I would need a proper GPU measurement to verify that.
+
+Overall, I accepted feedback when it matched what I observed, but I also rejected the initial interpretation of the scuff timing because my gameplay test showed something different. This helped me understand why testing effects in motion matters more than relying only on screenshots.
