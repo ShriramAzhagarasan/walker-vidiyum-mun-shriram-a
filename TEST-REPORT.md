@@ -486,7 +486,7 @@ Editor run (Play), Godot 4.7.2, Forward+ on **Metal**, **Apple M1 Pro (Apple7)**
 - **Visual Profiler:** the GPU column reads **0.0 ms on every row** (Prepare Render, Update GPU, Render Viewport, Render
   3D) with Effect A at its heaviest (walking under the lights) and Effect B at its heaviest (standing under the lights).
   The CPU column reads 0.01–0.14 ms. A real scene cannot cost the GPU 0 ms, so the profiler is receiving **no GPU
-  timestamps** in this setup: **GPU time could not be measured on this machine.** Recorded as a limitation; the budget
+  timestamps** in this setup: **GPU time could not be measured under Metal.** (Under Vulkan it can: A6.6b.) Recorded as a limitation; the budget
   comparison below uses frame time instead.
 - **FPS with vsync off** (debug key F10; Debugger → Monitors → FPS): about **280 fps** with both effects off (F11) and
   **260–270 fps** with both on. Both are far above the display's refresh rate, so the comparison is **not capped**.

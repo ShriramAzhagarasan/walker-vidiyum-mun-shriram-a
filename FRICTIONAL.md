@@ -388,7 +388,10 @@ Each revision was driven by a play observation from Shriram:
   "can't see".
 
 **Unresolved.**
-- GPU time could not be measured: the Visual Profiler's GPU column read 0.0 ms under Metal (TEST-REPORT A6.6).
+- GPU time per effect is unresolved.
+  - Under Metal the Visual Profiler's GPU column read 0.0 ms (TEST-REPORT A6.6).
+  - Shriram's later Vulkan run shows real times (2.1–6.0 ms per frame). But single-frame on/off pairs vary more than
+    the effects cost (+0.57 and −0.04 ms at the same view; TEST-REPORT A6.6b).
 - The scuff lands at Hari's centre, which reads as behind the front foot. Shriram kept this (brief revision 3).
 - Hari looks like he is floating: the A3 sprite and shadow, out of scope.
 - The "Hari freed while the level persists" rule is not tested headless (TEST-REPORT A6.3).
