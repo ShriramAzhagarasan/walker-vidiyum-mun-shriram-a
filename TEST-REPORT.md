@@ -594,3 +594,18 @@ SHADER ERROR.
 | test_footstep_scuff_trigger | 60 | **19/19** |
 | test_string_light_moths_config | 60 | **255/255** |
 | test_string_light_moths_controller | 60 | **63/63** |
+
+**Run by Shriram (2026-11-08, 21:14, Shriram's terminal, output pasted in the session):** the four A6 suites through
+`scripts/run-test.sh` at fixed 60 fps. Results:
+
+| Suite | Result |
+|---|---|
+| `test_footstep_scuff_config.gd` | 128/128 PASS |
+| `test_footstep_scuff_trigger.gd` | 19/19 PASS: 3 scuffs for 3 contacts in 1.91 m, overlap, none while paused |
+| `test_string_light_moths_config.gd` | 255/255 PASS |
+| `test_string_light_moths_controller.gd` | 63/63 PASS |
+
+The logs this run rewrote are byte-identical to the committed ones (`git status` clean). Each run ends with Godot's
+exit-time notices: "ObjectDB instances were leaked", "resources still in use" and, for the moth suites, one leaked
+`DummyShader` RID. These come from engine cleanup after the test has finished. They are not SCRIPT ERROR or SHADER
+ERROR, and they do not change any result.
